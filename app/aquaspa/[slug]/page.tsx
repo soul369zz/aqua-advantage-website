@@ -1073,7 +1073,7 @@ const products: Record<string, Product> = {
 // Gallery image mapping for collections display
 const getGalleryImage = (slug: string): string => {
   const galleryImageMap: Record<string, string> = {
-    "grand-bahama": "/images/products/Grand Bahama gallery.jpg",
+    "grand-bahama": "/images/products/Grand Bahama Gallery.jpg",
     "grand-cayman": "/images/products/Grand Cayman Gallery.jpg", 
     "captiva": "/images/products/Captiva Gallery.jpg",
     "antigua": "/images/products/Antigua Gallery.jpg",

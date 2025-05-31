@@ -15,7 +15,7 @@ const hotTubs = [
     title: "Island Series Elite Hot Tub",
     price: 18995,
     originalPrice: 21995,
-    image: "/images/products/Grand Bahama gallery.jpg",
+    image: "/images/products/Grand Bahama Gallery.jpg",
     features: [
       "64 Helix Jets (Elite)",
       "6 Person Capacity",
