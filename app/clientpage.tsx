@@ -1,0 +1,1536 @@
+"use client"
+
+import type React from "react"
+
+import Image from "next/image"
+import Link from "next/link"
+import { ArrowRight, Phone, Star, MapPin } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { useEffect, useRef, useState } from "react"
+
+// Before/After Slider Component
+function BeforeAfterSlider() {
+  const [sliderPosition, setSliderPosition] = useState(50)
+  const [isDragging, setIsDragging] = useState(false)
+  const [isHovered, setIsHovered] = useState(false)
+  const [imagesLoaded, setImagesLoaded] = useState({ before: false, after: false })
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging && !isHovered) return
+    const container = containerRef.current
+    if (!container) return
+    const rect = container.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100))
+    setSliderPosition(percentage)
+  }
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault()
+    setIsDragging(true)
+  }
+
+  const handleMouseUp = () => {
+    setIsDragging(false)
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    e.preventDefault()
+    const container = containerRef.current
+    if (!container) return
+    const rect = container.getBoundingClientRect()
+    const x = e.touches[0].clientX - rect.left
+    const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100))
+    setSliderPosition(percentage)
+  }
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    e.preventDefault()
+    setIsDragging(true)
+  }
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    e.preventDefault()
+    setIsDragging(false)
+  }
+
+  useEffect(() => {
+    const handleGlobalMouseUp = () => setIsDragging(false)
+    const handleGlobalMouseMove = (e: MouseEvent) => {
+      if (!isDragging) return
+      const container = containerRef.current
+      if (!container) return
+      const rect = container.getBoundingClientRect()
+      const x = e.clientX - rect.left
+      const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100))
+      setSliderPosition(percentage)
+    }
+    if (isDragging) {
+      document.addEventListener("mousemove", handleGlobalMouseMove)
+      document.addEventListener("mouseup", handleGlobalMouseUp)
+    }
+    return () => {
+      document.removeEventListener("mousemove", handleGlobalMouseMove)
+      document.removeEventListener("mouseup", handleGlobalMouseUp)
+    }
+  }, [isDragging])
+
+  const handleImageLoad = (type: "before" | "after") => {
+    setImagesLoaded((prev) => ({ ...prev, [type]: true }))
+  }
+
+  const allImagesLoaded = imagesLoaded.before && imagesLoaded.after
+
+  return (
+    <div className="relative">
+      <div
+        ref={containerRef}
+        className="relative w-full h-96 overflow-hidden rounded-lg select-none touch-none"
+        style={{ touchAction: 'none', WebkitUserSelect: 'none', userSelect: 'none' }}
+        onMouseMove={handleMouseMove}
+        onMouseDown={handleMouseDown}
+        onMouseUp={handleMouseUp}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onTouchMove={handleTouchMove}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
+        {/* Before Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/Before1.jpg"
+            alt="Before pool installation"
+            fill
+            className={`object-cover transition-opacity duration-700 ${
+              imagesLoaded.before ? "opacity-100" : "opacity-0"
+            }`}
+            onLoad={() => handleImageLoad("before")}
+            priority
+          />
+          <div className="absolute top-4 left-4 bg-gray-800 text-white px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-gray-700">
+            Before
+          </div>
+        </div>
+
+        {/* After Image with Clip Path */}
+        <div
+          className="absolute inset-0 transition-all duration-200 ease-out"
+          style={{
+            clipPath: `polygon(${sliderPosition}% 0%, 100% 0%, 100% 100%, ${sliderPosition}% 100%)`,
+          }}
+        >
+          <Image
+            src="/images/After.jpg"
+            alt="After pool installation"
+            fill
+            className={`object-cover transition-opacity duration-700 ${
+              imagesLoaded.after ? "opacity-100" : "opacity-0"
+            }`}
+            onLoad={() => handleImageLoad("after")}
+            priority
+          />
+          <div className="absolute top-4 right-4 bg-blue-500 text-white px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-blue-600">
+            After
+          </div>
+        </div>
+
+        {/* Slider Handle */}
+        <div
+          className="absolute top-0 bottom-0 z-10 flex items-center justify-center"
+          style={{ left: `${sliderPosition}%`, transform: "translateX(-50%)" }}
+        >
+          <button
+            type="button"
+            aria-label="Drag to compare"
+            tabIndex={0}
+            className={`relative focus:outline-none focus:ring-2 focus:ring-blue-500 active:scale-110 transition-transform duration-200
+              w-16 h-16 md:w-14 md:h-14 sm:w-12 sm:h-12 rounded-full bg-white shadow-2xl border-2 border-blue-400 flex items-center justify-center
+              ${isDragging || isHovered ? "scale-110 ring-2 ring-blue-400" : "scale-100"}
+              cursor-grab active:cursor-grabbing`}
+            style={{ touchAction: 'none' }}
+            onMouseDown={handleMouseDown}
+            onTouchStart={handleTouchStart}
+          >
+            <div className="w-8 h-8 bg-blue-500 rounded-full shadow-lg flex items-center justify-center">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+                <path d="M8 12h8" />
+                <path d="M12 8v8" />
+              </svg>
+            </div>
+          </button>
+        </div>
+
+        {/* Loading Overlay */}
+        {!allImagesLoaded && (
+          <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
+            <div className="flex items-center space-x-2">
+              <div className="w-4 h-4 bg-blue-500 rounded-full animate-pulse"></div>
+              <span className="text-gray-600">Loading comparison...</span>
+            </div>
+          </div>
+        )}
+
+        {/* Hover Instructions */}
+        {allImagesLoaded && !isDragging && (
+          <div
+            className={`absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/70 text-white px-4 py-2 rounded-full text-sm transition-all duration-300 ${
+              isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+            }`}
+          >
+            Drag or slide to compare
+          </div>
+        )}
+      </div>
+
+      {/* Progress Indicator */}
+      {allImagesLoaded && (
+        <div className="mt-4 flex items-center justify-between text-sm text-gray-600">
+          <span className={`transition-all duration-300 ${sliderPosition < 50 ? "font-semibold text-gray-900" : ""}`}>
+            Before
+          </span>
+          <div className="flex-1 mx-4 h-2 bg-gray-200 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-gradient-to-r from-gray-800 to-blue-500 transition-all duration-200 ease-out"
+              style={{ width: `${sliderPosition}%` }}
+            ></div>
+          </div>
+          <span className={`transition-all duration-300 ${sliderPosition > 50 ? "font-semibold text-blue-600" : ""}`}>
+            After
+          </span>
+        </div>
+      )}
+    </div>
+  )
+}
+
+// Custom hook for intersection observer
+function useInView(threshold = 0.1) {
+  const [isInView, setIsInView] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true)
+        }
+      },
+      { threshold },
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => observer.disconnect()
+  }, [threshold])
+
+  return [ref, isInView] as const
+}
+
+// Animated counter component
+function AnimatedCounter({
+  target,
+  suffix = "",
+  duration = 2000,
+}: { target: number; suffix?: string; duration?: number }) {
+  const [count, setCount] = useState(0)
+  const [ref, isInView] = useInView()
+  const [hasAnimated, setHasAnimated] = useState(false)
+
+  useEffect(() => {
+    if (isInView && !hasAnimated) {
+      setHasAnimated(true)
+      let startTime: number
+      const animate = (currentTime: number) => {
+        if (!startTime) startTime = currentTime
+        const progress = Math.min((currentTime - startTime) / duration, 1)
+
+        // Easing function for smooth animation
+        const easeOutQuart = 1 - Math.pow(1 - progress, 4)
+        const currentCount = Math.floor(easeOutQuart * target)
+
+        setCount(currentCount)
+
+        if (progress < 1) {
+          requestAnimationFrame(animate)
+        } else {
+          setCount(target)
+        }
+      }
+      requestAnimationFrame(animate)
+    }
+  }, [isInView, hasAnimated, target, duration])
+
+  return (
+    <span ref={ref}>
+      {count}
+      {suffix}
+    </span>
+  )
+}
+
+// Animated text component
+function AnimatedText({ text, className = "", delay = 0 }: { text: string; className?: string; delay?: number }) {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), delay)
+    return () => clearTimeout(timer)
+  }, [delay])
+
+  return (
+    <div
+      className={`${className} transition-all duration-1000 ease-out ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
+      {text}
+    </div>
+  )
+}
+
+// Fade in component
+function FadeInSection({
+  children,
+  direction = "up",
+  delay = 0,
+}: {
+  children: React.ReactNode
+  direction?: "up" | "down" | "left" | "right"
+  delay?: number
+}) {
+  const [ref, isInView] = useInView()
+
+  const getTransform = () => {
+    switch (direction) {
+      case "up":
+        return "translate-y-8"
+      case "down":
+        return "-translate-y-8"
+      case "left":
+        return "translate-x-8"
+      case "right":
+        return "-translate-x-8"
+      default:
+        return "translate-y-8"
+    }
+  }
+
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-1000 ease-out ${
+        isInView ? "opacity-100 translate-x-0 translate-y-0" : `opacity-0 ${getTransform()}`
+      }`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {children}
+    </div>
+  )
+}
+
+// Loading component
+function LoadingScreen() {
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 2000)
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (!isLoading) return null
+
+  return (
+    <div className="fixed inset-0 z-50 bg-white flex items-center justify-center">
+      <div className="text-center">
+        <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
+          <div className="w-8 h-8 bg-white rounded-full animate-ping" />
+        </div>
+        <div className="text-2xl font-light text-gray-900 animate-fade-in">Aqua Advantage</div>
+      </div>
+    </div>
+  )
+}
+
+export default function HomePage() {
+  const [heroLoaded, setHeroLoaded] = useState(false)
+  const [backgroundScale, setBackgroundScale] = useState(1)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  useEffect(() => {
+    setHeroLoaded(true)
+
+    const handleScroll = () => {
+      const scrolled = window.scrollY
+      const rate = scrolled * -0.0005
+      setBackgroundScale(1 + rate)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const [showHeader, setShowHeader] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+
+      if (currentScrollY < lastScrollY || currentScrollY < 100) {
+        setShowHeader(true)
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setShowHeader(false)
+      }
+
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [lastScrollY])
+
+  const navigationItems = [
+    "About",
+    "Services",
+    "AquaSpa",
+    "Testimonials",
+    "FAQs",
+  ]
+
+  return (
+    <>
+      <div className="min-h-screen">
+        {/* Hero Section */}
+        <section className="relative min-h-screen overflow-hidden">
+          {/* Background Image with Parallax */}
+          <div
+            className="absolute inset-0 z-0 transition-transform duration-1000 ease-out"
+            style={{ transform: `scale(${backgroundScale})` }}
+          >
+            <Image
+              src="/images/hero/Hero1.jpg"
+              alt="Luxury pool and spa background"
+              fill
+              className="object-cover transition-opacity duration-2000"
+              priority
+            />
+            <div className="absolute inset-0 bg-black/40 transition-opacity duration-2000" />
+          </div>
+
+          {/* Navigation */}
+          <nav
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+              showHeader ? "translate-y-0" : "-translate-y-full"
+            } ${heroLoaded ? "opacity-100" : "opacity-0"} ${
+              lastScrollY > 0 ? "bg-gray-100 shadow-md" : "bg-transparent"
+            }`}
+          >
+            <div className="max-w-7xl mx-auto px-6 py-4">
+              <div className="flex items-center justify-between">
+                <Link href="/" className="flex items-center space-x-2 group">
+                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                    <div className="w-4 h-4 bg-white rounded-full transition-all duration-300 group-hover:animate-pulse" />
+                  </div>
+                  <span className={`font-semibold text-xl transition-colors duration-300 group-hover:text-blue-600 ${
+                    lastScrollY > 0 ? "text-gray-900" : "text-white"
+                  }`}>
+                    Aqua Advantage
+                  </span>
+                </Link>
+
+                {/* Desktop Navigation */}
+                <div className="hidden md:flex items-center space-x-8">
+                  {navigationItems.map((item, index) => (
+                    <Link
+                      key={item}
+                      href={`#${item.toLowerCase().replace(" ", "-")}`}
+                      className={`hover:text-blue-600 transition-all duration-300 hover:scale-105 relative group ${
+                        lastScrollY > 0 ? "text-gray-900" : "text-white"
+                      }`}
+                      style={{ animationDelay: `${index * 100}ms` }}
+                    >
+                      {item}
+                      <span className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
+                        lastScrollY > 0 ? "bg-blue-600" : "bg-blue-400"
+                      }`}></span>
+                    </Link>
+                  ))}
+                  <a 
+                    href="https://www.google.com/maps/search/?api=1&query=334+E+Main+St,+Burley,+ID,+83318"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center space-x-1 group cursor-pointer hover:text-blue-600 transition-all duration-300 ${
+                      lastScrollY > 0 ? "text-gray-900" : "text-white"
+                    }`}
+                  >
+                    <MapPin className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+                    <span className="text-sm">Burley, ID</span>
+                  </a>
+                </div>
+
+                {/* Mobile Menu Button */}
+                <button
+                  className={`md:hidden p-2 hover:bg-gray-200 rounded-lg transition-colors duration-300 ${
+                    lastScrollY > 0 ? "text-gray-900" : "text-white"
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                  aria-label="Toggle mobile menu"
+                >
+                  <div className="w-6 h-5 relative flex flex-col justify-between">
+                    <span className={`w-full h-0.5 transform transition-all duration-300 ${
+                      isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
+                    } ${lastScrollY > 0 ? 'bg-gray-900' : 'bg-white'}`} />
+                    <span className={`w-full h-0.5 transition-all duration-300 ${
+                      isMobileMenuOpen ? 'opacity-0' : ''
+                    } ${lastScrollY > 0 ? 'bg-gray-900' : 'bg-white'}`} />
+                    <span className={`w-full h-0.5 transform transition-all duration-300 ${
+                      isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
+                    } ${lastScrollY > 0 ? 'bg-gray-900' : 'bg-white'}`} />
+                  </div>
+                </button>
+              </div>
+
+              {/* Mobile Menu */}
+              <div
+                className={`md:hidden fixed inset-0 z-[9999] bg-white transition-opacity duration-300 ${
+                  isMobileMenuOpen 
+                    ? 'opacity-100 pointer-events-auto' 
+                    : 'opacity-0 pointer-events-none'
+                }`}
+                style={{ minHeight: '100vh' }}
+              >
+                {/* Close Button */}
+                <button
+                  className="absolute top-6 right-6 text-3xl text-gray-900 focus:outline-none"
+                  aria-label="Close menu"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  &times;
+                </button>
+                <div className="flex flex-col justify-center items-center h-full space-y-8 p-6">
+                  {navigationItems.map((item, index) => (
+                    <Link
+                      key={item}
+                      href={`#${item.toLowerCase().replace(" ", "-")}`}
+                      className="text-gray-900 text-2xl font-medium hover:text-blue-600 transition-all duration-300 hover:scale-105"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {item}
+                    </Link>
+                  ))}
+                  <div className="flex items-center space-x-2 mt-8">
+                    <MapPin className="w-6 h-6 text-gray-900" />
+                    <a 
+                      href="https://www.google.com/maps/search/?api=1&query=334+E+Main+St,+Burley,+ID,+83318"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lg text-gray-900 font-medium hover:text-blue-600 transition-colors duration-300"
+                    >
+                      Burley, ID
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+          {/* Hero Content */}
+          <div className="relative z-10 px-6 pt-20 pb-32">
+            <div className="max-w-7xl mx-auto">
+              <div className="max-w-2xl">
+                <h1 className="text-5xl md:text-7xl font-light text-white leading-tight mb-6">
+                  <AnimatedText text="We'll create your " delay={500} />
+                  <span className="italic font-serif">
+                    <AnimatedText text="dream oasis" delay={1500} />
+                  </span>
+                </h1>
+
+                <div
+                  className={`transition-all duration-1000 delay-2000 ${heroLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+                >
+                  <div className="text-xl text-white/90 mb-8 leading-relaxed">
+                    <AnimatedText
+                      text="Aqua Advantage transforms ordinary backyards into extraordinary aquatic retreats with luxury pools, spas, and hot tubs you'll treasure for years."
+                      delay={2500}
+                    />
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                    <Button
+                      size="lg"
+                      className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium group transition-all duration-300 hover:scale-105 hover:shadow-lg relative overflow-hidden"
+                      asChild
+                    >
+                      <a href="tel:+12087277909">
+                        <span className="relative z-10">Design your pool</span>
+                        <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
+                        <div className="absolute inset-0 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                      </a>
+                    </Button>
+
+                    <div className="flex items-center space-x-2 text-white group cursor-pointer">
+                      <Phone className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+                      <a href="tel:+12087277909" className="text-lg transition-colors duration-300 group-hover:text-blue-200">
+                        or call us
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Trust Indicators */}
+          <div
+            className={`absolute bottom-8 right-8 z-10 transition-all duration-1000 delay-3000 ${heroLoaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}
+          >
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-white hover:bg-white/20 transition-all duration-300 hover:scale-105">
+              <div className="flex items-center space-x-1 mb-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className="w-4 h-4 fill-yellow-400 text-yellow-400 transition-transform duration-300 hover:scale-125"
+                    style={{ animationDelay: `${i * 100}ms` }}
+                  />
+                ))}
+              </div>
+              <p className="text-sm">Trusted by 200+ clients</p>
+            </div>
+          </div>
+        </section>
+
+        {/* About Section */}
+        <section id="about" className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <FadeInSection direction="left">
+                <div>
+                  <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6 transition-all duration-300 hover:bg-blue-200">
+                    About us
+                  </div>
+                  <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
+                    We are aquatic transformation <span className="italic font-serif">specialists.</span>
+                  </h2>
+                  <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                    Aqua Advantage transforms ordinary backyards into extraordinary aquatic retreats you'll enjoy with
+                    family and friends.
+                  </p>
+
+                  <div className="grid grid-cols-3 gap-8">
+                    {[
+                      { number: 12, suffix: "+", label: ["Years", "experience"] },
+                      { number: 150, suffix: "+", label: ["Projects", "completed"] },
+                      { number: 200, suffix: "+", label: ["Happy", "customers"] },
+                    ].map((stat, index) => (
+                      <FadeInSection key={index} delay={index * 200}>
+                        <div className="group cursor-pointer">
+                          <div className="text-4xl font-light text-gray-900 mb-2 transition-all duration-300 group-hover:text-blue-600 group-hover:scale-110">
+                            <AnimatedCounter target={stat.number} suffix={stat.suffix} />
+                          </div>
+                          <div className="text-gray-600 transition-colors duration-300 group-hover:text-gray-800">
+                            {stat.label.map((line, i) => (
+                              <div key={i}>{line}</div>
+                            ))}
+                          </div>
+                        </div>
+                      </FadeInSection>
+                    ))}
+                  </div>
+                </div>
+              </FadeInSection>
+
+              <FadeInSection direction="right" delay={300}>
+                <div className="relative">
+                  <BeforeAfterSlider />
+                </div>
+              </FadeInSection>
+            </div>
+          </div>
+        </section>
+
+        {/* Services Section */}
+        <section id="services" className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <FadeInSection>
+              <div className="text-center mb-16">
+                <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6 transition-all duration-300 hover:bg-blue-200">
+                  Services
+                </div>
+                <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4">
+                  What we <span className="italic font-serif">do</span>
+                </h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Find out which one of our services fit the needs of your backyard
+                </p>
+              </div>
+            </FadeInSection>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Pool Cleaning",
+                  description: "Professional pool cleaning services to keep your pool crystal clear and inviting.",
+                  perfect: "Regular maintenance, clear water",
+                  duration: "1-2 hours",
+                  budget: "$100 - $200",
+                  image: "/images/services/Service 1-Pool Cleaning .jpg",
+                },
+                {
+                  title: "Chemical Balancing",
+                  description: "Expert chemical balancing to maintain perfect water chemistry and swimmer comfort.",
+                  perfect: "Water quality, swimmer comfort",
+                  duration: "30-45 mins",
+                  budget: "$50 - $150",
+                  image: "/images/services/Service 2- Chemical Balancing.jpg",
+                },
+                {
+                  title: "Equipment Repair",
+                  description: "Fast and reliable repair services for all pool and spa equipment.",
+                  perfect: "Equipment issues, quick fixes",
+                  duration: "1-3 hours",
+                  budget: "$150 - $500",
+                  image: "/images/services/Service 3- Equipment Repair.jpg",
+                },
+                {
+                  title: "Pool Maintenance",
+                  description: "Comprehensive maintenance programs to keep your pool in perfect condition year-round.",
+                  perfect: "Long-term care, peace of mind",
+                  duration: "Weekly/Monthly",
+                  budget: "$200 - $500/month",
+                  image: "/images/services/Service 4- Pool Maintenance.jpg",
+                },
+                {
+                  title: "Hot Tub Service",
+                  description: "Specialized maintenance and repair services for your hot tub or spa.",
+                  perfect: "Spa owners, relaxation",
+                  duration: "1-2 hours",
+                  budget: "$100 - $300",
+                  image: "/images/services/Service 5- Hot Tub Service.jpg",
+                },
+                {
+                  title: "Pool Opening/Closing",
+                  description: "Professional seasonal services to properly open and close your pool.",
+                  perfect: "Seasonal preparation",
+                  duration: "2-3 hours",
+                  budget: "$200 - $400",
+                  image: "/images/services/Service 6- Pool Opening:Closing.jpg",
+                },
+              ].map((service, index) => (
+                <FadeInSection key={index} delay={index * 100}>
+                  <Card className="overflow-hidden group hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+                    <div className="relative h-64 overflow-hidden">
+                      <Image
+                        src={service.image || "/placeholder.svg"}
+                        alt={service.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
+                    </div>
+                    <CardContent className="p-6">
+                      <h3 className="text-2xl font-semibold text-gray-900 mb-4 transition-colors duration-300 group-hover:text-blue-600">
+                        {service.title}
+                      </h3>
+                      <p className="text-gray-600 mb-6 transition-colors duration-300 group-hover:text-gray-700">
+                        {service.description}
+                      </p>
+                      <div className="space-y-3 text-sm">
+                        <div>
+                          <span className="font-medium">Perfect for:</span>
+                          <div className="text-gray-600">{service.perfect}</div>
+                        </div>
+                        <div>
+                          <span className="font-medium">Estimated Duration:</span>
+                          <div className="text-gray-600">{service.duration}</div>
+                        </div>
+                        <div>
+                          <span className="font-medium">Ideal Budget Range:</span>
+                          <div className="text-gray-600">{service.budget}</div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </FadeInSection>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Call to Action Section */}
+        <section className="pt-8 pb-16 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <FadeInSection delay={600}>
+              <div className="text-center bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-white">
+                <h3 className="text-2xl md:text-3xl font-light mb-3">Ready to transform your backyard?</h3>
+                <p className="text-lg mb-6 opacity-90">Schedule a consultation and discover your perfect AquaSpa.</p>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <Button
+                    size="lg"
+                    className="bg-white text-blue-600 hover:bg-gray-50 px-6 py-3 rounded-full text-base font-medium transition-all duration-300 hover:scale-105"
+                    asChild
+                  >
+                    <a href="tel:+12087277909">Schedule Consultation</a>
+                  </Button>
+                </div>
+              </div>
+            </FadeInSection>
+          </div>
+        </section>
+
+        {/* Hot Tubs & Spas Showcase Section - Apple Style */}
+        <section id="aquaspa" className="py-32 bg-gradient-to-b from-blue-50 to-gray-100 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6">
+            {/* Main Hero */}
+            <FadeInSection>
+              <div className="text-center mb-20">
+                <h2 className="text-6xl md:text-8xl font-light text-gray-900 mb-6 tracking-tight">AquaSpa</h2>
+                <p className="text-2xl md:text-3xl text-gray-600 mb-4 font-light">Luxury redefined.</p>
+                <p className="text-xl text-gray-600 mb-12 font-light">
+                  Premium therapeutic experience with cutting-edge technology.
+                </p>
+
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+                  <Button
+                    size="lg"
+                    className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105"
+                    asChild
+                  >
+                    <Link href="/aquaspa">Learn more</Link>
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-blue-500 text-blue-500 hover:bg-blue-50 px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105"
+                    asChild
+                  >
+                    <Link href="/aquaspa">Shop Spa</Link>
+                  </Button>
+                </div>
+
+                {/* Featured Product Image */}
+                <div className="relative mb-12">
+                  <div className="relative mx-auto w-full max-w-4xl">
+                    <Image
+                      src="/images/products/Main Product Image.jpg"
+                      alt="Premium AquaSpa Hot Tub"
+                      width={800}
+                      height={600}
+                      className="mx-auto rounded-3xl shadow-2xl transition-transform duration-700 hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
+                  </div>
+                </div>
+
+                <p className="text-lg text-blue-600 font-medium">Built for ultimate relaxation.</p>
+              </div>
+            </FadeInSection>
+
+            {/* Technology Showcase */}
+            <FadeInSection delay={400}>
+              <div className="text-center mb-20">
+                <h3 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">Advanced Technology</h3>
+                <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+                  Every AquaSpa features cutting-edge technology designed to enhance your wellness experience.
+                </p>
+
+                <div className="grid md:grid-cols-3 gap-8 mb-16">
+                  {[
+                    {
+                      icon: "💧",
+                      title: "HydroTherapy System",
+                      description:
+                        "Precision-engineered jets deliver targeted therapeutic massage for ultimate relaxation.",
+                    },
+                    {
+                      icon: "🌡️",
+                      title: "Smart Climate Control",
+                      description:
+                        "AI-powered temperature management maintains perfect water conditions automatically.",
+                    },
+                    {
+                      icon: "📱",
+                      title: "Connected Experience",
+                      description: "Control every aspect of your spa remotely with our intuitive mobile app.",
+                    },
+                  ].map((tech, index) => (
+                    <div key={index} className="group">
+                      <div className="text-4xl mb-4 transition-transform duration-300 group-hover:scale-110">
+                        {tech.icon}
+                      </div>
+                      <h4 className="text-xl font-semibold text-gray-900 mb-3 transition-colors duration-300 group-hover:text-blue-600">
+                        {tech.title}
+                      </h4>
+                      <p className="text-gray-600 leading-relaxed">{tech.description}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <Button
+                  size="lg"
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105"
+                  asChild
+                >
+                  <Link href="/aquaspa">Explore Technology</Link>
+                </Button>
+              </div>
+            </FadeInSection>
+          </div>
+        </section>
+
+        {/* Portfolio Section */}
+        <section id="portfolio" className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-6">
+            <FadeInSection>
+              <div className="text-center mb-16">
+                <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6 transition-all duration-300 hover:bg-blue-200">
+                  Our work
+                </div>
+                <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4">
+                  Get <span className="italic font-serif">inspired</span> by our beautiful work
+                </h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  See how we've transformed spaces with our expert craftsmanship and attention to detail.
+                </p>
+              </div>
+            </FadeInSection>
+
+            <div className="space-y-16">
+              {[
+                {
+                  title: "From backyard to resort",
+                  description:
+                    "This once-ordinary backyard was transformed into a luxury resort-style retreat with an infinity pool, integrated spa, and stunning water features — perfect for entertaining and relaxation.",
+                  quote:
+                    "We barely used our backyard before, but now it's our favorite part of the house. Aqua Advantage absolutely nailed it.",
+                  category: "Custom Pools",
+                  image: "/images/gallery/Gallery Image 1.jpg",
+                  reverse: false,
+                },
+                {
+                  title: "A modern wellness retreat",
+                  description:
+                    "A compact space transformed with a premium 8-person spa featuring therapeutic jets, LED lighting, and integrated sound system — turning a small patio into a wellness oasis.",
+                  quote: "It looks like something out of a magazine. I still can't believe it's the same space!",
+                  category: "Hot Tubs",
+                  image: "/images/gallery/Gallery Image 2.jpg",
+                  reverse: true,
+                },
+                {
+                  title: "Natural pool with wildlife appeal",
+                  description:
+                    "We renovated parts of this pool with natural stone, a waterfall feature, and native landscaping to attract local wildlife while keeping a clean, usable pool layout.",
+                  quote:
+                    "It's peaceful, beautiful, and we see more birds and butterflies than ever. Aqua Advantage completely understood our vision and made it our favorite part of the house.",
+                  category: "Renovation",
+                  image: "/images/gallery/Gallery Image 3.jpg",
+                  reverse: false,
+                },
+              ].map((project, index) => (
+                <div
+                  key={index}
+                  className={`grid lg:grid-cols-2 gap-12 items-center ${project.reverse ? "lg:grid-flow-col-dense" : ""}`}
+                >
+                  <FadeInSection direction={project.reverse ? "right" : "left"} delay={index * 200}>
+                    <div className={`relative group ${project.reverse ? "lg:col-start-2" : ""}`}>
+                      <div className="overflow-hidden rounded-lg">
+                        <Image
+                          src={project.image || "/placeholder.svg"}
+                          alt={project.title}
+                          width={600}
+                          height={400}
+                          className="rounded-lg transition-transform duration-700 group-hover:scale-105"
+                        />
+                      </div>
+                      <div className="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm transition-all duration-300 hover:bg-green-700">
+                        {project.category}
+                      </div>
+                    </div>
+                  </FadeInSection>
+
+                  <FadeInSection direction={project.reverse ? "left" : "right"} delay={index * 200 + 100}>
+                    <div className={project.reverse ? "lg:col-start-1" : ""}>
+                      <h3 className="text-3xl font-semibold text-gray-900 mb-4 transition-colors duration-300 hover:text-blue-600">
+                        {project.title}
+                      </h3>
+                      <p className="text-gray-600 mb-6 leading-relaxed">{project.description}</p>
+                      <blockquote className="border-l-4 border-blue-500 pl-6 italic text-gray-700 mb-4 transition-all duration-300 hover:border-blue-600 hover:pl-8">
+                        "{project.quote}"
+                      </blockquote>
+                      <div className="flex items-center space-x-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className="w-4 h-4 fill-yellow-400 text-yellow-400 transition-transform duration-300 hover:scale-125"
+                            style={{ animationDelay: `${i * 50}ms` }}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </FadeInSection>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section id="testimonials" className="py-20 bg-white overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6">
+            <FadeInSection>
+              <div className="text-center mb-16">
+                <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6 transition-all duration-300 hover:bg-blue-200">
+                  Testimonials
+                </div>
+                <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4">
+                  Hear from our <span className="italic font-serif">clients</span>
+                </h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Hear from our happy clients about their experience working with Aqua Advantage and the pools we've
+                  brought to life.
+                </p>
+              </div>
+            </FadeInSection>
+
+            {/* Two Row Scrolling Testimonials */}
+            <div className="space-y-6">
+              {/* First Row - Scrolling Left to Right */}
+              <div className="relative">
+                <div className="flex animate-scroll-horizontal space-x-6">
+                  {/* First set of testimonials */}
+                  {[
+                    {
+                      name: "James Richardson",
+                      text: "The team at Aqua Advantage was friendly, professional, and incredibly skilled. Our new pool looks absolutely amazing!",
+                      avatar: "/images/testimonials/Reviews Avatar 1.jpg",
+                    },
+                    {
+                      name: "Sophie Williams",
+                      text: "We wanted a low-maintenance pool and Aqua Advantage nailed it. The design is beautiful and easy to care for.",
+                      avatar: "/images/testimonials/Reviews Avatar 2.jpg",
+                    },
+                    {
+                      name: "Michael Chen",
+                      text: "From first meeting to the final walkthrough, Aqua Advantage made the whole process smooth and stress-free. Highly recommend!",
+                      avatar: "/images/testimonials/Reviews Avatar 3.jpg",
+                    },
+                    {
+                      name: "Oliver Bennett",
+                      text: "We're beyond happy with our new hot tub. Aqua Advantage created a beautiful space that fits our family perfectly.",
+                      avatar: "/images/testimonials/Reviews Avatar 4.jpg",
+                    },
+                  ].map((testimonial, index) => (
+                    <Card
+                      key={`row1-first-${index}`}
+                      className="flex-shrink-0 w-80 p-6 group hover:shadow-lg transition-all duration-500 hover:-translate-y-1 hover:bg-gray-50"
+                    >
+                      <div className="flex items-center space-x-1 mb-4">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className="w-4 h-4 fill-green-500 text-green-500 transition-transform duration-300 group-hover:scale-110"
+                            style={{ animationDelay: `${i * 50}ms` }}
+                          />
+                        ))}
+                      </div>
+                      <p className="text-gray-600 mb-4 leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+                        "{testimonial.text}"
+                      </p>
+                      <div className="flex items-center space-x-3">
+                        <div className="overflow-hidden rounded-full">
+                          <Image
+                            src={testimonial.avatar || "/placeholder.svg"}
+                            alt={testimonial.name}
+                            width={40}
+                            height={40}
+                            className="rounded-full transition-transform duration-300 group-hover:scale-110"
+                          />
+                        </div>
+                        <span className="font-medium text-gray-900 transition-colors duration-300 group-hover:text-blue-600">
+                          {testimonial.name}
+                        </span>
+                      </div>
+                    </Card>
+                  ))}
+
+                  {/* Duplicate set for seamless loop */}
+                  {[
+                    {
+                      name: "James Richardson",
+                      text: "The team at Aqua Advantage was friendly, professional, and incredibly skilled. Our new pool looks absolutely amazing!",
+                      avatar: "/images/testimonials/Reviews Avatar 1.jpg",
+                    },
+                    {
+                      name: "Sophie Williams",
+                      text: "We wanted a low-maintenance pool and Aqua Advantage nailed it. The design is beautiful and easy to care for.",
+                      avatar: "/images/testimonials/Reviews Avatar 2.jpg",
+                    },
+                    {
+                      name: "Michael Chen",
+                      text: "From first meeting to the final walkthrough, Aqua Advantage made the whole process smooth and stress-free. Highly recommend!",
+                      avatar: "/images/testimonials/Reviews Avatar 3.jpg",
+                    },
+                    {
+                      name: "Oliver Bennett",
+                      text: "We're beyond happy with our new hot tub. Aqua Advantage created a beautiful space that fits our family perfectly.",
+                      avatar: "/images/testimonials/Reviews Avatar 4.jpg",
+                    },
+                  ].map((testimonial, index) => (
+                    <Card
+                      key={`row1-second-${index}`}
+                      className="flex-shrink-0 w-80 p-6 group hover:shadow-lg transition-all duration-500 hover:-translate-y-1 hover:bg-gray-50"
+                    >
+                      <div className="flex items-center space-x-1 mb-4">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className="w-4 h-4 fill-green-500 text-green-500 transition-transform duration-300 group-hover:scale-110"
+                            style={{ animationDelay: `${i * 50}ms` }}
+                          />
+                        ))}
+                      </div>
+                      <p className="text-gray-600 mb-4 leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+                        "{testimonial.text}"
+                      </p>
+                      <div className="flex items-center space-x-3">
+                        <div className="overflow-hidden rounded-full">
+                          <Image
+                            src={testimonial.avatar || "/placeholder.svg"}
+                            alt={testimonial.name}
+                            width={40}
+                            height={40}
+                            className="rounded-full transition-transform duration-300 group-hover:scale-110"
+                          />
+                        </div>
+                        <span className="font-medium text-gray-900 transition-colors duration-300 group-hover:text-blue-600">
+                          {testimonial.name}
+                        </span>
+                      </div>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+
+              {/* Second Row - Scrolling Right to Left */}
+              <div className="relative">
+                <div className="flex animate-scroll-horizontal-reverse space-x-6">
+                  {/* Second set of testimonials */}
+                  {[
+                    {
+                      name: "Daniel Foster",
+                      text: "Our new pool deck and water features completely changed the feel of our backyard. Aqua Advantage's craftsmanship is second to none.",
+                      avatar: "/images/testimonials/Reviews Avatar 1.jpg",
+                    },
+                    {
+                      name: "Charlotte Harris",
+                      text: "Aqua Advantage turned our sad, patchy lawn into a lush aquatic space. They really listened to what we wanted and delivered!",
+                      avatar: "/images/testimonials/Reviews Avatar 2.jpg",
+                    },
+                    {
+                      name: "Emma Thompson",
+                      text: "The attention to detail Aqua Advantage brought to our project was incredible. Every aspect of our pool looks stunning now!",
+                      avatar: "/images/testimonials/Reviews Avatar 3.jpg",
+                    },
+                    {
+                      name: "Robert Martinez",
+                      text: "Professional service from start to finish. Our infinity pool exceeded all expectations and the maintenance service is excellent.",
+                      avatar: "/images/testimonials/Reviews Avatar 4.jpg",
+                    },
+                  ].map((testimonial, index) => (
+                    <Card
+                      key={`row2-first-${index}`}
+                      className="flex-shrink-0 w-80 p-6 group hover:shadow-lg transition-all duration-500 hover:-translate-y-1 hover:bg-gray-50"
+                    >
+                      <div className="flex items-center space-x-1 mb-4">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className="w-4 h-4 fill-green-500 text-green-500 transition-transform duration-300 group-hover:scale-110"
+                            style={{ animationDelay: `${i * 50}ms` }}
+                          />
+                        ))}
+                      </div>
+                      <p className="text-gray-600 mb-4 leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+                        "{testimonial.text}"
+                      </p>
+                      <div className="flex items-center space-x-3">
+                        <div className="overflow-hidden rounded-full">
+                          <Image
+                            src={testimonial.avatar || "/placeholder.svg"}
+                            alt={testimonial.name}
+                            width={40}
+                            height={40}
+                            className="rounded-full transition-transform duration-300 group-hover:scale-110"
+                          />
+                        </div>
+                        <span className="font-medium text-gray-900 transition-colors duration-300 group-hover:text-blue-600">
+                          {testimonial.name}
+                        </span>
+                      </div>
+                    </Card>
+                  ))}
+
+                  {/* Duplicate set for seamless loop */}
+                  {[
+                    {
+                      name: "Daniel Foster",
+                      text: "Our new pool deck and water features completely changed the feel of our backyard. Aqua Advantage's craftsmanship is second to none.",
+                      avatar: "/images/testimonials/Reviews Avatar 1.jpg",
+                    },
+                    {
+                      name: "Charlotte Harris",
+                      text: "Aqua Advantage turned our sad, patchy lawn into a lush aquatic space. They really listened to what we wanted and delivered!",
+                      avatar: "/images/testimonials/Reviews Avatar 2.jpg",
+                    },
+                    {
+                      name: "Emma Thompson",
+                      text: "The attention to detail Aqua Advantage brought to our project was incredible. Every aspect of our pool looks stunning now!",
+                      avatar: "/images/testimonials/Reviews Avatar 3.jpg",
+                    },
+                    {
+                      name: "Robert Martinez",
+                      text: "Professional service from start to finish. Our infinity pool exceeded all expectations and the maintenance service is excellent.",
+                      avatar: "/images/testimonials/Reviews Avatar 4.jpg",
+                    },
+                  ].map((testimonial, index) => (
+                    <Card
+                      key={`row2-second-${index}`}
+                      className="flex-shrink-0 w-80 p-6 group hover:shadow-lg transition-all duration-500 hover:-translate-y-1 hover:bg-gray-50"
+                    >
+                      <div className="flex items-center space-x-1 mb-4">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className="w-4 h-4 fill-green-500 text-green-500 transition-transform duration-300 group-hover:scale-110"
+                            style={{ animationDelay: `${i * 50}ms` }}
+                          />
+                        ))}
+                      </div>
+                      <p className="text-gray-600 mb-4 leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+                        "{testimonial.text}"
+                      </p>
+                      <div className="flex items-center space-x-3">
+                        <div className="overflow-hidden rounded-full">
+                          <Image
+                            src={testimonial.avatar || "/placeholder.svg"}
+                            alt={testimonial.name}
+                            width={40}
+                            height={40}
+                            className="rounded-full transition-transform duration-300 group-hover:scale-110"
+                          />
+                        </div>
+                        <span className="font-medium text-gray-900 transition-colors duration-300 group-hover:text-blue-600">
+                          {testimonial.name}
+                        </span>
+                      </div>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Gallery Section */}
+        <section className="py-20 bg-gray-100">
+          <div className="max-w-7xl mx-auto px-6">
+            <FadeInSection>
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4">Our Work Gallery</h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Explore our diverse range of pool and spa projects, showcasing our commitment to quality and design.
+                </p>
+              </div>
+            </FadeInSection>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Large Featured Image */}
+              <div className="lg:col-span-2 row-span-2 relative overflow-hidden rounded-lg group hover:shadow-xl transition-all duration-500">
+                <Image
+                  src="/images/gallery/Gallery Image 1.jpg"
+                  alt="Large Featured Pool"
+                  width={800}
+                  height={600}
+                  className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+              </div>
+
+              {/* Medium Landscape Image */}
+              <div className="relative overflow-hidden rounded-lg group hover:shadow-xl transition-all duration-500">
+                <Image
+                  src="/images/gallery/Gallery Image 2.jpg"
+                  alt="Medium Landscape Pool"
+                  width={600}
+                  height={400}
+                  className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+              </div>
+
+              {/* Medium Portrait Image */}
+              <div className="relative overflow-hidden rounded-lg group hover:shadow-xl transition-all duration-500">
+                <Image
+                  src="/images/gallery/Gallery Image 3.jpg"
+                  alt="Medium Portrait Spa"
+                  width={400}
+                  height={600}
+                  className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+              </div>
+
+              {/* Small Square Image */}
+              <div className="relative overflow-hidden rounded-lg group hover:shadow-xl transition-all duration-500">
+                <Image
+                  src="/images/gallery/Gallery Image 4.jpg"
+                  alt="Small Square Hot Tub"
+                  width={400}
+                  height={400}
+                  className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+              </div>
+
+              {/* Wide Panoramic Image */}
+              <div className="relative overflow-hidden rounded-lg group hover:shadow-xl transition-all duration-500">
+                <Image
+                  src="/images/gallery/Gallery Image 5.jpg"
+                  alt="Wide Panoramic Pool"
+                  width={800}
+                  height={400}
+                  className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+              </div>
+
+              {/* Tall Narrow Image */}
+              <div className="relative overflow-hidden rounded-lg group hover:shadow-xl transition-all duration-500">
+                <Image
+                  src="/images/gallery/Gallery Image 6.jpg"
+                  alt="Tall Narrow Spa"
+                  width={400}
+                  height={800}
+                  className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section id="faqs" className="py-20 bg-gray-50">
+          <div className="max-w-4xl mx-auto px-6">
+            <FadeInSection>
+              <div className="text-center mb-16">
+                <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6 transition-all duration-300 hover:bg-blue-200">
+                  FAQs
+                </div>
+                <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4">
+                  Frequently asked <span className="italic font-serif">questions</span>
+                </h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Get answers to common questions about our pool and spa services.
+                </p>
+              </div>
+            </FadeInSection>
+
+            <div className="space-y-4">
+              {[
+                {
+                  question: "How long does pool equipment repair typically take?",
+                  answer:
+                    "Most equipment repairs can be completed within 1-3 days, depending on parts availability and the complexity of the issue. We stock common parts and can often complete repairs the same day.",
+                },
+                {
+                  question: "Do you offer warranties on new equipment installations?",
+                  answer:
+                    "Yes, all new equipment comes with manufacturer warranties, and we provide additional service warranties on our installation work. Warranty periods vary by equipment type and manufacturer.",
+                },
+                {
+                  question: "What's the difference between new and used spa pricing?",
+                  answer:
+                    "Used spas typically cost 40-60% less than new models. All our used spas are thoroughly inspected, refurbished as needed, and come with a limited warranty. We'll help you determine the best option for your budget and needs.",
+                },
+                {
+                  question: "Can you automate my existing pool system?",
+                  answer:
+                    "In most cases, yes! We can retrofit automation systems to existing pools and spas. Our technicians will assess your current setup and recommend the best automation solution for your specific system.",
+                },
+                {
+                  question: "How often should I purchase pool chemicals?",
+                  answer:
+                    "Chemical usage varies by pool size, usage, and season. On average, residential pools need chemical replenishment every 2-4 weeks. We offer delivery services and can set up automatic delivery schedules.",
+                },
+                {
+                  question: "Do you service all brands of pool and spa equipment?",
+                  answer:
+                    "Yes, our certified technicians are trained to service all major brands of pool and spa equipment including Pentair, Hayward, Jandy, Balboa, and many others.",
+                },
+              ].map((faq, index) => (
+                <FadeInSection key={index} delay={index * 100}>
+                  <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden group hover:shadow-md transition-all duration-300">
+                    <details className="group">
+                      <summary className="flex items-center justify-between p-6 cursor-pointer list-none group-hover:bg-gray-50 transition-colors duration-300">
+                        <h3 className="text-lg font-semibold text-gray-900 pr-4 group-hover:text-blue-600 transition-colors duration-300">
+                          {faq.question}
+                        </h3>
+                        <div className="flex-shrink-0 w-6 h-6 text-gray-400 group-hover:text-blue-600 transition-all duration-300 group-open:rotate-180">
+                          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </div>
+                      </summary>
+                      <div className="px-6 pb-6">
+                        <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                      </div>
+                    </details>
+                  </div>
+                </FadeInSection>
+              ))}
+            </div>
+
+            <FadeInSection delay={600}>
+              <div className="text-center mt-12">
+                <p className="text-gray-600 mb-6">Still have questions?</p>
+                <Button
+                  size="lg"
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105"
+                  asChild
+                >
+                  <a href="tel:+12087277909">Contact Us</a>
+                </Button>
+              </div>
+            </FadeInSection>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="bg-gray-900 text-white py-16">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+              {/* Company Info */}
+              <div>
+                <Link href="/" className="flex items-center space-x-2 mb-6 group cursor-pointer">
+                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                    <div className="w-4 h-4 bg-white rounded-full transition-all duration-300 group-hover:animate-pulse" />
+                  </div>
+                  <span className="text-white font-semibold text-xl transition-colors duration-300 group-hover:text-blue-400">Aqua Advantage</span>
+                </Link>
+                <p className="text-gray-400 mb-4 leading-relaxed">
+                  Transforming ordinary backyards into extraordinary aquatic retreats with professional pool and spa
+                  services.
+                </p>
+                <div className="flex items-center space-x-2 text-gray-400">
+                  <MapPin className="w-4 h-4" />
+                  <span>Burley, ID</span>
+                </div>
+              </div>
+
+              {/* Services */}
+              <div>
+                <h4 className="text-lg font-semibold mb-6">Services</h4>
+                <ul className="space-y-3 text-gray-400">
+                  <li>
+                    <Link href="#services" className="hover:text-white transition-colors duration-300">
+                      Equipment Repair
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#services" className="hover:text-white transition-colors duration-300">
+                      Equipment Sales
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#aquaspa" className="hover:text-white transition-colors duration-300">
+                      Spa Sales
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#services" className="hover:text-white transition-colors duration-300">
+                      Automation
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#services" className="hover:text-white transition-colors duration-300">
+                      Chemical Sales
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Quick Links */}
+              <div>
+                <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
+                <ul className="space-y-3 text-gray-400">
+                  <li>
+                    <Link href="#about" className="hover:text-white transition-colors duration-300">
+                      About Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#portfolio" className="hover:text-white transition-colors duration-300">
+                      Reviews
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#faqs" className="hover:text-white transition-colors duration-300">
+                      FAQs
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/aquaspa" className="hover:text-white transition-colors duration-300">
+                      Shop Spa
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Contact Info */}
+              <div>
+                <h4 className="text-lg font-semibold mb-6">Get In Touch</h4>
+                <div className="space-y-3 text-gray-400">
+                  <div className="flex items-center space-x-2">
+                    <Phone className="w-4 h-4" />
+                    <span>(208) 727-7909</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                    <span>info@aquaadvantage.com</span>
+                  </div>
+                  <div className="flex items-center space-x-1 mt-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    ))}
+                    <span className="ml-2 text-white">200+ Happy Customers</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Bar */}
+            <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between">
+              <p className="text-gray-400 text-sm">© 2024 Aqua Advantage. All rights reserved.</p>
+              <div className="flex items-center space-x-6 mt-4 md:mt-0">
+                <Link href="#" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm">
+                  Privacy Policy
+                </Link>
+                <Link href="#" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm">
+                  Terms of Service
+                </Link>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </>
+  )
+}
