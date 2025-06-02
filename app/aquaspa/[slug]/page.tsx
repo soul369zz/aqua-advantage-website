@@ -1964,6 +1964,7 @@ const products: Record<string, Product> = {
 }
 
 // Gallery image mapping for collections display
+// Updated feature images paths - December 2024
 const getGalleryImage = (slug: string): string => {
   const galleryImageMap: Record<string, string> = {
     "grand-bahama": "/images/products/Grand Bahama Gallery.jpg",
