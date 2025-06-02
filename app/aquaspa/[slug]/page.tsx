@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { ChevronLeft, ChevronRight, Zap, Shield, Smartphone, Clock, ChevronDown, Star, MapPin, Phone, Settings, Droplets, Wifi, Volume2, Lightbulb } from "lucide-react"
+import { ChevronLeft, ChevronRight, Zap, Shield, Smartphone, Clock, ChevronDown, Star, MapPin, Phone, Settings, Droplets, Wifi, Volume2, Lightbulb, Waves, Thermometer } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useParams } from "next/navigation"
@@ -1850,6 +1850,33 @@ const products: Record<string, Product> = {
     controlFeatures: {
       title: "Features Of The ActivePlus EP-12 Exercise Pool",
       description: "Experience the ultimate in luxury aquatic fitness with professional-grade features designed for both exercise and relaxation.",
+      features: [
+        {
+          icon: "Settings",
+          title: "SpaTouch Topside Control",
+          description: "Color touchscreen panel with WiFi ready capabilities and multi-language interface"
+        },
+        {
+          icon: "Waves", 
+          title: "Variable Speed Swim Jets",
+          description: "Adjustable current strength for customized swimming and exercise intensity"
+        },
+        {
+          icon: "Thermometer",
+          title: "Dual Zone Temperature Control",
+          description: "Independent temperature control for exercise and hydrotherapy zones"
+        },
+        {
+          icon: "Smartphone",
+          title: "Smart App Integration",
+          description: "Optional worldwide WiFi app module for remote control via smartphone or tablet"
+        },
+        {
+          icon: "Lightbulb",
+          title: "Advanced LED Lighting",
+          description: "Standard blue LED with optional DynaBrite and multicolor lighting upgrades"
+        }
+      ],
       standardFeatures: [
         {
           title: "Grab Rails",
@@ -1866,7 +1893,7 @@ const products: Record<string, Product> = {
         {
           title: "Grandwood Cabinets",
           description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color.",
-          image: "/images/products/Cabinetry Colors/Grandwood Java.png",
+          image: "/images/products/features/grandwood-cabinets.jpg",
           category: "Cabinetry"
         },
         {
@@ -1890,46 +1917,46 @@ const products: Record<string, Product> = {
       ],
       optionalFeatures: [
         {
-          title: "Aquatic Training System",
-          description: "Maximize your workout in your exercise pool! You can choose between the Stationary Resistant Swim and/or the Rowing Bars and Resistant Cords.",
-          image: "/images/products/features/aquatic-training.jpg",
-          category: "Fitness Equipment"
-        },
-        {
-          title: "Worldwide WiFi App",
-          description: "Control your pool temperature, filter cycle, turn on pumps and much more from anywhere in the world.",
-          image: "/images/products/features/wifi-app.jpg",
-          category: "Smart Technology"
-        },
-        {
-          title: "Water Purification",
-          description: "Whether you choose to add Diamond AOP™, Crystal ProPure™, Ozone Mixing Chamber or an Ozonator, TidalFit promotes water purification for a clean pool.",
-          image: "/images/products/features/water-purification.jpg",
-          category: "Water Treatment"
-        },
-        {
-          title: "Audio Systems", 
-          description: "Complete your pool experience with our audio systems. Advanced technology and high-end speakers. Music Experience and bba™2 Audio.",
-          image: "/images/products/features/audio-system.jpg",
-          category: "Entertainment"
-        },
-        {
-          title: "Hydrotherapy",
-          description: "Each model offers the hydrotherapy option to soothe aching muscles and help with relaxation.",
-          image: "/images/products/features/hydrotherapy.jpg",
-          category: "Wellness"
-        },
-        {
           title: "Swim Jet Systems",
-          description: "TidalFit models have their own unique swim jets systems, the Quad Swim Jet System and the Dual Swim Jet System.",
-          image: "/images/products/features/swim-jets.jpg",
+          description: "Choose between our powerful Quad Swim Jets for the ultimate swimming workout, or our efficient Dual Swim Jets for a more budget-friendly option. Both allow you to adjust the current strength to match your fitness level.",
+          image: "/images/products/features/swim-jet-systems.jpg",
           category: "Exercise Technology"
         },
         {
-          title: "DynaBrite LED Lighting",
-          description: "With both standard and optional LED lighting selections in our spas, you can find fun and unique ways to light up your spa for the perfect ambiance.",
-          image: "/images/products/features/dynabrite-lighting.jpg",
+          title: "Hydrotherapy Package",
+          description: "Transform your exercise pool into a relaxation oasis with 28 therapeutic massage jets and a beautiful waterfall feature. Perfect for soothing sore muscles after your workout.",
+          image: "/images/products/features/hydrotherapy-package.jpg",
+          category: "Wellness"
+        },
+        {
+          title: "LED Lighting Systems",
+          description: "Create the perfect ambiance for evening workouts or nighttime relaxation with customizable underwater lighting. Choose from single-color or multi-color options to set the mood.",
+          image: "/images/products/features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
+        },
+        {
+          title: "Smart Controls",
+          description: "Control your pool from anywhere with our smartphone app. Pre-heat your pool on the way home, adjust settings remotely, and monitor your pool's status from the comfort of your couch.",
+          image: "/images/products/features/smart-controls.jpg",
+          category: "Smart Technology"
+        },
+        {
+          title: "Water Treatment Systems",
+          description: "Keep your pool water crystal clear with less work and fewer harsh chemicals. Our advanced purification systems mean cleaner, healthier water that's gentler on your skin and easier to maintain.",
+          image: "/images/products/features/water-treatment-systems.jpg",
+          category: "Water Treatment"
+        },
+        {
+          title: "Audio Systems",
+          description: "Enhance your workout or relaxation time with high-quality sound. Stream your favorite music wirelessly while you swim, exercise, or unwind in your pool.",
+          image: "/images/products/features/audio-systems.jpg",
+          category: "Entertainment"
+        },
+        {
+          title: "Aquatic Training System",
+          description: "Take your workouts to the next level with professional exercise equipment designed specifically for water fitness. Includes resistance anchors and rowing equipment for a complete gym experience.",
+          image: "/images/products/features/aquatic-training.jpg",
+          category: "Fitness Equipment"
         }
       ]
     },
@@ -2270,6 +2297,123 @@ export default function ProductPage() {
         </div>
       ),
     },
+    {
+      id: "advanced-options",
+      title: "Advanced Options & Accessories",
+      content: (
+        <div className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-4">Swim Jet Configurations</h4>
+              <div className="space-y-4">
+                <div className="p-4 bg-blue-50 rounded-lg">
+                  <h5 className="font-medium text-gray-900 mb-2">Quad Swim Jet System</h5>
+                  <p className="text-gray-600 text-sm mb-2">
+                    Four powerful swim jets create the strongest current for serious swimmers and athletes. Perfect for competitive training and high-intensity workouts.
+                  </p>
+                  <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">Premium Option</span>
+                </div>
+                <div className="p-4 bg-green-50 rounded-lg">
+                  <h5 className="font-medium text-gray-900 mb-2">Dual Swim Jet System</h5>
+                  <p className="text-gray-600 text-sm mb-2">
+                    Two swim jets provide excellent current for recreational swimming, water jogging, and moderate exercise routines. Great value for most users.
+                  </p>
+                  <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">Value Option</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-4">Relaxation Features</h4>
+              <div className="space-y-4">
+                <div className="p-4 bg-purple-50 rounded-lg">
+                  <h5 className="font-medium text-gray-900 mb-2">Massage Jets Package</h5>
+                  <p className="text-gray-600 text-sm">
+                    28 therapeutic jets and a beautiful waterfall to help you unwind after your workout. Perfect for muscle recovery and stress relief.
+                  </p>
+                </div>
+                <div className="p-4 bg-purple-50 rounded-lg">
+                  <h5 className="font-medium text-gray-900 mb-2">Extra Seating Bench</h5>
+                  <p className="text-gray-600 text-sm">
+                    Additional bench seating with 12 more massage jets for family and friends to enjoy the relaxation benefits together.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-4">Water Treatment Options</h4>
+              <div className="space-y-3">
+                <div className="border-l-4 border-blue-500 pl-4">
+                  <h5 className="font-medium text-gray-900">Premium Water Purification</h5>
+                  <p className="text-gray-600 text-sm">Advanced technology that keeps your water crystal clear with minimal chemical use. Great for sensitive skin and easier maintenance.</p>
+                </div>
+                <div className="border-l-4 border-cyan-500 pl-4">
+                  <h5 className="font-medium text-gray-900">Professional Ozone System</h5>
+                  <p className="text-gray-600 text-sm">Hospital-grade water purification that eliminates bacteria and reduces the need for harsh chemicals. Perfect for families with children.</p>
+                </div>
+                <div className="border-l-4 border-teal-500 pl-4">
+                  <h5 className="font-medium text-gray-900">Standard Ozone Treatment</h5>
+                  <p className="text-gray-600 text-sm">Natural water purification that keeps your pool clean and fresh while reducing chemical costs and maintenance time.</p>
+                </div>
+                <div className="border-l-4 border-green-500 pl-4">
+                  <h5 className="font-medium text-gray-900">Smart Chemical System</h5>
+                  <p className="text-gray-600 text-sm">Automatic water balancing that maintains perfect water chemistry 24/7. Never worry about testing or adding chemicals again.</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-4">Audio & Lighting Details</h4>
+              <div className="space-y-4">
+                <div className="p-4 bg-amber-50 rounded-lg">
+                  <h5 className="font-medium text-gray-900 mb-2">Wireless Audio System</h5>
+                  <p className="text-gray-600 text-sm">Stream your favorite workout playlists or relaxing music directly from your phone. Crystal clear sound that works perfectly even with water splashing.</p>
+                </div>
+                <div className="p-4 bg-amber-50 rounded-lg">
+                  <h5 className="font-medium text-gray-900 mb-2">Premium Sound Package</h5>
+                  <p className="text-gray-600 text-sm">Upgrade to our high-end audio system with additional patio speakers so you can enjoy music throughout your entire outdoor space.</p>
+                </div>
+                <div className="p-4 bg-yellow-50 rounded-lg">
+                  <h5 className="font-medium text-gray-900 mb-2">Underwater Lighting</h5>
+                  <p className="text-gray-600 text-sm">Beautiful underwater lights that illuminate your swim jets and waterfall, creating a stunning visual experience for evening workouts and entertaining.</p>
+                </div>
+                <div className="p-4 bg-yellow-50 rounded-lg">
+                  <h5 className="font-medium text-gray-900 mb-2">Color-Changing Lights</h5>
+                  <p className="text-gray-600 text-sm">Transform your pool's ambiance with customizable colored lighting. Set the perfect mood for any occasion, from energizing workouts to romantic evenings.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-4">Accessories & Upgrades</h4>
+              <div className="space-y-3">
+                <div className="p-4 bg-gray-50 rounded-lg">
+                  <h5 className="font-medium text-gray-900 mb-2">Cover Lifters</h5>
+                  <p className="text-gray-600 text-sm">Choose between Hydraulic or Manual cover lifters for easy one-person cover operation and maintenance.</p>
+                </div>
+                <div className="p-4 bg-gray-50 rounded-lg">
+                  <h5 className="font-medium text-gray-900 mb-2">Hi-Flo Circulation with Microfilter</h5>
+                  <p className="text-gray-600 text-sm">Enhanced circulation system with microfilter upgrade for superior water flow and filtration performance.</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h4 className="font-semibold text-gray-900 mb-4">Important Notes</h4>
+              <div className="bg-blue-50 p-4 rounded-lg">
+                <ul className="space-y-2 text-gray-600 text-sm">
+                  <li>• Some options may require additional electrical requirements</li>
+                  <li>• Hydrotherapy Twin Bench requires main Hydrotherapy System</li>
+                  <li>• BellagioFall lighting requires Hydrotherapy System</li>
+                  <li>• Professional installation recommended for all upgrades</li>
+                  <li>• Consult with our specialists for custom configurations</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+    },
   ]
 
   useEffect(() => {
@@ -2562,42 +2706,6 @@ export default function ProductPage() {
         </div>
         </section>
 
-      {/* Product Information Dropdowns - Added */}
-      <section
-        id="product-info"
-        data-animate
-        className={`py-16 bg-white transition-all duration-1000 delay-300 ${sectionsInView["product-info"] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-      >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-4">
-            {dropdownSections.map((section, index) => (
-              <div
-                key={section.id}
-                className={`bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-md ${sectionsInView["product-info"] ? `animate-fade-in-up` : "opacity-0"}`}
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <button
-                  onClick={() => toggleDropdown(section.id)}
-                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
-                >
-                  <h3 className="text-lg font-semibold text-gray-900">{section.title}</h3>
-                  <ChevronDown
-                    className={`w-5 h-5 text-gray-500 transition-transform duration-300 ${openDropdowns[section.id] ? "rotate-180" : ""}`}
-                  />
-                </button>
-                <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${openDropdowns[section.id] ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"}`}
-                >
-                  <div className="px-6 pb-6 border-t border-gray-100">
-                    <div className="pt-4">{section.content}</div>
-            </div>
-            </div>
-              </div>
-            ))}
-            </div>
-          </div>
-        </section>
-
       {/* Enhanced Features Section - Only for ActivePlus EP-12 */}
       {productSlug === "activeplus-ep-12" && (
         <section
@@ -2649,7 +2757,7 @@ export default function ProductPage() {
             </div>
 
             {/* Optional Features */}
-            <div>
+            <div className="mb-20">
               <h3 className="text-3xl font-bold text-center mb-12 text-gray-900">Optional Features</h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {product.controlFeatures.optionalFeatures.map((feature, index) => (
@@ -2685,6 +2793,39 @@ export default function ProductPage() {
               </div>
             </div>
 
+            {/* Product Information Dropdowns */}
+            <div className="mb-20">
+              <h3 className="text-3xl font-bold text-center mb-12 text-gray-900">Detailed Specifications</h3>
+              <div className="max-w-4xl mx-auto">
+                <div className="space-y-4">
+                  {dropdownSections.map((section, index) => (
+                    <div
+                      key={section.id}
+                      className={`bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-md ${sectionsInView["enhanced-features"] ? `animate-fade-in-up` : "opacity-0"}`}
+                      style={{ animationDelay: `${(index + 12) * 100}ms` }}
+                    >
+                      <button
+                        onClick={() => toggleDropdown(section.id)}
+                        className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                      >
+                        <h3 className="text-lg font-semibold text-gray-900">{section.title}</h3>
+                        <ChevronDown
+                          className={`w-5 h-5 text-gray-500 transition-transform duration-300 ${openDropdowns[section.id] ? "rotate-180" : ""}`}
+                        />
+                      </button>
+                      <div
+                        className={`overflow-hidden transition-all duration-500 ease-in-out ${openDropdowns[section.id] ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"}`}
+                      >
+                        <div className="px-6 pb-6 border-t border-gray-100">
+                          <div className="pt-4">{section.content}</div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             {/* Call to Action */}
             <div className="text-center mt-16">
               <div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-8 shadow-2xl">
@@ -2708,20 +2849,20 @@ export default function ProductPage() {
 
       {/* Mobile App Integration - Updated for non-ActivePlus products */}
       {productSlug !== "activeplus-ep-12" && (
-        <section
-          id="app"
-          data-animate
-          className={`py-16 bg-gray-50 transition-all duration-1000 delay-500 ${sectionsInView.app ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+       <section
+         id="app"
+         data-animate
+         className={`py-16 bg-gray-50 transition-all duration-1000 delay-500 ${sectionsInView.app ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+       >
+         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+           <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-4xl font-bold mb-6 text-gray-900">{product.controlFeatures.title}</h2>
-                <p className="text-lg text-gray-600 mb-6">
+               <p className="text-lg text-gray-600 mb-6">
                   {product.controlFeatures.description}
-                </p>
+               </p>
 
-                <div className="space-y-4 mb-8">
+               <div className="space-y-4 mb-8">
                   {product.controlFeatures.features.map((feature, index) => {
                     const IconComponent = feature.icon === "Settings" ? Settings :
                                         feature.icon === "Droplets" ? Droplets :
@@ -2735,36 +2876,74 @@ export default function ProductPage() {
                       <div key={index} className="flex items-center gap-3 transform transition-all duration-300 hover:translate-x-2">
                         <IconComponent className="w-6 h-6 text-blue-600" />
                         <span className="text-gray-700">{feature.description}</span>
-                      </div>
+              </div>
                     );
                   })}
-                </div>
+            </div>
 
-                <div className="flex gap-4">
-                  <Button
-                    className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 w-full"
-                    asChild
-                  >
-                    <a href="tel:+12087277909">
-                      Unlock Sale Pricing
-                    </a>
-                  </Button>
-                </div>
-              </div>
-
-              <div className="relative">
-                {/* Control system image - update based on product type */}
-                <Image
-                  src="/images/products/mobile app.jpg"
-                  alt={`${product.controlFeatures.title} Interface`}
-                  width={400}
-                  height={500}
-                  className="mx-auto hover:scale-105 transition-transform duration-500"
-                />
+               <div className="flex gap-4">
+                 <Button
+                 className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 w-full"
+                 asChild
+                 >
+                   <a href="tel:+12087277909">
+                    Unlock Sale Pricing
+                   </a>
+                 </Button>
               </div>
             </div>
+
+             <div className="relative">
+                {/* Control system image - update based on product type */}
+               <Image
+                 src="/images/products/mobile app.jpg"
+                  alt={`${product.controlFeatures.title} Interface`}
+                 width={400}
+                 height={500}
+                 className="mx-auto hover:scale-105 transition-transform duration-500"
+               />
+             </div>
+          </div>
           </div>
         </section>
+      )}
+
+      {/* Product Information Dropdowns - Only for non-ActivePlus products */}
+      {productSlug !== "activeplus-ep-12" && (
+        <section
+          id="product-info"
+          data-animate
+          className={`py-16 bg-white transition-all duration-1000 delay-300 ${sectionsInView["product-info"] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+        >
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="space-y-4">
+              {dropdownSections.map((section, index) => (
+                <div
+                  key={section.id}
+                  className={`bg-white rounded-lg border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-md ${sectionsInView["product-info"] ? `animate-fade-in-up` : "opacity-0"}`}
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <button
+                    onClick={() => toggleDropdown(section.id)}
+                    className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                  >
+                    <h3 className="text-lg font-semibold text-gray-900">{section.title}</h3>
+                    <ChevronDown
+                      className={`w-5 h-5 text-gray-500 transition-transform duration-300 ${openDropdowns[section.id] ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-500 ease-in-out ${openDropdowns[section.id] ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"}`}
+                  >
+                    <div className="px-6 pb-6 border-t border-gray-100">
+                      <div className="pt-4">{section.content}</div>
+              </div>
+              </div>
+                </div>
+              ))}
+              </div>
+            </div>
+          </section>
       )}
 
       {/* Related Products - Added based on provided code structure */}

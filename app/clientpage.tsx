@@ -745,13 +745,13 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-6">
             <FadeInSection delay={600}>
               <div className="text-center">
-                <Button
-                  size="lg"
+                  <Button
+                    size="lg"
                   className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105"
-                  asChild
-                >
+                    asChild
+                  >
                   <a href="tel:+12087277909">Book Service</a>
-                </Button>
+                  </Button>
               </div>
             </FadeInSection>
           </div>
@@ -849,13 +849,13 @@ export default function HomePage() {
                   <h3 className="text-2xl md:text-3xl font-light mb-3">Need pool service or a new hot tub?</h3>
                   <p className="text-lg mb-6 opacity-90">Schedule a consultation to keep your pool perfect or explore our premium Shop Spa collection.</p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <Button
-                      size="lg"
+                <Button
+                  size="lg"
                       className="bg-white text-blue-600 hover:bg-gray-50 px-6 py-3 rounded-full text-base font-medium transition-all duration-300 hover:scale-105"
-                      asChild
-                    >
+                  asChild
+                >
                       <a href="tel:+12087277909">Schedule Consultation</a>
-                    </Button>
+                </Button>
                   </div>
                 </div>
               </div>
