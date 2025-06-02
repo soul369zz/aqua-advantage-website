@@ -281,37 +281,37 @@ const products: Record<string, Product> = {
         {
           title: "Grab Rails",
           description: "These rails offer extra stability when exercising and stretching.",
-          image: "/images/products/features/grab-rails.jpg",
+          image: "/images/products/Features/grab-rails.jpg",
           category: "Safety & Accessibility"
         },
         {
           title: "Blue LED Spa Light",
           description: "This 5 in. spa light illuminates your pool during dark hours.",
-          image: "/images/products/features/led-spa-light.jpg",
+          image: "/images/products/Features/led-spa-light.jpg",
           category: "Lighting"
         },
         {
           title: "Grandwood Cabinets",
-          description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color. This subtle variance creates a more realistic look and feel of natural wood.",
-          image: "/images/products/Cabinetry Colors/Grandwood Java.png",
+          description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color.",
+          image: "/images/products/Features/grandwood-cabinets.jpg",
           category: "Cabinetry"
         },
         {
           title: "Full Foam With ABS Bottom",
           description: "TidalFit models come standard with full foam insulation and an ABS bottom to protect against environmental elements.",
-          image: "/images/products/features/full-foam-insulation.jpg",
+          image: "/images/products/Features/full-foam-insulation.jpg",
           category: "Insulation"
         },
         {
           title: "Heater",
           description: "Every TidalFit comes with a standard heater to warm your pool to the perfect temperature in any climate.",
-          image: "/images/products/features/heater-system.jpg",
+          image: "/images/products/Features/heater-system.jpg",
           category: "Climate Control"
         },
         {
           title: "Hi-Flo Circulation System",
           description: "Advanced circulation system ensures optimal water flow and filtration for crystal clear water.",
-          image: "/images/products/features/circulation-system.jpg",
+          image: "/images/products/Features/circulation-system.jpg",
           category: "Water Management"
         }
       ],
@@ -319,43 +319,43 @@ const products: Record<string, Product> = {
         {
           title: "Aquatic Training System",
           description: "Maximize your workout in your exercise pool! You can choose between the Stationary Resistant Swim and/or the Rowing Bars and Resistant Cords.",
-          image: "/images/products/features/aquatic-training.jpg",
+          image: "/images/products/Features/aquatic-training.jpg",
           category: "Fitness Equipment"
         },
         {
           title: "Worldwide WiFi App",
           description: "Control your pool temperature, filter cycle, turn on pumps and much more from anywhere in the world.",
-          image: "/images/products/features/smart-controls.jpg",
+          image: "/images/products/Features/smart-controls.jpg",
           category: "Smart Technology"
         },
         {
           title: "Water Purification",
           description: "Whether you choose to add Diamond AOP™, Crystal ProPure™, Ozone Mixing Chamber or an Ozonator, TidalFit promotes water purification for a clean pool.",
-          image: "/images/products/features/water-treatment-systems.jpg",
+          image: "/images/products/Features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "Audio Systems",
           description: "Complete your pool experience with our audio systems. Advanced technology and high-end speakers. Music Experience and bba™2 Audio.",
-          image: "/images/products/features/audio-systems.jpg",
+          image: "/images/products/Features/audio-systems.jpg",
           category: "Entertainment"
         },
         {
           title: "Hydrotherapy",
           description: "Each model offers the hydrotherapy option to soothe aching muscles and help with relaxation.",
-          image: "/images/products/features/hydrotherapy-package.jpg",
+          image: "/images/products/Features/hydrotherapy-package.jpg",
           category: "Wellness"
         },
         {
           title: "Swim Jet Systems",
           description: "TidalFit models have their own unique swim jets systems, the Quad Swim Jet System and the Dual Swim Jet System.",
-          image: "/images/products/features/swim-jet-systems.jpg",
+          image: "/images/products/Features/swim-jet-systems.jpg",
           category: "Exercise Technology"
         },
         {
           title: "DynaBrite LED Lighting",
           description: "With both standard and optional LED lighting selections in our spas, you can find fun and unique ways to light up your spa for the perfect ambiance.",
-          image: "/images/products/features/LED-lighting-systems.jpg",
+          image: "/images/products/Features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
         }
       ]
@@ -513,37 +513,37 @@ const products: Record<string, Product> = {
         {
           title: "Grab Rails",
           description: "These rails offer extra stability when exercising and stretching.",
-          image: "/images/products/features/grab-rails.jpg",
+          image: "/images/products/Features/grab-rails.jpg",
           category: "Safety & Accessibility"
         },
         {
           title: "Blue LED Spa Light",
           description: "This 5 in. spa light illuminates your pool during dark hours.",
-          image: "/images/products/features/led-spa-light.jpg",
+          image: "/images/products/Features/led-spa-light.jpg",
           category: "Lighting"
         },
         {
           title: "Grandwood Cabinets",
-          description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color. This subtle variance creates a more realistic look and feel of natural wood.",
-          image: "/images/products/Cabinetry Colors/Grandwood Java.png",
+          description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color.",
+          image: "/images/products/Features/grandwood-cabinets.jpg",
           category: "Cabinetry"
         },
         {
           title: "Full Foam With ABS Bottom",
           description: "TidalFit models come standard with full foam insulation and an ABS bottom to protect against environmental elements.",
-          image: "/images/products/features/full-foam-insulation.jpg",
+          image: "/images/products/Features/full-foam-insulation.jpg",
           category: "Insulation"
         },
         {
           title: "Heater",
           description: "Every TidalFit comes with a standard heater to warm your pool to the perfect temperature in any climate.",
-          image: "/images/products/features/heater-system.jpg",
+          image: "/images/products/Features/heater-system.jpg",
           category: "Climate Control"
         },
         {
           title: "Hi-Flo Circulation System",
           description: "Advanced circulation system ensures optimal water flow and filtration for crystal clear water.",
-          image: "/images/products/features/circulation-system.jpg",
+          image: "/images/products/Features/circulation-system.jpg",
           category: "Water Management"
         }
       ],
@@ -551,43 +551,43 @@ const products: Record<string, Product> = {
         {
           title: "Aquatic Training System",
           description: "Maximize your workout in your exercise pool! You can choose between the Stationary Resistant Swim and/or the Rowing Bars and Resistant Cords.",
-          image: "/images/products/features/aquatic-training.jpg",
+          image: "/images/products/Features/aquatic-training.jpg",
           category: "Fitness Equipment"
         },
         {
           title: "Worldwide WiFi App",
           description: "Control your pool temperature, filter cycle, turn on pumps and much more from anywhere in the world.",
-          image: "/images/products/features/smart-controls.jpg",
+          image: "/images/products/Features/smart-controls.jpg",
           category: "Smart Technology"
         },
         {
           title: "Water Purification",
           description: "Whether you choose to add Diamond AOP™, Crystal ProPure™, Ozone Mixing Chamber or an Ozonator, TidalFit promotes water purification for a clean pool.",
-          image: "/images/products/features/water-treatment-systems.jpg",
+          image: "/images/products/Features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "Audio Systems",
           description: "Complete your pool experience with our audio systems. Advanced technology and high-end speakers. Music Experience and bba™2 Audio.",
-          image: "/images/products/features/audio-systems.jpg",
+          image: "/images/products/Features/audio-systems.jpg",
           category: "Entertainment"
         },
         {
           title: "Hydrotherapy",
           description: "Each model offers the hydrotherapy option to soothe aching muscles and help with relaxation.",
-          image: "/images/products/features/hydrotherapy-package.jpg",
+          image: "/images/products/Features/hydrotherapy-package.jpg",
           category: "Wellness"
         },
         {
           title: "Swim Jet Systems",
           description: "TidalFit models have their own unique swim jets systems, the Quad Swim Jet System and the Dual Swim Jet System.",
-          image: "/images/products/features/swim-jet-systems.jpg",
+          image: "/images/products/Features/swim-jet-systems.jpg",
           category: "Exercise Technology"
         },
         {
           title: "DynaBrite LED Lighting",
           description: "With both standard and optional LED lighting selections in our spas, you can find fun and unique ways to light up your spa for the perfect ambiance.",
-          image: "/images/products/features/LED-lighting-systems.jpg",
+          image: "/images/products/Features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
         }
       ]
@@ -735,37 +735,37 @@ const products: Record<string, Product> = {
         {
           title: "Grab Rails",
           description: "These rails offer extra stability when exercising and stretching.",
-          image: "/images/products/features/grab-rails.jpg",
+          image: "/images/products/Features/grab-rails.jpg",
           category: "Safety & Accessibility"
         },
         {
           title: "Blue LED Spa Light",
           description: "This 5 in. spa light illuminates your pool during dark hours.",
-          image: "/images/products/features/led-spa-light.jpg",
+          image: "/images/products/Features/led-spa-light.jpg",
           category: "Lighting"
         },
         {
           title: "Grandwood Cabinets",
-          description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color. This subtle variance creates a more realistic look and feel of natural wood.",
-          image: "/images/products/Cabinetry Colors/Grandwood Java.png",
+          description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color.",
+          image: "/images/products/Features/grandwood-cabinets.jpg",
           category: "Cabinetry"
         },
         {
           title: "Full Foam With ABS Bottom",
           description: "TidalFit models come standard with full foam insulation and an ABS bottom to protect against environmental elements.",
-          image: "/images/products/features/full-foam-insulation.jpg",
+          image: "/images/products/Features/full-foam-insulation.jpg",
           category: "Insulation"
         },
         {
           title: "Heater",
           description: "Every TidalFit comes with a standard heater to warm your pool to the perfect temperature in any climate.",
-          image: "/images/products/features/heater-system.jpg",
+          image: "/images/products/Features/heater-system.jpg",
           category: "Climate Control"
         },
         {
           title: "Hi-Flo Circulation System",
           description: "Advanced circulation system ensures optimal water flow and filtration for crystal clear water.",
-          image: "/images/products/features/circulation-system.jpg",
+          image: "/images/products/Features/circulation-system.jpg",
           category: "Water Management"
         }
       ],
@@ -773,43 +773,43 @@ const products: Record<string, Product> = {
         {
           title: "Aquatic Training System",
           description: "Maximize your workout in your exercise pool! You can choose between the Stationary Resistant Swim and/or the Rowing Bars and Resistant Cords.",
-          image: "/images/products/features/aquatic-training.jpg",
+          image: "/images/products/Features/aquatic-training.jpg",
           category: "Fitness Equipment"
         },
         {
           title: "Worldwide WiFi App",
           description: "Control your pool temperature, filter cycle, turn on pumps and much more from anywhere in the world.",
-          image: "/images/products/features/smart-controls.jpg",
+          image: "/images/products/Features/smart-controls.jpg",
           category: "Smart Technology"
         },
         {
           title: "Water Purification",
           description: "Whether you choose to add Diamond AOP™, Crystal ProPure™, Ozone Mixing Chamber or an Ozonator, TidalFit promotes water purification for a clean pool.",
-          image: "/images/products/features/water-treatment-systems.jpg",
+          image: "/images/products/Features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "Audio Systems",
           description: "Complete your pool experience with our audio systems. Advanced technology and high-end speakers. Music Experience and bba™2 Audio.",
-          image: "/images/products/features/audio-systems.jpg",
+          image: "/images/products/Features/audio-systems.jpg",
           category: "Entertainment"
         },
         {
           title: "Hydrotherapy",
           description: "Each model offers the hydrotherapy option to soothe aching muscles and help with relaxation.",
-          image: "/images/products/features/hydrotherapy-package.jpg",
+          image: "/images/products/Features/hydrotherapy-package.jpg",
           category: "Wellness"
         },
         {
           title: "Swim Jet Systems",
           description: "TidalFit models have their own unique swim jets systems, the Quad Swim Jet System and the Dual Swim Jet System.",
-          image: "/images/products/features/swim-jet-systems.jpg",
+          image: "/images/products/Features/swim-jet-systems.jpg",
           category: "Exercise Technology"
         },
         {
           title: "DynaBrite LED Lighting",
           description: "With both standard and optional LED lighting selections in our spas, you can find fun and unique ways to light up your spa for the perfect ambiance.",
-          image: "/images/products/features/LED-lighting-systems.jpg",
+          image: "/images/products/Features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
         }
       ]
@@ -967,37 +967,37 @@ const products: Record<string, Product> = {
         {
           title: "Grab Rails",
           description: "These rails offer extra stability when exercising and stretching.",
-          image: "/images/products/features/grab-rails.jpg",
+          image: "/images/products/Features/grab-rails.jpg",
           category: "Safety & Accessibility"
         },
         {
           title: "Blue LED Spa Light",
           description: "This 5 in. spa light illuminates your pool during dark hours.",
-          image: "/images/products/features/led-spa-light.jpg",
+          image: "/images/products/Features/led-spa-light.jpg",
           category: "Lighting"
         },
         {
           title: "Grandwood Cabinets",
-          description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color. This subtle variance creates a more realistic look and feel of natural wood.",
-          image: "/images/products/Cabinetry Colors/Grandwood Java.png",
+          description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color.",
+          image: "/images/products/Features/grandwood-cabinets.jpg",
           category: "Cabinetry"
         },
         {
           title: "Full Foam With ABS Bottom",
           description: "TidalFit models come standard with full foam insulation and an ABS bottom to protect against environmental elements.",
-          image: "/images/products/features/full-foam-insulation.jpg",
+          image: "/images/products/Features/full-foam-insulation.jpg",
           category: "Insulation"
         },
         {
           title: "Heater",
           description: "Every TidalFit comes with a standard heater to warm your pool to the perfect temperature in any climate.",
-          image: "/images/products/features/heater-system.jpg",
+          image: "/images/products/Features/heater-system.jpg",
           category: "Climate Control"
         },
         {
           title: "Hi-Flo Circulation System",
           description: "Advanced circulation system ensures optimal water flow and filtration for crystal clear water.",
-          image: "/images/products/features/circulation-system.jpg",
+          image: "/images/products/Features/circulation-system.jpg",
           category: "Water Management"
         }
       ],
@@ -1005,43 +1005,43 @@ const products: Record<string, Product> = {
         {
           title: "Aquatic Training System",
           description: "Maximize your workout in your exercise pool! You can choose between the Stationary Resistant Swim and/or the Rowing Bars and Resistant Cords.",
-          image: "/images/products/features/aquatic-training.jpg",
+          image: "/images/products/Features/aquatic-training.jpg",
           category: "Fitness Equipment"
         },
         {
           title: "Worldwide WiFi App",
           description: "Control your pool temperature, filter cycle, turn on pumps and much more from anywhere in the world.",
-          image: "/images/products/features/smart-controls.jpg",
+          image: "/images/products/Features/smart-controls.jpg",
           category: "Smart Technology"
         },
         {
           title: "Water Purification",
           description: "Whether you choose to add Diamond AOP™, Crystal ProPure™, Ozone Mixing Chamber or an Ozonator, TidalFit promotes water purification for a clean pool.",
-          image: "/images/products/features/water-treatment-systems.jpg",
+          image: "/images/products/Features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "Audio Systems",
           description: "Complete your pool experience with our audio systems. Advanced technology and high-end speakers. Music Experience and bba™2 Audio.",
-          image: "/images/products/features/audio-systems.jpg",
+          image: "/images/products/Features/audio-systems.jpg",
           category: "Entertainment"
         },
         {
           title: "Hydrotherapy",
           description: "Each model offers the hydrotherapy option to soothe aching muscles and help with relaxation.",
-          image: "/images/products/features/hydrotherapy-package.jpg",
+          image: "/images/products/Features/hydrotherapy-package.jpg",
           category: "Wellness"
         },
         {
           title: "Swim Jet Systems",
           description: "TidalFit models have their own unique swim jets systems, the Quad Swim Jet System and the Dual Swim Jet System.",
-          image: "/images/products/features/swim-jet-systems.jpg",
+          image: "/images/products/Features/swim-jet-systems.jpg",
           category: "Exercise Technology"
         },
         {
           title: "DynaBrite LED Lighting",
           description: "With both standard and optional LED lighting selections in our spas, you can find fun and unique ways to light up your spa for the perfect ambiance.",
-          image: "/images/products/features/LED-lighting-systems.jpg",
+          image: "/images/products/Features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
         }
       ]
@@ -1194,37 +1194,37 @@ const products: Record<string, Product> = {
         {
           title: "Grab Rails",
           description: "These rails offer extra stability when exercising and stretching.",
-          image: "/images/products/features/grab-rails.jpg",
+          image: "/images/products/Features/grab-rails.jpg",
           category: "Safety & Accessibility"
         },
         {
           title: "Blue LED Spa Light",
           description: "This 5 in. spa light illuminates your pool during dark hours.",
-          image: "/images/products/features/led-spa-light.jpg",
+          image: "/images/products/Features/led-spa-light.jpg",
           category: "Lighting"
         },
         {
           title: "Grandwood Cabinets",
-          description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color. This subtle variance creates a more realistic look and feel of natural wood.",
-          image: "/images/products/Cabinetry Colors/Grandwood Java.png",
+          description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color.",
+          image: "/images/products/Features/grandwood-cabinets.jpg",
           category: "Cabinetry"
         },
         {
           title: "Full Foam With ABS Bottom",
           description: "TidalFit models come standard with full foam insulation and an ABS bottom to protect against environmental elements.",
-          image: "/images/products/features/full-foam-insulation.jpg",
+          image: "/images/products/Features/full-foam-insulation.jpg",
           category: "Insulation"
         },
         {
           title: "Heater",
           description: "Every TidalFit comes with a standard heater to warm your pool to the perfect temperature in any climate.",
-          image: "/images/products/features/heater-system.jpg",
+          image: "/images/products/Features/heater-system.jpg",
           category: "Climate Control"
         },
         {
           title: "Hi-Flo Circulation System",
           description: "Advanced circulation system ensures optimal water flow and filtration for crystal clear water.",
-          image: "/images/products/features/circulation-system.jpg",
+          image: "/images/products/Features/circulation-system.jpg",
           category: "Water Management"
         }
       ],
@@ -1232,43 +1232,43 @@ const products: Record<string, Product> = {
         {
           title: "Aquatic Training System",
           description: "Maximize your workout in your exercise pool! You can choose between the Stationary Resistant Swim and/or the Rowing Bars and Resistant Cords.",
-          image: "/images/products/features/aquatic-training.jpg",
+          image: "/images/products/Features/aquatic-training.jpg",
           category: "Fitness Equipment"
         },
         {
           title: "Worldwide WiFi App",
           description: "Control your pool temperature, filter cycle, turn on pumps and much more from anywhere in the world.",
-          image: "/images/products/features/smart-controls.jpg",
+          image: "/images/products/Features/smart-controls.jpg",
           category: "Smart Technology"
         },
         {
           title: "Water Purification",
           description: "Whether you choose to add Diamond AOP™, Crystal ProPure™, Ozone Mixing Chamber or an Ozonator, TidalFit promotes water purification for a clean pool.",
-          image: "/images/products/features/water-treatment-systems.jpg",
+          image: "/images/products/Features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "Audio Systems",
           description: "Complete your pool experience with our audio systems. Advanced technology and high-end speakers. Music Experience and bba™2 Audio.",
-          image: "/images/products/features/audio-systems.jpg",
+          image: "/images/products/Features/audio-systems.jpg",
           category: "Entertainment"
         },
         {
           title: "Hydrotherapy",
           description: "Each model offers the hydrotherapy option to soothe aching muscles and help with relaxation.",
-          image: "/images/products/features/hydrotherapy-package.jpg",
+          image: "/images/products/Features/hydrotherapy-package.jpg",
           category: "Wellness"
         },
         {
           title: "Swim Jet Systems",
           description: "TidalFit models have their own unique swim jets systems, the Quad Swim Jet System and the Dual Swim Jet System.",
-          image: "/images/products/features/swim-jet-systems.jpg",
+          image: "/images/products/Features/swim-jet-systems.jpg",
           category: "Exercise Technology"
         },
         {
           title: "DynaBrite LED Lighting",
           description: "With both standard and optional LED lighting selections in our spas, you can find fun and unique ways to light up your spa for the perfect ambiance.",
-          image: "/images/products/features/LED-lighting-systems.jpg",
+          image: "/images/products/Features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
         }
       ]
@@ -1421,37 +1421,37 @@ const products: Record<string, Product> = {
         {
           title: "Grab Rails",
           description: "These rails offer extra stability when exercising and stretching.",
-          image: "/images/products/features/grab-rails.jpg",
+          image: "/images/products/Features/grab-rails.jpg",
           category: "Safety & Accessibility"
         },
         {
           title: "Blue LED Spa Light",
           description: "This 5 in. spa light illuminates your pool during dark hours.",
-          image: "/images/products/features/led-spa-light.jpg",
+          image: "/images/products/Features/led-spa-light.jpg",
           category: "Lighting"
         },
         {
           title: "Grandwood Cabinets",
-          description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color. This subtle variance creates a more realistic look and feel of natural wood.",
-          image: "/images/products/Cabinetry Colors/Grandwood Java.png",
+          description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color.",
+          image: "/images/products/Features/grandwood-cabinets.jpg",
           category: "Cabinetry"
         },
         {
           title: "Full Foam With ABS Bottom",
           description: "TidalFit models come standard with full foam insulation and an ABS bottom to protect against environmental elements.",
-          image: "/images/products/features/full-foam-insulation.jpg",
+          image: "/images/products/Features/full-foam-insulation.jpg",
           category: "Insulation"
         },
         {
           title: "Heater",
           description: "Every TidalFit comes with a standard heater to warm your pool to the perfect temperature in any climate.",
-          image: "/images/products/features/heater-system.jpg",
+          image: "/images/products/Features/heater-system.jpg",
           category: "Climate Control"
         },
         {
           title: "Hi-Flo Circulation System",
           description: "Advanced circulation system ensures optimal water flow and filtration for crystal clear water.",
-          image: "/images/products/features/circulation-system.jpg",
+          image: "/images/products/Features/circulation-system.jpg",
           category: "Water Management"
         }
       ],
@@ -1459,43 +1459,43 @@ const products: Record<string, Product> = {
         {
           title: "Aquatic Training System",
           description: "Maximize your workout in your exercise pool! You can choose between the Stationary Resistant Swim and/or the Rowing Bars and Resistant Cords.",
-          image: "/images/products/features/aquatic-training.jpg",
+          image: "/images/products/Features/aquatic-training.jpg",
           category: "Fitness Equipment"
         },
         {
           title: "Worldwide WiFi App",
           description: "Control your pool temperature, filter cycle, turn on pumps and much more from anywhere in the world.",
-          image: "/images/products/features/smart-controls.jpg",
+          image: "/images/products/Features/smart-controls.jpg",
           category: "Smart Technology"
         },
         {
           title: "Water Purification",
           description: "Whether you choose to add Diamond AOP™, Crystal ProPure™, Ozone Mixing Chamber or an Ozonator, TidalFit promotes water purification for a clean pool.",
-          image: "/images/products/features/water-treatment-systems.jpg",
+          image: "/images/products/Features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "Audio Systems",
           description: "Complete your pool experience with our audio systems. Advanced technology and high-end speakers. Music Experience and bba™2 Audio.",
-          image: "/images/products/features/audio-systems.jpg",
+          image: "/images/products/Features/audio-systems.jpg",
           category: "Entertainment"
         },
         {
           title: "Hydrotherapy",
           description: "Each model offers the hydrotherapy option to soothe aching muscles and help with relaxation.",
-          image: "/images/products/features/hydrotherapy-package.jpg",
+          image: "/images/products/Features/hydrotherapy-package.jpg",
           category: "Wellness"
         },
         {
           title: "Swim Jet Systems",
           description: "TidalFit models have their own unique swim jets systems, the Quad Swim Jet System and the Dual Swim Jet System.",
-          image: "/images/products/features/swim-jet-systems.jpg",
+          image: "/images/products/Features/swim-jet-systems.jpg",
           category: "Exercise Technology"
         },
         {
           title: "DynaBrite LED Lighting",
           description: "With both standard and optional LED lighting selections in our spas, you can find fun and unique ways to light up your spa for the perfect ambiance.",
-          image: "/images/products/features/LED-lighting-systems.jpg",
+          image: "/images/products/Features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
         }
       ]
@@ -1648,37 +1648,37 @@ const products: Record<string, Product> = {
         {
           title: "Grab Rails",
           description: "These rails offer extra stability when exercising and stretching.",
-          image: "/images/products/features/grab-rails.jpg",
+          image: "/images/products/Features/grab-rails.jpg",
           category: "Safety & Accessibility"
         },
         {
           title: "Blue LED Spa Light",
           description: "This 5 in. spa light illuminates your pool during dark hours.",
-          image: "/images/products/features/led-spa-light.jpg",
+          image: "/images/products/Features/led-spa-light.jpg",
           category: "Lighting"
         },
         {
           title: "Grandwood Cabinets",
-          description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color. This subtle variance creates a more realistic look and feel of natural wood.",
-          image: "/images/products/Cabinetry Colors/Grandwood Java.png",
+          description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color.",
+          image: "/images/products/Features/grandwood-cabinets.jpg",
           category: "Cabinetry"
         },
         {
           title: "Full Foam With ABS Bottom",
           description: "TidalFit models come standard with full foam insulation and an ABS bottom to protect against environmental elements.",
-          image: "/images/products/features/full-foam-insulation.jpg",
+          image: "/images/products/Features/full-foam-insulation.jpg",
           category: "Insulation"
         },
         {
           title: "Heater",
           description: "Every TidalFit comes with a standard heater to warm your pool to the perfect temperature in any climate.",
-          image: "/images/products/features/heater-system.jpg",
+          image: "/images/products/Features/heater-system.jpg",
           category: "Climate Control"
         },
         {
           title: "Hi-Flo Circulation System",
           description: "Advanced circulation system ensures optimal water flow and filtration for crystal clear water.",
-          image: "/images/products/features/circulation-system.jpg",
+          image: "/images/products/Features/circulation-system.jpg",
           category: "Water Management"
         }
       ],
@@ -1686,43 +1686,43 @@ const products: Record<string, Product> = {
         {
           title: "Aquatic Training System",
           description: "Maximize your workout in your exercise pool! You can choose between the Stationary Resistant Swim and/or the Rowing Bars and Resistant Cords.",
-          image: "/images/products/features/aquatic-training.jpg",
+          image: "/images/products/Features/aquatic-training.jpg",
           category: "Fitness Equipment"
         },
         {
           title: "Worldwide WiFi App",
           description: "Control your pool temperature, filter cycle, turn on pumps and much more from anywhere in the world.",
-          image: "/images/products/features/smart-controls.jpg",
+          image: "/images/products/Features/smart-controls.jpg",
           category: "Smart Technology"
         },
         {
           title: "Water Purification",
           description: "Whether you choose to add Diamond AOP™, Crystal ProPure™, Ozone Mixing Chamber or an Ozonator, TidalFit promotes water purification for a clean pool.",
-          image: "/images/products/features/water-treatment-systems.jpg",
+          image: "/images/products/Features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "Audio Systems",
           description: "Complete your pool experience with our audio systems. Advanced technology and high-end speakers. Music Experience and bba™2 Audio.",
-          image: "/images/products/features/audio-systems.jpg",
+          image: "/images/products/Features/audio-systems.jpg",
           category: "Entertainment"
         },
         {
           title: "Hydrotherapy",
           description: "Each model offers the hydrotherapy option to soothe aching muscles and help with relaxation.",
-          image: "/images/products/features/hydrotherapy-package.jpg",
+          image: "/images/products/Features/hydrotherapy-package.jpg",
           category: "Wellness"
         },
         {
           title: "Swim Jet Systems",
           description: "TidalFit models have their own unique swim jets systems, the Quad Swim Jet System and the Dual Swim Jet System.",
-          image: "/images/products/features/swim-jet-systems.jpg",
+          image: "/images/products/Features/swim-jet-systems.jpg",
           category: "Exercise Technology"
         },
         {
           title: "DynaBrite LED Lighting",
           description: "With both standard and optional LED lighting selections in our spas, you can find fun and unique ways to light up your spa for the perfect ambiance.",
-          image: "/images/products/features/LED-lighting-systems.jpg",
+          image: "/images/products/Features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
         }
       ]
@@ -1881,37 +1881,37 @@ const products: Record<string, Product> = {
         {
           title: "Grab Rails",
           description: "These rails offer extra stability when exercising and stretching.",
-          image: "/images/products/features/grab-rails.jpg",
+          image: "/images/products/Features/grab-rails.jpg",
           category: "Safety & Accessibility"
         },
         {
           title: "Blue LED Spa Light", 
           description: "This 5 in. spa light illuminates your pool during dark hours.",
-          image: "/images/products/features/led-spa-light.jpg",
+          image: "/images/products/Features/led-spa-light.jpg",
           category: "Lighting"
         },
         {
           title: "Grandwood Cabinets",
           description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color.",
-          image: "/images/products/features/grandwood-cabinets.jpg",
+          image: "/images/products/Features/grandwood-cabinets.jpg",
           category: "Cabinetry"
         },
         {
           title: "Full Foam With ABS Bottom",
           description: "TidalFit models come standard with full foam insulation and an ABS bottom to protect against environmental elements.",
-          image: "/images/products/features/full-foam-insulation.jpg",
+          image: "/images/products/Features/full-foam-insulation.jpg",
           category: "Insulation"
         },
         {
           title: "Heater",
           description: "Every TidalFit comes with a standard heater to warm your pool to the perfect temperature in any climate.",
-          image: "/images/products/features/heater-system.jpg", 
+          image: "/images/products/Features/heater-system.jpg", 
           category: "Climate Control"
         },
         {
           title: "Hi-Flo Circulation System",
           description: "Advanced circulation system ensures optimal water flow and filtration for crystal clear water.",
-          image: "/images/products/features/circulation-system.jpg",
+          image: "/images/products/Features/circulation-system.jpg",
           category: "Water Management"
         }
       ],
@@ -1919,43 +1919,43 @@ const products: Record<string, Product> = {
         {
           title: "Swim Jet Systems",
           description: "Choose between our powerful Quad Swim Jets for the ultimate swimming workout, or our efficient Dual Swim Jets for a more budget-friendly option. Both allow you to adjust the current strength to match your fitness level.",
-          image: "/images/products/features/swim-jet-systems.jpg",
+          image: "/images/products/Features/swim-jet-systems.jpg",
           category: "Exercise Technology"
         },
         {
           title: "Hydrotherapy Package",
           description: "Transform your exercise pool into a relaxation oasis with 28 therapeutic massage jets and a beautiful waterfall feature. Perfect for soothing sore muscles after your workout.",
-          image: "/images/products/features/hydrotherapy-package.jpg",
+          image: "/images/products/Features/hydrotherapy-package.jpg",
           category: "Wellness"
         },
         {
           title: "LED Lighting Systems",
           description: "Create the perfect ambiance for evening workouts or nighttime relaxation with customizable underwater lighting. Choose from single-color or multi-color options to set the mood.",
-          image: "/images/products/features/LED-lighting-systems.jpg",
+          image: "/images/products/Features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
         },
         {
           title: "Smart Controls",
           description: "Control your pool from anywhere with our smartphone app. Pre-heat your pool on the way home, adjust settings remotely, and monitor your pool's status from the comfort of your couch.",
-          image: "/images/products/features/smart-controls.jpg",
+          image: "/images/products/Features/smart-controls.jpg",
           category: "Smart Technology"
         },
         {
           title: "Water Treatment Systems",
           description: "Keep your pool water crystal clear with less work and fewer harsh chemicals. Our advanced purification systems mean cleaner, healthier water that's gentler on your skin and easier to maintain.",
-          image: "/images/products/features/water-treatment-systems.jpg",
+          image: "/images/products/Features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "Audio Systems",
           description: "Enhance your workout or relaxation time with high-quality sound. Stream your favorite music wirelessly while you swim, exercise, or unwind in your pool.",
-          image: "/images/products/features/audio-systems.jpg",
+          image: "/images/products/Features/audio-systems.jpg",
           category: "Entertainment"
         },
         {
           title: "Aquatic Training System",
           description: "Take your workouts to the next level with professional exercise equipment designed specifically for water fitness. Includes resistance anchors and rowing equipment for a complete gym experience.",
-          image: "/images/products/features/aquatic-training.jpg",
+          image: "/images/products/Features/aquatic-training.jpg",
           category: "Fitness Equipment"
         }
       ]
