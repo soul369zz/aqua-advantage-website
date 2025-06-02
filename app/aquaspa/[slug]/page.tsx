@@ -325,37 +325,37 @@ const products: Record<string, Product> = {
         {
           title: "Worldwide WiFi App",
           description: "Control your pool temperature, filter cycle, turn on pumps and much more from anywhere in the world.",
-          image: "/images/products/features/wifi-app.jpg",
+          image: "/images/products/features/smart-controls.jpg",
           category: "Smart Technology"
         },
         {
           title: "Water Purification",
           description: "Whether you choose to add Diamond AOP™, Crystal ProPure™, Ozone Mixing Chamber or an Ozonator, TidalFit promotes water purification for a clean pool.",
-          image: "/images/products/features/water-purification.jpg",
+          image: "/images/products/features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "Audio Systems",
           description: "Complete your pool experience with our audio systems. Advanced technology and high-end speakers. Music Experience and bba™2 Audio.",
-          image: "/images/products/features/audio-system.jpg",
+          image: "/images/products/features/audio-systems.jpg",
           category: "Entertainment"
         },
         {
           title: "Hydrotherapy",
           description: "Each model offers the hydrotherapy option to soothe aching muscles and help with relaxation.",
-          image: "/images/products/features/hydrotherapy.jpg",
+          image: "/images/products/features/hydrotherapy-package.jpg",
           category: "Wellness"
         },
         {
           title: "Swim Jet Systems",
           description: "TidalFit models have their own unique swim jets systems, the Quad Swim Jet System and the Dual Swim Jet System.",
-          image: "/images/products/features/swim-jets.jpg",
+          image: "/images/products/features/swim-jet-systems.jpg",
           category: "Exercise Technology"
         },
         {
           title: "DynaBrite LED Lighting",
           description: "With both standard and optional LED lighting selections in our spas, you can find fun and unique ways to light up your spa for the perfect ambiance.",
-          image: "/images/products/features/dynabrite-lighting.jpg",
+          image: "/images/products/features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
         }
       ]
@@ -557,37 +557,37 @@ const products: Record<string, Product> = {
         {
           title: "Worldwide WiFi App",
           description: "Control your pool temperature, filter cycle, turn on pumps and much more from anywhere in the world.",
-          image: "/images/products/features/wifi-app.jpg",
+          image: "/images/products/features/smart-controls.jpg",
           category: "Smart Technology"
         },
         {
           title: "Water Purification",
           description: "Whether you choose to add Diamond AOP™, Crystal ProPure™, Ozone Mixing Chamber or an Ozonator, TidalFit promotes water purification for a clean pool.",
-          image: "/images/products/features/water-purification.jpg",
+          image: "/images/products/features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "Audio Systems",
           description: "Complete your pool experience with our audio systems. Advanced technology and high-end speakers. Music Experience and bba™2 Audio.",
-          image: "/images/products/features/audio-system.jpg",
+          image: "/images/products/features/audio-systems.jpg",
           category: "Entertainment"
         },
         {
           title: "Hydrotherapy",
           description: "Each model offers the hydrotherapy option to soothe aching muscles and help with relaxation.",
-          image: "/images/products/features/hydrotherapy.jpg",
+          image: "/images/products/features/hydrotherapy-package.jpg",
           category: "Wellness"
         },
         {
           title: "Swim Jet Systems",
           description: "TidalFit models have their own unique swim jets systems, the Quad Swim Jet System and the Dual Swim Jet System.",
-          image: "/images/products/features/swim-jets.jpg",
+          image: "/images/products/features/swim-jet-systems.jpg",
           category: "Exercise Technology"
         },
         {
           title: "DynaBrite LED Lighting",
           description: "With both standard and optional LED lighting selections in our spas, you can find fun and unique ways to light up your spa for the perfect ambiance.",
-          image: "/images/products/features/dynabrite-lighting.jpg",
+          image: "/images/products/features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
         }
       ]
@@ -779,37 +779,37 @@ const products: Record<string, Product> = {
         {
           title: "Worldwide WiFi App",
           description: "Control your pool temperature, filter cycle, turn on pumps and much more from anywhere in the world.",
-          image: "/images/products/features/wifi-app.jpg",
+          image: "/images/products/features/smart-controls.jpg",
           category: "Smart Technology"
         },
         {
           title: "Water Purification",
           description: "Whether you choose to add Diamond AOP™, Crystal ProPure™, Ozone Mixing Chamber or an Ozonator, TidalFit promotes water purification for a clean pool.",
-          image: "/images/products/features/water-purification.jpg",
+          image: "/images/products/features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "Audio Systems",
           description: "Complete your pool experience with our audio systems. Advanced technology and high-end speakers. Music Experience and bba™2 Audio.",
-          image: "/images/products/features/audio-system.jpg",
+          image: "/images/products/features/audio-systems.jpg",
           category: "Entertainment"
         },
         {
           title: "Hydrotherapy",
           description: "Each model offers the hydrotherapy option to soothe aching muscles and help with relaxation.",
-          image: "/images/products/features/hydrotherapy.jpg",
+          image: "/images/products/features/hydrotherapy-package.jpg",
           category: "Wellness"
         },
         {
           title: "Swim Jet Systems",
           description: "TidalFit models have their own unique swim jets systems, the Quad Swim Jet System and the Dual Swim Jet System.",
-          image: "/images/products/features/swim-jets.jpg",
+          image: "/images/products/features/swim-jet-systems.jpg",
           category: "Exercise Technology"
         },
         {
           title: "DynaBrite LED Lighting",
           description: "With both standard and optional LED lighting selections in our spas, you can find fun and unique ways to light up your spa for the perfect ambiance.",
-          image: "/images/products/features/dynabrite-lighting.jpg",
+          image: "/images/products/features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
         }
       ]
@@ -1011,37 +1011,37 @@ const products: Record<string, Product> = {
         {
           title: "Worldwide WiFi App",
           description: "Control your pool temperature, filter cycle, turn on pumps and much more from anywhere in the world.",
-          image: "/images/products/features/wifi-app.jpg",
+          image: "/images/products/features/smart-controls.jpg",
           category: "Smart Technology"
         },
         {
           title: "Water Purification",
           description: "Whether you choose to add Diamond AOP™, Crystal ProPure™, Ozone Mixing Chamber or an Ozonator, TidalFit promotes water purification for a clean pool.",
-          image: "/images/products/features/water-purification.jpg",
+          image: "/images/products/features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "Audio Systems",
           description: "Complete your pool experience with our audio systems. Advanced technology and high-end speakers. Music Experience and bba™2 Audio.",
-          image: "/images/products/features/audio-system.jpg",
+          image: "/images/products/features/audio-systems.jpg",
           category: "Entertainment"
         },
         {
           title: "Hydrotherapy",
           description: "Each model offers the hydrotherapy option to soothe aching muscles and help with relaxation.",
-          image: "/images/products/features/hydrotherapy.jpg",
+          image: "/images/products/features/hydrotherapy-package.jpg",
           category: "Wellness"
         },
         {
           title: "Swim Jet Systems",
           description: "TidalFit models have their own unique swim jets systems, the Quad Swim Jet System and the Dual Swim Jet System.",
-          image: "/images/products/features/swim-jets.jpg",
+          image: "/images/products/features/swim-jet-systems.jpg",
           category: "Exercise Technology"
         },
         {
           title: "DynaBrite LED Lighting",
           description: "With both standard and optional LED lighting selections in our spas, you can find fun and unique ways to light up your spa for the perfect ambiance.",
-          image: "/images/products/features/dynabrite-lighting.jpg",
+          image: "/images/products/features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
         }
       ]
@@ -1238,37 +1238,37 @@ const products: Record<string, Product> = {
         {
           title: "Worldwide WiFi App",
           description: "Control your pool temperature, filter cycle, turn on pumps and much more from anywhere in the world.",
-          image: "/images/products/features/wifi-app.jpg",
+          image: "/images/products/features/smart-controls.jpg",
           category: "Smart Technology"
         },
         {
           title: "Water Purification",
           description: "Whether you choose to add Diamond AOP™, Crystal ProPure™, Ozone Mixing Chamber or an Ozonator, TidalFit promotes water purification for a clean pool.",
-          image: "/images/products/features/water-purification.jpg",
+          image: "/images/products/features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "Audio Systems",
           description: "Complete your pool experience with our audio systems. Advanced technology and high-end speakers. Music Experience and bba™2 Audio.",
-          image: "/images/products/features/audio-system.jpg",
+          image: "/images/products/features/audio-systems.jpg",
           category: "Entertainment"
         },
         {
           title: "Hydrotherapy",
           description: "Each model offers the hydrotherapy option to soothe aching muscles and help with relaxation.",
-          image: "/images/products/features/hydrotherapy.jpg",
+          image: "/images/products/features/hydrotherapy-package.jpg",
           category: "Wellness"
         },
         {
           title: "Swim Jet Systems",
           description: "TidalFit models have their own unique swim jets systems, the Quad Swim Jet System and the Dual Swim Jet System.",
-          image: "/images/products/features/swim-jets.jpg",
+          image: "/images/products/features/swim-jet-systems.jpg",
           category: "Exercise Technology"
         },
         {
           title: "DynaBrite LED Lighting",
           description: "With both standard and optional LED lighting selections in our spas, you can find fun and unique ways to light up your spa for the perfect ambiance.",
-          image: "/images/products/features/dynabrite-lighting.jpg",
+          image: "/images/products/features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
         }
       ]
@@ -1465,37 +1465,37 @@ const products: Record<string, Product> = {
         {
           title: "Worldwide WiFi App",
           description: "Control your pool temperature, filter cycle, turn on pumps and much more from anywhere in the world.",
-          image: "/images/products/features/wifi-app.jpg",
+          image: "/images/products/features/smart-controls.jpg",
           category: "Smart Technology"
         },
         {
           title: "Water Purification",
           description: "Whether you choose to add Diamond AOP™, Crystal ProPure™, Ozone Mixing Chamber or an Ozonator, TidalFit promotes water purification for a clean pool.",
-          image: "/images/products/features/water-purification.jpg",
+          image: "/images/products/features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "Audio Systems",
           description: "Complete your pool experience with our audio systems. Advanced technology and high-end speakers. Music Experience and bba™2 Audio.",
-          image: "/images/products/features/audio-system.jpg",
+          image: "/images/products/features/audio-systems.jpg",
           category: "Entertainment"
         },
         {
           title: "Hydrotherapy",
           description: "Each model offers the hydrotherapy option to soothe aching muscles and help with relaxation.",
-          image: "/images/products/features/hydrotherapy.jpg",
+          image: "/images/products/features/hydrotherapy-package.jpg",
           category: "Wellness"
         },
         {
           title: "Swim Jet Systems",
           description: "TidalFit models have their own unique swim jets systems, the Quad Swim Jet System and the Dual Swim Jet System.",
-          image: "/images/products/features/swim-jets.jpg",
+          image: "/images/products/features/swim-jet-systems.jpg",
           category: "Exercise Technology"
         },
         {
           title: "DynaBrite LED Lighting",
           description: "With both standard and optional LED lighting selections in our spas, you can find fun and unique ways to light up your spa for the perfect ambiance.",
-          image: "/images/products/features/dynabrite-lighting.jpg",
+          image: "/images/products/features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
         }
       ]
@@ -1692,37 +1692,37 @@ const products: Record<string, Product> = {
         {
           title: "Worldwide WiFi App",
           description: "Control your pool temperature, filter cycle, turn on pumps and much more from anywhere in the world.",
-          image: "/images/products/features/wifi-app.jpg",
+          image: "/images/products/features/smart-controls.jpg",
           category: "Smart Technology"
         },
         {
           title: "Water Purification",
           description: "Whether you choose to add Diamond AOP™, Crystal ProPure™, Ozone Mixing Chamber or an Ozonator, TidalFit promotes water purification for a clean pool.",
-          image: "/images/products/features/water-purification.jpg",
+          image: "/images/products/features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "Audio Systems",
           description: "Complete your pool experience with our audio systems. Advanced technology and high-end speakers. Music Experience and bba™2 Audio.",
-          image: "/images/products/features/audio-system.jpg",
+          image: "/images/products/features/audio-systems.jpg",
           category: "Entertainment"
         },
         {
           title: "Hydrotherapy",
           description: "Each model offers the hydrotherapy option to soothe aching muscles and help with relaxation.",
-          image: "/images/products/features/hydrotherapy.jpg",
+          image: "/images/products/features/hydrotherapy-package.jpg",
           category: "Wellness"
         },
         {
           title: "Swim Jet Systems",
           description: "TidalFit models have their own unique swim jets systems, the Quad Swim Jet System and the Dual Swim Jet System.",
-          image: "/images/products/features/swim-jets.jpg",
+          image: "/images/products/features/swim-jet-systems.jpg",
           category: "Exercise Technology"
         },
         {
           title: "DynaBrite LED Lighting",
           description: "With both standard and optional LED lighting selections in our spas, you can find fun and unique ways to light up your spa for the perfect ambiance.",
-          image: "/images/products/features/dynabrite-lighting.jpg",
+          image: "/images/products/features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
         }
       ]
