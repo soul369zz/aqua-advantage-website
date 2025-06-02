@@ -347,8 +347,14 @@ function LoadingScreen() {
   return (
     <div className="fixed inset-0 z-50 bg-white flex items-center justify-center">
       <div className="text-center">
-        <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
-          <div className="w-8 h-8 bg-white rounded-full animate-ping" />
+        <div className="w-16 h-16 mx-auto mb-4 animate-pulse">
+          <Image
+            src="/images/logo/logo-128.png"
+            alt="Aqua Advantage Logo"
+            width={64}
+            height={64}
+            className="w-full h-full object-contain animate-ping"
+          />
         </div>
         <div className="text-2xl font-light text-gray-900 animate-fade-in">Aqua Advantage</div>
       </div>
@@ -397,7 +403,7 @@ export default function HomePage() {
   const navigationItems = [
     "About",
     "Services",
-    "AquaSpa",
+    "Shop Spa",
     "Testimonials",
     "FAQs",
   ]
@@ -433,8 +439,14 @@ export default function HomePage() {
             <div className="max-w-7xl mx-auto px-6 py-4">
               <div className="flex items-center justify-between">
                 <Link href="/" className="flex items-center space-x-2 group">
-                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                    <div className="w-4 h-4 bg-white rounded-full transition-all duration-300 group-hover:animate-pulse" />
+                  <div className="w-8 h-8 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                    <Image
+                      src="/images/logo/logo-64.png"
+                      alt="Aqua Advantage Logo"
+                      width={32}
+                      height={32}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                   <span className={`font-semibold text-xl transition-colors duration-300 group-hover:text-blue-600 ${
                     lastScrollY > 0 ? "text-gray-900" : "text-white"
@@ -448,7 +460,7 @@ export default function HomePage() {
                   {navigationItems.map((item, index) => (
                     <Link
                       key={item}
-                      href={`#${item.toLowerCase().replace(" ", "-")}`}
+                      href={item === "Shop Spa" ? "/aquaspa" : `#${item.toLowerCase().replace(" ", "-")}`}
                       className={`hover:text-blue-600 transition-all duration-300 hover:scale-105 relative group ${
                         lastScrollY > 0 ? "text-gray-900" : "text-white"
                       }`}
@@ -516,7 +528,7 @@ export default function HomePage() {
                   {navigationItems.map((item, index) => (
                     <Link
                       key={item}
-                      href={`#${item.toLowerCase().replace(" ", "-")}`}
+                      href={item === "Shop Spa" ? "/aquaspa" : `#${item.toLowerCase().replace(" ", "-")}`}
                       className="text-gray-900 text-2xl font-medium hover:text-blue-600 transition-all duration-300 hover:scale-105"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
@@ -544,9 +556,9 @@ export default function HomePage() {
             <div className="max-w-7xl mx-auto">
               <div className="max-w-2xl">
                 <h1 className="text-5xl md:text-7xl font-light text-white leading-tight mb-6">
-                  <AnimatedText text="We'll create your " delay={500} />
+                  <AnimatedText text="Keep your pool " delay={500} />
                   <span className="italic font-serif">
-                    <AnimatedText text="dream oasis" delay={1500} />
+                    <AnimatedText text="perfect" delay={1500} />
                   </span>
                 </h1>
 
@@ -555,7 +567,7 @@ export default function HomePage() {
                 >
                   <div className="text-xl text-white/90 mb-8 leading-relaxed">
                     <AnimatedText
-                      text="Aqua Advantage transforms ordinary backyards into extraordinary aquatic retreats with luxury pools, spas, and hot tubs you'll treasure for years."
+                      text="Expert pool maintenance, equipment repair, and premium hot tub sales. We keep your aquatic investment crystal clear and running smoothly year-round."
                       delay={2500}
                     />
                   </div>
@@ -567,7 +579,7 @@ export default function HomePage() {
                       asChild
                     >
                       <a href="tel:+12087277909">
-                        <span className="relative z-10">Design your pool</span>
+                        <span className="relative z-10">Book Service</span>
                         <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
                         <div className="absolute inset-0 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                       </a>
@@ -614,17 +626,16 @@ export default function HomePage() {
                     About us
                   </div>
                   <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
-                    We are aquatic transformation <span className="italic font-serif">specialists.</span>
+                    We are pool care <span className="italic font-serif">specialists.</span>
                   </h2>
                   <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                    Aqua Advantage transforms ordinary backyards into extraordinary aquatic retreats you'll enjoy with
-                    family and friends.
+                    Aqua Advantage keeps your pool pristine and equipment running perfectly, while offering premium hot tubs to enhance your backyard relaxation.
                   </p>
 
                   <div className="grid grid-cols-3 gap-8">
                     {[
-                      { number: 12, suffix: "+", label: ["Years", "experience"] },
-                      { number: 150, suffix: "+", label: ["Projects", "completed"] },
+                      { number: 6, suffix: "+", label: ["Years", "experience"] },
+                      { number: 150, suffix: "+", label: ["Service", "calls"] },
                       { number: 200, suffix: "+", label: ["Happy", "customers"] },
                     ].map((stat, index) => (
                       <FadeInSection key={index} delay={index * 200}>
@@ -675,49 +686,31 @@ export default function HomePage() {
                 {
                   title: "Pool Cleaning",
                   description: "Professional pool cleaning services to keep your pool crystal clear and inviting.",
-                  perfect: "Regular maintenance, clear water",
-                  duration: "1-2 hours",
-                  budget: "$100 - $200",
                   image: "/images/services/Service 1-Pool Cleaning .jpg",
                 },
                 {
                   title: "Chemical Balancing",
                   description: "Expert chemical balancing to maintain perfect water chemistry and swimmer comfort.",
-                  perfect: "Water quality, swimmer comfort",
-                  duration: "30-45 mins",
-                  budget: "$50 - $150",
                   image: "/images/services/Service 2- Chemical Balancing.jpg",
                 },
                 {
                   title: "Equipment Repair",
                   description: "Fast and reliable repair services for all pool and spa equipment.",
-                  perfect: "Equipment issues, quick fixes",
-                  duration: "1-3 hours",
-                  budget: "$150 - $500",
                   image: "/images/services/Service 3- Equipment Repair.jpg",
                 },
                 {
                   title: "Pool Maintenance",
                   description: "Comprehensive maintenance programs to keep your pool in perfect condition year-round.",
-                  perfect: "Long-term care, peace of mind",
-                  duration: "Weekly/Monthly",
-                  budget: "$200 - $500/month",
                   image: "/images/services/Service 4- Pool Maintenance.jpg",
                 },
                 {
                   title: "Hot Tub Service",
                   description: "Specialized maintenance and repair services for your hot tub or spa.",
-                  perfect: "Spa owners, relaxation",
-                  duration: "1-2 hours",
-                  budget: "$100 - $300",
                   image: "/images/services/Service 5- Hot Tub Service.jpg",
                 },
                 {
                   title: "Pool Opening/Closing",
                   description: "Professional seasonal services to properly open and close your pool.",
-                  perfect: "Seasonal preparation",
-                  duration: "2-3 hours",
-                  budget: "$200 - $400",
                   image: "/images/services/Service 6- Pool Opening:Closing.jpg",
                 },
               ].map((service, index) => (
@@ -739,20 +732,6 @@ export default function HomePage() {
                       <p className="text-gray-600 mb-6 transition-colors duration-300 group-hover:text-gray-700">
                         {service.description}
                       </p>
-                      <div className="space-y-3 text-sm">
-                        <div>
-                          <span className="font-medium">Perfect for:</span>
-                          <div className="text-gray-600">{service.perfect}</div>
-                        </div>
-                        <div>
-                          <span className="font-medium">Estimated Duration:</span>
-                          <div className="text-gray-600">{service.duration}</div>
-                        </div>
-                        <div>
-                          <span className="font-medium">Ideal Budget Range:</span>
-                          <div className="text-gray-600">{service.budget}</div>
-                        </div>
-                      </div>
                     </CardContent>
                   </Card>
                 </FadeInSection>
@@ -765,30 +744,26 @@ export default function HomePage() {
         <section className="pt-8 pb-16 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <FadeInSection delay={600}>
-              <div className="text-center bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-white">
-                <h3 className="text-2xl md:text-3xl font-light mb-3">Ready to transform your backyard?</h3>
-                <p className="text-lg mb-6 opacity-90">Schedule a consultation and discover your perfect AquaSpa.</p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <Button
-                    size="lg"
-                    className="bg-white text-blue-600 hover:bg-gray-50 px-6 py-3 rounded-full text-base font-medium transition-all duration-300 hover:scale-105"
-                    asChild
-                  >
-                    <a href="tel:+12087277909">Schedule Consultation</a>
-                  </Button>
-                </div>
+              <div className="text-center">
+                <Button
+                  size="lg"
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105"
+                  asChild
+                >
+                  <a href="tel:+12087277909">Book Service</a>
+                </Button>
               </div>
             </FadeInSection>
           </div>
         </section>
 
         {/* Hot Tubs & Spas Showcase Section - Apple Style */}
-        <section id="aquaspa" className="py-32 bg-gradient-to-b from-blue-50 to-gray-100 overflow-hidden">
+        <section id="shop-spa" className="py-32 bg-gradient-to-b from-blue-50 to-gray-100 overflow-hidden">
           <div className="max-w-7xl mx-auto px-6">
             {/* Main Hero */}
             <FadeInSection>
               <div className="text-center mb-20">
-                <h2 className="text-6xl md:text-8xl font-light text-gray-900 mb-6 tracking-tight">AquaSpa</h2>
+                <h2 className="text-6xl md:text-8xl font-light text-gray-900 mb-6 tracking-tight">Shop Spa</h2>
                 <p className="text-2xl md:text-3xl text-gray-600 mb-4 font-light">Luxury redefined.</p>
                 <p className="text-xl text-gray-600 mb-12 font-light">
                   Premium therapeutic experience with cutting-edge technology.
@@ -817,7 +792,7 @@ export default function HomePage() {
                   <div className="relative mx-auto w-full max-w-4xl">
                     <Image
                       src="/images/products/Main Product Image.jpg"
-                      alt="Premium AquaSpa Hot Tub"
+                      alt="Premium Shop Spa Hot Tub"
                       width={800}
                       height={600}
                       className="mx-auto rounded-3xl shadow-2xl transition-transform duration-700 hover:scale-105"
@@ -833,9 +808,9 @@ export default function HomePage() {
             {/* Technology Showcase */}
             <FadeInSection delay={400}>
               <div className="text-center mb-20">
-                <h3 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">Advanced Technology</h3>
+                <h3 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">Quality Features</h3>
                 <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
-                  Every AquaSpa features cutting-edge technology designed to enhance your wellness experience.
+                  Every Shop Spa includes proven features designed for comfort, reliability, and performance.
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-8 mb-16">
@@ -848,14 +823,14 @@ export default function HomePage() {
                     },
                     {
                       icon: "🌡️",
-                      title: "Smart Climate Control",
+                      title: "Digital Temperature Control",
                       description:
-                        "AI-powered temperature management maintains perfect water conditions automatically.",
+                        "Precise digital controls maintain your ideal water temperature with reliable heating systems.",
                     },
                     {
-                      icon: "📱",
-                      title: "Connected Experience",
-                      description: "Control every aspect of your spa remotely with our intuitive mobile app.",
+                      icon: "💡",
+                      title: "Energy Efficient Design",
+                      description: "Advanced insulation and energy-saving features keep operating costs low while maximizing performance.",
                     },
                   ].map((tech, index) => (
                     <div key={index} className="group">
@@ -870,13 +845,19 @@ export default function HomePage() {
                   ))}
                 </div>
 
-                <Button
-                  size="lg"
-                  className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105"
-                  asChild
-                >
-                  <Link href="/aquaspa">Explore Technology</Link>
-                </Button>
+                <div className="text-center bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-white">
+                  <h3 className="text-2xl md:text-3xl font-light mb-3">Need pool service or a new hot tub?</h3>
+                  <p className="text-lg mb-6 opacity-90">Schedule a consultation to keep your pool perfect or explore our premium Shop Spa collection.</p>
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <Button
+                      size="lg"
+                      className="bg-white text-blue-600 hover:bg-gray-50 px-6 py-3 rounded-full text-base font-medium transition-all duration-300 hover:scale-105"
+                      asChild
+                    >
+                      <a href="tel:+12087277909">Schedule Consultation</a>
+                    </Button>
+                  </div>
+                </div>
               </div>
             </FadeInSection>
           </div>
@@ -891,10 +872,10 @@ export default function HomePage() {
                   Our work
                 </div>
                 <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4">
-                  Get <span className="italic font-serif">inspired</span> by our beautiful work
+                  See our <span className="italic font-serif">expert</span> pool care work
                 </h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  See how we've transformed spaces with our expert craftsmanship and attention to detail.
+                  See how we keep pools pristine and enhance backyards with premium hot tub installations.
                 </p>
               </div>
             </FadeInSection>
@@ -902,12 +883,12 @@ export default function HomePage() {
             <div className="space-y-16">
               {[
                 {
-                  title: "From backyard to resort",
+                  title: "Crystal clear pool restoration",
                   description:
-                    "This once-ordinary backyard was transformed into a luxury resort-style retreat with an infinity pool, integrated spa, and stunning water features — perfect for entertaining and relaxation.",
+                    "This neglected pool was brought back to life with our comprehensive cleaning, equipment repair, and ongoing maintenance program — now it's the family's favorite gathering spot.",
                   quote:
-                    "We barely used our backyard before, but now it's our favorite part of the house. Aqua Advantage absolutely nailed it.",
-                  category: "Custom Pools",
+                    "We thought our pool was beyond saving, but Aqua Advantage worked miracles. Now it's crystal clear and runs perfectly.",
+                  category: "Pool Restoration",
                   image: "/images/gallery/Gallery Image 1.jpg",
                   reverse: false,
                 },
@@ -917,16 +898,16 @@ export default function HomePage() {
                     "A compact space transformed with a premium 8-person spa featuring therapeutic jets, LED lighting, and integrated sound system — turning a small patio into a wellness oasis.",
                   quote: "It looks like something out of a magazine. I still can't believe it's the same space!",
                   category: "Hot Tubs",
-                  image: "/images/gallery/Gallery Image 2.jpg",
+                  image: "/images/Project 2.jpg",
                   reverse: true,
                 },
                 {
-                  title: "Natural pool with wildlife appeal",
+                  title: "Year-round pool perfection",
                   description:
-                    "We renovated parts of this pool with natural stone, a waterfall feature, and native landscaping to attract local wildlife while keeping a clean, usable pool layout.",
+                    "Our weekly maintenance program keeps this family pool sparkling clean through all seasons, with perfect chemical balance and reliable equipment performance.",
                   quote:
-                    "It's peaceful, beautiful, and we see more birds and butterflies than ever. Aqua Advantage completely understood our vision and made it our favorite part of the house.",
-                  category: "Renovation",
+                    "Having Aqua Advantage handle our pool maintenance means we can just enjoy swimming without any of the hassle. They're incredibly reliable.",
+                  category: "Maintenance",
                   image: "/images/gallery/Gallery Image 3.jpg",
                   reverse: false,
                 },
@@ -1004,24 +985,36 @@ export default function HomePage() {
                   {/* First set of testimonials */}
                   {[
                     {
-                      name: "James Richardson",
-                      text: "The team at Aqua Advantage was friendly, professional, and incredibly skilled. Our new pool looks absolutely amazing!",
-                      avatar: "/images/testimonials/Reviews Avatar 1.jpg",
+                      name: "TIREBUSTER",
+                      text: "Bought a used hot tub from my brother in law and have been struggling to get my water cleared up and balanced right. He came out and got it taken care of in no time and basically took me to spa school! Would recommend for sure!!!",
                     },
                     {
-                      name: "Sophie Williams",
-                      text: "We wanted a low-maintenance pool and Aqua Advantage nailed it. The design is beautiful and easy to care for.",
-                      avatar: "/images/testimonials/Reviews Avatar 2.jpg",
+                      name: "Kallie Carney",
+                      text: "Logan has serviced our spa for a few years now and not only does a fantastic job but he has great service as well. When we decided to upgrade our spa, he was the obvious choice. It was delivered and set up yesterday and we love it.",
                     },
                     {
-                      name: "Michael Chen",
-                      text: "From first meeting to the final walkthrough, Aqua Advantage made the whole process smooth and stress-free. Highly recommend!",
-                      avatar: "/images/testimonials/Reviews Avatar 3.jpg",
+                      name: "Rachelle",
+                      text: "Excellent customer service! I was very pleased with the straightforward bid I received and the prompt response. Logan helped me go over options for repairing my hot tub and quickly fixed a leaking valve. It's rare to find someone in this industry who responds without trying to upsell and I appreciate that so much!",
                     },
                     {
-                      name: "Oliver Bennett",
-                      text: "We're beyond happy with our new hot tub. Aqua Advantage created a beautiful space that fits our family perfectly.",
-                      avatar: "/images/testimonials/Reviews Avatar 4.jpg",
+                      name: "Devin Culley",
+                      text: "What can I say, they have a 5 star rating for a reason! I feel very fortunate and thankful we have Logan and his top notch customer service here in southern idaho! THANK YOU LOGAN AND CREW!",
+                    },
+                    {
+                      name: "Monte Watson",
+                      text: "Totally impressed with Logan at Aqua Advantage! Had a slow leak in my hot tub. Logan came and diagnosed the problem thoroughly. Order the parts and and had me back in the water very quickly. Recommend him for great work and superior service!",
+                    },
+                    {
+                      name: "HeathAndStacey Runyon",
+                      text: "OUTSTANDING!!! I stumbled onto Aqua Advantage through a Facebook ad and I couldn't be more pleased with my experience. Logan is reliable, knowledgeable, professional and friendly. It has been such a gift to have help with maintaining our spa.",
+                    },
+                    {
+                      name: "Michael Simcoe",
+                      text: "Very professional staff. Logan was able to balance the chemicals for my spa, and has a top notch service program. The price was very reasonable, and the service was same day. I would recommend Aqua Advantage for anyone who enjoys clean and clear water in Southern Idaho.",
+                    },
+                    {
+                      name: "wondercutDeb ruler",
+                      text: "Our spa was not an easy fix. Logan was tenacious. What a great guy! He knows his stuff and I am ever so grateful.",
                     },
                   ].map((testimonial, index) => (
                     <Card
@@ -1041,15 +1034,6 @@ export default function HomePage() {
                         "{testimonial.text}"
                       </p>
                       <div className="flex items-center space-x-3">
-                        <div className="overflow-hidden rounded-full">
-                          <Image
-                            src={testimonial.avatar || "/placeholder.svg"}
-                            alt={testimonial.name}
-                            width={40}
-                            height={40}
-                            className="rounded-full transition-transform duration-300 group-hover:scale-110"
-                          />
-                        </div>
                         <span className="font-medium text-gray-900 transition-colors duration-300 group-hover:text-blue-600">
                           {testimonial.name}
                         </span>
@@ -1060,24 +1044,36 @@ export default function HomePage() {
                   {/* Duplicate set for seamless loop */}
                   {[
                     {
-                      name: "James Richardson",
-                      text: "The team at Aqua Advantage was friendly, professional, and incredibly skilled. Our new pool looks absolutely amazing!",
-                      avatar: "/images/testimonials/Reviews Avatar 1.jpg",
+                      name: "TIREBUSTER",
+                      text: "Bought a used hot tub from my brother in law and have been struggling to get my water cleared up and balanced right. He came out and got it taken care of in no time and basically took me to spa school! Would recommend for sure!!!",
                     },
                     {
-                      name: "Sophie Williams",
-                      text: "We wanted a low-maintenance pool and Aqua Advantage nailed it. The design is beautiful and easy to care for.",
-                      avatar: "/images/testimonials/Reviews Avatar 2.jpg",
+                      name: "Kallie Carney",
+                      text: "Logan has serviced our spa for a few years now and not only does a fantastic job but he has great service as well. When we decided to upgrade our spa, he was the obvious choice. It was delivered and set up yesterday and we love it.",
                     },
                     {
-                      name: "Michael Chen",
-                      text: "From first meeting to the final walkthrough, Aqua Advantage made the whole process smooth and stress-free. Highly recommend!",
-                      avatar: "/images/testimonials/Reviews Avatar 3.jpg",
+                      name: "Rachelle",
+                      text: "Excellent customer service! I was very pleased with the straightforward bid I received and the prompt response. Logan helped me go over options for repairing my hot tub and quickly fixed a leaking valve. It's rare to find someone in this industry who responds without trying to upsell and I appreciate that so much!",
                     },
                     {
-                      name: "Oliver Bennett",
-                      text: "We're beyond happy with our new hot tub. Aqua Advantage created a beautiful space that fits our family perfectly.",
-                      avatar: "/images/testimonials/Reviews Avatar 4.jpg",
+                      name: "Devin Culley",
+                      text: "What can I say, they have a 5 star rating for a reason! I feel very fortunate and thankful we have Logan and his top notch customer service here in southern idaho! THANK YOU LOGAN AND CREW!",
+                    },
+                    {
+                      name: "Monte Watson",
+                      text: "Totally impressed with Logan at Aqua Advantage! Had a slow leak in my hot tub. Logan came and diagnosed the problem thoroughly. Order the parts and and had me back in the water very quickly. Recommend him for great work and superior service!",
+                    },
+                    {
+                      name: "HeathAndStacey Runyon",
+                      text: "OUTSTANDING!!! I stumbled onto Aqua Advantage through a Facebook ad and I couldn't be more pleased with my experience. Logan is reliable, knowledgeable, professional and friendly. It has been such a gift to have help with maintaining our spa.",
+                    },
+                    {
+                      name: "Michael Simcoe",
+                      text: "Very professional staff. Logan was able to balance the chemicals for my spa, and has a top notch service program. The price was very reasonable, and the service was same day. I would recommend Aqua Advantage for anyone who enjoys clean and clear water in Southern Idaho.",
+                    },
+                    {
+                      name: "wondercutDeb ruler",
+                      text: "Our spa was not an easy fix. Logan was tenacious. What a great guy! He knows his stuff and I am ever so grateful.",
                     },
                   ].map((testimonial, index) => (
                     <Card
@@ -1097,15 +1093,6 @@ export default function HomePage() {
                         "{testimonial.text}"
                       </p>
                       <div className="flex items-center space-x-3">
-                        <div className="overflow-hidden rounded-full">
-                          <Image
-                            src={testimonial.avatar || "/placeholder.svg"}
-                            alt={testimonial.name}
-                            width={40}
-                            height={40}
-                            className="rounded-full transition-transform duration-300 group-hover:scale-110"
-                          />
-                        </div>
                         <span className="font-medium text-gray-900 transition-colors duration-300 group-hover:text-blue-600">
                           {testimonial.name}
                         </span>
@@ -1121,24 +1108,40 @@ export default function HomePage() {
                   {/* Second set of testimonials */}
                   {[
                     {
-                      name: "Daniel Foster",
-                      text: "Our new pool deck and water features completely changed the feel of our backyard. Aqua Advantage's craftsmanship is second to none.",
-                      avatar: "/images/testimonials/Reviews Avatar 1.jpg",
+                      name: "Marc Hernandez",
+                      text: "Very fast and friendly service. Logan is very professional he went above and beyond to get our hot tub going. There prices are very reasonable and they offer more than just there service they carry an assortment of product as well. I would highly recommend Aqua Advantage!!!!!",
                     },
                     {
-                      name: "Charlotte Harris",
-                      text: "Aqua Advantage turned our sad, patchy lawn into a lush aquatic space. They really listened to what we wanted and delivered!",
-                      avatar: "/images/testimonials/Reviews Avatar 2.jpg",
+                      name: "Brandy Hennefer",
+                      text: "Logan responds fast! Works hard!! Knowledgeable! Honest! Great experience and reasonable! Definitely will call him again!!",
                     },
                     {
-                      name: "Emma Thompson",
-                      text: "The attention to detail Aqua Advantage brought to our project was incredible. Every aspect of our pool looks stunning now!",
-                      avatar: "/images/testimonials/Reviews Avatar 3.jpg",
+                      name: "Alex Mitton",
+                      text: "Awesome to work with! Called them out because I couldnt get my hot tub to stop tripping the disconnect breaker. Quickly diagnosed the problem and got it working. Super responsive, helpful, answered all my questions!",
                     },
                     {
-                      name: "Robert Martinez",
-                      text: "Professional service from start to finish. Our infinity pool exceeded all expectations and the maintenance service is excellent.",
-                      avatar: "/images/testimonials/Reviews Avatar 4.jpg",
+                      name: "EJ Mercer",
+                      text: "Logan was very helpful and helped me diagnose and issue with my hot tub over email.",
+                    },
+                    {
+                      name: "Eli Hansen",
+                      text: "Best Spa guy we have ever had. I would absolutely recommend Logan. We use Logan for our Hot Tub. he has been great to work with and come on time and keeps in good communication. knows his stuff",
+                    },
+                    {
+                      name: "Nikki Engkraf",
+                      text: "Very prompt, knowledgeable, thorough and fair. Great customer relation skills!",
+                    },
+                    {
+                      name: "Richie Oppe",
+                      text: "the best service and helped us understand how to take care of our hot tub brings supplies to me at work and always answer's my call thank you Logan",
+                    },
+                    {
+                      name: "Stacey Runyon",
+                      text: "Logan is reliable, knowledgeable, professional and friendly. It has been such a gift to have help with maintaining our spa. He doesn't just test the water, he cleans the filters, adds water as needed, cleans the spa cover and balances the water as appropriate.",
+                    },
+                    {
+                      name: "Jino Castañeda",
+                      text: "Logan is incredible. he's very knowledgeable, very reliable, won't quit until the job is done. he is a great guy, and always down to help out or give tips even over the phone",
                     },
                   ].map((testimonial, index) => (
                     <Card
@@ -1158,15 +1161,6 @@ export default function HomePage() {
                         "{testimonial.text}"
                       </p>
                       <div className="flex items-center space-x-3">
-                        <div className="overflow-hidden rounded-full">
-                          <Image
-                            src={testimonial.avatar || "/placeholder.svg"}
-                            alt={testimonial.name}
-                            width={40}
-                            height={40}
-                            className="rounded-full transition-transform duration-300 group-hover:scale-110"
-                          />
-                        </div>
                         <span className="font-medium text-gray-900 transition-colors duration-300 group-hover:text-blue-600">
                           {testimonial.name}
                         </span>
@@ -1177,24 +1171,40 @@ export default function HomePage() {
                   {/* Duplicate set for seamless loop */}
                   {[
                     {
-                      name: "Daniel Foster",
-                      text: "Our new pool deck and water features completely changed the feel of our backyard. Aqua Advantage's craftsmanship is second to none.",
-                      avatar: "/images/testimonials/Reviews Avatar 1.jpg",
+                      name: "Marc Hernandez",
+                      text: "Very fast and friendly service. Logan is very professional he went above and beyond to get our hot tub going. There prices are very reasonable and they offer more than just there service they carry an assortment of product as well. I would highly recommend Aqua Advantage!!!!!",
                     },
                     {
-                      name: "Charlotte Harris",
-                      text: "Aqua Advantage turned our sad, patchy lawn into a lush aquatic space. They really listened to what we wanted and delivered!",
-                      avatar: "/images/testimonials/Reviews Avatar 2.jpg",
+                      name: "Brandy Hennefer",
+                      text: "Logan responds fast! Works hard!! Knowledgeable! Honest! Great experience and reasonable! Definitely will call him again!!",
                     },
                     {
-                      name: "Emma Thompson",
-                      text: "The attention to detail Aqua Advantage brought to our project was incredible. Every aspect of our pool looks stunning now!",
-                      avatar: "/images/testimonials/Reviews Avatar 3.jpg",
+                      name: "Alex Mitton",
+                      text: "Awesome to work with! Called them out because I couldnt get my hot tub to stop tripping the disconnect breaker. Quickly diagnosed the problem and got it working. Super responsive, helpful, answered all my questions!",
                     },
                     {
-                      name: "Robert Martinez",
-                      text: "Professional service from start to finish. Our infinity pool exceeded all expectations and the maintenance service is excellent.",
-                      avatar: "/images/testimonials/Reviews Avatar 4.jpg",
+                      name: "EJ Mercer",
+                      text: "Logan was very helpful and helped me diagnose and issue with my hot tub over email.",
+                    },
+                    {
+                      name: "Eli Hansen",
+                      text: "Best Spa guy we have ever had. I would absolutely recommend Logan. We use Logan for our Hot Tub. he has been great to work with and come on time and keeps in good communication. knows his stuff",
+                    },
+                    {
+                      name: "Nikki Engkraf",
+                      text: "Very prompt, knowledgeable, thorough and fair. Great customer relation skills!",
+                    },
+                    {
+                      name: "Richie Oppe",
+                      text: "the best service and helped us understand how to take care of our hot tub brings supplies to me at work and always answer's my call thank you Logan",
+                    },
+                    {
+                      name: "Stacey Runyon",
+                      text: "Logan is reliable, knowledgeable, professional and friendly. It has been such a gift to have help with maintaining our spa. He doesn't just test the water, he cleans the filters, adds water as needed, cleans the spa cover and balances the water as appropriate.",
+                    },
+                    {
+                      name: "Jino Castañeda",
+                      text: "Logan is incredible. he's very knowledgeable, very reliable, won't quit until the job is done. he is a great guy, and always down to help out or give tips even over the phone",
                     },
                   ].map((testimonial, index) => (
                     <Card
@@ -1214,15 +1224,6 @@ export default function HomePage() {
                         "{testimonial.text}"
                       </p>
                       <div className="flex items-center space-x-3">
-                        <div className="overflow-hidden rounded-full">
-                          <Image
-                            src={testimonial.avatar || "/placeholder.svg"}
-                            alt={testimonial.name}
-                            width={40}
-                            height={40}
-                            className="rounded-full transition-transform duration-300 group-hover:scale-110"
-                          />
-                        </div>
                         <span className="font-medium text-gray-900 transition-colors duration-300 group-hover:text-blue-600">
                           {testimonial.name}
                         </span>
@@ -1232,6 +1233,21 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Book Service CTA Section */}
+        <section className="py-16 bg-white">
+          <div className="max-w-4xl mx-auto px-6 text-center">
+            <FadeInSection>
+              <Button
+                size="lg"
+                className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105"
+                asChild
+              >
+                <a href="tel:+12087277909">Book Service</a>
+              </Button>
+            </FadeInSection>
           </div>
         </section>
 
@@ -1417,8 +1433,14 @@ export default function HomePage() {
               {/* Company Info */}
               <div>
                 <Link href="/" className="flex items-center space-x-2 mb-6 group cursor-pointer">
-                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                    <div className="w-4 h-4 bg-white rounded-full transition-all duration-300 group-hover:animate-pulse" />
+                  <div className="w-8 h-8 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                    <Image
+                      src="/images/logo/logo-64.png"
+                      alt="Aqua Advantage Logo"
+                      width={32}
+                      height={32}
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                   <span className="text-white font-semibold text-xl transition-colors duration-300 group-hover:text-blue-400">Aqua Advantage</span>
                 </Link>
@@ -1438,27 +1460,32 @@ export default function HomePage() {
                 <ul className="space-y-3 text-gray-400">
                   <li>
                     <Link href="#services" className="hover:text-white transition-colors duration-300">
+                      Pool Cleaning
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#services" className="hover:text-white transition-colors duration-300">
+                      Chemical Balancing
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#services" className="hover:text-white transition-colors duration-300">
                       Equipment Repair
                     </Link>
                   </li>
                   <li>
                     <Link href="#services" className="hover:text-white transition-colors duration-300">
-                      Equipment Sales
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="#aquaspa" className="hover:text-white transition-colors duration-300">
-                      Spa Sales
+                      Pool Maintenance
                     </Link>
                   </li>
                   <li>
                     <Link href="#services" className="hover:text-white transition-colors duration-300">
-                      Automation
+                      Hot Tub Service
                     </Link>
                   </li>
                   <li>
                     <Link href="#services" className="hover:text-white transition-colors duration-300">
-                      Chemical Sales
+                      Pool Opening/Closing
                     </Link>
                   </li>
                 </ul>

@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { ChevronLeft, ChevronRight, Zap, Shield, Smartphone, Clock, ChevronDown, Star, MapPin, Phone } from "lucide-react"
+import { ChevronLeft, ChevronRight, Zap, Shield, Smartphone, Clock, ChevronDown, Star, MapPin, Phone, Settings, Droplets, Wifi, Volume2, Lightbulb } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useParams } from "next/navigation"
@@ -95,7 +95,7 @@ interface Product {
   price: number;
   originalPrice: number;
   images: string[];
-  colorOptions: { name: string; color: string; }[];
+  colorOptions: { name: string; color: string; image?: string; }[];
   specs: ProductSpecs;
   warranty: ProductWarranty;
   installation: ProductInstallation;
@@ -104,6 +104,27 @@ interface Product {
   reviews: ProductReviews;
   accessories: ProductAccessory[];
   faqs: ProductFAQ[];
+  controlFeatures: {
+    title: string;
+    description: string;
+    features: Array<{
+      icon: string;
+      title: string;
+      description: string;
+    }>;
+    standardFeatures: Array<{
+      title: string;
+      description: string;
+      image: string;
+      category: string;
+    }>;
+    optionalFeatures: Array<{
+      title: string;
+      description: string;
+      image: string;
+      category: string;
+    }>;
+  };
 }
 
 // Product data - in a real app, this would come from a database or API
@@ -117,10 +138,9 @@ const products: Record<string, Product> = {
       "/images/products/GrandBahama_ELITE_900.jpg",
     ],
     colorOptions: [
-      { name: "Tapestry", color: "#8B9DC3" },
-      { name: "Midnight Canyon", color: "#2C2C2C" },
-      { name: "Tuscan Sun", color: "#D4B896" },
-      { name: "Storm Clouds", color: "#4A90A4" },
+      { name: "Grey", color: "#6B7280", image: "/images/products/Cabinetry Colors/Grey.png" },
+      { name: "Black", color: "#1F2937", image: "/images/products/Cabinetry Colors/Black.png" },
+      { name: "Brown", color: "#8B4513", image: "/images/products/Cabinetry Colors/Brown.png" },
     ],
     specs: {
       seating: "6 Adults",
@@ -227,6 +247,119 @@ const products: Record<string, Product> = {
         answer: "Professional installation typically takes 4-6 hours once electrical and foundation prep is complete.",
       },
     ],
+    controlFeatures: {
+      title: "Island Series Control Features",
+      description: "Professional-grade control systems with trim-specific features for the ultimate spa experience.",
+      features: [
+        {
+          icon: "Settings",
+          title: "Digital Control System",
+          description: "Intuitive topside control panel for temperature, jets, and lighting management"
+        },
+        {
+          icon: "Droplets", 
+          title: "DirectFlow Personal Control®",
+          description: "Elite trim includes individual jet control to customize water flow and pressure (trim-specific feature)"
+        },
+        {
+          icon: "Lightbulb",
+          title: "Multi-Level LED Lighting",
+          description: "Interior underwater lighting, illuminated pillows, and footwell lighting (varies by trim level)"
+        },
+        {
+          icon: "Volume2",
+          title: "Audio System Ready",
+          description: "Optional Bluetooth audio integration with waterproof speakers"
+        },
+        {
+          icon: "Zap",
+          title: "Cascade Falls Control",
+          description: "Standard waterfall feature with adjustable flow control, optional Pillowfall upgrade available"
+        }
+      ],
+      standardFeatures: [
+        {
+          title: "Grab Rails",
+          description: "These rails offer extra stability when exercising and stretching.",
+          image: "/images/products/features/grab-rails.jpg",
+          category: "Safety & Accessibility"
+        },
+        {
+          title: "Blue LED Spa Light",
+          description: "This 5 in. spa light illuminates your pool during dark hours.",
+          image: "/images/products/features/led-spa-light.jpg",
+          category: "Lighting"
+        },
+        {
+          title: "Grandwood Cabinets",
+          description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color. This subtle variance creates a more realistic look and feel of natural wood.",
+          image: "/images/products/Cabinetry Colors/Grandwood Java.png",
+          category: "Cabinetry"
+        },
+        {
+          title: "Full Foam With ABS Bottom",
+          description: "TidalFit models come standard with full foam insulation and an ABS bottom to protect against environmental elements.",
+          image: "/images/products/features/full-foam-insulation.jpg",
+          category: "Insulation"
+        },
+        {
+          title: "Heater",
+          description: "Every TidalFit comes with a standard heater to warm your pool to the perfect temperature in any climate.",
+          image: "/images/products/features/heater-system.jpg",
+          category: "Climate Control"
+        },
+        {
+          title: "Hi-Flo Circulation System",
+          description: "Advanced circulation system ensures optimal water flow and filtration for crystal clear water.",
+          image: "/images/products/features/circulation-system.jpg",
+          category: "Water Management"
+        }
+      ],
+      optionalFeatures: [
+        {
+          title: "Aquatic Training System",
+          description: "Maximize your workout in your exercise pool! You can choose between the Stationary Resistant Swim and/or the Rowing Bars and Resistant Cords.",
+          image: "/images/products/features/aquatic-training.jpg",
+          category: "Fitness Equipment"
+        },
+        {
+          title: "Worldwide WiFi App",
+          description: "Control your pool temperature, filter cycle, turn on pumps and much more from anywhere in the world.",
+          image: "/images/products/features/wifi-app.jpg",
+          category: "Smart Technology"
+        },
+        {
+          title: "Water Purification",
+          description: "Whether you choose to add Diamond AOP™, Crystal ProPure™, Ozone Mixing Chamber or an Ozonator, TidalFit promotes water purification for a clean pool.",
+          image: "/images/products/features/water-purification.jpg",
+          category: "Water Treatment"
+        },
+        {
+          title: "Audio Systems",
+          description: "Complete your pool experience with our audio systems. Advanced technology and high-end speakers. Music Experience and bba™2 Audio.",
+          image: "/images/products/features/audio-system.jpg",
+          category: "Entertainment"
+        },
+        {
+          title: "Hydrotherapy",
+          description: "Each model offers the hydrotherapy option to soothe aching muscles and help with relaxation.",
+          image: "/images/products/features/hydrotherapy.jpg",
+          category: "Wellness"
+        },
+        {
+          title: "Swim Jet Systems",
+          description: "TidalFit models have their own unique swim jets systems, the Quad Swim Jet System and the Dual Swim Jet System.",
+          image: "/images/products/features/swim-jets.jpg",
+          category: "Exercise Technology"
+        },
+        {
+          title: "DynaBrite LED Lighting",
+          description: "With both standard and optional LED lighting selections in our spas, you can find fun and unique ways to light up your spa for the perfect ambiance.",
+          image: "/images/products/features/dynabrite-lighting.jpg",
+          category: "Premium Lighting"
+        }
+      ]
+    },
   },
   "grand-cayman": {
     name: "Grand Cayman",
@@ -237,10 +370,9 @@ const products: Record<string, Product> = {
       "/images/products/Grand Cayman.jpg",
     ],
     colorOptions: [
-      { name: "Tapestry", color: "#8B9DC3" },
-      { name: "Midnight Canyon", color: "#2C2C2C" },
-      { name: "Tuscan Sun", color: "#D4B896" },
-      { name: "Storm Clouds", color: "#4A90A4" },
+      { name: "Grey", color: "#6B7280", image: "/images/products/Cabinetry Colors/Grey.png" },
+      { name: "Black", color: "#1F2937", image: "/images/products/Cabinetry Colors/Black.png" },
+      { name: "Brown", color: "#8B4513", image: "/images/products/Cabinetry Colors/Brown.png" },
     ],
     specs: {
       seating: "7 Adults",
@@ -347,6 +479,119 @@ const products: Record<string, Product> = {
         answer: "While not required, professional installation is highly recommended for optimal performance and warranty coverage.",
       },
     ],
+    controlFeatures: {
+      title: "Island Series Control Features",
+      description: "Professional-grade control systems with premium features for enhanced spa experience.",
+      features: [
+        {
+          icon: "Settings",
+          title: "Digital Control System",
+          description: "Intuitive topside control panel for temperature, jets, and lighting management"
+        },
+        {
+          icon: "Droplets",
+          title: "Advanced Pump Control",
+          description: "Four total pumps with independent control for customized hydrotherapy experience"
+        },
+        {
+          icon: "Lightbulb",
+          title: "Multi-Level LED Lighting",
+          description: "Comprehensive lighting system with interior underwater and accent lighting"
+        },
+        {
+          icon: "Volume2",
+          title: "Audio System Ready",
+          description: "Optional Bluetooth audio integration with waterproof speakers"
+        },
+        {
+          icon: "Zap",
+          title: "Cascade Falls Control",
+          description: "Standard waterfall feature with adjustable flow control"
+        }
+      ],
+      standardFeatures: [
+        {
+          title: "Grab Rails",
+          description: "These rails offer extra stability when exercising and stretching.",
+          image: "/images/products/features/grab-rails.jpg",
+          category: "Safety & Accessibility"
+        },
+        {
+          title: "Blue LED Spa Light",
+          description: "This 5 in. spa light illuminates your pool during dark hours.",
+          image: "/images/products/features/led-spa-light.jpg",
+          category: "Lighting"
+        },
+        {
+          title: "Grandwood Cabinets",
+          description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color. This subtle variance creates a more realistic look and feel of natural wood.",
+          image: "/images/products/Cabinetry Colors/Grandwood Java.png",
+          category: "Cabinetry"
+        },
+        {
+          title: "Full Foam With ABS Bottom",
+          description: "TidalFit models come standard with full foam insulation and an ABS bottom to protect against environmental elements.",
+          image: "/images/products/features/full-foam-insulation.jpg",
+          category: "Insulation"
+        },
+        {
+          title: "Heater",
+          description: "Every TidalFit comes with a standard heater to warm your pool to the perfect temperature in any climate.",
+          image: "/images/products/features/heater-system.jpg",
+          category: "Climate Control"
+        },
+        {
+          title: "Hi-Flo Circulation System",
+          description: "Advanced circulation system ensures optimal water flow and filtration for crystal clear water.",
+          image: "/images/products/features/circulation-system.jpg",
+          category: "Water Management"
+        }
+      ],
+      optionalFeatures: [
+        {
+          title: "Aquatic Training System",
+          description: "Maximize your workout in your exercise pool! You can choose between the Stationary Resistant Swim and/or the Rowing Bars and Resistant Cords.",
+          image: "/images/products/features/aquatic-training.jpg",
+          category: "Fitness Equipment"
+        },
+        {
+          title: "Worldwide WiFi App",
+          description: "Control your pool temperature, filter cycle, turn on pumps and much more from anywhere in the world.",
+          image: "/images/products/features/wifi-app.jpg",
+          category: "Smart Technology"
+        },
+        {
+          title: "Water Purification",
+          description: "Whether you choose to add Diamond AOP™, Crystal ProPure™, Ozone Mixing Chamber or an Ozonator, TidalFit promotes water purification for a clean pool.",
+          image: "/images/products/features/water-purification.jpg",
+          category: "Water Treatment"
+        },
+        {
+          title: "Audio Systems",
+          description: "Complete your pool experience with our audio systems. Advanced technology and high-end speakers. Music Experience and bba™2 Audio.",
+          image: "/images/products/features/audio-system.jpg",
+          category: "Entertainment"
+        },
+        {
+          title: "Hydrotherapy",
+          description: "Each model offers the hydrotherapy option to soothe aching muscles and help with relaxation.",
+          image: "/images/products/features/hydrotherapy.jpg",
+          category: "Wellness"
+        },
+        {
+          title: "Swim Jet Systems",
+          description: "TidalFit models have their own unique swim jets systems, the Quad Swim Jet System and the Dual Swim Jet System.",
+          image: "/images/products/features/swim-jets.jpg",
+          category: "Exercise Technology"
+        },
+        {
+          title: "DynaBrite LED Lighting",
+          description: "With both standard and optional LED lighting selections in our spas, you can find fun and unique ways to light up your spa for the perfect ambiance.",
+          image: "/images/products/features/dynabrite-lighting.jpg",
+          category: "Premium Lighting"
+        }
+      ]
+    },
   },
   "captiva": {
     name: "Captiva",
@@ -357,10 +602,9 @@ const products: Record<string, Product> = {
       "/images/products/Captiva.jpg",
     ],
     colorOptions: [
-      { name: "Tapestry", color: "#8B9DC3" },
-      { name: "Midnight Canyon", color: "#2C2C2C" },
-      { name: "Tuscan Sun", color: "#D4B896" },
-      { name: "Storm Clouds", color: "#4A90A4" },
+      { name: "Grey", color: "#6B7280", image: "/images/products/Cabinetry Colors/Grey.png" },
+      { name: "Black", color: "#1F2937", image: "/images/products/Cabinetry Colors/Black.png" },
+      { name: "Brown", color: "#8B4513", image: "/images/products/Cabinetry Colors/Brown.png" },
     ],
     specs: {
       seating: "7 Adults",
@@ -467,6 +711,109 @@ const products: Record<string, Product> = {
         answer: "The Captiva is highly energy efficient, typically costing $22-35 per month to operate depending on usage and local utility rates.",
       },
     ],
+    controlFeatures: {
+      title: "Advanced Control Features",
+      description: "Includes intuitive digital control system, direct water flow control, and optional WiFi connectivity.",
+      features: [
+        {
+          icon: "/images/icons/digital-control.svg",
+          title: "Intuitive Digital Control",
+          description: "Easily control your hot tub's temperature, jets, and lighting from anywhere with our app or remote control.",
+        },
+        {
+          icon: "/images/icons/water-flow.svg",
+          title: "DirectFlow Personal Control",
+          description: "Customize your water flow and temperature with our Elite trim's DirectFlow system. No electrician needed.",
+        },
+        {
+          icon: "/images/icons/wifi.svg",
+          title: "Optional WiFi Connectivity",
+          description: "Stay connected with your hot tub via WiFi. Control your settings remotely and receive updates on your phone.",
+        },
+      ],
+      standardFeatures: [
+        {
+          title: "Grab Rails",
+          description: "These rails offer extra stability when exercising and stretching.",
+          image: "/images/products/features/grab-rails.jpg",
+          category: "Safety & Accessibility"
+        },
+        {
+          title: "Blue LED Spa Light",
+          description: "This 5 in. spa light illuminates your pool during dark hours.",
+          image: "/images/products/features/led-spa-light.jpg",
+          category: "Lighting"
+        },
+        {
+          title: "Grandwood Cabinets",
+          description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color. This subtle variance creates a more realistic look and feel of natural wood.",
+          image: "/images/products/Cabinetry Colors/Grandwood Java.png",
+          category: "Cabinetry"
+        },
+        {
+          title: "Full Foam With ABS Bottom",
+          description: "TidalFit models come standard with full foam insulation and an ABS bottom to protect against environmental elements.",
+          image: "/images/products/features/full-foam-insulation.jpg",
+          category: "Insulation"
+        },
+        {
+          title: "Heater",
+          description: "Every TidalFit comes with a standard heater to warm your pool to the perfect temperature in any climate.",
+          image: "/images/products/features/heater-system.jpg",
+          category: "Climate Control"
+        },
+        {
+          title: "Hi-Flo Circulation System",
+          description: "Advanced circulation system ensures optimal water flow and filtration for crystal clear water.",
+          image: "/images/products/features/circulation-system.jpg",
+          category: "Water Management"
+        }
+      ],
+      optionalFeatures: [
+        {
+          title: "Aquatic Training System",
+          description: "Maximize your workout in your exercise pool! You can choose between the Stationary Resistant Swim and/or the Rowing Bars and Resistant Cords.",
+          image: "/images/products/features/aquatic-training.jpg",
+          category: "Fitness Equipment"
+        },
+        {
+          title: "Worldwide WiFi App",
+          description: "Control your pool temperature, filter cycle, turn on pumps and much more from anywhere in the world.",
+          image: "/images/products/features/wifi-app.jpg",
+          category: "Smart Technology"
+        },
+        {
+          title: "Water Purification",
+          description: "Whether you choose to add Diamond AOP™, Crystal ProPure™, Ozone Mixing Chamber or an Ozonator, TidalFit promotes water purification for a clean pool.",
+          image: "/images/products/features/water-purification.jpg",
+          category: "Water Treatment"
+        },
+        {
+          title: "Audio Systems",
+          description: "Complete your pool experience with our audio systems. Advanced technology and high-end speakers. Music Experience and bba™2 Audio.",
+          image: "/images/products/features/audio-system.jpg",
+          category: "Entertainment"
+        },
+        {
+          title: "Hydrotherapy",
+          description: "Each model offers the hydrotherapy option to soothe aching muscles and help with relaxation.",
+          image: "/images/products/features/hydrotherapy.jpg",
+          category: "Wellness"
+        },
+        {
+          title: "Swim Jet Systems",
+          description: "TidalFit models have their own unique swim jets systems, the Quad Swim Jet System and the Dual Swim Jet System.",
+          image: "/images/products/features/swim-jets.jpg",
+          category: "Exercise Technology"
+        },
+        {
+          title: "DynaBrite LED Lighting",
+          description: "With both standard and optional LED lighting selections in our spas, you can find fun and unique ways to light up your spa for the perfect ambiance.",
+          image: "/images/products/features/dynabrite-lighting.jpg",
+          category: "Premium Lighting"
+        }
+      ]
+    },
   },
   "antigua": {
     name: "Antigua",
@@ -477,10 +824,9 @@ const products: Record<string, Product> = {
       "/images/products/Antigua.jpg",
     ],
     colorOptions: [
-      { name: "Tapestry", color: "#8B9DC3" },
-      { name: "Midnight Canyon", color: "#2C2C2C" },
-      { name: "Tuscan Sun", color: "#D4B896" },
-      { name: "Storm Clouds", color: "#4A90A4" },
+      { name: "Grey", color: "#6B7280", image: "/images/products/Cabinetry Colors/Grey.png" },
+      { name: "Black", color: "#1F2937", image: "/images/products/Cabinetry Colors/Black.png" },
+      { name: "Brown", color: "#8B4513", image: "/images/products/Cabinetry Colors/Brown.png" },
     ],
     specs: {
       seating: "6 Adults",
@@ -587,6 +933,119 @@ const products: Record<string, Product> = {
         answer: "Absolutely! The Antigua is designed for year-round use with excellent insulation and a powerful heater system.",
       },
     ],
+    controlFeatures: {
+      title: "Island Series Control Features",
+      description: "Professional-grade control systems designed for compact luxury and performance.",
+      features: [
+        {
+          icon: "Settings",
+          title: "Digital Control System",
+          description: "Intuitive topside control panel for temperature, jets, and lighting management"
+        },
+        {
+          icon: "Droplets",
+          title: "Multi-Pump Control",
+          description: "Three total pumps with independent operation for customized hydrotherapy"
+        },
+        {
+          icon: "Lightbulb",
+          title: "LED Lighting System",
+          description: "Energy-efficient LED lighting with underwater illumination"
+        },
+        {
+          icon: "Volume2",
+          title: "Audio System Ready",
+          description: "Optional Bluetooth audio integration capability"
+        },
+        {
+          icon: "Zap",
+          title: "Cascade Falls Control",
+          description: "Standard waterfall feature with adjustable flow control"
+        }
+      ],
+      standardFeatures: [
+        {
+          title: "Grab Rails",
+          description: "These rails offer extra stability when exercising and stretching.",
+          image: "/images/products/features/grab-rails.jpg",
+          category: "Safety & Accessibility"
+        },
+        {
+          title: "Blue LED Spa Light",
+          description: "This 5 in. spa light illuminates your pool during dark hours.",
+          image: "/images/products/features/led-spa-light.jpg",
+          category: "Lighting"
+        },
+        {
+          title: "Grandwood Cabinets",
+          description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color. This subtle variance creates a more realistic look and feel of natural wood.",
+          image: "/images/products/Cabinetry Colors/Grandwood Java.png",
+          category: "Cabinetry"
+        },
+        {
+          title: "Full Foam With ABS Bottom",
+          description: "TidalFit models come standard with full foam insulation and an ABS bottom to protect against environmental elements.",
+          image: "/images/products/features/full-foam-insulation.jpg",
+          category: "Insulation"
+        },
+        {
+          title: "Heater",
+          description: "Every TidalFit comes with a standard heater to warm your pool to the perfect temperature in any climate.",
+          image: "/images/products/features/heater-system.jpg",
+          category: "Climate Control"
+        },
+        {
+          title: "Hi-Flo Circulation System",
+          description: "Advanced circulation system ensures optimal water flow and filtration for crystal clear water.",
+          image: "/images/products/features/circulation-system.jpg",
+          category: "Water Management"
+        }
+      ],
+      optionalFeatures: [
+        {
+          title: "Aquatic Training System",
+          description: "Maximize your workout in your exercise pool! You can choose between the Stationary Resistant Swim and/or the Rowing Bars and Resistant Cords.",
+          image: "/images/products/features/aquatic-training.jpg",
+          category: "Fitness Equipment"
+        },
+        {
+          title: "Worldwide WiFi App",
+          description: "Control your pool temperature, filter cycle, turn on pumps and much more from anywhere in the world.",
+          image: "/images/products/features/wifi-app.jpg",
+          category: "Smart Technology"
+        },
+        {
+          title: "Water Purification",
+          description: "Whether you choose to add Diamond AOP™, Crystal ProPure™, Ozone Mixing Chamber or an Ozonator, TidalFit promotes water purification for a clean pool.",
+          image: "/images/products/features/water-purification.jpg",
+          category: "Water Treatment"
+        },
+        {
+          title: "Audio Systems",
+          description: "Complete your pool experience with our audio systems. Advanced technology and high-end speakers. Music Experience and bba™2 Audio.",
+          image: "/images/products/features/audio-system.jpg",
+          category: "Entertainment"
+        },
+        {
+          title: "Hydrotherapy",
+          description: "Each model offers the hydrotherapy option to soothe aching muscles and help with relaxation.",
+          image: "/images/products/features/hydrotherapy.jpg",
+          category: "Wellness"
+        },
+        {
+          title: "Swim Jet Systems",
+          description: "TidalFit models have their own unique swim jets systems, the Quad Swim Jet System and the Dual Swim Jet System.",
+          image: "/images/products/features/swim-jets.jpg",
+          category: "Exercise Technology"
+        },
+        {
+          title: "DynaBrite LED Lighting",
+          description: "With both standard and optional LED lighting selections in our spas, you can find fun and unique ways to light up your spa for the perfect ambiance.",
+          image: "/images/products/features/dynabrite-lighting.jpg",
+          category: "Premium Lighting"
+        }
+      ]
+    },
   },
   "wisteria": {
     name: "Wisteria",
@@ -597,10 +1056,9 @@ const products: Record<string, Product> = {
       "/images/products/Wisteria.jpg",
     ],
     colorOptions: [
-      { name: "Sterling", color: "#9CA3AF" },
-      { name: "Sahara", color: "#D4B896" },
-      { name: "Midnight", color: "#2C2C2C" },
-      { name: "Redwood", color: "#8B4513" },
+      { name: "Grey", color: "#6B7280", image: "/images/products/Cabinetry Colors/Grey.png" },
+      { name: "Java", color: "#8B4513", image: "/images/products/Cabinetry Colors/Grandwood Java.png" },
+      { name: "Black", color: "#1F2937", image: "/images/products/Cabinetry Colors/Black.png" },
     ],
     specs: {
       seating: "6 Adults",
@@ -707,6 +1165,114 @@ const products: Record<string, Product> = {
         answer: "The Wisteria typically heats at 3-5°F per hour, so it takes about 12-18 hours to reach operating temperature from cold.",
       },
     ],
+    controlFeatures: {
+      title: "Garden Series Plug & Play Controls", 
+      description: "Simple, efficient controls designed for easy operation with standard household power.",
+      features: [
+        {
+          icon: "Settings",
+          title: "Digital Control Panel",
+          description: "Easy-to-use topside digital controls for temperature and jet operation"
+        },
+        {
+          icon: "Zap",
+          title: "120V Plug & Play",
+          description: "Simply plug into any standard household GFCI outlet - no electrician required"
+        },
+        {
+          icon: "Lightbulb",
+          title: "LED Lighting System",
+          description: "Energy-efficient LED lighting with simple on/off control"
+        },
+        {
+          icon: "Settings",
+          title: "Single Pump Operation", 
+          description: "Efficient single pump system with variable speed control for jets and filtration"
+        }
+      ],
+      standardFeatures: [
+        {
+          title: "Grab Rails",
+          description: "These rails offer extra stability when exercising and stretching.",
+          image: "/images/products/features/grab-rails.jpg",
+          category: "Safety & Accessibility"
+        },
+        {
+          title: "Blue LED Spa Light",
+          description: "This 5 in. spa light illuminates your pool during dark hours.",
+          image: "/images/products/features/led-spa-light.jpg",
+          category: "Lighting"
+        },
+        {
+          title: "Grandwood Cabinets",
+          description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color. This subtle variance creates a more realistic look and feel of natural wood.",
+          image: "/images/products/Cabinetry Colors/Grandwood Java.png",
+          category: "Cabinetry"
+        },
+        {
+          title: "Full Foam With ABS Bottom",
+          description: "TidalFit models come standard with full foam insulation and an ABS bottom to protect against environmental elements.",
+          image: "/images/products/features/full-foam-insulation.jpg",
+          category: "Insulation"
+        },
+        {
+          title: "Heater",
+          description: "Every TidalFit comes with a standard heater to warm your pool to the perfect temperature in any climate.",
+          image: "/images/products/features/heater-system.jpg",
+          category: "Climate Control"
+        },
+        {
+          title: "Hi-Flo Circulation System",
+          description: "Advanced circulation system ensures optimal water flow and filtration for crystal clear water.",
+          image: "/images/products/features/circulation-system.jpg",
+          category: "Water Management"
+        }
+      ],
+      optionalFeatures: [
+        {
+          title: "Aquatic Training System",
+          description: "Maximize your workout in your exercise pool! You can choose between the Stationary Resistant Swim and/or the Rowing Bars and Resistant Cords.",
+          image: "/images/products/features/aquatic-training.jpg",
+          category: "Fitness Equipment"
+        },
+        {
+          title: "Worldwide WiFi App",
+          description: "Control your pool temperature, filter cycle, turn on pumps and much more from anywhere in the world.",
+          image: "/images/products/features/wifi-app.jpg",
+          category: "Smart Technology"
+        },
+        {
+          title: "Water Purification",
+          description: "Whether you choose to add Diamond AOP™, Crystal ProPure™, Ozone Mixing Chamber or an Ozonator, TidalFit promotes water purification for a clean pool.",
+          image: "/images/products/features/water-purification.jpg",
+          category: "Water Treatment"
+        },
+        {
+          title: "Audio Systems",
+          description: "Complete your pool experience with our audio systems. Advanced technology and high-end speakers. Music Experience and bba™2 Audio.",
+          image: "/images/products/features/audio-system.jpg",
+          category: "Entertainment"
+        },
+        {
+          title: "Hydrotherapy",
+          description: "Each model offers the hydrotherapy option to soothe aching muscles and help with relaxation.",
+          image: "/images/products/features/hydrotherapy.jpg",
+          category: "Wellness"
+        },
+        {
+          title: "Swim Jet Systems",
+          description: "TidalFit models have their own unique swim jets systems, the Quad Swim Jet System and the Dual Swim Jet System.",
+          image: "/images/products/features/swim-jets.jpg",
+          category: "Exercise Technology"
+        },
+        {
+          title: "DynaBrite LED Lighting",
+          description: "With both standard and optional LED lighting selections in our spas, you can find fun and unique ways to light up your spa for the perfect ambiance.",
+          image: "/images/products/features/dynabrite-lighting.jpg",
+          category: "Premium Lighting"
+        }
+      ]
+    },
   },
   "plume": {
     name: "Plume",
@@ -717,10 +1283,9 @@ const products: Record<string, Product> = {
       "/images/products/Plume.jpg",
     ],
     colorOptions: [
-      { name: "Sterling", color: "#9CA3AF" },
-      { name: "Sahara", color: "#D4B896" },
-      { name: "Midnight", color: "#2C2C2C" },
-      { name: "Redwood", color: "#8B4513" },
+      { name: "Grey", color: "#6B7280", image: "/images/products/Cabinetry Colors/Grey.png" },
+      { name: "Java", color: "#8B4513", image: "/images/products/Cabinetry Colors/Grandwood Java.png" },
+      { name: "Black", color: "#1F2937", image: "/images/products/Cabinetry Colors/Black.png" },
     ],
     specs: {
       seating: "6 Adults",
@@ -827,6 +1392,114 @@ const products: Record<string, Product> = {
         answer: "Yes, the Plume is designed for year-round use, though heating times may be longer in very cold climates.",
       },
     ],
+    controlFeatures: {
+      title: "Garden Series Plug & Play Controls",
+      description: "Simple, efficient controls designed for easy operation with standard household power.",
+      features: [
+        {
+          icon: "Settings",
+          title: "Digital Control Panel",
+          description: "Easy-to-use topside digital controls for temperature and jet operation"
+        },
+        {
+          icon: "Zap",
+          title: "120V Plug & Play",
+          description: "Simply plug into any standard household GFCI outlet - no electrician required"
+        },
+        {
+          icon: "Lightbulb",
+          title: "LED Lighting System",
+          description: "Energy-efficient LED lighting with simple on/off control"
+        },
+        {
+          icon: "Settings",
+          title: "Single Pump Operation",
+          description: "Efficient single pump system with variable speed control for jets and filtration"
+        }
+      ],
+      standardFeatures: [
+        {
+          title: "Grab Rails",
+          description: "These rails offer extra stability when exercising and stretching.",
+          image: "/images/products/features/grab-rails.jpg",
+          category: "Safety & Accessibility"
+        },
+        {
+          title: "Blue LED Spa Light",
+          description: "This 5 in. spa light illuminates your pool during dark hours.",
+          image: "/images/products/features/led-spa-light.jpg",
+          category: "Lighting"
+        },
+        {
+          title: "Grandwood Cabinets",
+          description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color. This subtle variance creates a more realistic look and feel of natural wood.",
+          image: "/images/products/Cabinetry Colors/Grandwood Java.png",
+          category: "Cabinetry"
+        },
+        {
+          title: "Full Foam With ABS Bottom",
+          description: "TidalFit models come standard with full foam insulation and an ABS bottom to protect against environmental elements.",
+          image: "/images/products/features/full-foam-insulation.jpg",
+          category: "Insulation"
+        },
+        {
+          title: "Heater",
+          description: "Every TidalFit comes with a standard heater to warm your pool to the perfect temperature in any climate.",
+          image: "/images/products/features/heater-system.jpg",
+          category: "Climate Control"
+        },
+        {
+          title: "Hi-Flo Circulation System",
+          description: "Advanced circulation system ensures optimal water flow and filtration for crystal clear water.",
+          image: "/images/products/features/circulation-system.jpg",
+          category: "Water Management"
+        }
+      ],
+      optionalFeatures: [
+        {
+          title: "Aquatic Training System",
+          description: "Maximize your workout in your exercise pool! You can choose between the Stationary Resistant Swim and/or the Rowing Bars and Resistant Cords.",
+          image: "/images/products/features/aquatic-training.jpg",
+          category: "Fitness Equipment"
+        },
+        {
+          title: "Worldwide WiFi App",
+          description: "Control your pool temperature, filter cycle, turn on pumps and much more from anywhere in the world.",
+          image: "/images/products/features/wifi-app.jpg",
+          category: "Smart Technology"
+        },
+        {
+          title: "Water Purification",
+          description: "Whether you choose to add Diamond AOP™, Crystal ProPure™, Ozone Mixing Chamber or an Ozonator, TidalFit promotes water purification for a clean pool.",
+          image: "/images/products/features/water-purification.jpg",
+          category: "Water Treatment"
+        },
+        {
+          title: "Audio Systems",
+          description: "Complete your pool experience with our audio systems. Advanced technology and high-end speakers. Music Experience and bba™2 Audio.",
+          image: "/images/products/features/audio-system.jpg",
+          category: "Entertainment"
+        },
+        {
+          title: "Hydrotherapy",
+          description: "Each model offers the hydrotherapy option to soothe aching muscles and help with relaxation.",
+          image: "/images/products/features/hydrotherapy.jpg",
+          category: "Wellness"
+        },
+        {
+          title: "Swim Jet Systems",
+          description: "TidalFit models have their own unique swim jets systems, the Quad Swim Jet System and the Dual Swim Jet System.",
+          image: "/images/products/features/swim-jets.jpg",
+          category: "Exercise Technology"
+        },
+        {
+          title: "DynaBrite LED Lighting",
+          description: "With both standard and optional LED lighting selections in our spas, you can find fun and unique ways to light up your spa for the perfect ambiance.",
+          image: "/images/products/features/dynabrite-lighting.jpg",
+          category: "Premium Lighting"
+        }
+      ]
+    },
   },
   "viola": {
     name: "Viola",
@@ -837,10 +1510,9 @@ const products: Record<string, Product> = {
       "/images/products/Viola.jpg",
     ],
     colorOptions: [
-      { name: "Sterling", color: "#9CA3AF" },
-      { name: "Sahara", color: "#D4B896" },
-      { name: "Midnight", color: "#2C2C2C" },
-      { name: "Redwood", color: "#8B4513" },
+      { name: "Grey", color: "#6B7280", image: "/images/products/Cabinetry Colors/Grey.png" },
+      { name: "Java", color: "#8B4513", image: "/images/products/Cabinetry Colors/Grandwood Java.png" },
+      { name: "Black", color: "#1F2937", image: "/images/products/Cabinetry Colors/Black.png" },
     ],
     specs: {
       seating: "2 Adults",
@@ -947,6 +1619,114 @@ const products: Record<string, Product> = {
         answer: "The Viola comfortably accommodates couples up to 6'2\" with ergonomic seating designed for two adults.",
       },
     ],
+    controlFeatures: {
+      title: "Garden Series Plug & Play Controls",
+      description: "Simple, efficient controls designed for easy operation with standard household power.",
+      features: [
+        {
+          icon: "Settings",
+          title: "Digital Control Panel",
+          description: "Easy-to-use topside digital controls for temperature and jet operation"
+        },
+        {
+          icon: "Zap",
+          title: "120V Plug & Play",
+          description: "Simply plug into any standard household GFCI outlet - no electrician required"
+        },
+        {
+          icon: "Lightbulb",
+          title: "LED Lighting System",
+          description: "Energy-efficient LED lighting with simple on/off control"
+        },
+        {
+          icon: "Settings",
+          title: "Single Pump Operation",
+          description: "Efficient single pump system with variable speed control for jets and filtration"
+        }
+      ],
+      standardFeatures: [
+        {
+          title: "Grab Rails",
+          description: "These rails offer extra stability when exercising and stretching.",
+          image: "/images/products/features/grab-rails.jpg",
+          category: "Safety & Accessibility"
+        },
+        {
+          title: "Blue LED Spa Light",
+          description: "This 5 in. spa light illuminates your pool during dark hours.",
+          image: "/images/products/features/led-spa-light.jpg",
+          category: "Lighting"
+        },
+        {
+          title: "Grandwood Cabinets",
+          description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color. This subtle variance creates a more realistic look and feel of natural wood.",
+          image: "/images/products/Cabinetry Colors/Grandwood Java.png",
+          category: "Cabinetry"
+        },
+        {
+          title: "Full Foam With ABS Bottom",
+          description: "TidalFit models come standard with full foam insulation and an ABS bottom to protect against environmental elements.",
+          image: "/images/products/features/full-foam-insulation.jpg",
+          category: "Insulation"
+        },
+        {
+          title: "Heater",
+          description: "Every TidalFit comes with a standard heater to warm your pool to the perfect temperature in any climate.",
+          image: "/images/products/features/heater-system.jpg",
+          category: "Climate Control"
+        },
+        {
+          title: "Hi-Flo Circulation System",
+          description: "Advanced circulation system ensures optimal water flow and filtration for crystal clear water.",
+          image: "/images/products/features/circulation-system.jpg",
+          category: "Water Management"
+        }
+      ],
+      optionalFeatures: [
+        {
+          title: "Aquatic Training System",
+          description: "Maximize your workout in your exercise pool! You can choose between the Stationary Resistant Swim and/or the Rowing Bars and Resistant Cords.",
+          image: "/images/products/features/aquatic-training.jpg",
+          category: "Fitness Equipment"
+        },
+        {
+          title: "Worldwide WiFi App",
+          description: "Control your pool temperature, filter cycle, turn on pumps and much more from anywhere in the world.",
+          image: "/images/products/features/wifi-app.jpg",
+          category: "Smart Technology"
+        },
+        {
+          title: "Water Purification",
+          description: "Whether you choose to add Diamond AOP™, Crystal ProPure™, Ozone Mixing Chamber or an Ozonator, TidalFit promotes water purification for a clean pool.",
+          image: "/images/products/features/water-purification.jpg",
+          category: "Water Treatment"
+        },
+        {
+          title: "Audio Systems",
+          description: "Complete your pool experience with our audio systems. Advanced technology and high-end speakers. Music Experience and bba™2 Audio.",
+          image: "/images/products/features/audio-system.jpg",
+          category: "Entertainment"
+        },
+        {
+          title: "Hydrotherapy",
+          description: "Each model offers the hydrotherapy option to soothe aching muscles and help with relaxation.",
+          image: "/images/products/features/hydrotherapy.jpg",
+          category: "Wellness"
+        },
+        {
+          title: "Swim Jet Systems",
+          description: "TidalFit models have their own unique swim jets systems, the Quad Swim Jet System and the Dual Swim Jet System.",
+          image: "/images/products/features/swim-jets.jpg",
+          category: "Exercise Technology"
+        },
+        {
+          title: "DynaBrite LED Lighting",
+          description: "With both standard and optional LED lighting selections in our spas, you can find fun and unique ways to light up your spa for the perfect ambiance.",
+          image: "/images/products/features/dynabrite-lighting.jpg",
+          category: "Premium Lighting"
+        }
+      ]
+    },
   },
   "activeplus-ep-12": {
     name: "ActivePlus EP-12",
@@ -957,10 +1737,10 @@ const products: Record<string, Product> = {
       "/images/products/ActivePlus EP-12.jpg",
     ],
     colorOptions: [
-      { name: "Arctic White", color: "#F8F9FA" },
-      { name: "Ocean Blue", color: "#0066CC" },
-      { name: "Platinum", color: "#8E9AAF" },
-      { name: "Sahara", color: "#D4B896" },
+      { name: "Charcoal", color: "#374151", image: "/images/products/Cabinetry Colors/Grandwood Charcoal Black.png" },
+      { name: "Black", color: "#1F2937", image: "/images/products/Cabinetry Colors/Black.png" },
+      { name: "Java", color: "#8B4513", image: "/images/products/Cabinetry Colors/Grandwood Java.png" },
+      { name: "Grey", color: "#6B7280", image: "/images/products/Cabinetry Colors/Grey.png" },
     ],
     specs: {
       seating: "Exercise Pool",
@@ -1067,6 +1847,92 @@ const products: Record<string, Product> = {
         answer: "Yes! One person can swim while others enjoy hydrotherapy, or multiple people can exercise together depending on the activity.",
       },
     ],
+    controlFeatures: {
+      title: "Features Of The ActivePlus EP-12 Exercise Pool",
+      description: "Experience the ultimate in luxury aquatic fitness with professional-grade features designed for both exercise and relaxation.",
+      standardFeatures: [
+        {
+          title: "Grab Rails",
+          description: "These rails offer extra stability when exercising and stretching.",
+          image: "/images/products/features/grab-rails.jpg",
+          category: "Safety & Accessibility"
+        },
+        {
+          title: "Blue LED Spa Light", 
+          description: "This 5 in. spa light illuminates your pool during dark hours.",
+          image: "/images/products/features/led-spa-light.jpg",
+          category: "Lighting"
+        },
+        {
+          title: "Grandwood Cabinets",
+          description: "From the realistic wood-like texture to the matte finish, it's no wonder these cabinets are called Grandwood. These cabinets feature a tight grain pattern along with subtly varying shades of color.",
+          image: "/images/products/Cabinetry Colors/Grandwood Java.png",
+          category: "Cabinetry"
+        },
+        {
+          title: "Full Foam With ABS Bottom",
+          description: "TidalFit models come standard with full foam insulation and an ABS bottom to protect against environmental elements.",
+          image: "/images/products/features/full-foam-insulation.jpg",
+          category: "Insulation"
+        },
+        {
+          title: "Heater",
+          description: "Every TidalFit comes with a standard heater to warm your pool to the perfect temperature in any climate.",
+          image: "/images/products/features/heater-system.jpg", 
+          category: "Climate Control"
+        },
+        {
+          title: "Hi-Flo Circulation System",
+          description: "Advanced circulation system ensures optimal water flow and filtration for crystal clear water.",
+          image: "/images/products/features/circulation-system.jpg",
+          category: "Water Management"
+        }
+      ],
+      optionalFeatures: [
+        {
+          title: "Aquatic Training System",
+          description: "Maximize your workout in your exercise pool! You can choose between the Stationary Resistant Swim and/or the Rowing Bars and Resistant Cords.",
+          image: "/images/products/features/aquatic-training.jpg",
+          category: "Fitness Equipment"
+        },
+        {
+          title: "Worldwide WiFi App",
+          description: "Control your pool temperature, filter cycle, turn on pumps and much more from anywhere in the world.",
+          image: "/images/products/features/wifi-app.jpg",
+          category: "Smart Technology"
+        },
+        {
+          title: "Water Purification",
+          description: "Whether you choose to add Diamond AOP™, Crystal ProPure™, Ozone Mixing Chamber or an Ozonator, TidalFit promotes water purification for a clean pool.",
+          image: "/images/products/features/water-purification.jpg",
+          category: "Water Treatment"
+        },
+        {
+          title: "Audio Systems", 
+          description: "Complete your pool experience with our audio systems. Advanced technology and high-end speakers. Music Experience and bba™2 Audio.",
+          image: "/images/products/features/audio-system.jpg",
+          category: "Entertainment"
+        },
+        {
+          title: "Hydrotherapy",
+          description: "Each model offers the hydrotherapy option to soothe aching muscles and help with relaxation.",
+          image: "/images/products/features/hydrotherapy.jpg",
+          category: "Wellness"
+        },
+        {
+          title: "Swim Jet Systems",
+          description: "TidalFit models have their own unique swim jets systems, the Quad Swim Jet System and the Dual Swim Jet System.",
+          image: "/images/products/features/swim-jets.jpg",
+          category: "Exercise Technology"
+        },
+        {
+          title: "DynaBrite LED Lighting",
+          description: "With both standard and optional LED lighting selections in our spas, you can find fun and unique ways to light up your spa for the perfect ambiance.",
+          image: "/images/products/features/dynabrite-lighting.jpg",
+          category: "Premium Lighting"
+        }
+      ]
+    },
   },
 }
 
@@ -1145,7 +2011,7 @@ export default function ProductPage() {
   const navigationItems = [
     "About",
     "Services", 
-    "AquaSpa",
+    "Shop Spa",
     "Testimonials",
     "FAQs",
   ]
@@ -1442,9 +2308,15 @@ export default function ProductPage() {
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center space-x-2 group">
-              <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                <div className="w-4 h-4 bg-white rounded-full transition-all duration-300 group-hover:animate-pulse" />
-        </div>
+              <div className="w-8 h-8 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                <Image
+                  src="/images/logo/logo-64.png"
+                  alt="Aqua Advantage Logo"
+                  width={32}
+                  height={32}
+                  className="w-full h-full object-contain"
+                />
+              </div>
               <span className="font-semibold text-xl transition-colors duration-300 group-hover:text-blue-600 text-gray-900">
                 Aqua Advantage
               </span>
@@ -1455,7 +2327,7 @@ export default function ProductPage() {
               {navigationItems.map((item, index) => (
                 <Link
                   key={item}
-                  href={item === "AquaSpa" ? "/aquaspa" : `/#${item.toLowerCase().replace(" ", "-")}`}
+                  href={item === "Shop Spa" ? "/aquaspa" : `/#${item.toLowerCase().replace(" ", "-")}`}
                   className="hover:text-blue-600 transition-all duration-300 hover:scale-105 relative group text-gray-900"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -1515,7 +2387,7 @@ export default function ProductPage() {
               {navigationItems.map((item, index) => (
                 <Link
                   key={item}
-                  href={item === "AquaSpa" ? "/aquaspa" : `/#${item.toLowerCase().replace(" ", "-")}`}
+                  href={item === "Shop Spa" ? "/aquaspa" : `/#${item.toLowerCase().replace(" ", "-")}`}
                   className="text-gray-900 text-2xl font-medium hover:text-blue-600 transition-all duration-300 hover:scale-105"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -1567,43 +2439,39 @@ export default function ProductPage() {
               <h1 className="text-5xl font-bold mb-4 text-gray-900">{product.name}</h1>
               <p className="text-xl text-gray-600 mb-6">{product.title}</p>
 
-              <div className="flex items-baseline gap-4 mb-6">
-                <span className="text-4xl font-bold text-emerald-600">${product.price.toLocaleString()}</span>
-                <span className="text-lg text-gray-400 line-through">${product.originalPrice.toLocaleString()}</span>
-                <Badge className="bg-red-100 text-red-700 border-red-200">
-                  Save ${(product.originalPrice - product.price).toLocaleString()}
-                </Badge>
-        </div>
-
-              <div className="bg-gray-50 rounded-lg p-4 mb-6 border border-gray-200">
-                <p className="text-sm text-gray-600 mb-2">Financing Available</p>
-                <p className="text-2xl font-semibold text-gray-900">
-                  ${Math.round(product.price / 84)}/month
-                </p>
-                <p className="text-sm text-gray-500">for 84 months at 6.9% APR</p>
-          </div>
-
               {/* Color Selection */}
               <div className="mb-8">
-                <h3 className="text-lg font-semibold mb-4 text-gray-900">Choose Your Finish</h3>
+                <h3 className="text-lg font-semibold mb-4 text-gray-900">Choose Your Cabinet</h3>
                 <div className="flex gap-3">
                   {product.colorOptions.map((option, index) => (
                     <button
                       key={index}
                       onClick={() => setSelectedColor(index)}
-                      className={`relative w-16 h-16 rounded-full border-2 transition-all duration-300 hover:scale-110 ${
+                      className={`relative w-16 h-16 rounded-lg border-2 transition-all duration-300 hover:scale-110 overflow-hidden ${
                         selectedColor === index ? "border-blue-500 scale-110 shadow-lg" : "border-gray-300"
                       }`}
-                      style={{ backgroundColor: option.color }}
                     >
+                      {option.image ? (
+                        <Image
+                          src={option.image}
+                          alt={option.name}
+                          fill
+                          className="object-cover"
+                        />
+                      ) : (
+                        <div 
+                          className="w-full h-full"
+                          style={{ backgroundColor: option.color }}
+                        />
+                      )}
                       {selectedColor === index && (
-                        <div className="absolute inset-0 rounded-full border-2 border-blue-500 animate-pulse" />
+                        <div className="absolute inset-0 rounded-lg border-2 border-blue-500 animate-pulse" />
                       )}
                     </button>
                   ))}
-          </div>
+                </div>
                 <p className="text-sm text-gray-500 mt-2">{product.colorOptions[selectedColor].name}</p>
-        </div>
+              </div>
 
               {/* CTA Buttons */}
               <div className="flex flex-col gap-4">
@@ -1626,7 +2494,7 @@ export default function ProductPage() {
                       className="border-blue-500 text-blue-500 hover:bg-blue-50 px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 w-full"
                       asChild
                     >
-                      <a href="tel:+12087277909">Save $250 - Book Appointment</a>
+                      <a href="tel:+12087277909">Financing Available</a>
                     </Button>
           </div>
         </div>
@@ -1730,66 +2598,174 @@ export default function ProductPage() {
           </div>
         </section>
 
-      {/* Mobile App Integration - Added based on provided code structure */}
-       <section
-         id="app"
-         data-animate
-         className={`py-16 bg-gray-50 transition-all duration-1000 delay-500 ${sectionsInView.app ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-       >
-         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-           <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-               <h2 className="text-4xl font-bold mb-6 text-gray-900">Control Your {product.name} from Anywhere</h2>
-               <p className="text-lg text-gray-600 mb-6">
-                 The Aqua Advantage mobile app puts complete control of your hot tub at your fingertips. Adjust
-                 temperature, control lighting, and monitor system status from anywhere.
-               </p>
-
-               {/* Assuming static app features, replace with dynamic if available in product data */}
-               <div className="space-y-4 mb-8">
-                 <div className="flex items-center gap-3 transform transition-all duration-300 hover:translate-x-2">
-                   <Smartphone className="w-6 h-6 text-blue-600" />
-                   <span className="text-gray-700">Remote temperature control</span>
-              </div>
-                 <div className="flex items-center gap-3 transform transition-all duration-300 hover:translate-x-2">
-                   <Zap className="w-6 h-6 text-blue-600" />
-                   <span className="text-gray-700">LED lighting customization</span>
-            </div>
-                 <div className="flex items-center gap-3 transform transition-all duration-300 hover:translate-x-2">
-                   <Shield className="w-6 h-6 text-blue-600" />
-                   <span className="text-gray-700">System diagnostics and alerts</span>
-              </div>
-                 <div className="flex items-center gap-3 transform transition-all duration-300 hover:translate-x-2">
-                   <Clock className="w-6 h-6 text-blue-600" />
-                   <span className="text-gray-700">Scheduling and automation</span>
-            </div>
+      {/* Enhanced Features Section - Only for ActivePlus EP-12 */}
+      {productSlug === "activeplus-ep-12" && (
+        <section
+          id="enhanced-features"
+          data-animate
+          className={`py-20 bg-gradient-to-b from-gray-50 to-white transition-all duration-1000 delay-500 ${sectionsInView["enhanced-features"] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Header */}
+            <div className="text-center mb-16">
+              <h2 className="text-5xl font-bold mb-6 text-gray-900 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                {product.controlFeatures.title}
+              </h2>
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                {product.controlFeatures.description}
+              </p>
             </div>
 
-               <div className="flex gap-4">
-                 <Button
-                 className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 w-full"
-                 asChild
-                 >
-                   <a href="tel:+12087277909">
-                    Unlock Sale Pricing
-                   </a>
-                 </Button>
+            {/* Standard Features */}
+            <div className="mb-20">
+              <h3 className="text-3xl font-bold text-center mb-12 text-gray-900">Standard Features</h3>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {product.controlFeatures.standardFeatures.map((feature, index) => (
+                  <div
+                    key={index}
+                    className={`bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 ${sectionsInView["enhanced-features"] ? `animate-fade-in-up` : "opacity-0"}`}
+                    style={{ animationDelay: `${index * 150}ms` }}
+                  >
+                    <div className="relative h-48 overflow-hidden">
+                      <Image
+                        src={feature.image}
+                        alt={feature.title}
+                        fill
+                        className="object-cover transition-transform duration-700 hover:scale-110"
+                      />
+                      <div className="absolute top-4 left-4">
+                        <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                          {feature.category}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      <h4 className="text-xl font-bold mb-3 text-gray-900">{feature.title}</h4>
+                      <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
-             <div className="relative">
-               {/* Mobile app image */}
-               <Image
-                 src="/images/products/mobile app.jpg"
-                 alt="Mobile App Interface"
-                 width={400}
-                 height={500}
-                 className="mx-auto hover:scale-105 transition-transform duration-500"
-               />
-             </div>
-          </div>
+            {/* Optional Features */}
+            <div>
+              <h3 className="text-3xl font-bold text-center mb-12 text-gray-900">Optional Features</h3>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {product.controlFeatures.optionalFeatures.map((feature, index) => (
+                  <div
+                    key={index}
+                    className={`bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border border-blue-100 ${sectionsInView["enhanced-features"] ? `animate-fade-in-up` : "opacity-0"}`}
+                    style={{ animationDelay: `${(index + 6) * 150}ms` }}
+                  >
+                    <div className="relative h-48 overflow-hidden">
+                      <Image
+                        src={feature.image}
+                        alt={feature.title}
+                        fill
+                        className="object-cover transition-transform duration-700 hover:scale-110"
+                      />
+                      <div className="absolute top-4 left-4">
+                        <span className="bg-gradient-to-r from-amber-500 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                          {feature.category}
+                        </span>
+                      </div>
+                      <div className="absolute top-4 right-4">
+                        <span className="bg-green-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                          OPTIONAL
+                        </span>
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      <h4 className="text-xl font-bold mb-3 text-gray-900">{feature.title}</h4>
+                      <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="text-center mt-16">
+              <div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-8 shadow-2xl">
+                <h3 className="text-3xl font-bold text-white mb-4">
+                  Ready to Experience Ultimate Aquatic Luxury?
+                </h3>
+                <p className="text-blue-100 text-lg mb-6">
+                  Discover how the ActivePlus EP-12 can transform your fitness and wellness routine
+                </p>
+                <Button
+                  className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                  asChild
+                >
+                  <a href="tel:+12087277909">Get Your Custom Quote</a>
+                </Button>
+              </div>
+            </div>
           </div>
         </section>
+      )}
+
+      {/* Mobile App Integration - Updated for non-ActivePlus products */}
+      {productSlug !== "activeplus-ep-12" && (
+        <section
+          id="app"
+          data-animate
+          className={`py-16 bg-gray-50 transition-all duration-1000 delay-500 ${sectionsInView.app ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-4xl font-bold mb-6 text-gray-900">{product.controlFeatures.title}</h2>
+                <p className="text-lg text-gray-600 mb-6">
+                  {product.controlFeatures.description}
+                </p>
+
+                <div className="space-y-4 mb-8">
+                  {product.controlFeatures.features.map((feature, index) => {
+                    const IconComponent = feature.icon === "Settings" ? Settings :
+                                        feature.icon === "Droplets" ? Droplets :
+                                        feature.icon === "Wifi" ? Wifi :
+                                        feature.icon === "Volume2" ? Volume2 :
+                                        feature.icon === "Lightbulb" ? Lightbulb :
+                                        feature.icon === "Zap" ? Zap :
+                                        Settings; // Default fallback
+                    
+                    return (
+                      <div key={index} className="flex items-center gap-3 transform transition-all duration-300 hover:translate-x-2">
+                        <IconComponent className="w-6 h-6 text-blue-600" />
+                        <span className="text-gray-700">{feature.description}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                <div className="flex gap-4">
+                  <Button
+                    className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 w-full"
+                    asChild
+                  >
+                    <a href="tel:+12087277909">
+                      Unlock Sale Pricing
+                    </a>
+                  </Button>
+                </div>
+              </div>
+
+              <div className="relative">
+                {/* Control system image - update based on product type */}
+                <Image
+                  src="/images/products/mobile app.jpg"
+                  alt={`${product.controlFeatures.title} Interface`}
+                  width={400}
+                  height={500}
+                  className="mx-auto hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Related Products - Added based on provided code structure */}
       <section
@@ -1823,8 +2799,6 @@ export default function ProductPage() {
                   </div>
                   <CardContent className="p-6">
                     <h3 className="text-xl font-semibold mb-2 text-gray-900">{relatedProduct.name}</h3>
-                    <p className="text-2xl font-bold text-blue-600">${relatedProduct.price.toLocaleString()}</p>
-                    {/* Link to the related product page - update href as needed */}
                     <Button
                       variant="outline"
                       className="w-full border-blue-500 text-blue-500 hover:bg-blue-50 transition-all duration-300 hover:scale-105"
@@ -1883,10 +2857,18 @@ export default function ProductPage() {
             {/* Company Info */}
             <div>
               <Link href="/" className="flex items-center space-x-2 mb-6 group cursor-pointer">
-                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                  <div className="w-4 h-4 bg-white rounded-full transition-all duration-300 group-hover:animate-pulse" />
+                <div className="w-8 h-8 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                  <Image
+                    src="/images/logo/logo-64.png"
+                    alt="Aqua Advantage Logo"
+                    width={32}
+                    height={32}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
-                <span className="text-white font-semibold text-xl transition-colors duration-300 group-hover:text-blue-400">Aqua Advantage</span>
+                <span className="text-white font-semibold text-xl transition-colors duration-300 group-hover:text-blue-400">
+                  Aqua Advantage
+                </span>
               </Link>
               <p className="text-gray-400 mb-4 leading-relaxed">
                 Transforming ordinary backyards into extraordinary aquatic retreats with professional pool and spa
@@ -1903,29 +2885,34 @@ export default function ProductPage() {
               <h4 className="text-lg font-semibold mb-6">Services</h4>
               <ul className="space-y-3 text-gray-400">
                 <li>
-                  <a href="/aquaspa" className="hover:text-white transition-colors duration-300">
+                  <Link href="/#services" className="hover:text-white transition-colors duration-300">
+                    Pool Cleaning
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#services" className="hover:text-white transition-colors duration-300">
+                    Chemical Balancing
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#services" className="hover:text-white transition-colors duration-300">
                     Equipment Repair
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/aquaspa" className="hover:text-white transition-colors duration-300">
-                    Equipment Sales
-                  </a>
+                  <Link href="/#services" className="hover:text-white transition-colors duration-300">
+                    Pool Maintenance
+                  </Link>
                 </li>
                 <li>
-                  <a href="/aquaspa" className="hover:text-white transition-colors duration-300">
-                    Spa Sales
-                  </a>
+                  <Link href="/#services" className="hover:text-white transition-colors duration-300">
+                    Hot Tub Service
+                  </Link>
                 </li>
                 <li>
-                  <a href="/aquaspa" className="hover:text-white transition-colors duration-300">
-                    Automation
-                  </a>
-                </li>
-                <li>
-                  <a href="/aquaspa" className="hover:text-white transition-colors duration-300">
-                    Chemical Sales
-                  </a>
+                  <Link href="/#services" className="hover:text-white transition-colors duration-300">
+                    Pool Opening/Closing
+                  </Link>
                 </li>
               </ul>
       </div>
@@ -1963,7 +2950,7 @@ export default function ProductPage() {
               <div className="space-y-3 text-gray-400">
                 <div className="flex items-center space-x-2">
                   <Phone className="w-4 h-4" />
-                  <span>(208) 555-0123</span>
+                  <span>(208) 727-7909</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">

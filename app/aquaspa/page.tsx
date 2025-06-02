@@ -197,7 +197,7 @@ export default function HotTubsPage() {
   const navigationItems = [
     "About",
     "Services",
-    "AquaSpa",
+    "Shop Spa",
     "Testimonials",
     "FAQs",
   ]
@@ -215,8 +215,14 @@ export default function HotTubsPage() {
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center space-x-2 group">
-              <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                <div className="w-4 h-4 bg-white rounded-full transition-all duration-300 group-hover:animate-pulse" />
+              <div className="w-8 h-8 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                <Image
+                  src="/images/logo/logo-64.png"
+                  alt="Aqua Advantage Logo"
+                  width={32}
+                  height={32}
+                  className="w-full h-full object-contain"
+                />
               </div>
               <span className={`font-semibold text-xl transition-colors duration-300 group-hover:text-blue-600 ${
                 lastScrollY > 0 ? "text-gray-900" : "text-gray-900"
@@ -230,7 +236,7 @@ export default function HotTubsPage() {
               {navigationItems.map((item, index) => (
                 <Link
                   key={item}
-                  href={item === "AquaSpa" ? "/aquaspa" : `/#${item.toLowerCase().replace(" ", "-")}`}
+                  href={item === "Shop Spa" ? "/aquaspa" : `/#${item.toLowerCase().replace(" ", "-")}`}
                   className={`hover:text-blue-600 transition-all duration-300 hover:scale-105 relative group ${
                     lastScrollY > 0 ? "text-gray-900" : "text-gray-900"
                   }`}
@@ -298,7 +304,7 @@ export default function HotTubsPage() {
               {navigationItems.map((item, index) => (
                 <Link
                   key={item}
-                  href={item === "AquaSpa" ? "/aquaspa" : `/#${item.toLowerCase().replace(" ", "-")}`}
+                  href={item === "Shop Spa" ? "/aquaspa" : `/#${item.toLowerCase().replace(" ", "-")}`}
                   className="text-gray-900 text-2xl font-medium hover:text-blue-600 transition-all duration-300 hover:scale-105"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -360,18 +366,9 @@ export default function HotTubsPage() {
                   </Badge>
                 </div>
                 <CardContent className="p-6">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-2">{tub.name}</h2>
+                  <h3 className="text-2xl font-semibold mb-2 text-gray-900">{tub.name}</h3>
                   <p className="text-gray-600 mb-4">{tub.title}</p>
                   
-                  <div className="flex items-baseline gap-2 mb-4">
-                    <span className="text-3xl font-bold text-blue-600">
-                      ${tub.price.toLocaleString()}
-                    </span>
-                    <span className="text-lg text-gray-400 line-through">
-                      ${tub.originalPrice.toLocaleString()}
-                    </span>
-                  </div>
-
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     <div>
                       <p className="text-sm text-gray-500">Seating</p>
@@ -487,8 +484,14 @@ export default function HotTubsPage() {
             {/* Company Info */}
             <div>
               <Link href="/" className="flex items-center space-x-2 mb-6 group cursor-pointer">
-                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                  <div className="w-4 h-4 bg-white rounded-full transition-all duration-300 group-hover:animate-pulse" />
+                <div className="w-8 h-8 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                  <Image
+                    src="/images/logo/logo-64.png"
+                    alt="Aqua Advantage Logo"
+                    width={32}
+                    height={32}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <span className="text-white font-semibold text-xl transition-colors duration-300 group-hover:text-blue-400">Aqua Advantage</span>
               </Link>
@@ -507,29 +510,34 @@ export default function HotTubsPage() {
               <h4 className="text-lg font-semibold mb-6">Services</h4>
               <ul className="space-y-3 text-gray-400">
                 <li>
-                  <a href="/aquaspa" className="hover:text-white transition-colors duration-300">
+                  <Link href="/#services" className="hover:text-white transition-colors duration-300">
+                    Pool Cleaning
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#services" className="hover:text-white transition-colors duration-300">
+                    Chemical Balancing
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#services" className="hover:text-white transition-colors duration-300">
                     Equipment Repair
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/aquaspa" className="hover:text-white transition-colors duration-300">
-                    Equipment Sales
-                  </a>
+                  <Link href="/#services" className="hover:text-white transition-colors duration-300">
+                    Pool Maintenance
+                  </Link>
                 </li>
                 <li>
-                  <a href="/aquaspa" className="hover:text-white transition-colors duration-300">
-                    Spa Sales
-                  </a>
+                  <Link href="/#services" className="hover:text-white transition-colors duration-300">
+                    Hot Tub Service
+                  </Link>
                 </li>
                 <li>
-                  <a href="/aquaspa" className="hover:text-white transition-colors duration-300">
-                    Automation
-                  </a>
-                </li>
-                <li>
-                  <a href="/aquaspa" className="hover:text-white transition-colors duration-300">
-                    Chemical Sales
-                  </a>
+                  <Link href="/#services" className="hover:text-white transition-colors duration-300">
+                    Pool Opening/Closing
+                  </Link>
                 </li>
               </ul>
             </div>
