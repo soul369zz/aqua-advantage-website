@@ -239,9 +239,8 @@ const products: Record<string, Product> = {
       },
       {
         title: "Cascade Falls Water Feature",
-        description: "Standard waterfall feature creates relaxing ambiance while providing gentle neck and shoulder massage.",
-        image: "/images/products/Features/cascade-falls.jpg",
-        category: "Water Features"
+        description: "Relaxing waterfall feature creates soothing ambiance while providing gentle neck and shoulder massage.",
+        image: "/images/products/Cascade Falls Water Feature.jpg"
       }
     ],
     reviews: {
@@ -352,7 +351,7 @@ const products: Record<string, Product> = {
           title: "Water Purification",
           description: "Cleaner water, less work - Advanced water purification keeps your spa crystal clear with fewer harsh chemicals. Enjoy healthier water that's gentler on your skin.",
           image: "/images/products/Features/water-treatment-systems.jpg",
-          category: "Water Treatment"
+          category: "Water Care"
         },
         {
           title: "WiFi Controls",
@@ -363,7 +362,7 @@ const products: Record<string, Product> = {
         {
           title: "DirectFlow Personal Control®",
           description: "Individual jet control allows each user to customize their massage experience with precision flow adjustment. Available on Luxury and Elite trim levels.",
-          image: "/images/products/Features/direct-flow.jpg",
+          image: "/images/products/Features/smart-controls.jpg",
           category: "Controls"
         },
       ]
@@ -581,7 +580,7 @@ const products: Record<string, Product> = {
           title: "Water Purification",
           description: "Cleaner water, less work - Advanced water purification keeps your spa crystal clear with fewer harsh chemicals. Enjoy healthier water that's gentler on your skin.",
           image: "/images/products/Features/water-treatment-systems.jpg",
-          category: "Water Treatment"
+          category: "Water Care"
         },
         {
           title: "WiFi Controls",
@@ -747,19 +746,19 @@ const products: Record<string, Product> = {
         {
           title: "Helix Jet Technology",
           description: "Precision-engineered jets provide targeted massage therapy with customizable intensity. Jet count varies by trim level (32-54 jets).",
-          image: "/images/products/Features/Helix Jet Technology.jpg",
+          image: "/images/products/Features/hydrotherapy-package.jpg",
           category: "Hydrotherapy"
         },
         {
           title: "Dual Footblasters",
           description: "Powerful foot and leg massage jets come standard on all trim levels for improved circulation and relief.",
-          image: "/images/products/Dual Footblasters.jpg",
-          category: "Hydrotherapy"
+          image: "/images/products/Features/hydrotherapy-package.jpg",
+          category: "Wellness"
         },
         {
           title: "Cascade Falls Water Feature",
           description: "Standard waterfall feature creates relaxing ambiance while providing gentle neck and shoulder massage.",
-          image: "/images/products/Features/cascade-falls.jpg",
+          image: "/images/products/Features/circulation-system.jpg",
           category: "Water Features"
         },
         {
@@ -803,7 +802,7 @@ const products: Record<string, Product> = {
         {
           title: "WiFi Controls",
           description: "Control your spa remotely with optional WiFi module. Pre-heat, adjust settings, and monitor your spa from anywhere.",
-          image: "/images/products/Features/smart-controls.jpg",
+          image: "/images/products/Features/grandwood-cabinets.jpg",
           category: "Smart Technology"
         },
         {
@@ -815,7 +814,7 @@ const products: Record<string, Product> = {
         {
           title: "Pillowfall Water Feature",
           description: "Upgrade your relaxation with an additional gentle waterfall feature for enhanced therapeutic benefits.",
-          image: "/images/products/Features/pillow-water.jpg",
+          image: "/images/products/Features/circulation-system.jpg",
           category: "Water Features"
         }
       ]
@@ -876,16 +875,16 @@ const products: Record<string, Product> = {
       { name: "Brown", color: "#8B4513", image: "/images/products/Cabinetry Colors/Brown.png" },
     ],
     specs: {
-      seating: "6 Adults",
+      seating: "5 Adults",
       dimensions: "78\" x 78\" x 36\"",
-      waterCapacity: "320 Gallons",
+      waterCapacity: "300 Gallons",
       jets: "32-54 Helix Jets (varies by trim)",
       electrical: {
         voltage: "240V",
         amperage: "50 Amp",
         heater: "5.5 kW"
       },
-      dryWeight: "834 lbs + cover",
+      dryWeight: "750 lbs + cover",
       insulation: "Full Foam"
     },
     warranty: {
@@ -976,19 +975,19 @@ const products: Record<string, Product> = {
         {
           title: "Helix Jet Technology",
           description: "Precision-engineered jets provide targeted massage therapy with customizable intensity. Jet count varies by trim level (32-54 jets).",
-          image: "/images/products/Features/Helix Jet Technology.jpg",
+          image: "/images/products/Features/hydrotherapy-package.jpg",
           category: "Hydrotherapy"
         },
         {
           title: "Dual Footblasters",
           description: "Powerful foot and leg massage jets come standard on all trim levels for improved circulation and relief.",
-          image: "/images/products/Dual Footblasters.jpg",
-          category: "Hydrotherapy"
+          image: "/images/products/Features/hydrotherapy-package.jpg",
+          category: "Wellness"
         },
         {
           title: "Cascade Falls Water Feature",
           description: "Standard waterfall feature creates relaxing ambiance while providing gentle neck and shoulder massage.",
-          image: "/images/products/Features/cascade-falls.jpg",
+          image: "/images/products/Features/circulation-system.jpg",
           category: "Water Features"
         },
         {
@@ -1032,7 +1031,7 @@ const products: Record<string, Product> = {
         {
           title: "WiFi Controls",
           description: "Control your spa remotely with optional WiFi module. Pre-heat, adjust settings, and monitor your spa from anywhere.",
-          image: "/images/products/Features/smart-controls.jpg",
+          image: "/images/products/Features/grandwood-cabinets.jpg",
           category: "Smart Technology"
         },
         {
@@ -1044,7 +1043,7 @@ const products: Record<string, Product> = {
         {
           title: "Pillowfall Water Feature",
           description: "Upgrade your relaxation with an additional gentle waterfall feature for enhanced therapeutic benefits.",
-          image: "/images/products/Features/pillow-water.jpg",
+          image: "/images/products/Features/circulation-system.jpg",
           category: "Water Features"
         }
       ]
@@ -1167,7 +1166,7 @@ const products: Record<string, Product> = {
           title: "Digital Controls",
           description: "User-friendly digital controls with clear temperature display and simple operation - perfect for everyday relaxation.",
           image: "/images/products/Digital Controls.jpg",
-          category: "Controls"
+          category: "Cabinetry"
         },
         {
           title: "Space-Efficient Design",
@@ -1187,7 +1186,7 @@ const products: Record<string, Product> = {
           title: "LED Lighting",
           description: "Add mood lighting with energy-efficient LED systems that create the perfect ambiance for evening relaxation.",
           image: "/images/products/Features/LED-lighting-systems.jpg",
-          category: "Premium Lighting"
+          category: "Lighting"
         },
         {
           title: "Audio System",
@@ -1199,7 +1198,7 @@ const products: Record<string, Product> = {
           title: "Water Purification",
           description: "Cleaner water, less work - Advanced water purification keeps your spa crystal clear with fewer harsh chemicals. Enjoy healthier water that's gentler on your skin.",
           image: "/images/products/Features/water-treatment-systems.jpg",
-          category: "Water Treatment"
+          category: "Water Care"
         },
         {
           title: "Spa Accessories",
@@ -1272,7 +1271,7 @@ const products: Record<string, Product> = {
       { name: "Brown", color: "#8B4513", image: "/images/products/Cabinetry Colors/Brown.png" },
     ],
     specs: {
-      seating: "6 Adults",
+      seating: "5 Adults",
       dimensions: "84\" x 72\" x 34\"",
       waterCapacity: "320 Gallons",
       jets: "27 Stainless Steel Jets",
@@ -1334,7 +1333,7 @@ const products: Record<string, Product> = {
           title: "Digital Controls",
           description: "Simple digital controls with clear temperature display and easy jet operation - perfect for everyday use.",
           image: "/images/products/Digital Controls.jpg",
-          category: "Controls"
+          category: "Cabinetry"
         },
         {
           title: "Plug-and-Play Setup",
@@ -1364,9 +1363,9 @@ const products: Record<string, Product> = {
         },
         {
           title: "Water Purification",
-          description: "Advanced water purification keeps your pool crystal clear with fewer harsh chemicals. Enjoy healthier water while spending less time on maintenance.",
+          description: "Cleaner water, less work - Advanced water purification keeps your spa crystal clear with fewer harsh chemicals. Enjoy healthier water that's gentler on your skin.",
           image: "/images/products/Features/water-treatment-systems.jpg",
-          category: "Water Treatment"
+          category: "Water Care"
         },
         {
           title: "Spa Accessories",
@@ -1501,7 +1500,7 @@ const products: Record<string, Product> = {
           title: "Digital Controls",
           description: "Easy-to-use controls designed for couples with clear displays and simple operation - perfect for romantic evenings.",
           image: "/images/products/Digital Controls.jpg",
-          category: "Controls"
+          category: "Cabinetry"
         },
         {
           title: "Plug-and-Play Setup",
@@ -1533,7 +1532,7 @@ const products: Record<string, Product> = {
           title: "Water Purification",
           description: "Cleaner water, less work - Advanced water purification keeps your spa crystal clear with fewer harsh chemicals. Enjoy healthier water that's gentler on your skin.",
           image: "/images/products/Features/water-treatment-systems.jpg",
-          category: "Water Treatment"
+          category: "Water Care"
         },
         {
           title: "Spa Accessories",
@@ -1609,7 +1608,7 @@ const products: Record<string, Product> = {
     specs: {
       seating: "Exercise Pool",
       dimensions: "144\" x 91\" x 52\"",
-      waterCapacity: "1,315 Gallons",
+      waterCapacity: "1315 Gallons",
       jets: "Swim Jets + Optional 28 Helix",
       electrical: {
         voltage: "240V",
@@ -1631,11 +1630,11 @@ const products: Record<string, Product> = {
       },
     },
     warranty: {
-      shell: "Lifetime Structure",
+      shell: "10 Years",
       surface: "7 Years", 
       components: "5 Years",
-      cabinet: "2 Years",
-      labor: "5 Years",
+      cabinet: "3 Years",
+      labor: "2 Years",
     },
     installation: {
       spaceRequired: "16' x 12' minimum",
@@ -1769,7 +1768,7 @@ const products: Record<string, Product> = {
           title: "LED Lighting",
           description: "Dynamic LED lighting makes evening workouts magical while clearly illuminating swim jets and water features for safety.",
           image: "/images/products/Features/LED-lighting-systems.jpg",
-          category: "Premium Lighting"
+          category: "Atmosphere"
         },
         {
           title: "WiFi Controls",
@@ -1781,13 +1780,13 @@ const products: Record<string, Product> = {
           title: "Water Purification",
           description: "Advanced water purification keeps your pool crystal clear with fewer harsh chemicals. Enjoy healthier water while spending less time on maintenance.",
           image: "/images/products/Features/water-treatment-systems.jpg",
-          category: "Water Treatment"
+          category: "Easy Maintenance"
         },
         {
           title: "Audio System",
           description: "Immerse yourself in your favorite workout music with crystal-clear Bluetooth speakers designed for pool environments.",
           image: "/images/products/Features/audio-systems.jpg",
-          category: "Entertainment"
+          category: "Motivation"
         },
         {
           title: "Aquatic Training System",

@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Bahama - Wireframe Example</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .wireframe-note {
+            background: #ff6b6b;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            background: white;
+            margin: 20px 0;
+            padding: 40px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .wireframe-box {
+            background: #e9ecef;
+            border: 2px dashed #6c757d;
+            padding: 20px;
+            margin: 10px 0;
+            text-align: center;
+            border-radius: 4px;
+            color: #6c757d;
+            font-weight: 500;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        
+        .hero .tagline {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .quick-specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .spec-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .spec-item .number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .cta-button {
+            background: #28a745;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 20px 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: #218838;
+            transform: translateY(-2px);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #2c3e50;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 4px solid #007bff;
+        }
+        
+        .feature-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .feature-card .category {
+            background: #007bff;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .lifestyle-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin: 40px 0;
+        }
+        
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .why-card {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        
+        .why-card .icon {
+            width: 80px;
+            height: 80px;
+            background: #007bff;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .specs-tabs {
+            margin: 30px 0;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            border-bottom: 2px solid #e9ecef;
+            margin-bottom: 20px;
+        }
+        
+        .tab-button {
+            padding: 15px 30px;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab-button.active {
+            color: #007bff;
+            border-bottom-color: #007bff;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .review-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 4px solid #28a745;
+        }
+        
+        .review-stars {
+            color: #ffc107;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .faq-item {
+            background: #f8f9fa;
+            margin: 10px 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background: #e9ecef;
+            padding: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .faq-answer {
+            padding: 20px;
+            display: none;
+        }
+        
+        .related-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .product-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .warranty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .warranty-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid #28a745;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .lifestyle-grid { grid-template-columns: 1fr; }
+            .quick-specs { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <div class="wireframe-note">
+        🚨 WIREFRAME EXAMPLE - This is a mockup to visualize the new luxury spa page structure 🚨
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="wireframe-box">[Image Carousel - Multiple Grand Bahama Views]</div>
+            <h1>Grand Bahama – Island Series</h1>
+            <p class="tagline">Transform Your Home Into a Private Retreat</p>
+            
+            <div class="quick-specs">
+                <div class="spec-item">
+                    <span class="number">6</span>
+                    <span>Adults</span>
+                </div>
+                <div class="spec-item">
+                    <span class="number">91"×91"</span>
+                    <span>Dimensions</span>
+                </div>
+                <div class="spec-item">
+                    <span class="number">390</span>
+                    <span>Gallons</span>
+                </div>
+                <div class="spec-item">
+                    <span class="number">44-64</span>
+                    <span>Helix Jets</span>
+                </div>
+            </div>
+            
+            <button class="cta-button">Request Consultation</button>
+        </div>
+    </section>
+
+    <!-- LIFESTYLE INTRO -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Your Personal Wellness Sanctuary</h2>
+            <div class="lifestyle-grid">
+                <div>
+                    <p style="font-size: 1.2rem; line-height: 1.8;">
+                        Imagine unwinding every evening in your own luxury spa, where therapeutic jets melt away the day's stress while you're surrounded by the tranquil sounds of cascading water. The Grand Bahama transforms your backyard into a year-round wellness retreat.
+                    </p>
+                </div>
+                <div class="wireframe-box">
+                    [Lifestyle Image - Family enjoying spa at sunset]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE GRAND BAHAMA -->
+    <section class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Why Choose Grand Bahama?</h2>
+            <div class="why-choose-grid">
+                <div class="why-card">
+                    <div class="icon">🏊</div>
+                    <h3>Year-Round Wellness</h3>
+                    <p>Enjoy therapeutic benefits 365 days a year with energy-efficient design that maintains perfect temperature.</p>
+                </div>
+                <div class="why-card">
+                    <div class="icon">💨</div>
+                    <h3>Therapeutic Jet System</h3>
+                    <p>Precision-engineered Helix jets target pressure points for professional-grade hydrotherapy at home.</p>
+                </div>
+                <div class="why-card">
+                    <div class="icon">⚡</div>
+                    <h3>Energy Efficient Luxury</h3>
+                    <p>Full foam insulation reduces energy costs by up to 40% while maintaining premium comfort.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STANDARD FEATURES -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Signature Features</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 40px;">
+                Every Grand Bahama includes these premium features as standard
+            </p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="category">Hydrotherapy</span>
+                    <div class="wireframe-box">[Helix Jet Image]</div>
+                    <h3>Helix Jet Technology</h3>
+                    <p>Precision-engineered jets provide targeted massage therapy with customizable intensity. Jet count varies by trim level (44-64 jets).</p>
+                </div>
+                <div class="feature-card">
+                    <span class="category">Hydrotherapy</span>
+                    <div class="wireframe-box">[Dual Footblasters Image]</div>
+                    <h3>Dual Footblasters</h3>
+                    <p>Powerful foot and leg massage jets included standard on all trim levels for invigorating lower body therapy.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="category">Ambiance</span>
+                    <div class="wireframe-box">[Cascade Falls Image]</div>
+                    <h3>Cascade Falls Water Feature</h3>
+                    <p>Standard waterfall feature creates a tranquil atmosphere while providing gentle neck and shoulder massage.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="category">Energy Efficiency</span>
+                    <div class="wireframe-box">[Insulation Image]</div>
+                    <h3>Full Foam Insulation</h3>
+                    <p>Complete foam insulation system maintains temperature efficiently and reduces energy costs by up to 40%.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="category">Construction</span>
+                    <div class="wireframe-box">[Frame Image]</div>
+                    <h3>Hybrid Frame Construction</h3>
+                    <p>Durable galvanized steel frame with advanced engineering for maximum longevity and structural integrity.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="category">Cabinetry</span>
+                    <div class="wireframe-box">[Cabinet Image]</div>
+                    <h3>Grandwood Cabinets</h3>
+                    <p>Maintenance-free cabinets with realistic wood-like texture. Available in Grey, Black, and Brown.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPTIONAL UPGRADES -->
+    <section class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Personalize Your Spa</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 40px;">
+                Enhance your experience with these premium upgrades
+            </p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="category">Customization</span>
+                    <div class="wireframe-box">[Trim Levels Image]</div>
+                    <h3>Trim Level Upgrades</h3>
+                    <p>Choose from Essential (44 jets), Luxury (52 jets), or Elite (64 jets) trim levels with increasing features and performance.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="category">Controls</span>
+                    <div class="wireframe-box">[DirectFlow Image]</div>
+                    <h3>DirectFlow Personal Control®</h3>
+                    <p>Individual jet control allows each user to customize their massage experience. Available on Luxury and Elite trims.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="category">Ambiance</span>
+                    <div class="wireframe-box">[LED Lighting Image]</div>
+                    <h3>LED Lighting Packages</h3>
+                    <p>Complete lighting package includes underwater, pillow, footblaster, and waterfall illumination for evening ambiance.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="category">Entertainment</span>
+                    <div class="wireframe-box">[Audio System Image]</div>
+                    <h3>Premium Audio System</h3>
+                    <p>Bluetooth-enabled sound system with subwoofer for immersive relaxation experience.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="category">Water Care</span>
+                    <div class="wireframe-box">[Purification Image]</div>
+                    <h3>Water Purification System</h3>
+                    <p>Advanced ozone and UV purification reduces chemical dependency while maintaining crystal-clear water.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="category">Smart Technology</span>
+                    <div class="wireframe-box">[WiFi Controls Image]</div>
+                    <h3>WiFi Controls</h3>
+                    <p>Smart home integration allows remote monitoring and control from anywhere using smartphone app.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETAILED SPECS -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Specifications</h2>
+            <div class="specs-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-button active">General Specs</button>
+                    <button class="tab-button">Electrical</button>
+                    <button class="tab-button">Trim Comparison</button>
+                    <button class="tab-button">Dimensions</button>
+                </div>
+                <div class="wireframe-box">
+                    [Specifications Table]<br>
+                    • Seating: 6 Adults<br>
+                    • Dimensions: 91" x 91" x 36"<br>
+                    • Water Capacity: 390 Gallons<br>
+                    • Jets: 44-64 Helix Jets (varies by trim)<br>
+                    • Electrical: 240V, 50-60 Amp<br>
+                    • Heater: 5.5kW<br>
+                    • Dry Weight: 875 lbs + cover<br>
+                    • Insulation: Full Foam
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">See It In Action</h2>
+            <div class="gallery-grid">
+                <div class="wireframe-box">[Installation Photo 1]</div>
+                <div class="wireframe-box">[Installation Photo 2]</div>
+                <div class="wireframe-box">[Installation Photo 3]</div>
+                <div class="wireframe-box">[Installation Photo 4]</div>
+                <div class="wireframe-box">[Installation Photo 5]</div>
+                <div class="wireframe-box">[Installation Photo 6]</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p>"The Grand Bahama has transformed our evenings. The jet therapy is incredible and the kids love it too. Best investment we've made for our home."</p>
+                <strong>— Sarah M., verified buyer</strong>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p>"Installation was seamless and the energy efficiency is exactly as promised. Our electric bill barely changed despite daily use."</p>
+                <strong>— Mike T., verified buyer</strong>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p>"The build quality is exceptional. After two years, it still looks and performs like new. The DirectFlow controls are a game-changer."</p>
+                <strong>— Jennifer L., verified buyer</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- WARRANTY & SERVICE -->
+    <section class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Warranty & Peace of Mind</h2>
+            <div class="warranty-grid">
+                <div class="warranty-item">
+                    <h3>5 Years</h3>
+                    <p>Structure</p>
+                </div>
+                <div class="warranty-item">
+                    <h3>3 Years</h3>
+                    <p>Surface</p>
+                </div>
+                <div class="warranty-item">
+                    <h3>2 Years</h3>
+                    <p>Components</p>
+                </div>
+                <div class="warranty-item">
+                    <h3>1 Year</h3>
+                    <p>Cabinet & Labor</p>
+                </div>
+            </div>
+            <div class="wireframe-box">
+                [Service Highlights]<br>
+                • Nationwide authorized dealer network<br>
+                • 24/7 customer support hotline<br>
+                • Comprehensive installation service<br>
+                • Annual maintenance programs available
+            </div>
+        </div>
+    </section>
+
+    <!-- ACCESSORIES -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Premium Accessories</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="wireframe-box">[Cover Image]</div>
+                    <h3>Premium Spa Cover</h3>
+                    <p>Energy-efficient, lockable cover with integrated safety features.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="wireframe-box">[Steps Image]</div>
+                    <h3>Spa Steps</h3>
+                    <p>Durable, non-slip steps with built-in storage compartment.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="wireframe-box">[Chemicals Image]</div>
+                    <h3>Water Care Kit</h3>
+                    <p>Complete starter kit with premium chemicals and testing supplies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQS -->
+    <section class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">How much does installation cost?</div>
+                <div class="faq-answer">Installation costs vary by location and site requirements. Our dealers provide free site surveys and detailed quotes.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What's the difference between trim levels?</div>
+                <div class="faq-answer">Essential includes 44 jets and basic features. Luxury adds 52 jets and DirectFlow controls. Elite includes 64 jets, full lighting, and premium features.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How energy efficient is the Grand Bahama?</div>
+                <div class="faq-answer">With full foam insulation, most customers see operating costs of $20-40 per month depending on usage and local electricity rates.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What's included in the warranty?</div>
+                <div class="faq-answer">5-year structure, 3-year surface, 2-year components, 1-year cabinet and labor. Full details provided with purchase.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <div class="container" style="text-align: center;">
+            <h2 style="color: white; margin-bottom: 20px;">Ready to Transform Your Home?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">
+                Book your free consultation and site survey today. Our spa experts will help you design the perfect wellness retreat.
+            </p>
+            <button class="cta-button" style="margin: 10px;">Book Free Consultation</button>
+            <button class="cta-button" style="background: transparent; border: 2px solid white;">Download Brochure</button>
+        </div>
+    </section>
+
+    <!-- RELATED PRODUCTS -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">You Might Also Like</h2>
+            <div class="related-products">
+                <div class="product-card">
+                    <div class="wireframe-box">[Grand Cayman Image]</div>
+                    <h3>Grand Cayman</h3>
+                    <p>7-person Island Series spa with enhanced seating layout</p>
+                    <button class="cta-button" style="background: #007bff; font-size: 0.9rem; padding: 10px 20px;">Learn More</button>
+                </div>
+                <div class="product-card">
+                    <div class="wireframe-box">[Captiva Image]</div>
+                    <h3>Captiva</h3>
+                    <p>6-person compact Island Series for smaller spaces</p>
+                    <button class="cta-button" style="background: #007bff; font-size: 0.9rem; padding: 10px 20px;">Learn More</button>
+                </div>
+                <div class="product-card">
+                    <div class="wireframe-box">[ActivePlus Image]</div>
+                    <h3>ActivePlus EP-12</h3>
+                    <p>Swim spa for fitness and recreation</p>
+                    <button class="cta-button" style="background: #007bff; font-size: 0.9rem; padding: 10px 20px;">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Simple FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        // Tab functionality
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+                button.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html> 
