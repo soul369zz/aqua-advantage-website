@@ -1000,7 +1000,7 @@ const products: Record<string, Product> = {
         {
           title: "Hybrid Frame Construction",
           description: "Durable galvanized steel frame with advanced engineering for maximum longevity and structural integrity.",
-          image: "/images/products/Features/full-foam-insulation.jpg",
+          image: "/images/products/Features/hybrid-frame.jpg",
           category: "Construction"
         },
         {
@@ -1160,13 +1160,13 @@ const products: Record<string, Product> = {
         {
           title: "Plug-and-Play Setup",
           description: "110V/220V dual voltage system plugs into standard outlet - no complicated electrical work or permits required for installation.",
-          image: "/images/products/Plug-and-Play Convenience.jpg",
+          image: "/images/products/Plug & Play Convenience.jpg",
           category: "Convenience"
         },
         {
           title: "Digital Controls",
           description: "User-friendly digital controls with clear temperature display and simple operation - perfect for everyday relaxation.",
-          image: "/images/products/Digital Controls.jpg",
+          image: "/images/products/Digital Control System.jpg",
           category: "Controls"
         },
         {
@@ -1200,18 +1200,6 @@ const products: Record<string, Product> = {
           description: "Cleaner water, less work - Advanced water purification keeps your spa crystal clear with fewer harsh chemicals. Enjoy healthier water that's gentler on your skin.",
           image: "/images/products/Features/water-treatment-systems.jpg",
           category: "Water Treatment"
-        },
-        {
-          title: "Spa Accessories",
-          description: "Enhance your relaxation with premium accessories including steps, handrails, and storage solutions designed for Garden Series spas.",
-          image: "/images/products/Features/grandwood-cabinets.jpg",
-          category: "Accessories"
-        },
-        {
-          title: "Extended Warranty",
-          description: "Protect your investment with extended warranty options providing additional coverage and peace of mind.",
-          image: "/images/products/Features/grandwood-cabinets.jpg",
-          category: "Protection"
         }
       ]
     },
@@ -1333,13 +1321,13 @@ const products: Record<string, Product> = {
         {
           title: "Digital Controls",
           description: "Simple digital controls with clear temperature display and easy jet operation - perfect for everyday use.",
-          image: "/images/products/Digital Controls.jpg",
+          image: "/images/products/Digital Control System.jpg",
           category: "Controls"
         },
         {
           title: "Plug-and-Play Setup",
           description: "110V/220V dual voltage system requires no special electrical work - simply plug in and enjoy your new spa.",
-          image: "/images/products/Plug-and-Play Convenience.jpg",
+          image: "/images/products/Plug & Play Convenience.jpg",
           category: "Convenience"
         },
         {
@@ -1367,18 +1355,6 @@ const products: Record<string, Product> = {
           description: "Advanced water purification keeps your pool crystal clear with fewer harsh chemicals. Enjoy healthier water while spending less time on maintenance.",
           image: "/images/products/Features/water-treatment-systems.jpg",
           category: "Water Treatment"
-        },
-        {
-          title: "Spa Accessories",
-          description: "Complete your spa experience with premium accessories including steps, handrails, and convenient storage options.",
-          image: "/images/products/Features/grandwood-cabinets.jpg",
-          category: "Accessories"
-        },
-        {
-          title: "Extended Warranty",
-          description: "Additional protection for your spa investment with comprehensive extended warranty coverage options.",
-          image: "/images/products/Features/grandwood-cabinets.jpg",
-          category: "Protection"
         }
       ]
     },
@@ -1500,13 +1476,13 @@ const products: Record<string, Product> = {
         {
           title: "Digital Controls",
           description: "Easy-to-use controls designed for couples with clear displays and simple operation - perfect for romantic evenings.",
-          image: "/images/products/Digital Controls.jpg",
+          image: "/images/products/Digital Control System.jpg",
           category: "Controls"
         },
         {
           title: "Plug-and-Play Setup",
           description: "110V/220V dual voltage means no electrical complications - perfect for renters or those wanting simple installation.",
-          image: "/images/products/Plug-and-Play Convenience.jpg",
+          image: "/images/products/Plug & Play Convenience.jpg",
           category: "Convenience"
         },
         {
@@ -1534,18 +1510,6 @@ const products: Record<string, Product> = {
           description: "Cleaner water, less work - Advanced water purification keeps your spa crystal clear with fewer harsh chemicals. Enjoy healthier water that's gentler on your skin.",
           image: "/images/products/Features/water-treatment-systems.jpg",
           category: "Water Treatment"
-        },
-        {
-          title: "Spa Accessories",
-          description: "Complete your romantic retreat with accessories designed for couples including convenient storage and comfort features.",
-          image: "/images/products/Features/grandwood-cabinets.jpg",
-          category: "Accessories"
-        },
-        {
-          title: "Extended Warranty",
-          description: "Protect your romantic investment with extended warranty options providing long-term peace of mind.",
-          image: "/images/products/Features/grandwood-cabinets.jpg",
-          category: "Protection"
         }
       ]
     },
