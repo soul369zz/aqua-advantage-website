@@ -1070,13 +1070,13 @@ const products: Record<string, Product> = {
         {
           title: "Plug & Play Operation",
           description: "Simply plug into any standard 120V household outlet with GFCI protection. No electrician needed - just plug in and enjoy.",
-          image: "/placeholder.svg?height=300&width=400&text=Plug+Play",
+          image: "/images/products/Features/smart-controls.jpg",
           category: "Convenience"
         },
         {
           title: "All-Season Cover",
           description: "Durable solution-dyed polyester cover with high-density foam core maintains temperature efficiency in all weather conditions.",
-          image: "/placeholder.svg?height=300&width=400&text=All+Season+Cover",
+          image: "/images/products/Features/full-foam-insulation.jpg",
           category: "Protection"
         }
       ],
@@ -1102,13 +1102,13 @@ const products: Record<string, Product> = {
         {
           title: "Extended Warranty",
           description: "Protect your investment with extended warranty coverage for added peace of mind and comprehensive protection.",
-          image: "/placeholder.svg?height=300&width=400&text=Extended+Warranty",
+          image: "/images/products/Features/grandwood-cabinets.jpg",
           category: "Protection"
         },
         {
           title: "Spa Accessories",
           description: "Add spa steps, handrails, and storage solutions to enhance your spa experience and make maintenance even easier.",
-          image: "/placeholder.svg?height=300&width=400&text=Spa+Accessories",
+          image: "/images/products/Features/circulation-system.jpg",
           category: "Convenience"
         }
       ]
@@ -1251,7 +1251,7 @@ const products: Record<string, Product> = {
         {
           title: "Space-Saving Design",
           description: "Rectangular footprint maximizes seating capacity while fitting perfectly on decks, patios, and smaller outdoor spaces.",
-          image: "/placeholder.svg?height=300&width=400&text=Space+Saving",
+          image: "/images/products/Features/grandwood-cabinets.jpg",
           category: "Design"
         },
         {
