@@ -107,11 +107,6 @@ interface Product {
   controlFeatures: {
     title: string;
     description: string;
-    features: Array<{
-      icon: string;
-      title: string;
-      description: string;
-    }>;
     standardFeatures: Array<{
       title: string;
       description: string;
@@ -250,50 +245,23 @@ const products: Record<string, Product> = {
     controlFeatures: {
       title: "Features Of The Grand Bahama Island Series",
       description: "Experience premium Island Series wellness technology with exceptional energy efficiency, customizable jets for targeted massage, and top-tier insulation.",
-      features: [
-        {
-          icon: "Settings",
-          title: "Digital Control System",
-          description: "Intuitive topside control panel for temperature, jets, and lighting management"
-        },
-        {
-          icon: "Droplets", 
-          title: "DirectFlow Personal Control®",
-          description: "Elite trim includes individual jet control to customize water flow and pressure"
-        },
-        {
-          icon: "Lightbulb",
-          title: "Multi-Level LED Lighting",
-          description: "Comprehensive lighting system with underwater illumination and illuminated features"
-        },
-        {
-          icon: "Volume2",
-          title: "Bluetooth Audio Ready",
-          description: "Optional wireless audio integration with waterproof speakers"
-        },
-        {
-          icon: "Zap",
-          title: "Cascade Falls Control",
-          description: "Standard waterfall feature with adjustable flow control, optional Pillowfall upgrade"
-        }
-      ],
       standardFeatures: [
         {
           title: "Helix Jet Technology",
           description: "Precision-engineered jets provide targeted massage therapy with customizable intensity. Jet count varies by trim level (44-64 jets).",
-          image: "/images/products/Features/helix-jets.jpg",
+          image: "/images/products/Features/hydrotherapy-package.jpg",
           category: "Hydrotherapy"
         },
         {
           title: "Dual Footblasters",
           description: "Powerful foot and leg massage jets come standard on all trim levels for improved circulation and relief.",
-          image: "/images/products/Features/footblasters.jpg",
+          image: "/images/products/Features/hydrotherapy-package.jpg",
           category: "Wellness"
         },
         {
           title: "Cascade Falls Water Feature",
           description: "Standard waterfall feature creates relaxing ambiance while providing gentle neck and shoulder massage.",
-          image: "/images/products/Features/cascade-falls.jpg",
+          image: "/images/products/Features/circulation-system.jpg",
           category: "Water Features"
         },
         {
@@ -305,7 +273,7 @@ const products: Record<string, Product> = {
         {
           title: "Hybrid Frame Construction",
           description: "Durable galvanized steel frame with advanced engineering for maximum longevity and structural integrity.",
-          image: "/images/products/Features/hybrid-frame.jpg",
+          image: "/images/products/Features/grandwood-cabinets.jpg",
           category: "Construction"
         },
         {
@@ -319,7 +287,7 @@ const products: Record<string, Product> = {
         {
           title: "Trim Level Upgrades",
           description: "Choose from Essential (44 jets), Luxury (52 jets), or Elite (64 jets) trim levels. Higher trims include more jets, pumps, and premium features like DirectFlow Personal Control®.",
-          image: "/images/products/Features/trim-levels.jpg",
+          image: "/images/products/Features/smart-controls.jpg",
           category: "Customization"
         },
         {
@@ -342,15 +310,15 @@ const products: Record<string, Product> = {
         },
         {
           title: "Advanced Water Purification",
-          description: "Choose from multiple water treatment options including Waterlab, Diamond AOP™, or FROG® @ease® systems for cleaner, healthier water.",
+          description: "Cleaner Water, Less Work - Advanced purification systems keep your spa crystal clear while reducing chemical use and maintenance time for a healthier, more enjoyable experience.",
           image: "/images/products/Features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "Pillowfall Water Feature",
-          description: "Upgrade your relaxation with an additional gentle waterfall feature for enhanced therapeutic benefits.",
-          image: "/images/products/Features/pillowfall.jpg",
-          category: "Premium Water Features"
+          description: "Optional upgraded waterfall feature provides enhanced relaxation with soothing water sounds and therapeutic benefits.",
+          image: "/images/products/Features/circulation-system.jpg",
+          category: "Water Features"
         }
       ]
     },
@@ -476,68 +444,42 @@ const products: Record<string, Product> = {
     controlFeatures: {
       title: "Features Of The Grand Cayman Island Series",
       description: "Experience premium Island Series wellness technology with spacious 7-person seating, exceptional energy efficiency, and customizable therapeutic features.",
-      features: [
-        {
-          icon: "Settings",
-          title: "Digital Control System",
-          description: "Intuitive topside control panel for temperature, jets, and lighting management"
-        },
-        {
-          icon: "Droplets",
-          title: "DirectFlow Personal Control®",
-          description: "Elite trim includes individual jet control for personalized hydrotherapy experience"
-        },
-        {
-          icon: "Lightbulb",
-          title: "Multi-Level LED Lighting",
-          description: "Comprehensive lighting system with underwater illumination and accent lighting"
-        },
-        {
-          icon: "Volume2",
-          title: "Bluetooth Audio Ready",
-          description: "Optional wireless audio integration with waterproof speakers"
-        },
-        {
-          icon: "Zap",
-          title: "Cascade Falls Control",
-          description: "Standard waterfall feature with adjustable flow control"
-        }
-      ],
       standardFeatures: [
         {
           title: "Helix Jet Technology",
           description: "Precision-engineered jets provide targeted massage therapy with customizable intensity. Jet count varies by trim level (44-64 jets).",
-          image: "/images/products/Features/helix-jets.jpg",
+          image: "/images/products/Features/hydrotherapy-package.jpg",
           category: "Hydrotherapy"
         },
         {
           title: "Dual Footblasters",
           description: "Powerful foot and leg massage jets come standard on all trim levels for improved circulation and relief.",
-          image: "/images/products/Features/footblasters.jpg",
+          image: "/images/products/Features/hydrotherapy-package.jpg",
           category: "Wellness"
         },
         {
           title: "Cascade Falls Water Feature",
           description: "Standard waterfall feature creates relaxing ambiance while providing gentle neck and shoulder massage.",
-          image: "/images/products/Features/cascade-falls.jpg",
+          image: "/images/products/Features/circulation-system.jpg",
           category: "Water Features"
         },
         {
           title: "Full Foam Insulation",
-          description: "Complete foam insulation system maintains temperature efficiently and reduces energy costs by up to 40%.",
+          description: "Complete foam insulation system maintains temperature efficiently and reduces energy costs by up to 40%.
+          ",
           image: "/images/products/Features/full-foam-insulation.jpg",
           category: "Energy Efficiency"
         },
         {
           title: "Hybrid Frame Construction",
           description: "Durable galvanized steel frame with advanced engineering for maximum longevity and structural integrity.",
-          image: "/images/products/Features/hybrid-frame.jpg",
+          image: "/images/products/Features/grandwood-cabinets.jpg",
           category: "Construction"
         },
         {
           title: "Grandwood Cabinets",
           description: "Maintenance-free cabinets with realistic wood-like texture and tight grain pattern. Available in Grey, Black, and Brown.",
-          image: "/images/products/Features/grandwood-cabinets.jpg",
+          image: "/placeholder.svg?height=300&width=400&text=Grandwood+Cabinets",
           category: "Cabinetry"
         }
       ],
@@ -545,7 +487,7 @@ const products: Record<string, Product> = {
         {
           title: "Trim Level Upgrades",
           description: "Choose from Essential (44 jets), Luxury (52 jets), or Elite (64 jets) trim levels. Higher trims include more jets, pumps, and premium features like DirectFlow Personal Control®.",
-          image: "/images/products/Features/trim-levels.jpg",
+          image: "/images/products/Features/smart-controls.jpg",
           category: "Customization"
         },
         {
@@ -568,15 +510,15 @@ const products: Record<string, Product> = {
         },
         {
           title: "Advanced Water Purification",
-          description: "Choose from multiple water treatment options including Waterlab, Diamond AOP™, or FROG® @ease® systems for cleaner, healthier water.",
+          description: "Cleaner Water, Less Work - Advanced purification systems keep your spa crystal clear while reducing chemical use and maintenance time for a healthier, more enjoyable experience.",
           image: "/images/products/Features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "Pillowfall Water Feature",
           description: "Upgrade your relaxation with an additional gentle waterfall feature for enhanced therapeutic benefits.",
-          image: "/images/products/Features/pillowfall.jpg",
-          category: "Premium Water Features"
+          image: "/images/products/Features/circulation-system.jpg",
+          category: "Water Features"
         }
       ]
     },
@@ -702,50 +644,23 @@ const products: Record<string, Product> = {
     controlFeatures: {
       title: "Features Of The Captiva Island Series",
       description: "Experience premium Island Series technology in a family-friendly compact design with efficient space utilization and exceptional therapeutic benefits.",
-      features: [
-        {
-          icon: "Settings",
-          title: "Digital Control System",
-          description: "Intuitive topside control panel for temperature, jets, and lighting management"
-        },
-        {
-          icon: "Droplets",
-          title: "DirectFlow Personal Control®",
-          description: "Elite trim includes individual jet control for personalized hydrotherapy experience"
-        },
-        {
-          icon: "Lightbulb",
-          title: "Multi-Level LED Lighting",
-          description: "Comprehensive lighting system with underwater illumination and accent lighting"
-        },
-        {
-          icon: "Volume2",
-          title: "Bluetooth Audio Ready",
-          description: "Optional wireless audio integration with waterproof speakers"
-        },
-        {
-          icon: "Zap",
-          title: "Cascade Falls Control",
-          description: "Standard waterfall feature with adjustable flow control"
-        }
-      ],
       standardFeatures: [
         {
           title: "Helix Jet Technology",
           description: "Precision-engineered jets provide targeted massage therapy with customizable intensity. Jet count varies by trim level (32-54 jets).",
-          image: "/images/products/Features/helix-jets.jpg",
+          image: "/images/products/Features/hydrotherapy-package.jpg",
           category: "Hydrotherapy"
         },
         {
           title: "Dual Footblasters",
           description: "Powerful foot and leg massage jets come standard on all trim levels for improved circulation and relief.",
-          image: "/images/products/Features/footblasters.jpg",
+          image: "/images/products/Features/hydrotherapy-package.jpg",
           category: "Wellness"
         },
         {
           title: "Cascade Falls Water Feature",
           description: "Standard waterfall feature creates relaxing ambiance while providing gentle neck and shoulder massage.",
-          image: "/images/products/Features/cascade-falls.jpg",
+          image: "/images/products/Features/circulation-system.jpg",
           category: "Water Features"
         },
         {
@@ -757,13 +672,13 @@ const products: Record<string, Product> = {
         {
           title: "Hybrid Frame Construction",
           description: "Durable galvanized steel frame with advanced engineering for maximum longevity and structural integrity.",
-          image: "/images/products/Features/hybrid-frame.jpg",
+          image: "/images/products/Features/grandwood-cabinets.jpg",
           category: "Construction"
         },
         {
           title: "Grandwood Cabinets",
           description: "Maintenance-free cabinets with realistic wood-like texture and tight grain pattern. Available in Grey, Black, and Brown.",
-          image: "/images/products/Features/grandwood-cabinets.jpg",
+          image: "/placeholder.svg?height=300&width=400&text=Grandwood+Cabinets",
           category: "Cabinetry"
         }
       ],
@@ -771,7 +686,7 @@ const products: Record<string, Product> = {
         {
           title: "Trim Level Upgrades",
           description: "Choose from Essential (32 jets), Luxury (44 jets), or Elite (54 jets) trim levels. Higher trims include more jets, pumps, and premium features like DirectFlow Personal Control®.",
-          image: "/images/products/Features/trim-levels.jpg",
+          image: "/images/products/Features/smart-controls.jpg",
           category: "Customization"
         },
         {
@@ -794,15 +709,15 @@ const products: Record<string, Product> = {
         },
         {
           title: "Advanced Water Purification",
-          description: "Choose from multiple water treatment options including Waterlab, Diamond AOP™, or FROG® @ease® systems for cleaner, healthier water.",
+          description: "Cleaner Water, Less Work - Advanced purification systems keep your spa crystal clear while reducing chemical use and maintenance time for a healthier, more enjoyable experience.",
           image: "/images/products/Features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "Pillowfall Water Feature",
           description: "Upgrade your relaxation with an additional gentle waterfall feature for enhanced therapeutic benefits.",
-          image: "/images/products/Features/pillowfall.jpg",
-          category: "Premium Water Features"
+          image: "/images/products/Features/circulation-system.jpg",
+          category: "Water Features"
         }
       ]
     },
@@ -928,50 +843,23 @@ const products: Record<string, Product> = {
     controlFeatures: {
       title: "Features Of The Antigua Island Series",
       description: "Experience premium Island Series technology in a compact design perfect for smaller spaces while delivering full spa luxury and therapeutic benefits.",
-      features: [
-        {
-          icon: "Settings",
-          title: "Digital Control System",
-          description: "Intuitive topside control panel for temperature, jets, and lighting management"
-        },
-        {
-          icon: "Droplets",
-          title: "DirectFlow Personal Control®",
-          description: "Elite trim includes individual jet control for personalized hydrotherapy experience"
-        },
-        {
-          icon: "Lightbulb",
-          title: "Multi-Level LED Lighting",
-          description: "Energy-efficient LED lighting with underwater illumination"
-        },
-        {
-          icon: "Volume2",
-          title: "Bluetooth Audio Ready",
-          description: "Optional wireless audio integration capability"
-        },
-        {
-          icon: "Zap",
-          title: "Cascade Falls Control",
-          description: "Standard waterfall feature with adjustable flow control"
-        }
-      ],
       standardFeatures: [
         {
           title: "Helix Jet Technology",
           description: "Precision-engineered jets provide targeted massage therapy with customizable intensity. Jet count varies by trim level (32-54 jets).",
-          image: "/images/products/Features/helix-jets.jpg",
+          image: "/images/products/Features/hydrotherapy-package.jpg",
           category: "Hydrotherapy"
         },
         {
           title: "Dual Footblasters",
           description: "Powerful foot and leg massage jets come standard on all trim levels for improved circulation and relief.",
-          image: "/images/products/Features/footblasters.jpg",
+          image: "/images/products/Features/hydrotherapy-package.jpg",
           category: "Wellness"
         },
         {
           title: "Cascade Falls Water Feature",
           description: "Standard waterfall feature creates relaxing ambiance while providing gentle neck and shoulder massage.",
-          image: "/images/products/Features/cascade-falls.jpg",
+          image: "/images/products/Features/circulation-system.jpg",
           category: "Water Features"
         },
         {
@@ -983,13 +871,13 @@ const products: Record<string, Product> = {
         {
           title: "Hybrid Frame Construction",
           description: "Durable galvanized steel frame with advanced engineering for maximum longevity and structural integrity.",
-          image: "/images/products/Features/hybrid-frame.jpg",
+          image: "/images/products/Features/grandwood-cabinets.jpg",
           category: "Construction"
         },
         {
           title: "Grandwood Cabinets",
           description: "Maintenance-free cabinets with realistic wood-like texture and tight grain pattern. Available in Grey, Black, and Brown.",
-          image: "/images/products/Features/grandwood-cabinets.jpg",
+          image: "/placeholder.svg?height=300&width=400&text=Grandwood+Cabinets",
           category: "Cabinetry"
         }
       ],
@@ -997,7 +885,7 @@ const products: Record<string, Product> = {
         {
           title: "Trim Level Upgrades",
           description: "Choose from Essential (32 jets), Luxury (44 jets), or Elite (54 jets) trim levels. Higher trims include more jets, pumps, and premium features like DirectFlow Personal Control®.",
-          image: "/images/products/Features/trim-levels.jpg",
+          image: "/images/products/Features/smart-controls.jpg",
           category: "Customization"
         },
         {
@@ -1020,15 +908,15 @@ const products: Record<string, Product> = {
         },
         {
           title: "Advanced Water Purification",
-          description: "Choose from multiple water treatment options including Waterlab, Diamond AOP™, or FROG® @ease® systems for cleaner, healthier water.",
+          description: "Cleaner Water, Less Work - Advanced purification systems keep your spa crystal clear while reducing chemical use and maintenance time for a healthier, more enjoyable experience.",
           image: "/images/products/Features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "Pillowfall Water Feature",
           description: "Upgrade your relaxation with an additional gentle waterfall feature for enhanced therapeutic benefits.",
-          image: "/images/products/Features/pillowfall.jpg",
-          category: "Premium Water Features"
+          image: "/images/products/Features/circulation-system.jpg",
+          category: "Water Features"
         }
       ]
     },
@@ -1154,33 +1042,6 @@ const products: Record<string, Product> = {
     controlFeatures: {
       title: "Garden Series Convenience Features",
       description: "Experience spa luxury without the complexity. Simple plug-and-play operation gets you relaxing faster with professional-quality massage therapy.",
-      features: [
-        {
-          icon: "Zap",
-          title: "120V Plug & Play",
-          description: "Simply plug into any standard household GFCI outlet - spa ready in hours, not days"
-        },
-        {
-          icon: "Settings",
-          title: "Digital Control Panel",
-          description: "Easy-to-use controls for temperature, jets, and lighting with clear LED display"
-        },
-        {
-          icon: "Lightbulb",
-          title: "LED Lighting System",
-          description: "Energy-efficient underwater lighting creates perfect ambiance for evening relaxation"
-        },
-        {
-          icon: "Settings",
-          title: "Single Pump Operation", 
-          description: "Efficient pump system provides powerful jets and filtration in one reliable unit"
-        },
-        {
-          icon: "Thermometer",
-          title: "Quick Heat Technology",
-          description: "Efficient heating system gets your spa to perfect temperature quickly and maintains it affordably"
-        }
-      ],
       standardFeatures: [
         {
           title: "ArcticPac Insulation",
@@ -1191,32 +1052,32 @@ const products: Record<string, Product> = {
         {
           title: "Stainless Steel Jets",
           description: "27 precision-engineered stainless steel jets provide consistent, therapeutic massage that won't corrode or fade over time.",
-          image: "/images/products/Features/stainless-steel-jets.jpg",
+          image: "/images/products/Features/hydrotherapy-package.jpg",
           category: "Hydrotherapy"
         },
         {
           title: "Digital Control System",
           description: "Simple, intuitive digital controls make operating your spa effortless with clear temperature display and one-touch jet control.",
-          image: "/images/products/Features/digital-controls.jpg",
+          image: "/images/products/Features/smart-controls.jpg",
           category: "Technology"
         },
         {
           title: "Grandwood Cabinets",
-          description: "Maintenance-free cabinets with realistic wood-like texture resist fading and weathering. Available in Grey, Java, and Black.",
+          description: "Beautiful maintenance-free cabinets in Grey, Java, and Black complement any backyard setting with realistic wood-like texture.",
           image: "/images/products/Features/grandwood-cabinets.jpg",
           category: "Cabinetry"
         },
         {
-          title: "LED Spa Lighting",
-          description: "Energy-efficient LED lighting illuminates your spa during evening hours, creating perfect ambiance for relaxation.",
-          image: "/images/products/Features/led-spa-light.jpg",
-          category: "Lighting"
+          title: "Plug & Play Operation",
+          description: "Simply plug into any standard 120V household outlet with GFCI protection. No electrician needed - just plug in and enjoy.",
+          image: "/placeholder.svg?height=300&width=400&text=Plug+Play",
+          category: "Convenience"
         },
         {
-          title: "Quick-Drain System",
-          description: "Convenient drain valve makes seasonal maintenance and water changes quick and easy without special equipment.",
-          image: "/images/products/Features/drain-system.jpg",
-          category: "Maintenance"
+          title: "All-Season Cover",
+          description: "Durable solution-dyed polyester cover with high-density foam core maintains temperature efficiency in all weather conditions.",
+          image: "/placeholder.svg?height=300&width=400&text=All+Season+Cover",
+          category: "Protection"
         }
       ],
       optionalFeatures: [
@@ -1227,34 +1088,28 @@ const products: Record<string, Product> = {
           category: "Premium Lighting"
         },
         {
-          title: "Wireless Audio System",
-          description: "Stream your favorite music wirelessly with optional Bluetooth speakers designed specifically for spa environments.",
-          image: "/images/products/Features/audio-systems.jpg",
-          category: "Entertainment"
-        },
-        {
-          title: "Smart Controls",
-          description: "Optional WiFi module lets you control your spa remotely - perfect for pre-heating your spa on the way home from work.",
-          image: "/images/products/Features/smart-controls.jpg",
-          category: "Smart Technology"
-        },
-        {
-          title: "Water Purification Systems",
-          description: "Choose from multiple water treatment options that reduce chemical use and keep your water cleaner with less maintenance effort.",
+          title: "Ozone Water Purification",
+          description: "Optional ozone system reduces chemical usage and keeps your water cleaner with less maintenance effort.",
           image: "/images/products/Features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
-          title: "Comfort Accessories",
-          description: "Add spa steps, cover lifter, and storage solutions to enhance your spa experience and make maintenance even easier.",
-          image: "/images/products/Features/spa-accessories.jpg",
-          category: "Convenience"
+          title: "Heater Valve Upgrade",
+          description: "Enhanced heating control for improved temperature regulation and energy efficiency in varying climates.",
+          image: "/images/products/Features/heater-system.jpg",
+          category: "Heating"
         },
         {
           title: "Extended Warranty",
-          description: "Protect your investment with extended warranty coverage options for added peace of mind and comprehensive protection.",
-          image: "/images/products/Features/warranty-protection.jpg",
+          description: "Protect your investment with extended warranty coverage for added peace of mind and comprehensive protection.",
+          image: "/placeholder.svg?height=300&width=400&text=Extended+Warranty",
           category: "Protection"
+        },
+        {
+          title: "Spa Accessories",
+          description: "Add spa steps, handrails, and storage solutions to enhance your spa experience and make maintenance even easier.",
+          image: "/placeholder.svg?height=300&width=400&text=Spa+Accessories",
+          category: "Convenience"
         }
       ]
     },
@@ -1380,33 +1235,6 @@ const products: Record<string, Product> = {
     controlFeatures: {
       title: "Garden Series Smart Efficiency",
       description: "Maximize your relaxation while minimizing your footprint and costs. Perfect balance of luxury features and practical efficiency for modern living.",
-      features: [
-        {
-          icon: "Zap",
-          title: "120V Plug & Play",
-          description: "Simply plug into any standard household GFCI outlet - installation in hours, not days"
-        },
-        {
-          icon: "Settings",
-          title: "Digital Control Panel",
-          description: "Intuitive controls for temperature, jets, and lighting with energy monitoring display"
-        },
-        {
-          icon: "Lightbulb",
-          title: "LED Lighting System",
-          description: "Energy-efficient lighting creates perfect ambiance while keeping operating costs low"
-        },
-        {
-          icon: "Thermometer",
-          title: "Fast Heat Technology",
-          description: "Smaller water volume heats 25% faster than larger spas - perfect for spontaneous relaxation"
-        },
-        {
-          icon: "Settings",
-          title: "Efficient Pump System", 
-          description: "Single pump design provides powerful jets and filtration while maximizing energy efficiency"
-        }
-      ],
       standardFeatures: [
         {
           title: "ArcticPac Insulation",
@@ -1423,7 +1251,7 @@ const products: Record<string, Product> = {
         {
           title: "Space-Saving Design",
           description: "Rectangular footprint maximizes seating capacity while fitting perfectly on decks, patios, and smaller outdoor spaces.",
-          image: "/images/products/Features/space-saving-design.jpg",
+          image: "/placeholder.svg?height=300&width=400&text=Space+Saving",
           category: "Design"
         },
         {
@@ -1466,7 +1294,7 @@ const products: Record<string, Product> = {
         },
         {
           title: "Water Purification Systems",
-          description: "Advanced water treatment options reduce chemical use and maintenance time while keeping your water crystal clear and healthy.",
+          description: "Cleaner Water, Less Work - Advanced purification systems keep your spa crystal clear while reducing chemical use and maintenance time for a healthier, more enjoyable experience.",
           image: "/images/products/Features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
@@ -1606,33 +1434,6 @@ const products: Record<string, Product> = {
     controlFeatures: {
       title: "Garden Series Intimate Luxury",
       description: "Experience spa luxury designed for two. Ultra-efficient operation and intimate design create the perfect romantic retreat for your backyard.",
-      features: [
-        {
-          icon: "Zap",
-          title: "120V Plug & Play",
-          description: "Simply plug into any standard household outlet - romantic evenings start in hours, not days"
-        },
-        {
-          icon: "Settings",
-          title: "Simple Digital Controls",
-          description: "Intuitive controls designed for couples - easy temperature and jet operation with romantic lighting"
-        },
-        {
-          icon: "Lightbulb",
-          title: "Romantic LED Lighting",
-          description: "Soft underwater lighting creates perfect intimate ambiance for romantic evenings together"
-        },
-        {
-          icon: "Thermometer",
-          title: "Ultra-Fast Heating",
-          description: "Smallest water volume heats fastest - perfect for spontaneous romantic moments"
-        },
-        {
-          icon: "Settings",
-          title: "Whisper-Quiet Operation", 
-          description: "Ultra-quiet pump operation ensures peaceful, intimate conversations and relaxation"
-        }
-      ],
       standardFeatures: [
         {
           title: "ArcticPac Insulation",
@@ -1649,7 +1450,7 @@ const products: Record<string, Product> = {
         {
           title: "Couples-Focused Design",
           description: "Compact intimate design maximizes comfort for two while fitting perfectly in small spaces, balconies, and cozy patios.",
-          image: "/images/products/Features/intimate-design.jpg",
+          image: "/placeholder.svg?height=300&width=400&text=Intimate+Design",
           category: "Design"
         },
         {
@@ -1833,33 +1634,6 @@ const products: Record<string, Product> = {
     controlFeatures: {
       title: "Features Of The ActivePlus EP-12 Exercise Pool",
       description: "Experience the ultimate in luxury aquatic fitness with professional-grade features designed for both exercise and relaxation.",
-      features: [
-        {
-          icon: "Settings",
-          title: "SpaTouch Topside Control",
-          description: "Color touchscreen panel with WiFi ready capabilities and multi-language interface"
-        },
-        {
-          icon: "Waves", 
-          title: "Variable Speed Swim Jets",
-          description: "Adjustable current strength for customized swimming and exercise intensity"
-        },
-        {
-          icon: "Thermometer",
-          title: "Dual Zone Temperature Control",
-          description: "Independent temperature control for exercise and hydrotherapy zones"
-        },
-        {
-          icon: "Smartphone",
-          title: "Smart App Integration",
-          description: "Optional worldwide WiFi app module for remote control via smartphone or tablet"
-        },
-        {
-          icon: "Lightbulb",
-          title: "Advanced LED Lighting",
-          description: "Standard blue LED with optional DynaBrite and multicolor lighting upgrades"
-        }
-      ],
       standardFeatures: [
         {
           title: "Grab Rails",
@@ -1880,58 +1654,58 @@ const products: Record<string, Product> = {
           category: "Cabinetry"
         },
         {
-          title: "Full Foam With ABS Bottom",
-          description: "TidalFit models come standard with full foam insulation and an ABS bottom to protect against environmental elements.",
+          title: "Full Foam Insulation",
+          description: "Advanced insulation system maintains optimal temperature efficiency and reduces energy costs throughout the year.",
           image: "/images/products/Features/full-foam-insulation.jpg",
-          category: "Insulation"
-        },
-        {
-          title: "Heater",
-          description: "Every TidalFit comes with a standard heater to warm your pool to the perfect temperature in any climate.",
-          image: "/images/products/Features/heater-system.jpg", 
-          category: "Climate Control"
+          category: "Energy Efficiency"
         },
         {
           title: "Hi-Flo Circulation System",
-          description: "Advanced circulation system ensures optimal water flow and filtration for crystal clear water.",
+          description: "Efficient circulation system maintains water quality and temperature distribution for optimal performance.",
           image: "/images/products/Features/circulation-system.jpg",
           category: "Water Management"
+        },
+        {
+          title: "Digital Controls",
+          description: "SpaTouch color touchscreen panel with intuitive controls and multi-language interface for easy operation.",
+          image: "/images/products/Features/smart-controls.jpg",
+          category: "Technology"
         }
       ],
       optionalFeatures: [
         {
           title: "Swim Jet Systems",
-          description: "Choose between our powerful Quad Swim Jets for the ultimate swimming workout, or our efficient Dual Swim Jets for a more budget-friendly option. Both allow you to adjust the current strength to match your fitness level.",
+          description: "Choose from Dual or Quad swim jet systems with variable speed control for customizable aquatic exercise experiences.",
           image: "/images/products/Features/swim-jet-systems.jpg",
-          category: "Exercise Technology"
+          category: "Exercise"
         },
         {
           title: "Hydrotherapy Package",
-          description: "Transform your exercise pool into a relaxation oasis with 28 therapeutic massage jets and a beautiful waterfall feature. Perfect for soothing sore muscles after your workout.",
+          description: "Add 28 Helix jets with BellagioFall water feature for therapeutic massage and enhanced relaxation benefits.",
           image: "/images/products/Features/hydrotherapy-package.jpg",
           category: "Wellness"
         },
         {
-          title: "LED Lighting Systems",
-          description: "Create the perfect ambiance for evening workouts or nighttime relaxation with customizable underwater lighting. Choose from single-color or multi-color options to set the mood.",
+          title: "DynaBrite LED Lighting",
+          description: "Upgrade to dynamic LED lighting system with multiple lights that illuminate swim jets and water features.",
           image: "/images/products/Features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
         },
         {
-          title: "Smart Controls",
-          description: "Control your pool from anywhere with our smartphone app. Pre-heat your pool on the way home, adjust settings remotely, and monitor your pool's status from the comfort of your couch.",
+          title: "WiFi & App Control",
+          description: "Control your pool remotely via smartphone or tablet with worldwide WiFi app module for ultimate convenience.",
           image: "/images/products/Features/smart-controls.jpg",
           category: "Smart Technology"
         },
         {
-          title: "Water Treatment Systems",
-          description: "Keep your pool water crystal clear with less work and fewer harsh chemicals. Our advanced purification systems mean cleaner, healthier water that's gentler on your skin and easier to maintain.",
+          title: "Water Purification Systems",
+          description: "Cleaner Water, Less Work - Advanced purification systems keep your spa crystal clear while reducing chemical use and maintenance time for a healthier, more enjoyable experience.",
           image: "/images/products/Features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "Audio Systems",
-          description: "Enhance your workout or relaxation time with high-quality sound. Stream your favorite music wirelessly while you swim, exercise, or unwind in your pool.",
+          description: "Enhance your experience with Bluetooth® music system and optional patio speakers for immersive entertainment.",
           image: "/images/products/Features/audio-systems.jpg",
           category: "Entertainment"
         },
