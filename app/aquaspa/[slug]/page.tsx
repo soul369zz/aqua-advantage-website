@@ -297,7 +297,7 @@ const products: Record<string, Product> = {
         {
           title: "Helix Jet Technology",
           description: "Precision-engineered jets provide targeted massage therapy with customizable intensity. Jet count varies by trim level (44-64 jets).",
-          image: "/images/products/features/hydrotherapy-package.jpg",
+          image: "/images/products/features/hydrotherapy.jpg",
           category: "Hydrotherapy"
         },
         {
@@ -526,7 +526,7 @@ const products: Record<string, Product> = {
         {
           title: "Helix Jet Technology",
           description: "Precision-engineered jets provide targeted massage therapy with customizable intensity. Jet count varies by trim level (44-64 jets).",
-          image: "/images/products/features/hydrotherapy-package.jpg",
+          image: "/images/products/features/hydrotherapy.jpg",
           category: "Hydrotherapy"
         },
         {
@@ -1728,7 +1728,7 @@ const products: Record<string, Product> = {
         {
           title: "Hydrotherapy",
           description: "Add therapeutic massage jets with soothing waterfall features - the perfect way to recover after intense training sessions.",
-          image: "/images/products/features/hydrotherapy-package.jpg",
+          image: "/images/products/features/hydrotherapy.jpg",
           category: "Recovery"
         },
         {
