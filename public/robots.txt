@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://aquaadvantage.com/sitemap.xml
+
+# Block development and admin paths
+Disallow: /_next/
+Disallow: /api/
+Disallow: /.next/
+Disallow: /admin/
+
+# Allow important pages
+Allow: /aquaspa/
+Allow: /images/
+
+# Crawl delay (optional - adjust based on server capacity)
+Crawl-delay: 1 

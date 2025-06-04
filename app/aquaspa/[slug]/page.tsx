@@ -63,6 +63,7 @@ interface ProductFeature {
   title: string;
   description: string;
   image: string;
+  category?: string;
 }
 
 interface ProductReview {
@@ -127,6 +128,7 @@ interface Product {
     title: string;
     description: string;
     image: string;
+    category?: string;
   }>;
   reviews?: {
     averageRating: number;
@@ -240,7 +242,7 @@ const products: Record<string, Product> = {
       {
         title: "Cascade Falls Water Feature",
         description: "Standard waterfall feature creates relaxing ambiance while providing gentle neck and shoulder massage.",
-        image: "/images/products/Features/cascade-falls.jpg",
+        image: "/images/products/features/cascade-falls.jpg",
         category: "Water Features"
       }
     ],
@@ -295,7 +297,7 @@ const products: Record<string, Product> = {
         {
           title: "Helix Jet Technology",
           description: "Precision-engineered jets provide targeted massage therapy with customizable intensity. Jet count varies by trim level (44-64 jets).",
-          image: "/images/products/Features/hydrotherapy-package.jpg",
+          image: "/images/products/features/hydrotherapy-package.jpg",
           category: "Hydrotherapy"
         },
         {
@@ -307,25 +309,25 @@ const products: Record<string, Product> = {
         {
           title: "Cascade Falls Water Feature",
           description: "Standard waterfall feature creates relaxing ambiance while providing gentle neck and shoulder massage.",
-          image: "/images/products/Features/cascade-falls.jpg",
+          image: "/images/products/features/cascade-falls.jpg",
           category: "Water Features"
         },
         {
           title: "Full Foam Insulation",
           description: "Complete foam insulation system maintains temperature efficiently and reduces energy costs by up to 40%.",
-          image: "/images/products/Features/full-foam-insulation.jpg",
+          image: "/images/products/features/full-foam-insulation.jpg",
           category: "Energy Efficiency"
         },
         {
           title: "Hybrid Frame Construction",
           description: "Durable galvanized steel frame with advanced engineering for maximum longevity and structural integrity.",
-          image: "/images/products/Features/hybrid-frame.jpg",
+          image: "/images/products/features/hybrid-frame.jpg",
           category: "Construction"
         },
         {
           title: "Grandwood Cabinets",
           description: "Maintenance-free cabinets with realistic wood-like texture and tight grain pattern. Available in Grey, Black, and Brown.",
-          image: "/images/products/Features/grandwood-cabinets.jpg",
+          image: "/images/products/features/grandwood-cabinets.jpg",
           category: "Cabinetry"
         }
       ],
@@ -333,37 +335,37 @@ const products: Record<string, Product> = {
         {
           title: "Trim Level Upgrades",
           description: "Choose from Essential (44 jets), Luxury (52 jets), or Elite (64 jets) trim levels. Higher trims include more jets, pumps, and premium features like enhanced lighting packages.",
-          image: "/images/products/Features/trim-level.jpg",
+          image: "/images/products/features/trim-level.jpg",
           category: "Customization"
         },
         {
           title: "LED Lighting Packages",
           description: "Elite trim includes complete lighting package: Interior Underwater, Illuminated Pillows, Illuminated Footblasters, Illuminated Cascade Falls, and Vertical Corner Cabinet LED. Luxury trim includes partial package with select features optional.",
-          image: "/images/products/Features/LED-lighting-systems.jpg",
+          image: "/images/products/features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
         },
         {
           title: "Audio System",
           description: "Premium sound system with Bluetooth connectivity for streaming your favorite music during relaxation sessions.",
-          image: "/images/products/Features/audio-systems.jpg",
+          image: "/images/products/features/audio-systems.jpg",
           category: "Entertainment"
         },
         {
           title: "Water Purification",
           description: "Cleaner water, less work - Advanced water purification keeps your spa crystal clear with fewer harsh chemicals. Enjoy healthier water that's gentler on your skin.",
-          image: "/images/products/Features/water-treatment-systems.jpg",
+          image: "/images/products/features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "WiFi Controls",
           description: "Smart home integration allows remote monitoring and control of your spa from anywhere using smartphone app.",
-          image: "/images/products/Features/smart-controls.jpg",
+          image: "/images/products/features/smart-controls.jpg",
           category: "Smart Technology"
         },
         {
           title: "DirectFlow Personal Control®",
           description: "Individual jet control allows each user to customize their massage experience with precision flow adjustment. Available on Luxury and Elite trim levels.",
-          image: "/images/products/Features/direct-flow.jpg",
+          image: "/images/products/features/direct-flow.jpg",
           category: "Controls"
         },
       ]
@@ -412,7 +414,7 @@ const products: Record<string, Product> = {
   },
   "grand-cayman": {
     name: "Grand Cayman",
-    title: "Island Series Premium Hot Tub",
+    title: "Island Series Elite Hot Tub",
     price: 19995,
     originalPrice: 22995,
     images: [
@@ -524,7 +526,7 @@ const products: Record<string, Product> = {
         {
           title: "Helix Jet Technology",
           description: "Precision-engineered jets provide targeted massage therapy with customizable intensity. Jet count varies by trim level (44-64 jets).",
-          image: "/images/products/Features/hydrotherapy-package.jpg",
+          image: "/images/products/features/hydrotherapy-package.jpg",
           category: "Hydrotherapy"
         },
         {
@@ -536,25 +538,25 @@ const products: Record<string, Product> = {
         {
           title: "Cascade Falls Water Feature",
           description: "Standard waterfall feature creates relaxing ambiance while providing gentle neck and shoulder massage.",
-          image: "/images/products/Features/cascade-falls.jpg",
+          image: "/images/products/features/cascade-falls.jpg",
           category: "Water Features"
         },
         {
           title: "Full Foam Insulation",
           description: "Complete foam insulation system maintains temperature efficiently and reduces energy costs by up to 40%.",
-          image: "/images/products/Features/full-foam-insulation.jpg",
+          image: "/images/products/features/full-foam-insulation.jpg",
           category: "Energy Efficiency"
         },
         {
           title: "Hybrid Frame Construction",
           description: "Durable galvanized steel frame with advanced engineering for maximum longevity and structural integrity.",
-          image: "/images/products/Features/hybrid-frame.jpg",
+          image: "/images/products/features/hybrid-frame.jpg",
           category: "Construction"
         },
         {
           title: "Grandwood Cabinets",
           description: "Maintenance-free cabinets with realistic wood-like texture and tight grain pattern. Available in Grey, Black, and Brown.",
-          image: "/images/products/Features/grandwood-cabinets.jpg",
+          image: "/images/products/features/grandwood-cabinets.jpg",
           category: "Cabinetry"
         }
       ],
@@ -562,31 +564,31 @@ const products: Record<string, Product> = {
         {
           title: "Trim Level Upgrades",
           description: "Choose from Essential (44 jets), Luxury (52 jets), or Elite (64 jets) trim levels. Higher trims include more jets, pumps, and premium features like enhanced lighting packages.",
-          image: "/images/products/Features/trim-level.jpg",
+          image: "/images/products/features/trim-level.jpg",
           category: "Customization"
         },
         {
           title: "LED Lighting Packages",
           description: "Elite trim includes complete lighting package: Interior Underwater, Illuminated Pillows, Illuminated Footblasters, Illuminated Cascade Falls, and Vertical Corner Cabinet LED. Luxury trim includes partial package with select features optional.",
-          image: "/images/products/Features/LED-lighting-systems.jpg",
+          image: "/images/products/features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
         },
         {
           title: "Audio System",
           description: "Premium sound system with Bluetooth connectivity for streaming your favorite music during relaxation sessions.",
-          image: "/images/products/Features/audio-systems.jpg",
+          image: "/images/products/features/audio-systems.jpg",
           category: "Entertainment"
         },
         {
           title: "Water Purification",
           description: "Cleaner water, less work - Advanced water purification keeps your spa crystal clear with fewer harsh chemicals. Enjoy healthier water that's gentler on your skin.",
-          image: "/images/products/Features/water-treatment-systems.jpg",
+          image: "/images/products/features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "WiFi Controls",
           description: "Smart home integration allows remote monitoring and control of your spa from anywhere using smartphone app.",
-          image: "/images/products/Features/smart-controls.jpg",
+          image: "/images/products/features/smart-controls.jpg",
           category: "Smart Technology"
         }
       ]
@@ -747,7 +749,7 @@ const products: Record<string, Product> = {
         {
           title: "Helix Jet Technology",
           description: "Precision-engineered jets provide targeted massage therapy with customizable intensity. Jet count varies by trim level (32-54 jets).",
-          image: "/images/products/Features/Helix Jet Technology.jpg",
+          image: "/images/products/features/Helix Jet Technology.jpg",
           category: "Hydrotherapy"
         },
         {
@@ -759,25 +761,25 @@ const products: Record<string, Product> = {
         {
           title: "Cascade Falls Water Feature",
           description: "Standard waterfall feature creates relaxing ambiance while providing gentle neck and shoulder massage.",
-          image: "/images/products/Features/cascade-falls.jpg",
+          image: "/images/products/features/cascade-falls.jpg",
           category: "Water Features"
         },
         {
           title: "Full Foam Insulation",
           description: "Complete foam insulation system maintains temperature efficiently and reduces energy costs by up to 40%.",
-          image: "/images/products/Features/full-foam-insulation.jpg",
+          image: "/images/products/features/full-foam-insulation.jpg",
           category: "Energy Efficiency"
         },
         {
           title: "Hybrid Frame Construction",
           description: "Durable galvanized steel frame with advanced engineering for maximum longevity and structural integrity.",
-          image: "/images/products/Features/full-foam-insulation.jpg",
+          image: "/images/products/features/hybrid-frame.jpg",
           category: "Construction"
         },
         {
           title: "Grandwood Cabinets",
           description: "Maintenance-free cabinets with realistic wood-like texture and tight grain pattern. Available in Grey, Black, and Brown.",
-          image: "/images/products/Features/grandwood-cabinets.jpg",
+          image: "/images/products/features/grandwood-cabinets.jpg",
           category: "Cabinetry"
         }
       ],
@@ -785,37 +787,37 @@ const products: Record<string, Product> = {
         {
           title: "Trim Level Upgrades",
           description: "Choose from Essential (32 jets), Luxury (44 jets), or Elite (54 jets) trim levels. Higher trims include more jets, pumps, and premium features like DirectFlow Personal Control®.",
-          image: "/images/products/Features/trim-level.jpg",
+          image: "/images/products/features/trim-level.jpg",
           category: "Customization"
         },
         {
           title: "LED Lighting",
           description: "Upgrade to illuminated pillows, footblasters, and vertical corner cabinet LED lighting. Elite trim includes full lighting package as standard.",
-          image: "/images/products/Features/LED-lighting-systems.jpg",
+          image: "/images/products/features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
         },
         {
           title: "Audio System",
           description: "Stream your favorite music wirelessly with optional waterproof Bluetooth speakers designed for spa environments.",
-          image: "/images/products/Features/audio-systems.jpg",
+          image: "/images/products/features/audio-systems.jpg",
           category: "Entertainment"
         },
         {
           title: "WiFi Controls",
           description: "Control your spa remotely with optional WiFi module. Pre-heat, adjust settings, and monitor your spa from anywhere.",
-          image: "/images/products/Features/smart-controls.jpg",
+          image: "/images/products/features/smart-controls.jpg",
           category: "Smart Technology"
         },
         {
           title: "Advanced Water Purification",
           description: "Choose from multiple water treatment options including Waterlab, Diamond AOP™, or FROG® @ease® systems for cleaner, healthier water.",
-          image: "/images/products/Features/water-treatment-systems.jpg",
+          image: "/images/products/features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "Pillowfall Water Feature",
           description: "Upgrade your relaxation with an additional gentle waterfall feature for enhanced therapeutic benefits.",
-          image: "/images/products/Features/pillow-water.jpg",
+          image: "/images/products/features/pillow-water.jpg",
           category: "Water Features"
         }
       ]
@@ -976,7 +978,7 @@ const products: Record<string, Product> = {
         {
           title: "Helix Jet Technology",
           description: "Precision-engineered jets provide targeted massage therapy with customizable intensity. Jet count varies by trim level (32-54 jets).",
-          image: "/images/products/Features/Helix Jet Technology.jpg",
+          image: "/images/products/features/Helix Jet Technology.jpg",
           category: "Hydrotherapy"
         },
         {
@@ -988,25 +990,25 @@ const products: Record<string, Product> = {
         {
           title: "Cascade Falls Water Feature",
           description: "Standard waterfall feature creates relaxing ambiance while providing gentle neck and shoulder massage.",
-          image: "/images/products/Features/cascade-falls.jpg",
+          image: "/images/products/features/cascade-falls.jpg",
           category: "Water Features"
         },
         {
           title: "Full Foam Insulation",
           description: "Complete foam insulation system maintains temperature efficiently and reduces energy costs by up to 40%.",
-          image: "/images/products/Features/full-foam-insulation.jpg",
+          image: "/images/products/features/full-foam-insulation.jpg",
           category: "Energy Efficiency"
         },
         {
           title: "Hybrid Frame Construction",
           description: "Durable galvanized steel frame with advanced engineering for maximum longevity and structural integrity.",
-          image: "/images/products/Features/hybrid-frame.jpg",
+          image: "/images/products/features/hybrid-frame.jpg",
           category: "Construction"
         },
         {
           title: "Grandwood Cabinets",
           description: "Maintenance-free cabinets with realistic wood-like texture and tight grain pattern. Available in Grey, Black, and Brown.",
-          image: "/images/products/Features/grandwood-cabinets.jpg",
+          image: "/images/products/features/grandwood-cabinets.jpg",
           category: "Cabinetry"
         }
       ],
@@ -1014,37 +1016,37 @@ const products: Record<string, Product> = {
         {
           title: "Trim Level Upgrades",
           description: "Choose from Essential (32 jets), Luxury (44 jets), or Elite (54 jets) trim levels. Higher trims include more jets, pumps, and premium features like DirectFlow Personal Control®.",
-          image: "/images/products/Features/trim-level.jpg",
+          image: "/images/products/features/trim-level.jpg",
           category: "Customization"
         },
         {
           title: "LED Lighting",
           description: "Upgrade to illuminated pillows, footblasters, and vertical corner cabinet LED lighting. Elite trim includes full lighting package as standard.",
-          image: "/images/products/Features/LED-lighting-systems.jpg",
+          image: "/images/products/features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
         },
         {
           title: "Audio System",
           description: "Stream your favorite music wirelessly with optional waterproof Bluetooth speakers designed for spa environments.",
-          image: "/images/products/Features/audio-systems.jpg",
+          image: "/images/products/features/audio-systems.jpg",
           category: "Entertainment"
         },
         {
           title: "WiFi Controls",
           description: "Control your spa remotely with optional WiFi module. Pre-heat, adjust settings, and monitor your spa from anywhere.",
-          image: "/images/products/Features/smart-controls.jpg",
+          image: "/images/products/features/smart-controls.jpg",
           category: "Smart Technology"
         },
         {
           title: "Advanced Water Purification",
           description: "Choose from multiple water treatment options including Waterlab, Diamond AOP™, or FROG® @ease® systems for cleaner, healthier water.",
-          image: "/images/products/Features/water-treatment-systems.jpg",
+          image: "/images/products/features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "Pillowfall Water Feature",
           description: "Upgrade your relaxation with an additional gentle waterfall feature for enhanced therapeutic benefits.",
-          image: "/images/products/Features/pillow-water.jpg",
+          image: "/images/products/features/pillow-water.jpg",
           category: "Water Features"
         }
       ]
@@ -1093,7 +1095,7 @@ const products: Record<string, Product> = {
   },
   "wisteria": {
     name: "Wisteria",
-    title: "Garden Series Luxury Hot Tub",
+    title: "Garden Series Plug & Play Hot Tub",
     price: 11995,
     originalPrice: 13995,
     images: [
@@ -1106,21 +1108,21 @@ const products: Record<string, Product> = {
     ],
     specs: {
       seating: "6 Adults",
-      dimensions: "90\" x 90\" x 34\"",
-      waterCapacity: "400 Gallons",
+      dimensions: "84\" x 84\" x 36\"",
+      waterCapacity: "330 Gallons",
       jets: "27 Stainless Steel Jets",
       electrical: {
-        voltage: "110V/220V Dual Voltage",
-        amperage: "Plug-and-Play Ready",
-        heater: "4.0 kW"
+        voltage: "120V Standard",
+        amperage: "15A GFCI",
+        heater: "1.0 kW @ 120V, 4.0 kW @ 240V"
       },
-      dryWeight: "680 lbs + cover",
+      dryWeight: "730 lbs",
       insulation: "ArcticPac Insulation"
     },
     warranty: {
-      shell: "5 Years Structure",
-      surface: "3 Years", 
-      components: "2 Years",
+      shell: "Lifetime Structure",
+      surface: "1 Year", 
+      components: "1 Year",
       cabinet: "1 Year",
       labor: "1 Year",
     },
@@ -1148,7 +1150,7 @@ const products: Record<string, Product> = {
         {
           title: "ArcticPac Insulation",
           description: "Advanced insulation system keeps your spa energy efficient while maintaining comfortable water temperature year-round.",
-          image: "/images/products/Features/full-foam-insulation.jpg",
+          image: "/images/products/features/full-foam-insulation.jpg",
           category: "Energy Efficiency"
       },
       {
@@ -1178,7 +1180,7 @@ const products: Record<string, Product> = {
         {
           title: "Weather-Resistant Cabinet",
           description: "Durable polymer cabinet withstands all weather conditions while maintaining attractive appearance year after year.",
-          image: "/images/products/Features/grandwood-cabinets.jpg",
+          image: "/images/products/features/grandwood-cabinets.jpg",
           category: "Construction"
         }
       ],
@@ -1186,19 +1188,19 @@ const products: Record<string, Product> = {
         {
           title: "LED Lighting",
           description: "Add mood lighting with energy-efficient LED systems that create the perfect ambiance for evening relaxation.",
-          image: "/images/products/Features/LED-lighting-systems.jpg",
+          image: "/images/products/features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
         },
         {
           title: "Audio System",
           description: "Waterproof Bluetooth speakers designed specifically for spa environments let you enjoy music during your soak.",
-          image: "/images/products/Features/audio-systems.jpg",
+          image: "/images/products/features/audio-systems.jpg",
           category: "Entertainment"
         },
         {
           title: "Water Purification",
           description: "Cleaner water, less work - Advanced water purification keeps your spa crystal clear with fewer harsh chemicals. Enjoy healthier water that's gentler on your skin.",
-          image: "/images/products/Features/water-treatment-systems.jpg",
+          image: "/images/products/features/water-treatment-systems.jpg",
           category: "Water Treatment"
         }
       ]
@@ -1210,10 +1212,10 @@ const products: Record<string, Product> = {
         {
           title: "Dimensions & Capacity",
           items: [
-            { label: "Overall Dimensions", value: "90\" x 90\" x 34\"" },
+            { label: "Overall Dimensions", value: "84\" x 84\" x 36\"" },
             { label: "Seating Capacity", value: "6 Adults" },
-            { label: "Water Capacity", value: "400 Gallons" },
-            { label: "Dry Weight", value: "680 lbs + cover" }
+            { label: "Water Capacity", value: "330 Gallons" },
+            { label: "Dry Weight", value: "730 lbs" }
           ]
         },
         {
@@ -1228,9 +1230,9 @@ const products: Record<string, Product> = {
         {
           title: "Electrical & Heating",
           items: [
-            { label: "Voltage", value: "110V/220V Dual Voltage" },
-            { label: "Setup Type", value: "Plug-and-Play Ready" },
-            { label: "Heater", value: "4.0 kW" },
+            { label: "Voltage", value: "120V Standard" },
+            { label: "Amperage", value: "15A GFCI" },
+            { label: "Heater", value: "1.0 kW @ 120V, 4.0 kW @ 240V" },
             { label: "GFCI", value: "Included" }
           ]
         },
@@ -1248,7 +1250,7 @@ const products: Record<string, Product> = {
   },
   "plume": {
     name: "Plume",
-    title: "Garden Series Mid-Size Hot Tub",
+    title: "Garden Series Plug & Play Hot Tub",
     price: 10995,
     originalPrice: 12995,
     images: [
@@ -1261,21 +1263,21 @@ const products: Record<string, Product> = {
     ],
     specs: {
       seating: "6 Adults",
-      dimensions: "84\" x 72\" x 34\"",
-      waterCapacity: "320 Gallons",
+      dimensions: "84\" x 78\" x 34\"",
+      waterCapacity: "295 Gallons",
       jets: "27 Stainless Steel Jets",
       electrical: {
-        voltage: "110V/220V Dual Voltage",
-        amperage: "Plug-and-Play Ready",
-        heater: "4.0 kW"
+        voltage: "120V Standard",
+        amperage: "15A GFCI",
+        heater: "1.0 kW @ 120V, 4.0 kW @ 240V"
       },
-      dryWeight: "580 lbs + cover",
+      dryWeight: "769 lbs",
       insulation: "ArcticPac Insulation"
     },
     warranty: {
-      shell: "5 Years Structure",
-      surface: "3 Years", 
-      components: "2 Years",
+      shell: "Lifetime Structure",
+      surface: "1 Year", 
+      components: "1 Year",
       cabinet: "1 Year",
       labor: "1 Year",
     },
@@ -1303,7 +1305,7 @@ const products: Record<string, Product> = {
         {
           title: "ArcticPac Insulation",
           description: "Advanced insulation technology maintains temperature efficiently, reducing energy costs and environmental impact.",
-          image: "/images/products/Features/full-foam-insulation.jpg",
+          image: "/images/products/features/full-foam-insulation.jpg",
           category: "Energy Efficiency"
         },
         {
@@ -1333,7 +1335,7 @@ const products: Record<string, Product> = {
         {
           title: "Weather-Resistant Cabinet",
           description: "Durable polymer construction stands up to all weather conditions while maintaining its attractive appearance.",
-          image: "/images/products/Features/grandwood-cabinets.jpg",
+          image: "/images/products/features/grandwood-cabinets.jpg",
           category: "Construction"
         }
       ],
@@ -1341,19 +1343,19 @@ const products: Record<string, Product> = {
         {
           title: "LED Lighting",
           description: "Create the perfect evening atmosphere with optional LED lighting systems designed for energy efficiency.",
-          image: "/images/products/Features/LED-lighting-systems.jpg",
+          image: "/images/products/features/LED-lighting-systems.jpg",
           category: "Lighting"
         },
         {
           title: "Audio System",
           description: "Enjoy your favorite music with waterproof Bluetooth speakers specifically designed for spa environments.",
-          image: "/images/products/Features/audio-systems.jpg",
+          image: "/images/products/features/audio-systems.jpg",
           category: "Entertainment"
         },
         {
           title: "Water Purification",
           description: "Advanced water purification keeps your pool crystal clear with fewer harsh chemicals. Enjoy healthier water while spending less time on maintenance.",
-          image: "/images/products/Features/water-treatment-systems.jpg",
+          image: "/images/products/features/water-treatment-systems.jpg",
           category: "Water Treatment"
         }
       ]
@@ -1365,10 +1367,10 @@ const products: Record<string, Product> = {
         {
           title: "Dimensions & Capacity",
           items: [
-            { label: "Overall Dimensions", value: "84\" x 72\" x 34\"" },
-            { label: "Seating Capacity", value: "5 Adults" },
-            { label: "Water Capacity", value: "320 Gallons" },
-            { label: "Dry Weight", value: "580 lbs + cover" }
+            { label: "Overall Dimensions", value: "84\" x 78\" x 34\"" },
+            { label: "Seating Capacity", value: "6 Adults" },
+            { label: "Water Capacity", value: "295 Gallons" },
+            { label: "Dry Weight", value: "769 lbs" }
           ]
         },
         {
@@ -1383,9 +1385,9 @@ const products: Record<string, Product> = {
         {
           title: "Electrical & Heating",
           items: [
-            { label: "Voltage", value: "110V/220V Dual Voltage" },
-            { label: "Setup Type", value: "Plug-and-Play Ready" },
-            { label: "Heater", value: "4.0 kW" },
+            { label: "Voltage", value: "120V Standard" },
+            { label: "Amperage", value: "15A GFCI" },
+            { label: "Heater", value: "1.0 kW @ 120V, 4.0 kW @ 240V" },
             { label: "GFCI", value: "Included" }
           ]
         },
@@ -1403,7 +1405,7 @@ const products: Record<string, Product> = {
   },
   "viola": {
     name: "Viola",
-    title: "Garden Series Intimate Hot Tub",
+    title: "Garden Series Plug & Play Hot Tub",
     price: 8995,
     originalPrice: 10995,
     images: [
@@ -1416,21 +1418,21 @@ const products: Record<string, Product> = {
     ],
     specs: {
       seating: "2 Adults",
-      dimensions: "72\" x 72\" x 34\"",
-      waterCapacity: "250 Gallons",
+      dimensions: "82\" x 65\" x 31\"",
+      waterCapacity: "220 Gallons",
       jets: "21 Stainless Steel Jets",
       electrical: {
-        voltage: "110V/220V Dual Voltage",
-        amperage: "Plug-and-Play Ready",
-        heater: "4.0 kW"
+        voltage: "120V Standard",
+        amperage: "15A GFCI",
+        heater: "1.0 kW @ 120V, 4.0 kW @ 240V"
       },
-      dryWeight: "480 lbs + cover",
+      dryWeight: "565 lbs",
       insulation: "ArcticPac Insulation"
     },
     warranty: {
-      shell: "5 Years Structure",
-      surface: "3 Years", 
-      components: "2 Years",
+      shell: "Lifetime Structure",
+      surface: "1 Year", 
+      components: "1 Year",
       cabinet: "1 Year",
       labor: "1 Year",
     },
@@ -1458,7 +1460,7 @@ const products: Record<string, Product> = {
         {
           title: "ArcticPac Insulation",
           description: "Advanced insulation maintains perfect temperature efficiently while keeping operating costs incredibly low for daily enjoyment.",
-          image: "/images/products/Features/full-foam-insulation.jpg",
+          image: "/images/products/features/full-foam-insulation.jpg",
           category: "Energy Efficiency"
         },
         {
@@ -1488,7 +1490,7 @@ const products: Record<string, Product> = {
         {
           title: "Weather-Resistant Cabinet",
           description: "Durable construction designed to withstand the elements while maintaining beauty in intimate outdoor settings.",
-          image: "/images/products/Features/grandwood-cabinets.jpg",
+          image: "/images/products/features/grandwood-cabinets.jpg",
           category: "Construction"
         }
       ],
@@ -1496,19 +1498,19 @@ const products: Record<string, Product> = {
         {
           title: "Romantic Lighting",
           description: "Set the perfect mood with optional LED lighting systems designed to create intimate ambiance for couples.",
-          image: "/images/products/Features/LED-lighting-systems.jpg",
+          image: "/images/products/features/LED-lighting-systems.jpg",
           category: "Romantic Features"
         },
         {
           title: "Audio System",
           description: "Create the perfect romantic atmosphere with waterproof Bluetooth speakers for your favorite music.",
-          image: "/images/products/Features/audio-systems.jpg",
+          image: "/images/products/features/audio-systems.jpg",
           category: "Entertainment"
         },
         {
           title: "Water Purification",
           description: "Cleaner water, less work - Advanced water purification keeps your spa crystal clear with fewer harsh chemicals. Enjoy healthier water that's gentler on your skin.",
-          image: "/images/products/Features/water-treatment-systems.jpg",
+          image: "/images/products/features/water-treatment-systems.jpg",
           category: "Water Treatment"
         }
       ]
@@ -1520,10 +1522,10 @@ const products: Record<string, Product> = {
         {
           title: "Dimensions & Capacity",
           items: [
-            { label: "Overall Dimensions", value: "72\" x 72\" x 34\"" },
+            { label: "Overall Dimensions", value: "82\" x 65\" x 31\"" },
             { label: "Seating Capacity", value: "2 Adults" },
-            { label: "Water Capacity", value: "250 Gallons" },
-            { label: "Dry Weight", value: "480 lbs + cover" }
+            { label: "Water Capacity", value: "220 Gallons" },
+            { label: "Dry Weight", value: "565 lbs" }
           ]
         },
         {
@@ -1538,9 +1540,9 @@ const products: Record<string, Product> = {
         {
           title: "Electrical & Heating",
           items: [
-            { label: "Voltage", value: "110V/220V Dual Voltage" },
-            { label: "Setup Type", value: "Plug-and-Play Ready" },
-            { label: "Heater", value: "4.0 kW" },
+            { label: "Voltage", value: "120V Standard" },
+            { label: "Amperage", value: "15A GFCI" },
+            { label: "Heater", value: "1.0 kW @ 120V, 4.0 kW @ 240V" },
             { label: "GFCI", value: "Included" }
           ]
         },
@@ -1700,19 +1702,19 @@ const products: Record<string, Product> = {
         {
           title: "Grab Rails",
           description: "Enhanced safety and stability when exercising, stretching, or transitioning in and out of the pool - perfect for users of all fitness levels.",
-          image: "/images/products/Features/grab-rails.jpg",
+          image: "/images/products/features/grab-rails.jpg",
           category: "Safety & Confidence"
         },
         {
           title: "Grandwood Cabinets",
           description: "Beautiful Grandwood cabinets with realistic wood-like texture complement any backyard setting while you enjoy your daily fitness routine in luxury.",
-          image: "/images/products/Features/grandwood-cabinets.jpg",
+          image: "/images/products/features/grandwood-cabinets.jpg",
           category: "Beautiful Design"
         },
         {
           title: "Smart Controls",
           description: "Advanced digital touchscreen controls let you adjust temperature and settings effortlessly, ensuring perfect conditions for every workout and recovery session.",
-          image: "/images/products/Features/smart-controls.jpg",
+          image: "/images/products/features/smart-controls.jpg",
           category: "Convenience"
         }
       ],
@@ -1720,47 +1722,338 @@ const products: Record<string, Product> = {
         {
           title: "Swim Jet Systems",
           description: "Choose from Dual or Quad swim jet systems with adjustable speed control - find your perfect training intensity whether you're a beginner or athlete.",
-          image: "/images/products/Features/swim-jet-systems.jpg",
+          image: "/images/products/features/swim-jet-systems.jpg",
           category: "Exercise"
         },
         {
           title: "Hydrotherapy",
           description: "Add therapeutic massage jets with soothing waterfall features - the perfect way to recover after intense training sessions.",
-          image: "/images/products/Features/hydrotherapy-package.jpg",
+          image: "/images/products/features/hydrotherapy-package.jpg",
           category: "Recovery"
         },
         {
           title: "LED Lighting",
           description: "Dynamic LED lighting makes evening workouts magical while clearly illuminating swim jets and water features for safety.",
-          image: "/images/products/Features/LED-lighting-systems.jpg",
+          image: "/images/products/features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
         },
         {
           title: "WiFi Controls",
           description: "Pre-heat your pool on the way home from work or adjust settings from inside the house - ultimate convenience for busy lifestyles.",
-          image: "/images/products/Features/smart-controls.jpg",
+          image: "/images/products/features/smart-controls.jpg",
           category: "Convenience"
         },
         {
           title: "Water Purification",
           description: "Advanced water purification keeps your pool crystal clear with fewer harsh chemicals. Enjoy healthier water while spending less time on maintenance.",
-          image: "/images/products/Features/water-treatment-systems.jpg",
+          image: "/images/products/features/water-treatment-systems.jpg",
           category: "Water Treatment"
         },
         {
           title: "Audio System",
           description: "Immerse yourself in your favorite workout music with crystal-clear Bluetooth speakers designed for pool environments.",
-          image: "/images/products/Features/audio-systems.jpg",
+          image: "/images/products/features/audio-systems.jpg",
           category: "Entertainment"
         },
         {
           title: "Aquatic Training System",
           description: "Transform your pool into a professional training facility with resistance equipment and rowing systems for total-body workouts.",
-          image: "/images/products/Features/aquatic-training.jpg",
+          image: "/images/products/features/aquatic-training.jpg",
           category: "Professional Training"
         }
       ]
     },
+  },
+  "pro-ep-15": {
+    name: "Pro EP-15",
+    title: "TidalFit Professional Exercise Pool",
+    price: 36995,
+    originalPrice: 42995,
+    images: [
+      "/images/products/Pro EP-15.jpg",
+    ],
+    colorOptions: [
+      { name: "Charcoal", color: "#374151", image: "/images/products/Cabinetry Colors/Grandwood Charcoal Black.png" },
+      { name: "Black", color: "#1F2937", image: "/images/products/Cabinetry Colors/Black.png" },
+      { name: "Java", color: "#8B4513", image: "/images/products/Cabinetry Colors/Grandwood Java.png" },
+      { name: "Grey", color: "#6B7280", image: "/images/products/Cabinetry Colors/Grey.png" },
+    ],
+    specs: {
+      seating: "Professional Pool",
+      dimensions: "180\" x 91\" x 60\"",
+      waterCapacity: "2,075 Gallons",
+      jets: "Variable Speed + Optional 34 Helix",
+      electrical: {
+        voltage: "240V",
+        amperage: "60 Amp",
+        heater: "5.5 kW",
+        pumps: "2 Variable Speed + 2 Therapy Pumps",
+      },
+      waterChemistry: {
+        ph: "7.2-7.6",
+        alkalinity: "80-120 ppm",
+        sanitizer: "1-3 ppm",
+        calcium: "150-300 ppm",
+      },
+      maintenance: {
+        filterChange: "Every 4-6 months",
+        waterChange: "Every 6-8 months",
+        chemicalCheck: "2-3 times per week",
+        cleaning: "Weekly skimming, bi-weekly deep clean",
+      },
+    },
+    warranty: {
+      shell: "Lifetime Structure",
+      surface: "7 Years", 
+      components: "5 Years",
+      cabinet: "2 Years",
+      labor: "5 Years",
+    },
+    installation: {
+      spaceRequired: "20' x 12' minimum",
+      foundation: "Reinforced concrete pad or deck",
+      electrical: "240V, 60 amp GFCI breaker",
+      drainage: "Access to drain or pump",
+      access: "48\" minimum clearance on all sides",
+    },
+    energyEfficiency: {
+      rating: "Commercial Grade Efficient",
+      monthlyCost: "$55-85",
+      insulation: "Full foam insulation with thermal barrier",
+      cover: "4\" commercial-grade cover with safety locks",
+    },
+    features: [
+      {
+        title: "Enhanced Swim Jet Technology",
+        description: "Professional-grade variable speed swim jets provide the most advanced current system for serious athletes and fitness enthusiasts",
+        image: "/images/products/Enhanced Swim Jet Technology.jpg",
+      },
+      {
+        title: "Commercial-Grade Construction", 
+        description: "Built to commercial standards for durability and performance that exceeds residential expectations",
+        image: "/images/products/Commercial-Grade Construction.jpg",
+      },
+      {
+        title: "Advanced Temperature Control",
+        description: "Precise temperature management system maintains optimal water temperature for extended exercise sessions",
+        image: "/images/products/Advanced Temperature Control.jpg",
+      },
+    ],
+    reviews: {
+      averageRating: 4.9,
+      totalReviews: 23,
+      highlights: [
+        {
+          rating: 5,
+          title: "Professional-grade performance",
+          text: "The Pro EP-15 delivers everything promised. Variable speed jets are incredibly smooth and the build quality is exceptional.",
+          author: "Coach Sarah Martinez",
+          date: "2024-01-18",
+        },
+        {
+          rating: 5,
+          title: "Worth every penny",
+          text: "Upgraded from the EP-12 and the difference is remarkable. The longer pool and variable speed jets make this perfect for serious training.",
+          author: "Dr. James Thompson",
+          date: "2024-01-05",
+        },
+      ],
+    },
+    accessories: [
+      {
+        name: "Professional Fitness Kit",
+        price: 599,
+        description: "Complete professional-grade water exercise equipment including resistance bands, weights, and training guides",
+        image: "/images/products/professional-fitness-kit.jpg",
+      },
+      {
+        name: "Commercial Auto Cover",
+        price: 1299,
+        description: "Heavy-duty motorized safety cover system with commercial-grade components",
+        image: "/images/products/commercial-auto-cover.jpg",
+      },
+      {
+        name: "Professional Steps",
+        price: 899,
+        description: "Non-slip professional steps with safety rails for secure entry and exit",
+        image: "/images/products/professional-steps.jpg",
+      },
+    ],
+    faqs: [
+      {
+        question: "What makes this 'professional-grade' compared to the EP-12?",
+        answer: "The Pro EP-15 features variable speed swim jets, larger dimensions, commercial-grade construction, and enhanced hydrotherapy options - designed for serious athletes and commercial applications.",
+      },
+      {
+        question: "Can this be used for competitive swim training?",
+        answer: "Absolutely! The variable speed jets and 15-foot length make it ideal for competitive swimmers, triathletes, and serious fitness enthusiasts who need professional training capabilities.",
+      },
+      {
+        question: "What's the maintenance difference from residential pools?",
+        answer: "Despite its professional capabilities, the Pro EP-15 maintains the same easy maintenance as our residential models - just on a slightly larger scale with commercial-grade components.",
+      },
+    ],
+    controlFeatures: {
+      title: "Features Of The Pro EP-15 Professional Exercise Pool",
+      description: "Experience the pinnacle of aquatic fitness with commercial-grade features designed for serious athletes, fitness professionals, and discerning homeowners who demand the best.",
+      standardFeatures: [
+        {
+          title: "Enhanced Swim Jet Technology",
+          description: "Professional-grade variable speed swim jets provide the ultimate training environment - smoothly adjustable from gentle rehabilitation to intense athletic training, bringing Olympic-level performance to your backyard.",
+          image: "/images/products/features/swim-jets.jpg",
+          category: "Professional Performance"
+        },
+        {
+          title: "Commercial-Grade Construction", 
+          description: "Built to withstand intensive daily use with commercial-grade materials and engineering. This isn't just a home pool - it's professional equipment designed for serious training.",
+          image: "/images/products/Commercial-Grade Construction.jpg",
+          category: "Premium Build Quality"
+        },
+        {
+          title: "Advanced Temperature Control",
+          description: "Precise temperature management maintains optimal water temperature even during extended training sessions, ensuring peak performance whether you're training for competition or recovery.",
+          image: "/images/products/Advanced Temperature Control.jpg",
+          category: "Performance Technology"
+        },
+        {
+          title: "Professional Grab Rails",
+          description: "Dual grab rails provide enhanced safety and stability for advanced exercises, stretching routines, and safe entry/exit during intensive training sessions.",
+          image: "/images/products/features/grab-rails.jpg",
+          category: "Safety & Performance"
+        },
+        {
+          title: "Premium Grandwood Cabinets",
+          description: "Commercial-grade Grandwood cabinets with enhanced weather resistance and professional styling that complements high-end residential and commercial installations.",
+          image: "/images/products/features/grandwood-cabinets.jpg",
+          category: "Professional Aesthetics"
+        },
+        {
+          title: "Professional Smart Controls",
+          description: "Advanced touchscreen control system with professional-grade features including workout presets, timer functions, and precise jet speed control for optimal training.",
+          image: "/images/products/features/smart-controls.jpg",
+          category: "Advanced Technology"
+        }
+      ],
+      optionalFeatures: [
+        {
+          title: "Variable Speed Swim Systems",
+          description: "Choose WaVS Variable Speed or Quad systems with infinitely adjustable speed control - from gentle rehabilitation to Olympic-level training intensity, perfectly tailored to your fitness goals.",
+          image: "/images/products/features/swim-jets.jpg",
+          category: "Professional Training"
+        },
+        {
+          title: "Enhanced Hydrotherapy",
+          description: "34 therapeutic massage jets with waterfall features provide professional-grade recovery and rehabilitation capabilities for serious athletes and fitness enthusiasts.",
+          image: "/images/products/features/hydrotherapy.jpg",
+          category: "Recovery & Wellness"
+        },
+        {
+          title: "Commercial Ozonator",
+          description: "Professional-grade water purification system reduces chemical usage while maintaining crystal-clear water quality perfect for intensive daily training sessions.",
+          image: "/images/products/Commercial Ozonator.jpg",
+          category: "Water Quality"
+        },
+        {
+          title: "Dual-Zone Design",
+          description: "Optimized dual-zone layout maximizes both exercise space and hydrotherapy area - perfect for training and recovery in one professional-grade system.",
+          image: "/images/products/Dual-Zone Design.jpg",
+          category: "Professional Design"
+        },
+        {
+          title: "Year-Round Fitness",
+          description: "Professional heating system ensures consistent training regardless of weather conditions - maintain your competitive edge year-round with reliable performance.",
+          image: "/images/products/Year-Round Fitness.jpg",
+          category: "All-Weather Performance"
+        },
+        {
+          title: "Professional LED Lighting",
+          description: "Enhanced DynaBrite Max LED system with 12 precision lights provides optimal visibility for evening training sessions and stunning visual appeal.",
+          image: "/images/products/features/dynabrite-lighting.jpg",
+          category: "Professional Lighting"
+        },
+        {
+          title: "Smart WiFi Controls",
+          description: "Professional WiFi module allows remote monitoring and control - perfect for coaches, trainers, or anyone managing multiple training sessions.",
+          image: "/images/products/features/wifi-app.jpg",
+          category: "Professional Connectivity"
+        },
+        {
+          title: "Professional Audio System",
+          description: "Commercial-grade Bluetooth and bba™2 audio system with professional speakers creates the perfect training environment for motivation and focus.",
+          image: "/images/products/features/audio-system.jpg",
+          category: "Training Enhancement"
+        }
+      ]
+    },
+    detailedSpecs: {
+      title: "Detailed Specifications",
+      description: "Complete technical specifications for the Pro EP-15 Professional Exercise Pool",
+      sections: [
+        {
+          title: "Dimensions & Capacity",
+          items: [
+            { label: "Overall Dimensions", value: "180\" x 91\" x 60\" (457 cm x 231 cm x 152 cm)" },
+            { label: "Water Capacity", value: "2,075 gallons (7,855 liters)" },
+            { label: "Dry Weight", value: "2,400 lbs (1,088 kg)" },
+            { label: "Space Required", value: "20' x 12' minimum clearance" }
+          ]
+        },
+        {
+          title: "Electrical Requirements",
+          items: [
+            { label: "Voltage", value: "240V" },
+            { label: "Amperage", value: "60 Amp GFCI" },
+            { label: "Heater", value: "5.5 kW North America (60 Hz), 3.0 kW Export (50 Hz)" },
+            { label: "Pumps", value: "2 Variable Speed + Optional 2 Therapy Pumps" }
+          ]
+        },
+        {
+          title: "Swim Jet Systems",
+          items: [
+            { label: "WaVS Variable Speed", value: "(4) 6.0\" Swim Jets, (2) 3.0 HP Variable Speed Pumps" },
+            { label: "Quad System", value: "(4) 6.0\" Swim Jets, (2) 3.0 HP 1-Spd Pumps with Speed Control" },
+            { label: "Jet Adjustment", value: "Infinitely variable speed control" },
+            { label: "Flow Rate", value: "Professional-grade current generation" }
+          ]
+        },
+        {
+          title: "Hydrotherapy Options",
+          items: [
+            { label: "Option 1", value: "34 Helix Jets, 6.0 BHP (3.0 HP continuous) 1-Spd Pump" },
+            { label: "Option 2", value: "34 Helix Jets, 3.0 HP 1-Spd Pump" },
+            { label: "Water Features", value: "BellagioFall Water Feature (optional)" },
+            { label: "Therapy Zones", value: "Dedicated hydrotherapy area" }
+          ]
+        },
+        {
+          title: "Construction & Materials",
+          items: [
+            { label: "Shell Material", value: "Commercial-Grade Acrylic" },
+            { label: "Cabinet", value: "Maintenance Free Grandwood" },
+            { label: "Insulation", value: "Full Foam with ABS Bottom" },
+            { label: "Frame", value: "Commercial-Grade Reinforced Structure" }
+          ]
+        },
+        {
+          title: "Standard Features",
+          items: [
+            { label: "Grab Rails", value: "2 Professional Grab Rails" },
+            { label: "Lighting", value: "Blue LED 5\" Spa Light" },
+            { label: "Controls", value: "SpaTouch Color Touchscreen (WiFi Ready)" },
+            { label: "Cover", value: "All Seasons Shield Cover" }
+          ]
+        },
+        {
+          title: "Warranty Coverage",
+          items: [
+            { label: "Structure", value: "Lifetime" },
+            { label: "Surface", value: "7 Years" },
+            { label: "Components", value: "5 Years" },
+            { label: "Cabinet", value: "2 Years" }
+          ]
+        }
+      ]
+    }
   },
 }
 
@@ -1776,6 +2069,7 @@ const getGalleryImage = (slug: string): string => {
     "plume": "/images/products/Plume Gallery.jpg",
     "viola": "/images/products/Viola Gallery .jpg",
     "activeplus-ep-12": "/images/products/ActivePlus EP-12 Gallery.jpg",
+    "pro-ep-15": "/images/products/Pro EP-15 Gallery.jpg",
   };
   return galleryImageMap[slug] || "/placeholder.svg";
 };
@@ -2817,13 +3111,29 @@ export default function ProductPage() {
 
           {/* Bottom Bar */}
           <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between">
-            <p className="text-gray-400 text-sm">© 2024 Aqua Advantage. All rights reserved.</p>
+            <p className="text-gray-400 text-sm">© 2025 Aqua Advantage. All rights reserved.</p>
             <div className="flex items-center space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm">
                 Privacy Policy
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm">
                 Terms of Service
+              </a>
+              {/* Facebook Logo */}
+              <a 
+                href="https://www.facebook.com/aquaadvantageservices" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                aria-label="Visit our Facebook page"
+              >
+                <svg 
+                  className="w-6 h-6" 
+                  fill="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
               </a>
             </div>
           </div>
