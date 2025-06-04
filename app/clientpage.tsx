@@ -1547,10 +1547,10 @@ export default function HomePage() {
             <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between">
               <p className="text-gray-400 text-sm">© 2025 Aqua Advantage. All rights reserved.</p>
               <div className="flex items-center space-x-6 mt-4 md:mt-0">
-                <Link href="#" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm">
+                <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm">
                   Privacy Policy
                 </Link>
-                <Link href="#" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm">
+                <Link href="/terms" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm">
                   Terms of Service
                 </Link>
                 {/* Facebook Logo */}

@@ -618,12 +618,12 @@ export default function HotTubsPage() {
           <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between">
             <p className="text-gray-400 text-sm">© 2025 Aqua Advantage. All rights reserved.</p>
             <div className="flex items-center space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm">
+              <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm">
                 Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm">
+              </Link>
+              <Link href="/terms" className="text-gray-400 hover:text-white transition-colors duration-300 text-sm">
                 Terms of Service
-              </a>
+              </Link>
               {/* Facebook Logo */}
               <a 
                 href="https://www.facebook.com/aquaadvantageservices" 
