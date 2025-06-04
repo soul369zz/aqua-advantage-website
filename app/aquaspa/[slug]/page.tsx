@@ -2272,35 +2272,7 @@ export default function ProductPage() {
       title: "Specifications",
       content: (
         <div className="space-y-6">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div>
-              <h4 className="font-semibold text-gray-900 mb-3">Dimensions</h4>
-              <div className="space-y-2 text-gray-600">
-                <div className="flex justify-between">
-                  <span>Length:</span>
-                  <span>{product.specs.dimensions.split(' x ')[0]} ({/* Add cm conversion if needed */})</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Width:</span>
-                  <span>{product.specs.dimensions.split(' x ')[1]} ({/* Add cm conversion if needed */})</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Height:</span>
-                  {/* Assuming height is not in current specs, add if needed */}
-                  <span>N/A</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Weight (dry):</span>
-                  {/* Assuming weight is not in current specs, add if needed */}
-                  <span>N/A</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Weight (filled):</span>
-                  {/* Assuming weight is not in current specs, add if needed */}
-                  <span>N/A</span>
-                </div>
-            </div>
-          </div>
+          <div className="grid md:grid-cols-2 gap-6">
           <div>
               <h4 className="font-semibold text-gray-900 mb-3">Capacity</h4>
               <div className="space-y-2 text-gray-600">
@@ -2315,10 +2287,6 @@ export default function ProductPage() {
                 <div className="flex justify-between">
                   <span>Jets:</span>
                   <span>{product.specs.jets}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span>Pumps:</span>
-                  <span>{product.specs.electrical.pumps}</span>
                 </div>
             </div>
           </div>

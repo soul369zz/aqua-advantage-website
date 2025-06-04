@@ -1,11 +1,11 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ChevronRight, Star, Shield, Zap, MapPin, Phone } from "lucide-react"
+import { ChevronRight, Star, Shield, Zap, MapPin, Phone, Menu, X } from "lucide-react"
 import Link from "next/link"
 
 const hotTubs = [
@@ -182,11 +182,138 @@ const hotTubs = [
   },
 ]
 
+// Gallery images from spa gallery directory - VERIFIED EXISTING IMAGES
+const galleryImages = [
+  { src: "/images/products/spa gallery/1.jpg", alt: "Luxury Hot Tub Installation" },
+  { src: "/images/products/spa gallery/2.jpg", alt: "Outdoor Spa Experience" },
+  { src: "/images/products/spa gallery/3.jpg", alt: "Modern Hot Tub Design" },
+  { src: "/images/products/spa gallery/4.jpg", alt: "Relaxing Spa Environment" },
+  { src: "/images/products/spa gallery/5.jpg", alt: "Premium Spa Features" },
+  { src: "/images/products/spa gallery/6.jpg", alt: "Hot Tub with Landscaping" },
+  { src: "/images/products/spa gallery/7.jpg", alt: "Elegant Spa Setting" },
+  { src: "/images/products/spa gallery/Untitled design.jpg", alt: "Custom Spa Design" },
+  { src: "/images/products/spa gallery/OC-Spas_Island-Spas_Grand-Bahama.jpg", alt: "Grand Bahama Island Spa" },
+  { src: "/images/products/spa gallery/OC-Spas_Garden-Spas_Iris.jpg", alt: "Iris Garden Series Spa" },
+  { src: "/images/products/spa gallery/OC-Spas_Island-Spas_Antigua-1.jpg", alt: "Antigua Island Spa Installation" },
+  { src: "/images/products/spa gallery/OC-Spas_South-Seas_519P-3.jpg", alt: "South Seas 519P Premium Features" },
+  { src: "/images/products/spa gallery/OC-Spas_South-Seas_519P-2.jpg", alt: "South Seas 519P Outdoor Setting" },
+  { src: "/images/products/spa gallery/OC-Spas_South-Seas_519P-1.jpg", alt: "South Seas Series 519P Model" },
+  { src: "/images/products/spa gallery/OC-Spas_South-Seas_533DL-2.jpg", alt: "South Seas 533DL Luxury Installation" },
+  { src: "/images/products/spa gallery/OC-Spas_South-Seas_627M.jpg", alt: "South Seas 627M Premium Spa" },
+  { src: "/images/products/spa gallery/OC-Spas_South-Seas_533DL.jpg", alt: "South Seas 533DL Model" },
+  { src: "/images/products/spa gallery/OC-Spas_South-Seas_519P-4.jpg", alt: "South Seas 519P Evening Ambiance" },
+  { src: "/images/products/spa gallery/OC-Spas_Artesian-Elite_Pelican-Bay-3.jpg", alt: "Pelican Bay Spa Installation" },
+  { src: "/images/products/spa gallery/OC-Spas_Artesian-Elite_Pelican-Bay-2.jpg", alt: "Pelican Bay Elite Features" },
+  { src: "/images/products/spa gallery/OC-Spas_Artesian-Elite_Pelican-Bay-1.jpg", alt: "Artesian Elite Pelican Bay Series" },
+  { src: "/images/products/spa gallery/OC-Spas_Artesian-Elite_Dove-Canyon-2.jpg", alt: "Dove Canyon Elite Series" },
+  { src: "/images/products/spa gallery/AE.jpg", alt: "Artesian Elite Collection" },
+  { src: "/images/products/spa gallery/AE3.jpg", alt: "Artesian Elite Premium Model" },
+  { src: "/images/products/spa gallery/Davison-Spas_Artesian-Elite_Dove-Canyon_3-2427x1800.jpeg", alt: "Davison Spas Artesian Elite Installation" },
+  { src: "/images/products/spa gallery/Goodwins-Hot-Tubs_SS-1.jpg", alt: "Goodwins Hot Tubs South Seas Collection" },
+  { src: "/images/products/spa gallery/NEW_Goodwins-Hot-Tubs_TidalFit-EP15.jpg", alt: "TidalFit EP-15 Swim Spa" },
+  { src: "/images/products/spa gallery/New_Goodwins-Hot-Tubs_TidalFit_DT21-3.jpg", alt: "TidalFit DT21 Model Features" },
+  { src: "/images/products/spa gallery/New_Goodwins-Hot-Tubs_TidalFit_DT21-4.jpg", alt: "TidalFit DT21 Swimming Area" },
+  { src: "/images/products/spa gallery/New_Goodwins-Hot-Tubs_TidalFit_DT21-5.jpg", alt: "TidalFit DT21 Exercise Pool" },
+  { src: "/images/products/spa gallery/Goodwins-Hot-Tubs_Island_Storm-Clouds.jpg", alt: "Island Series Storm Clouds Model" },
+  { src: "/images/products/spa gallery/Goodwins-Hot-Tubs_Garden.jpg", alt: "Garden Series Collection" },
+  { src: "/images/products/spa gallery/Goodwins-Hot-Tubs_Island_Cayman.jpg", alt: "Cayman Island Series Spa" },
+  { src: "/images/products/spa gallery/New_Goodwins-Hot-Tubs_627M.jpg", alt: "627M Premium Spa Model" },
+  { src: "/images/products/spa gallery/Goodwins-Hot-Tubs_SS-2.jpg", alt: "South Seas Premium Installation" },
+  { src: "/images/products/spa gallery/NEW_Goodwins-Hot-Tubs_Garden_Iris-3.jpg", alt: "Iris Garden Series Features" },
+  { src: "/images/products/spa gallery/NEW_Goodwins-Hot-Tubs_Garden_Iris-1.jpg", alt: "Garden Series Iris Model" },
+  { src: "/images/products/spa gallery/NEW_Goodwins-Hot-Tubs_Garden_Iris-2.jpg", alt: "Iris Garden Spa Installation" },
+  { src: "/images/products/spa gallery/NEW_Goodwins-Hot-Tubs_SS.jpg", alt: "New South Seas Collection Display" },
+  { src: "/images/products/spa gallery/NEW_Goodwins-Hot-Tubs_Island.jpg", alt: "New Island Series Collection" },
+  { src: "/images/products/spa gallery/NEW_Goodwins-Hot-Tubs_Island-2.jpg", alt: "Island Series Premium Features" },
+  { src: "/images/products/spa gallery/TLC-Spas_Garden_Hydrangea.jpg", alt: "TLC Garden Series Hydrangea" },
+  { src: "/images/products/spa gallery/chic-oakville-tidalfit-swim-spa-design-ep-14-factory-hot-tubs-imgef81bc9f0998a105_4-2690-1-fcb1db5.jpg", alt: "Chic Oakville TidalFit EP-14 Design" },
+  { src: "/images/products/spa gallery/Colorado-Custom-Pools-2560x1800.jpeg", alt: "Colorado Custom Pool & Spa Installation" },
+  { src: "/images/products/spa gallery/Colorado-Custom-Pools_2-1920x1800.jpeg", alt: "Colorado Custom Pools Premium Design" },
+  { src: "/images/products/spa gallery/Colorado-Custom-Spas_Island_St-Kitts.jpg", alt: "Colorado Custom St. Kitts Island Spa" },
+  { src: "/images/products/spa gallery/Colorado-Custom-Spas_Lee-Shaina-5.jpg", alt: "Colorado Custom Luxury Installation" },
+  { src: "/images/products/spa gallery/OC-Spas_Island-Spas_Antigua.jpg", alt: "Antigua Island Spa Premium Model" },
+  { src: "/images/products/spa gallery/Champagne-Spas_TidalFit.jpg", alt: "Champagne Spas TidalFit Collection" },
+  { src: "/images/products/spa gallery/Airbnb_KatiesFlat_8.jpeg", alt: "Luxury Rental Hot Tub Setting" },
+  { src: "/images/products/spa gallery/Airbnb_KatiesFlat_3.jpg", alt: "Katie's Flat Airbnb Spa Experience" },
+  { src: "/images/products/spa gallery/Airbnb_KatiesFlat_5.jpeg", alt: "Airbnb Luxury Spa Amenity" },
+  { src: "/images/products/spa gallery/Airbnb_KatiesFlat_6.jpeg", alt: "Premium Airbnb Hot Tub Feature" },
+  { src: "/images/products/spa gallery/Airbnb_KatiesFlat_7.jpeg", alt: "Vacation Rental Spa Experience" },
+  { src: "/images/products/spa gallery/Vici-Hot-Tubs_TidalFit_2.jpg", alt: "Vici TidalFit Swim Spa" },
+  { src: "/images/products/spa gallery/Vici-Hot-Tubs_TidalFit_3.jpg", alt: "Vici TidalFit Exercise Features" },
+  { src: "/images/products/spa gallery/Vici-Hot-Tubs_Garden_Camellia.jpg", alt: "Vici Garden Series Camellia" },
+  { src: "/images/products/spa gallery/Vici-Hot-Tubs_Garden_Iris_1.jpg", alt: "Vici Garden Iris Model" },
+  { src: "/images/products/spa gallery/Vici-Hot-Tubs_Garden_Iris_2.jpg", alt: "Vici Iris Garden Installation" },
+  { src: "/images/products/spa gallery/Vici-Hot-Tubs_Island-Spas-1542x1800.jpg", alt: "Vici Island Spas Collection" },
+  { src: "/images/products/spa gallery/Vici-Hot-Tubs_Island_2.jpg", alt: "Vici Island Series Premium Model" },
+  { src: "/images/products/spa gallery/Vici-Hot-Tubs_TidalFit-2.jpg", alt: "Vici TidalFit Premium Installation" },
+  { src: "/images/products/spa gallery/Goodwins-Hot-Tubs_TidalFit.jpg", alt: "Goodwins TidalFit Swim Spa" },
+  { src: "/images/products/spa gallery/Goodwins-Hot-Tubs_SS_627M.jpg", alt: "South Seas 627M Premium Spa" },
+  { src: "/images/products/spa gallery/Goodwins-Hot-Tubs_Island-Spas.jpg", alt: "Goodwins Island Spas Collection" },
+  { src: "/images/products/spa gallery/Goodwins-Hot-Tubs_TidalFit_4.jpg", alt: "TidalFit Premium Features" },
+  { src: "/images/products/spa gallery/Goodwins-Hot-Tubs_TidalFit_3.jpg", alt: "TidalFit Professional Installation" },
+  { src: "/images/products/spa gallery/Goodwins-Hot-Tubs_TidalFit_2.jpg", alt: "TidalFit Swimming & Exercise" },
+  { src: "/images/products/spa gallery/Goodwins-Hot-Tubs_TidalFit_1.jpg", alt: "TidalFit Exercise Pool Features" }
+];
+
 export default function HotTubsPage() {
   const [isVisible, setIsVisible] = useState(false)
   const [showHeader, setShowHeader] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  // Gallery state
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [isAutoScrollPaused, setIsAutoScrollPaused] = useState(false)
+  const galleryRef = useRef<HTMLDivElement>(null)
+  const autoScrollRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const pauseTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const [touchStart, setTouchStart] = useState<number | null>(null)
+  const [touchEnd, setTouchEnd] = useState<number | null>(null)
+
+  // Function to start auto-scroll
+  const startAutoScroll = () => {
+    if (autoScrollRef.current) {
+      clearInterval(autoScrollRef.current)
+    }
+    
+    autoScrollRef.current = setInterval(() => {
+      if (!isAutoScrollPaused) {
+        setCurrentImageIndex((prevIndex) => {
+          const nextIndex = prevIndex + 1;
+          const viewportWidth = window.innerWidth;
+          const imageWidth = 280 + 12;
+          const imagesPerView = Math.floor(viewportWidth / imageWidth);
+          const maxIndex = Math.max(0, galleryImages.length - imagesPerView);
+          
+          return nextIndex > maxIndex ? 0 : nextIndex;
+        });
+      }
+    }, 3000);
+  }
+
+  // Function to pause auto-scroll temporarily
+  const pauseAutoScroll = (duration = 5000) => {
+    setIsAutoScrollPaused(true)
+    
+    // Clear any existing pause timeout
+    if (pauseTimeoutRef.current) {
+      clearTimeout(pauseTimeoutRef.current)
+    }
+    
+    // Resume auto-scroll after the specified duration
+    pauseTimeoutRef.current = setTimeout(() => {
+      setIsAutoScrollPaused(false)
+    }, duration)
+  }
+
+  // Mouse event handlers for gallery interaction
+  const handleGalleryMouseEnter = () => {
+    pauseAutoScroll(10000) // Pause for 10 seconds when hovering
+  }
+
+  const handleGalleryMouseLeave = () => {
+    pauseAutoScroll(2000) // Brief pause when leaving, then resume
+  }
 
   useEffect(() => {
     setIsVisible(true)
@@ -204,6 +331,69 @@ export default function HotTubsPage() {
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [lastScrollY])
+
+  // Gallery auto-scroll effect
+  useEffect(() => {
+    startAutoScroll()
+
+    return () => {
+      if (autoScrollRef.current) {
+        clearInterval(autoScrollRef.current);
+      }
+      if (pauseTimeoutRef.current) {
+        clearTimeout(pauseTimeoutRef.current);
+      }
+    };
+  }, [isAutoScrollPaused])
+
+  // Gallery control functions
+  const goToNext = () => {
+    pauseAutoScroll(8000) // Pause for 8 seconds after button click
+    setCurrentImageIndex((prevIndex) => {
+      const viewportWidth = window.innerWidth
+      const imageWidth = 280 + 12
+      const imagesPerView = Math.floor(viewportWidth / imageWidth)
+      const maxIndex = Math.max(0, galleryImages.length - imagesPerView)
+      return prevIndex >= maxIndex ? 0 : prevIndex + 1
+    })
+  }
+
+  const goToPrevious = () => {
+    pauseAutoScroll(8000) // Pause for 8 seconds after button click
+    setCurrentImageIndex((prevIndex) => {
+      const viewportWidth = window.innerWidth
+      const imageWidth = 280 + 12
+      const imagesPerView = Math.floor(viewportWidth / imageWidth)
+      const maxIndex = Math.max(0, galleryImages.length - imagesPerView)
+      return prevIndex <= 0 ? maxIndex : prevIndex - 1
+    })
+  }
+
+  // Touch handlers for swipe detection
+  const handleTouchStart = (e: React.TouchEvent) => {
+    pauseAutoScroll(6000) // Pause when user starts touching
+    setTouchEnd(null)
+    setTouchStart(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+    
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > 50
+    const isRightSwipe = distance < -50
+
+    if (isLeftSwipe) {
+      goToNext()
+    }
+    if (isRightSwipe) {
+      goToPrevious()
+    }
+  }
 
   const navigationItems = [
     "About",
@@ -339,7 +529,7 @@ export default function HotTubsPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-20 pb-16 bg-gradient-to-b from-blue-50 to-white">
+      <section className="relative pt-20 pb-8 bg-gradient-to-b from-blue-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
@@ -349,6 +539,73 @@ export default function HotTubsPage() {
               Experience luxury, relaxation, and wellness with our premium collection of hot tubs.
               Each model is designed to provide the perfect balance of comfort, features, and value.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="py-8 bg-gradient-to-br from-blue-100 via-indigo-50 to-purple-100 relative">
+        {/* Subtle pattern overlay for extra visual interest */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,_theme(colors.white/30)_1px,_transparent_0)] bg-[length:20px_20px] opacity-40"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div 
+            ref={galleryRef}
+            className="relative overflow-hidden group bg-white/40 backdrop-blur-md rounded-2xl p-6 shadow-lg border border-white/30"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            onMouseEnter={handleGalleryMouseEnter}
+            onMouseLeave={handleGalleryMouseLeave}
+          >
+            {/* Horizontal Scrolling Gallery */}
+            <div 
+              className="flex gap-3 transition-transform duration-500 ease-in-out"
+              style={{
+                transform: `translateX(-${currentImageIndex * (280 + 12)}px)`, // 280px width + 12px gap (reduced from 16px)
+                width: `${galleryImages.length * (280 + 12)}px`
+              }}
+            >
+              {galleryImages.map((image, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-70 h-48 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-gray-100 to-gray-200 relative group border border-gray-200/50"
+                  style={{ width: '280px' }}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width={280}
+                    height={192}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="280px"
+                  />
+                  {/* Subtle overlay for better blending */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+              ))}
+            </div>
+
+            {/* Navigation Arrows */}
+            <div className="absolute inset-y-0 left-4 flex items-center">
+              <button
+                onClick={goToPrevious}
+                className="bg-black bg-opacity-50 hover:bg-opacity-70 rounded-full p-3 backdrop-blur-sm transition-all duration-300 hover:scale-110"
+                aria-label="Previous image"
+              >
+                <ChevronRight className="w-5 h-5 text-white rotate-180" />
+              </button>
+            </div>
+            
+            <div className="absolute inset-y-0 right-4 flex items-center">
+              <button
+                onClick={goToNext}
+                className="bg-black bg-opacity-50 hover:bg-opacity-70 rounded-full p-3 backdrop-blur-sm transition-all duration-300 hover:scale-110"
+                aria-label="Next image"
+              >
+                <ChevronRight className="w-5 h-5 text-white" />
+              </button>
+            </div>
           </div>
         </div>
       </section>
