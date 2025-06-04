@@ -232,7 +232,7 @@ const products: Record<string, Product> = {
       {
         title: "Helix Jet Technology",
         description: "Experience therapeutic precision with 44-64 advanced Helix jets (depending on trim level) designed for targeted massage therapy.",
-        image: "/images/products/Helix Jet Technology.jpg"
+        image: "/images/products/features/helix-jet.jpg"
       },
       {
         title: "Dual Footblasters",
@@ -462,7 +462,7 @@ const products: Record<string, Product> = {
       {
         title: "Helix Jet Technology",
         description: "Experience therapeutic precision with 44-64 advanced Helix jets (depending on trim level) designed for targeted massage therapy.",
-        image: "/images/products/Helix Jet Technology.jpg"
+        image: "/images/products/features/helix-jet.jpg"
       },
       {
         title: "Dual Footblasters", 
@@ -685,7 +685,7 @@ const products: Record<string, Product> = {
       {
         title: "Helix Jet Technology",
         description: "Experience therapeutic precision with 32-54 advanced Helix jets (depending on trim level) designed for targeted massage therapy.",
-        image: "/images/products/Helix Jet Technology.jpg"
+        image: "/images/products/features/helix-jet.jpg"
       },
       {
         title: "Dual Footblasters", 
@@ -749,7 +749,7 @@ const products: Record<string, Product> = {
         {
           title: "Helix Jet Technology",
           description: "Precision-engineered jets provide targeted massage therapy with customizable intensity. Jet count varies by trim level (32-54 jets).",
-          image: "/images/products/features/Helix Jet Technology.jpg",
+          image: "/images/products/features/helix-jet.jpg",
           category: "Hydrotherapy"
         },
         {
@@ -914,7 +914,7 @@ const products: Record<string, Product> = {
       {
         title: "Helix Jet Technology",
         description: "Experience therapeutic precision with 32-54 advanced Helix jets (depending on trim level) designed for targeted massage therapy.",
-        image: "/images/products/Helix Jet Technology.jpg"
+        image: "/images/products/features/helix-jet.jpg"
       },
       {
         title: "Dual Footblasters", 
@@ -978,7 +978,7 @@ const products: Record<string, Product> = {
         {
           title: "Helix Jet Technology",
           description: "Precision-engineered jets provide targeted massage therapy with customizable intensity. Jet count varies by trim level (32-54 jets).",
-          image: "/images/products/features/Helix Jet Technology.jpg",
+          image: "/images/products/features/helix-jet.jpg",
           category: "Hydrotherapy"
         },
         {
