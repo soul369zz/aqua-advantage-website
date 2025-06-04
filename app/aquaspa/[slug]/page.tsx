@@ -1980,7 +1980,7 @@ const products: Record<string, Product> = {
         {
           title: "Professional Audio System",
           description: "Commercial-grade Bluetooth and bba™2 audio system with professional speakers creates the perfect training environment for motivation and focus.",
-          image: "/images/products/features/audio-system.jpg",
+          image: "/images/products/features/audio-systems.jpg",
           category: "Training Enhancement"
         }
       ]
