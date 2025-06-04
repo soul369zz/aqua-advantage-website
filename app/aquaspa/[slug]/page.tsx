@@ -203,7 +203,7 @@ const products: Record<string, Product> = {
       electrical: {
         voltage: "240V",
         amperage: "60 Amp",
-        heater: "5.5 kW"
+        heater: "5.5 kW North America (60 Hz), 3.0 kW Export (50 Hz)"
       },
       dryWeight: "901 lbs + cover",
       insulation: "Full Foam"
@@ -397,7 +397,7 @@ const products: Record<string, Product> = {
             { label: "Voltage", value: "240V" },
             { label: "Amperage", value: "60 Amp" },
             { label: "Heater", value: "5.5 kW North America (60 Hz), 3.0 kW Export (50 Hz)" },
-            { label: "GFCI", value: "Included" }
+            { label: "Pump", value: "1.5 BHP (1.0 HP continuous) 2-Speed" }, { label: "GFCI", value: "Included" }
           ]
         },
         {
@@ -433,7 +433,7 @@ const products: Record<string, Product> = {
       electrical: {
         voltage: "240V",
         amperage: "60 Amp",
-        heater: "5.5 kW"
+        heater: "5.5 kW North America (60 Hz), 3.0 kW Export (50 Hz)"
       },
       dryWeight: "900 lbs + cover",
       insulation: "Full Foam"
@@ -620,7 +620,7 @@ const products: Record<string, Product> = {
             { label: "Voltage", value: "240V" },
             { label: "Amperage", value: "60 Amp" },
             { label: "Heater", value: "5.5 kW (North America)" },
-            { label: "GFCI", value: "Included" }
+            { label: "Pump", value: "1.5 BHP (1.0 HP continuous) 2-Speed" }, { label: "GFCI", value: "Included" }
           ]
         },
         {
@@ -656,7 +656,7 @@ const products: Record<string, Product> = {
       electrical: {
         voltage: "240V",
         amperage: "50 Amp",
-        heater: "5.5 kW"
+        heater: "5.5 kW North America (60 Hz), 3.0 kW Export (50 Hz)"
       },
       dryWeight: "835 lbs + cover",
       insulation: "Full Foam"
@@ -849,7 +849,7 @@ const products: Record<string, Product> = {
             { label: "Voltage", value: "240V" },
             { label: "Amperage", value: "50 Amp" },
             { label: "Heater", value: "5.5 kW (North America)" },
-            { label: "GFCI", value: "Included" }
+            { label: "Pump", value: "1.5 BHP (1.0 HP continuous) 2-Speed" }, { label: "GFCI", value: "Included" }
           ]
         },
         {
@@ -885,7 +885,7 @@ const products: Record<string, Product> = {
       electrical: {
         voltage: "240V",
         amperage: "50 Amp",
-        heater: "5.5 kW"
+        heater: "5.5 kW North America (60 Hz), 3.0 kW Export (50 Hz)"
       },
       dryWeight: "834 lbs + cover",
       insulation: "Full Foam"
@@ -1078,7 +1078,7 @@ const products: Record<string, Product> = {
             { label: "Voltage", value: "240V" },
             { label: "Amperage", value: "50 Amp" },
             { label: "Heater", value: "5.5 kW (North America)" },
-            { label: "GFCI", value: "Included" }
+            { label: "Pump", value: "1.5 BHP (1.0 HP continuous) 2-Speed" }, { label: "GFCI", value: "Included" }
           ]
         },
         {
@@ -1112,9 +1112,9 @@ const products: Record<string, Product> = {
       waterCapacity: "330 Gallons",
       jets: "27 Stainless Steel Jets",
       electrical: {
-        voltage: "120V Standard",
+        voltage: "120V-15A Standard Outlet (includes 15ft GFCI Cord)",
         amperage: "15A GFCI",
-        heater: "1.0 kW @ 120V, 4.0 kW @ 240V"
+        heater: "1.0 kW @ 120V, 4.0 kW @ 240V North America, 2.0 kW @ 240V Export"
       },
       dryWeight: "730 lbs",
       insulation: "ArcticPac Insulation"
@@ -1234,7 +1234,7 @@ const products: Record<string, Product> = {
             { label: "Amperage", value: "15A GFCI" },
             { label: "Heater", value: "1.0 kW @ 120V, 4.0 kW @ 240V North America, 2.0 kW @ 240V Export" },
             { label: "Pump", value: "1.5 BHP (1.0 HP continuous) 2-Speed" },
-            { label: "GFCI", value: "Included" }
+            { label: "Pump", value: "1.5 BHP (1.0 HP continuous) 2-Speed" }, { label: "GFCI", value: "Included" }
           ]
         },
         {
@@ -1268,9 +1268,9 @@ const products: Record<string, Product> = {
       waterCapacity: "295 Gallons",
       jets: "27 Stainless Steel Jets",
       electrical: {
-        voltage: "120V Standard",
+        voltage: "120V-15A Standard Outlet (includes 15ft GFCI Cord)",
         amperage: "15A GFCI",
-        heater: "1.0 kW @ 120V, 4.0 kW @ 240V"
+        heater: "1.0 kW @ 120V, 4.0 kW @ 240V North America, 2.0 kW @ 240V Export"
       },
       dryWeight: "769 lbs",
       insulation: "ArcticPac Insulation"
@@ -1386,10 +1386,10 @@ const products: Record<string, Product> = {
         {
           title: "Electrical & Heating",
           items: [
-            { label: "Voltage", value: "120V Standard" },
+            { label: "Voltage", value: "120V-15A Standard Outlet (includes 15ft GFCI Cord)" },
             { label: "Amperage", value: "15A GFCI" },
-            { label: "Heater", value: "1.0 kW @ 120V, 4.0 kW @ 240V" },
-            { label: "GFCI", value: "Included" }
+            { label: "Heater", value: "1.0 kW @ 120V, 4.0 kW @ 240V North America, 2.0 kW @ 240V Export" },
+            { label: "Pump", value: "1.5 BHP (1.0 HP continuous) 2-Speed" }, { label: "GFCI", value: "Included" }
           ]
         },
         {
@@ -1423,9 +1423,9 @@ const products: Record<string, Product> = {
       waterCapacity: "220 Gallons",
       jets: "21 Stainless Steel Jets",
       electrical: {
-        voltage: "120V Standard",
+        voltage: "120V-15A Standard Outlet (includes 15ft GFCI Cord)",
         amperage: "15A GFCI",
-        heater: "1.0 kW @ 120V, 4.0 kW @ 240V"
+        heater: "1.0 kW @ 120V, 4.0 kW @ 240V North America, 2.0 kW @ 240V Export"
       },
       dryWeight: "565 lbs",
       insulation: "ArcticPac Insulation"
@@ -1541,10 +1541,10 @@ const products: Record<string, Product> = {
         {
           title: "Electrical & Heating",
           items: [
-            { label: "Voltage", value: "120V Standard" },
+            { label: "Voltage", value: "120V-15A Standard Outlet (includes 15ft GFCI Cord)" },
             { label: "Amperage", value: "15A GFCI" },
-            { label: "Heater", value: "1.0 kW @ 120V, 4.0 kW @ 240V" },
-            { label: "GFCI", value: "Included" }
+            { label: "Heater", value: "1.0 kW @ 120V, 4.0 kW @ 240V North America, 2.0 kW @ 240V Export" },
+            { label: "Pump", value: "1.5 BHP (1.0 HP continuous) 2-Speed" }, { label: "GFCI", value: "Included" }
           ]
         },
         {
@@ -1581,7 +1581,7 @@ const products: Record<string, Product> = {
       electrical: {
         voltage: "240V",
         amperage: "60 Amp",
-        heater: "5.5 kW",
+        heater: "5.5 kW North America (60 Hz), 3.0 kW Export (50 Hz)",
         pumps: "2 Swim + 2 Therapy Pumps",
       },
       waterChemistry: {
@@ -1856,7 +1856,7 @@ const products: Record<string, Product> = {
       electrical: {
         voltage: "240V",
         amperage: "60 Amp",
-        heater: "5.5 kW",
+        heater: "5.5 kW North America (60 Hz), 3.0 kW Export (50 Hz)",
         pumps: "2 Variable Speed + 2 Therapy Pumps",
       },
       waterChemistry: {
