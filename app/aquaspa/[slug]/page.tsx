@@ -396,7 +396,7 @@ const products: Record<string, Product> = {
           items: [
             { label: "Voltage", value: "240V" },
             { label: "Amperage", value: "60 Amp" },
-            { label: "Heater", value: "5.5 kW (North America)" },
+            { label: "Heater", value: "5.5 kW North America (60 Hz), 3.0 kW Export (50 Hz)" },
             { label: "GFCI", value: "Included" }
           ]
         },
@@ -1230,9 +1230,10 @@ const products: Record<string, Product> = {
         {
           title: "Electrical & Heating",
           items: [
-            { label: "Voltage", value: "120V Standard" },
+            { label: "Voltage", value: "120V-15A Standard Outlet (includes 15ft GFCI Cord)" },
             { label: "Amperage", value: "15A GFCI" },
-            { label: "Heater", value: "1.0 kW @ 120V, 4.0 kW @ 240V" },
+            { label: "Heater", value: "1.0 kW @ 120V, 4.0 kW @ 240V North America, 2.0 kW @ 240V Export" },
+            { label: "Pump", value: "1.5 BHP (1.0 HP continuous) 2-Speed" },
             { label: "GFCI", value: "Included" }
           ]
         },
@@ -1763,6 +1764,75 @@ const products: Record<string, Product> = {
         }
       ]
     },
+    detailedSpecs: {
+      title: "Detailed Specifications",
+      description: "Complete technical specifications for the ActivePlus EP-12 Exercise Pool",
+      sections: [
+        {
+          title: "Dimensions & Capacity",
+          items: [
+            { label: "Overall Dimensions", value: "156\" x 91\" x 60\" (396 cm x 231 cm x 152 cm)" },
+            { label: "Water Capacity", value: "1,740 gallons (6,587 liters)" },
+            { label: "Dry Weight", value: "2,100 lbs (953 kg)" },
+            { label: "Space Required", value: "18' x 12' minimum clearance" }
+          ]
+        },
+        {
+          title: "Electrical Requirements",
+          items: [
+            { label: "Voltage", value: "240V" },
+            { label: "Amperage", value: "60 Amp GFCI" },
+            { label: "Heater", value: "5.5 kW North America (60 Hz), 3.0 kW Export (50 Hz)" },
+            { label: "Pumps", value: "2 Swim Pumps + Optional Therapy Pumps" }
+          ]
+        },
+        {
+          title: "Swim Jet Systems",
+          items: [
+            { label: "Standard System", value: "(4) 6.0\" Swim Jets, (2) 3.0 HP 1-Speed Pumps" },
+            { label: "Optional Upgrade", value: "WaVS Variable Speed or Quad System available" },
+            { label: "Jet Material", value: "Stainless Steel Construction" },
+            { label: "Flow Rate", value: "Professional current generation" }
+          ]
+        },
+        {
+          title: "Hydrotherapy Options",
+          items: [
+            { label: "Standard", value: "34 Helix Jets, 6.0 BHP (3.0 HP continuous) 1-Speed Pump" },
+            { label: "Premium Option", value: "34 Helix Jets, 3.0 HP Variable Speed Pump" },
+            { label: "Water Features", value: "BellagioFall Water Feature (optional)" },
+            { label: "Therapy Zones", value: "Dedicated hydrotherapy seating area" }
+          ]
+        },
+        {
+          title: "Construction & Materials",
+          items: [
+            { label: "Shell Material", value: "Premium Acrylic with Commercial-Grade Backing" },
+            { label: "Cabinet", value: "Maintenance Free Grandwood" },
+            { label: "Insulation", value: "Full Foam with ABS Bottom" },
+            { label: "Frame", value: "Reinforced Steel Structure" }
+          ]
+        },
+        {
+          title: "Standard Features",
+          items: [
+            { label: "Grab Rails", value: "2 Grab Rails" },
+            { label: "Lighting", value: "Blue LED 5\" Spa Light" },
+            { label: "Controls", value: "SpaTouch Digital Controls (WiFi Ready)" },
+            { label: "Cover", value: "All Seasons Shield Cover" }
+          ]
+        },
+        {
+          title: "Warranty Coverage",
+          items: [
+            { label: "Structure", value: "Lifetime" },
+            { label: "Surface", value: "7 Years" },
+            { label: "Components", value: "5 Years" },
+            { label: "Cabinet", value: "2 Years" }
+          ]
+        }
+      ]
+    }
   },
   "pro-ep-15": {
     name: "Pro EP-15",
