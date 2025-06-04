@@ -1916,19 +1916,19 @@ const products: Record<string, Product> = {
           category: "Performance Technology"
         },
         {
-          title: "Professional Grab Rails",
+          title: "Grab Rails",
           description: "Dual grab rails provide enhanced safety and stability for advanced exercises, stretching routines, and safe entry/exit during intensive training sessions.",
           image: "/images/products/features/grab-rails.jpg",
           category: "Safety & Performance"
         },
         {
-          title: "Premium Grandwood Cabinets",
+          title: "Grandwood Cabinets",
           description: "Commercial-grade Grandwood cabinets with enhanced weather resistance and professional styling that complements high-end residential and commercial installations.",
           image: "/images/products/features/grandwood-cabinets.jpg",
           category: "Professional Aesthetics"
         },
         {
-          title: "Professional Smart Controls",
+          title: "Smart Controls",
           description: "Advanced touchscreen control system with professional-grade features including workout presets, timer functions, and precise jet speed control for optimal training.",
           image: "/images/products/features/smart-controls.jpg",
           category: "Advanced Technology"
@@ -2037,7 +2037,7 @@ const products: Record<string, Product> = {
         {
           title: "Standard Features",
           items: [
-            { label: "Grab Rails", value: "2 Professional Grab Rails" },
+            { label: "Grab Rails", value: "2 Grab Rails" },
             { label: "Lighting", value: "Blue LED 5\" Spa Light" },
             { label: "Controls", value: "SpaTouch Color Touchscreen (WiFi Ready)" },
             { label: "Cover", value: "All Seasons Shield Cover" }
