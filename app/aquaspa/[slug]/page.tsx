@@ -815,9 +815,9 @@ const products: Record<string, Product> = {
           category: "Water Treatment"
         },
         {
-          title: "Pillowfall Water Feature",
-          description: "Upgrade your relaxation with an additional gentle waterfall feature for enhanced therapeutic benefits.",
-          image: "/images/products/features/pillow-water.jpg",
+          title: "Pillowfall Water",
+          description: "Gentle cascading water feature that creates a soothing ambiance while providing therapeutic benefits.",
+          image: "/images/products/features/pillowfall.jpg",
           category: "Water Features"
         }
       ]
@@ -1044,9 +1044,9 @@ const products: Record<string, Product> = {
           category: "Water Treatment"
         },
         {
-          title: "Pillowfall Water Feature",
-          description: "Upgrade your relaxation with an additional gentle waterfall feature for enhanced therapeutic benefits.",
-          image: "/images/products/features/pillow-water.jpg",
+          title: "Pillowfall Water",
+          description: "Gentle cascading water feature that creates a soothing ambiance while providing therapeutic benefits.",
+          image: "/images/products/features/pillowfall.jpg",
           category: "Water Features"
         }
       ]
