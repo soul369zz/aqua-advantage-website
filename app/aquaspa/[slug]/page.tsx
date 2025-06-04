@@ -1895,93 +1895,93 @@ const products: Record<string, Product> = {
     ],
     controlFeatures: {
       title: "Features Of The Pro EP-15 Professional Exercise Pool",
-      description: "Experience the pinnacle of aquatic fitness with commercial-grade features designed for serious athletes, fitness professionals, and discerning homeowners who demand the best.",
+      description: "Experience the ultimate in luxury aquatic fitness with premium features designed for serious exercise, family enjoyment, and therapeutic relaxation.",
       standardFeatures: [
         {
           title: "Enhanced Swim Jet Technology",
-          description: "Professional-grade variable speed swim jets provide the ultimate training environment - smoothly adjustable from gentle rehabilitation to intense athletic training, bringing Olympic-level performance to your backyard.",
+          description: "Variable speed swim jets provide the perfect training environment for all fitness levels - smoothly adjustable from gentle rehabilitation to challenging workouts, bringing professional performance to your backyard.",
           image: "/images/products/features/swim-jets.jpg",
-          category: "Professional Performance"
+          category: "Exercise Excellence"
         },
         {
-          title: "Commercial-Grade Construction", 
-          description: "Built to withstand intensive daily use with commercial-grade materials and engineering. This isn't just a home pool - it's professional equipment designed for serious training.",
+          title: "Premium Construction", 
+          description: "Built with enhanced materials and engineering for long-lasting durability and reliable daily use. This premium exercise pool is designed to withstand years of family enjoyment and serious training.",
           image: "/images/products/Commercial-Grade Construction.jpg",
-          category: "Premium Build Quality"
+          category: "Quality Build"
         },
         {
           title: "Advanced Temperature Control",
-          description: "Precise temperature management maintains optimal water temperature even during extended training sessions, ensuring peak performance whether you're training for competition or recovery.",
+          description: "Precise temperature management maintains optimal water temperature for comfortable exercise and relaxation, ensuring perfect conditions whether you're working out or unwinding.",
           image: "/images/products/Advanced Temperature Control.jpg",
-          category: "Performance Technology"
+          category: "Comfort Technology"
         },
         {
           title: "Grab Rails",
-          description: "Dual grab rails provide enhanced safety and stability for advanced exercises, stretching routines, and safe entry/exit during intensive training sessions.",
+          description: "Enhanced safety and stability when exercising, stretching, or transitioning in and out of the pool - perfect for users of all fitness levels and swimming abilities.",
           image: "/images/products/features/grab-rails.jpg",
-          category: "Safety & Performance"
+          category: "Safety & Confidence"
         },
         {
           title: "Grandwood Cabinets",
-          description: "Commercial-grade Grandwood cabinets with enhanced weather resistance and professional styling that complements high-end residential and commercial installations.",
+          description: "Beautiful Grandwood cabinets with enhanced weather resistance and premium styling that perfectly complements any backyard setting for years of elegant enjoyment.",
           image: "/images/products/features/grandwood-cabinets.jpg",
-          category: "Professional Aesthetics"
+          category: "Beautiful Design"
         },
         {
           title: "Smart Controls",
-          description: "Advanced touchscreen control system with professional-grade features including workout presets, timer functions, and precise jet speed control for optimal training.",
+          description: "Advanced touchscreen control system with user-friendly features including easy presets, timer functions, and simple jet speed adjustment for optimal comfort and convenience.",
           image: "/images/products/features/smart-controls.jpg",
-          category: "Advanced Technology"
+          category: "Easy Technology"
         }
       ],
       optionalFeatures: [
         {
           title: "Variable Speed Swim Systems",
-          description: "Choose WaVS Variable Speed or Quad systems with infinitely adjustable speed control - from gentle rehabilitation to Olympic-level training intensity, perfectly tailored to your fitness goals.",
+          description: "Choose WaVS Variable Speed or Quad systems with infinitely adjustable speed control - perfect for everyone from beginners to competitive swimmers, tailored to your fitness goals.",
           image: "/images/products/features/swim-jets.jpg",
-          category: "Professional Training"
+          category: "Exercise Options"
         },
         {
           title: "Enhanced Hydrotherapy",
-          description: "34 therapeutic massage jets with waterfall features provide professional-grade recovery and rehabilitation capabilities for serious athletes and fitness enthusiasts.",
+          description: "34 therapeutic massage jets with soothing waterfall features provide excellent recovery and relaxation benefits for the whole family to enjoy after workouts or long days.",
           image: "/images/products/features/hydrotherapy.jpg",
           category: "Recovery & Wellness"
         },
         {
-          title: "Commercial Ozonator",
-          description: "Professional-grade water purification system reduces chemical usage while maintaining crystal-clear water quality perfect for intensive daily training sessions.",
+          title: "Water Purification",
+          description: "Advanced water purification system reduces chemical usage while maintaining crystal-clear water quality - healthier for your family and easier maintenance for you.",
           image: "/images/products/Commercial Ozonator.jpg",
           category: "Water Quality"
         },
         {
           title: "Dual-Zone Design",
-          description: "Optimized dual-zone layout maximizes both exercise space and hydrotherapy area - perfect for training and recovery in one professional-grade system.",
+          description: "Optimized layout maximizes both exercise space and relaxation area - perfect for swimming laps while others enjoy hydrotherapy, bringing everyone together.",
           image: "/images/products/Dual-Zone Design.jpg",
-          category: "Professional Design"
+          category: "Smart Design"
         },
         {
           title: "Year-Round Fitness",
-          description: "Professional heating system ensures consistent training regardless of weather conditions - maintain your competitive edge year-round with reliable performance.",
+          description: "Never skip another workout due to weather. Your heated exercise pool ensures daily fitness routines are always possible, keeping your family healthy and active year-round.",
           image: "/images/products/Year-Round Fitness.jpg",
-          category: "All-Weather Performance"
+          category: "All-Weather Enjoyment"
         },
         {
-          title: "Professional LED Lighting",
-          description: "Enhanced DynaBrite Max LED system with 12 precision lights provides optimal visibility for evening training sessions and stunning visual appeal.",
+          title: "DynaBrite Lighting",
+          description: "Enhanced LED lighting with 12 precision lights provides beautiful evening ambiance and clear visibility for safe nighttime swimming and relaxation.",
           image: "/images/products/features/dynabrite-lighting.jpg",
-          category: "Professional Lighting"
+          category: "Premium Lighting"
         },
         {
-          title: "Smart WiFi Controls",
-          description: "Professional WiFi module allows remote monitoring and control - perfect for coaches, trainers, or anyone managing multiple training sessions.",
+          title: "WiFi App Controls",
+          description: "Easy WiFi app lets you pre-heat your pool on the way home from work or adjust settings from inside the house - ultimate convenience for busy lifestyles.",
           image: "/images/products/features/wifi-app.jpg",
-          category: "Professional Connectivity"
+          category: "Convenience"
         },
         {
-          title: "Professional Audio System",
-          description: "Commercial-grade Bluetooth and bba™2 audio system with professional speakers creates the perfect training environment for motivation and focus.",
+          title: "Audio Systems",
+          description: "Premium Bluetooth and audio system with high-quality speakers creates the perfect environment for workout motivation, relaxation, or family entertainment.",
           image: "/images/products/features/audio-systems.jpg",
-          category: "Training Enhancement"
+          category: "Entertainment"
         }
       ]
     },
