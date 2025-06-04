@@ -17,10 +17,9 @@ const hotTubs = [
     originalPrice: 21995,
     image: "/images/products/Grand Bahama Gallery.jpg",
     features: [
-      "64 Helix Jets (Elite)",
-      "6 Person Capacity",
-      "Dual Footblasters",
-      "Cascade Falls Feature",
+      "Melt tension: jets + foot therapy",
+      "Control jets & lights from phone",
+      "Clean water, low energy year-round",
     ],
     specs: {
       seating: "6 Adults",
@@ -37,10 +36,9 @@ const hotTubs = [
     originalPrice: 22995,
     image: "/images/products/Grand Cayman Gallery.jpg",
     features: [
-      "64 Helix Jets (Elite)",
-      "7 Person Capacity",
-      "Dual Footblasters",
-      "Cascade Falls Feature",
+      "Powerful massage for 7 people",
+      "Manage spa settings via app",
+      "Durable, efficient backyard retreat",
     ],
     specs: {
       seating: "7 Adults",
@@ -57,10 +55,9 @@ const hotTubs = [
     originalPrice: 19995,
     image: "/images/products/Captiva Gallery.jpg",
     features: [
-      "54 Helix Jets (Elite)",
-      "7 Person Capacity",
-      "Dual Footblasters",
-      "Cascade Falls Feature",
+      "Soothe muscles in 7 seats",
+      "App control + stunning lights",
+      "Easy-clear water, saves energy",
     ],
     specs: {
       seating: "7 Adults",
@@ -77,10 +74,9 @@ const hotTubs = [
     originalPrice: 18995,
     image: "/images/products/Antigua Gallery.jpg",
     features: [
-      "54 Helix Jets (Elite)",
-      "6 Person Capacity",
-      "Dual Footblasters",
-      "Cascade Falls Feature",
+      "Target neck/feet tension relief",
+      "Personalize jets instantly & remotely",
+      "Pure water, low running costs",
     ],
     specs: {
       seating: "6 Adults",
@@ -97,10 +93,9 @@ const hotTubs = [
     originalPrice: 10995,
     image: "/images/products/Wisteria Gallery.jpg",
     features: [
-      "27 Stainless Steel Jets",
-      "6 Person Capacity",
-      "120V Plug & Play",
-      "Digital LCD Control",
+      "Family soak: plug & relax!",
+      "No electrician - use tonight",
+      "Energy-efficient, lasts for years",
     ],
     specs: {
       seating: "6 Adults",
@@ -117,10 +112,9 @@ const hotTubs = [
     originalPrice: 10495,
     image: "/images/products/Plume Gallery.jpg",
     features: [
-      "27 Stainless Steel Jets",
-      "6 Person Capacity",
-      "120V Plug & Play",
-      "Digital LCD Control",
+      "Deep relief, compact spa",
+      "Plug in, soak tonight",
+      "Sustainable, worry-free design",
     ],
     specs: {
       seating: "6 Adults",
@@ -137,10 +131,9 @@ const hotTubs = [
     originalPrice: 8995,
     image: "/images/products/Viola Gallery .jpg",
     features: [
-      "21 Stainless Steel Jets",
-      "2 Person Capacity",
-      "120V Plug & Play",
-      "Digital LCD Control",
+      "Couples' massage: plug & play",
+      "Quick setup, instant escape",
+      "Affordable luxury, low costs",
     ],
     specs: {
       seating: "2 Adults",
@@ -157,10 +150,9 @@ const hotTubs = [
     originalPrice: 32995,
     image: "/images/products/ActivePlus EP-12 Gallery.jpg",
     features: [
-      "Swim Jet System",
-      "Exercise Pool",
-      "Year-Round Use",
-      "Optional Hydrotherapy",
+      "Swim year-round + recover muscles",
+      "Adjustable current for all levels",
+      "Exercise & relaxation combined",
     ],
     specs: {
       seating: "Exercise Pool",
@@ -177,10 +169,9 @@ const hotTubs = [
     originalPrice: 42995,
     image: "/images/products/Pro EP-15 Gallery.jpg",
     features: [
-      "Variable Speed Swim Jets",
-      "Professional Exercise Pool",
-      "Enhanced Hydrotherapy",
-      "Commercial-Grade Construction",
+      "Pro swim training at home",
+      "Multi-sport workouts + recovery",
+      "Endless laps, powerful massage",
     ],
     specs: {
       seating: "Professional Pool",
