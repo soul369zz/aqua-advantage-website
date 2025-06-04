@@ -359,7 +359,7 @@ const products: Record<string, Product> = {
         {
           title: "WiFi Controls",
           description: "Smart home integration allows remote monitoring and control of your spa from anywhere using smartphone app.",
-          image: "/images/products/features/smart-controls.jpg",
+          image: "/images/products/features/wifi-app.jpg",
           category: "Smart Technology"
         },
         {
@@ -588,7 +588,7 @@ const products: Record<string, Product> = {
         {
           title: "WiFi Controls",
           description: "Smart home integration allows remote monitoring and control of your spa from anywhere using smartphone app.",
-          image: "/images/products/features/smart-controls.jpg",
+          image: "/images/products/features/wifi-app.jpg",
           category: "Smart Technology"
         }
       ]
@@ -805,7 +805,7 @@ const products: Record<string, Product> = {
         {
           title: "WiFi Controls",
           description: "Control your spa remotely with optional WiFi module. Pre-heat, adjust settings, and monitor your spa from anywhere.",
-          image: "/images/products/features/smart-controls.jpg",
+          image: "/images/products/features/wifi-app.jpg",
           category: "Smart Technology"
         },
         {
@@ -1034,7 +1034,7 @@ const products: Record<string, Product> = {
         {
           title: "WiFi Controls",
           description: "Control your spa remotely with optional WiFi module. Pre-heat, adjust settings, and monitor your spa from anywhere.",
-          image: "/images/products/features/smart-controls.jpg",
+          image: "/images/products/features/wifi-app.jpg",
           category: "Smart Technology"
         },
         {
@@ -1740,7 +1740,7 @@ const products: Record<string, Product> = {
         {
           title: "WiFi Controls",
           description: "Pre-heat your pool on the way home from work or adjust settings from inside the house - ultimate convenience for busy lifestyles.",
-          image: "/images/products/features/smart-controls.jpg",
+          image: "/images/products/features/wifi-app.jpg",
           category: "Convenience"
         },
         {
