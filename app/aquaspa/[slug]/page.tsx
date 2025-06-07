@@ -2203,8 +2203,10 @@ export default function ProductPage() {
                    <ul className="space-y-1 text-gray-600">
                      <li>• Multi-color LED lighting</li>
                      <li>• Underwater illumination</li>
-
-                     <li>• Waterproof speakers</li>
+                     {/* Garden series (wisteria, plume, viola) don't have audio/BT speakers */}
+                     {!['wisteria', 'plume', 'viola'].includes(productSlug) && (
+                       <li>• Waterproof speakers</li>
+                     )}
                    </ul>
           </div>
                  <div>
