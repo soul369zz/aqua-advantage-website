@@ -879,7 +879,7 @@ const products: Record<string, Product> = {
     ],
     specs: {
       seating: "6 Adults",
-      dimensions: "78\" x 78\" x 36\"",
+      dimensions: "84\" x 84\" x 36\"",
       waterCapacity: "320 Gallons",
       jets: "32-54 Helix Jets (varies by trim)",
       electrical: {
@@ -1112,9 +1112,9 @@ const products: Record<string, Product> = {
       waterCapacity: "330 Gallons",
       jets: "27 Stainless Steel Jets",
       electrical: {
-        voltage: "120V-15A Standard Outlet (includes 15ft GFCI Cord)",
-        amperage: "15A GFCI",
-        heater: "1.0 kW @ 120V, 4.0 kW @ 240V North America, 2.0 kW @ 240V Export"
+        voltage: "220V/240V Compatible",
+        amperage: "15A GFCI Required",
+        heater: "1.0-4.0 kW Variable Power"
       },
       dryWeight: "730 lbs",
       insulation: "ArcticPac Insulation"
@@ -1190,18 +1190,6 @@ const products: Record<string, Product> = {
           description: "Add mood lighting with energy-efficient LED systems that create the perfect ambiance for evening relaxation.",
           image: "/images/products/features/LED-lighting-systems.jpg",
           category: "Premium Lighting"
-        },
-        {
-          title: "Audio System",
-          description: "Waterproof Bluetooth speakers designed specifically for spa environments let you enjoy music during your soak.",
-          image: "/images/products/features/audio-systems.jpg",
-          category: "Entertainment"
-        },
-        {
-          title: "Water Purification",
-          description: "Cleaner water, less work - Advanced water purification keeps your spa crystal clear with fewer harsh chemicals. Enjoy healthier water that's gentler on your skin.",
-          image: "/images/products/features/water-treatment-systems.jpg",
-          category: "Water Treatment"
         }
       ]
     },
@@ -1230,11 +1218,11 @@ const products: Record<string, Product> = {
         {
           title: "Electrical & Heating",
           items: [
-            { label: "Voltage", value: "120V-15A Standard Outlet (includes 15ft GFCI Cord)" },
-            { label: "Amperage", value: "15A GFCI" },
-            { label: "Heater", value: "1.0 kW @ 120V, 4.0 kW @ 240V North America, 2.0 kW @ 240V Export" },
-            { label: "Pump", value: "1.5 BHP (1.0 HP continuous) 2-Speed" },
-            { label: "Pump", value: "1.5 BHP (1.0 HP continuous) 2-Speed" }, { label: "GFCI", value: "Included" }
+            { label: "Voltage", value: "220V/240V Compatible" },
+            { label: "Connection", value: "Standard Outlet with 15ft GFCI Cord" },
+            { label: "Amperage", value: "15A GFCI Required" },
+            { label: "Heater", value: "1.0-4.0 kW Variable Power" },
+            { label: "Pump", value: "1.5 BHP 2-Speed Circulation" }
           ]
         },
         {
@@ -1268,9 +1256,9 @@ const products: Record<string, Product> = {
       waterCapacity: "295 Gallons",
       jets: "27 Stainless Steel Jets",
       electrical: {
-        voltage: "120V-15A Standard Outlet (includes 15ft GFCI Cord)",
-        amperage: "15A GFCI",
-        heater: "1.0 kW @ 120V, 4.0 kW @ 240V North America, 2.0 kW @ 240V Export"
+        voltage: "220V/240V Compatible",
+        amperage: "15A GFCI Required",
+        heater: "1.0-4.0 kW Variable Power"
       },
       dryWeight: "769 lbs",
       insulation: "ArcticPac Insulation"
@@ -1346,18 +1334,6 @@ const products: Record<string, Product> = {
           description: "Create the perfect evening atmosphere with optional LED lighting systems designed for energy efficiency.",
           image: "/images/products/features/LED-lighting-systems.jpg",
           category: "Lighting"
-        },
-        {
-          title: "Audio System",
-          description: "Enjoy your favorite music with waterproof Bluetooth speakers specifically designed for spa environments.",
-          image: "/images/products/features/audio-systems.jpg",
-          category: "Entertainment"
-        },
-        {
-          title: "Water Purification",
-          description: "Advanced water purification keeps your pool crystal clear with fewer harsh chemicals. Enjoy healthier water while spending less time on maintenance.",
-          image: "/images/products/features/water-treatment-systems.jpg",
-          category: "Water Treatment"
         }
       ]
     },
@@ -1386,10 +1362,11 @@ const products: Record<string, Product> = {
         {
           title: "Electrical & Heating",
           items: [
-            { label: "Voltage", value: "120V-15A Standard Outlet (includes 15ft GFCI Cord)" },
-            { label: "Amperage", value: "15A GFCI" },
-            { label: "Heater", value: "1.0 kW @ 120V, 4.0 kW @ 240V North America, 2.0 kW @ 240V Export" },
-            { label: "Pump", value: "1.5 BHP (1.0 HP continuous) 2-Speed" }, { label: "GFCI", value: "Included" }
+            { label: "Voltage", value: "220V/240V Compatible" },
+            { label: "Connection", value: "Standard Outlet with 15ft GFCI Cord" },
+            { label: "Amperage", value: "15A GFCI Required" },
+            { label: "Heater", value: "1.0-4.0 kW Variable Power" },
+            { label: "Pump", value: "1.5 BHP 2-Speed Circulation" }
           ]
         },
         {
@@ -1423,9 +1400,9 @@ const products: Record<string, Product> = {
       waterCapacity: "220 Gallons",
       jets: "21 Stainless Steel Jets",
       electrical: {
-        voltage: "120V-15A Standard Outlet (includes 15ft GFCI Cord)",
-        amperage: "15A GFCI",
-        heater: "1.0 kW @ 120V, 4.0 kW @ 240V North America, 2.0 kW @ 240V Export"
+        voltage: "220V/240V Compatible",
+        amperage: "15A GFCI Required",
+        heater: "1.0-4.0 kW Variable Power"
       },
       dryWeight: "565 lbs",
       insulation: "ArcticPac Insulation"
@@ -1501,18 +1478,6 @@ const products: Record<string, Product> = {
           description: "Set the perfect mood with optional LED lighting systems designed to create intimate ambiance for couples.",
           image: "/images/products/features/LED-lighting-systems.jpg",
           category: "Romantic Features"
-        },
-        {
-          title: "Audio System",
-          description: "Create the perfect romantic atmosphere with waterproof Bluetooth speakers for your favorite music.",
-          image: "/images/products/features/audio-systems.jpg",
-          category: "Entertainment"
-        },
-        {
-          title: "Water Purification",
-          description: "Cleaner water, less work - Advanced water purification keeps your spa crystal clear with fewer harsh chemicals. Enjoy healthier water that's gentler on your skin.",
-          image: "/images/products/features/water-treatment-systems.jpg",
-          category: "Water Treatment"
         }
       ]
     },
@@ -1541,10 +1506,11 @@ const products: Record<string, Product> = {
         {
           title: "Electrical & Heating",
           items: [
-            { label: "Voltage", value: "120V-15A Standard Outlet (includes 15ft GFCI Cord)" },
-            { label: "Amperage", value: "15A GFCI" },
-            { label: "Heater", value: "1.0 kW @ 120V, 4.0 kW @ 240V North America, 2.0 kW @ 240V Export" },
-            { label: "Pump", value: "1.5 BHP (1.0 HP continuous) 2-Speed" }, { label: "GFCI", value: "Included" }
+            { label: "Voltage", value: "220V/240V Compatible" },
+            { label: "Connection", value: "Standard Outlet with 15ft GFCI Cord" },
+            { label: "Amperage", value: "15A GFCI Required" },
+            { label: "Heater", value: "1.0-4.0 kW Variable Power" },
+            { label: "Pump", value: "1.5 BHP 2-Speed Circulation" }
           ]
         },
         {
@@ -1701,7 +1667,7 @@ const products: Record<string, Product> = {
           category: "Wellness"
         },
         {
-          title: "Grab Rails",
+          title: "Grab Rail",
           description: "Enhanced safety and stability when exercising, stretching, or transitioning in and out of the pool - perfect for users of all fitness levels.",
           image: "/images/products/features/grab-rails.jpg",
           category: "Safety & Confidence"
@@ -1798,8 +1764,8 @@ const products: Record<string, Product> = {
         {
           title: "Hydrotherapy Options",
           items: [
-            { label: "Standard", value: "34 Helix Jets, 6.0 BHP (3.0 HP continuous) 1-Speed Pump" },
-            { label: "Premium Option", value: "34 Helix Jets, 3.0 HP Variable Speed Pump" },
+            { label: "Standard", value: "28 Helix Jets, 3.0 HP 1-Spd Pump" },
+            { label: "Twin Bench Option", value: "12 Helix Jets, 3.0 BHP (1.5 HP continuous) 1-Spd Pump" },
             { label: "Water Features", value: "BellagioFall Water Feature (optional)" },
             { label: "Therapy Zones", value: "Dedicated hydrotherapy seating area" }
           ]
@@ -1816,7 +1782,7 @@ const products: Record<string, Product> = {
         {
           title: "Standard Features",
           items: [
-            { label: "Grab Rails", value: "2 Grab Rails" },
+            { label: "Grab Rail", value: "1 Grab Rail" },
             { label: "Lighting", value: "Blue LED 5\" Spa Light" },
             { label: "Controls", value: "SpaTouch Digital Controls (WiFi Ready)" },
             { label: "Cover", value: "All Seasons Shield Cover" }
@@ -2237,7 +2203,7 @@ export default function ProductPage() {
                    <ul className="space-y-1 text-gray-600">
                      <li>• Multi-color LED lighting</li>
                      <li>• Underwater illumination</li>
-                     <li>• Bluetooth audio system</li>
+
                      <li>• Waterproof speakers</li>
                    </ul>
           </div>
@@ -2254,8 +2220,6 @@ export default function ProductPage() {
                   <h4 className="font-semibold text-gray-900 mb-2">Comfort Features</h4>
                   <ul className="space-y-1 text-gray-600">
                     <li>• Ergonomic seating design</li>
-                    <li>• Adjustable headrests</li>
-                    <li>• Non-slip surfaces</li>
                     <li>• Cup holders</li>
                   </ul>
         </div>
@@ -2341,7 +2305,7 @@ export default function ProductPage() {
             <div>
               <h4 className="font-semibold text-gray-900 mb-4">Service & Support</h4>
               <div className="space-y-3 text-gray-600">
-                <p>• 24/7 customer support hotline</p>
+
                 <p>• Certified technician network</p>
                 <p>• Genuine replacement parts</p>
                 <p>• Mobile service available</p>
@@ -2351,7 +2315,7 @@ export default function ProductPage() {
               <div className="mt-6 p-4 bg-emerald-50 rounded-lg">
                 <h5 className="font-medium text-emerald-800 mb-2">Extended Warranty Available</h5>
                 <p className="text-emerald-700 text-sm">
-                  Extend your coverage up to 10 years with our comprehensive protection plan.
+                  Extend your coverage up to 3 years with our comprehensive protection plan.
                 </p>
               </div>
             </div>
@@ -2385,7 +2349,7 @@ export default function ProductPage() {
                 <div>
                   <h5 className="font-medium text-gray-900 mb-2">Base Frame</h5>
                   <p className="text-gray-600 text-sm">
-                    Galvanized steel frame with powder coating for corrosion resistance.
+                    Treated lumber frame construction for durability and support.
                   </p>
                 </div>
               </div>
@@ -2435,7 +2399,8 @@ export default function ProductPage() {
         </div>
       ),
     },
-    {
+    // Advanced Options & Accessories - Hidden for Garden Series
+    ...(!['wisteria', 'plume', 'viola'].includes(productSlug) ? [{
       id: "advanced-options",
       title: "Advanced Options & Accessories",
       content: (
@@ -2551,7 +2516,7 @@ export default function ProductPage() {
           </div>
         </div>
       ),
-    },
+    }] : []),
   ]
 
   useEffect(() => {
@@ -2758,27 +2723,15 @@ export default function ProductPage() {
               {/* CTA Buttons */}
               <div className="flex flex-col gap-4">
                 {/* Top row buttons */}
-                <div className="flex flex-col sm:flex-row gap-4">
-          <div className="flex-1">
+                <div>
                     <Button
                       size="lg"
-                      className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 w-full"
+                      className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105"
                       asChild
                     >
                       <a href="tel:+12087277909">View Sale Pricing</a>
                     </Button>
                     <p className="text-sm text-gray-500 mt-2 text-center sm:text-left">This pricing is not available online</p>
-          </div>
-          <div className="flex-1">
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className="border-blue-500 text-blue-500 hover:bg-blue-50 px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 w-full"
-                      asChild
-                    >
-                      <a href="tel:+12087277909">Financing Available</a>
-                    </Button>
-          </div>
         </div>
         </div>
 
@@ -2855,42 +2808,44 @@ export default function ProductPage() {
           </div>
         </div>
 
-          {/* Optional Features */}
-          <div className="mb-20">
-            <h3 className="text-3xl font-bold text-center mb-12 text-gray-900">Optional Features</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {product.controlFeatures.optionalFeatures.map((feature, index) => (
-                <div
-                  key={index}
-                  className={`bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border border-blue-100 ${sectionsInView["enhanced-features"] ? `animate-fade-in-up` : "opacity-0"}`}
-                  style={{ animationDelay: `${(index + 6) * 150}ms` }}
-                >
-                  <div className="relative h-48 overflow-hidden">
-                    <Image
-                      src={feature.image}
-                      alt={feature.title}
-                      fill
-                      className="object-cover transition-transform duration-700 hover:scale-110"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-gradient-to-r from-amber-500 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                        {feature.category}
-                      </span>
+          {/* Optional Features - Hidden for Garden Series */}
+          {!['wisteria', 'plume', 'viola'].includes(productSlug) && (
+            <div className="mb-20">
+              <h3 className="text-3xl font-bold text-center mb-12 text-gray-900">Optional Features</h3>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {product.controlFeatures.optionalFeatures.map((feature, index) => (
+                  <div
+                    key={index}
+                    className={`bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 border border-blue-100 ${sectionsInView["enhanced-features"] ? `animate-fade-in-up` : "opacity-0"}`}
+                    style={{ animationDelay: `${(index + 6) * 150}ms` }}
+                  >
+                    <div className="relative h-48 overflow-hidden">
+                      <Image
+                        src={feature.image}
+                        alt={feature.title}
+                        fill
+                        className="object-cover transition-transform duration-700 hover:scale-110"
+                      />
+                      <div className="absolute top-4 left-4">
+                        <span className="bg-gradient-to-r from-amber-500 to-orange-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                          {feature.category}
+                        </span>
+                      </div>
+                      <div className="absolute top-4 right-4">
+                        <span className="bg-green-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                          OPTIONAL
+                        </span>
+                      </div>
                     </div>
-                    <div className="absolute top-4 right-4">
-                      <span className="bg-green-500 text-white px-2 py-1 rounded-full text-xs font-bold">
-                        OPTIONAL
-                      </span>
+                    <div className="p-6">
+                      <h4 className="text-xl font-bold mb-3 text-gray-900">{feature.title}</h4>
+                      <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                     </div>
                   </div>
-                  <div className="p-6">
-                    <h4 className="text-xl font-bold mb-3 text-gray-900">{feature.title}</h4>
-                    <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Product Information Dropdowns */}
           <div className="mb-20">

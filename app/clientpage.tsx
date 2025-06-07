@@ -629,7 +629,7 @@ export default function HomePage() {
                     We are pool care <span className="italic font-serif">specialists.</span>
                   </h2>
                   <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                    Aqua Advantage keeps your pool pristine and equipment running perfectly, while offering premium hot tubs to enhance your backyard relaxation.
+                    Based in Burley, Idaho, Aqua Advantage is your local authority on pool care and spa luxury. We've built our reputation on reliable service, honest pricing, and genuine care for our community. Whether you need expert pool maintenance or dream of installing a premium hot tub, we treat every project like it's in our own backyard.
                   </p>
 
                   <div className="grid grid-cols-3 gap-8">
