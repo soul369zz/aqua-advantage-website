@@ -8,6 +8,7 @@ import { ChevronLeft, ChevronRight, Zap, Shield, Smartphone, Clock, ChevronDown,
 import Image from "next/image"
 import Link from "next/link"
 import { useParams } from "next/navigation"
+import { PhoneButton } from "@/components/PhoneButton"
 
 interface ProductSpecs {
   seating: string;
@@ -103,6 +104,15 @@ interface Product {
     color: string;
     image: string;
   }>;
+  cabinetryOptions?: Array<{
+    name: string;
+    image: string;
+  }>;
+  acrylicShellOptions?: Array<{
+    name: string;
+    materialType: string;
+    image: string;
+  }>;
   specs: ProductSpecs;
   warranty?: {
     shell: string;
@@ -195,6 +205,21 @@ const products: Record<string, Product> = {
       { name: "Black", color: "#1F2937", image: "/images/products/Cabinetry Colors/Black.png" },
       { name: "Brown", color: "#8B4513", image: "/images/products/Cabinetry Colors/Brown.png" },
     ],
+    cabinetryOptions: [
+      { name: "Grey", image: "/images/products/Acrylic Shell Options/Grey.jpg" },
+      { name: "Java", image: "/images/products/Acrylic Shell Options/Java.jpg" },
+      { name: "Charcoal Black", image: "/images/products/Acrylic Shell Options/Charcoal-Black.jpg" },
+    ],
+    acrylicShellOptions: [
+      { name: "White", materialType: "Solid", image: "/images/products/Acrylic Shell Options/white.png" },
+      { name: "Silver Marble", materialType: "Marble", image: "/images/products/Acrylic Shell Options/Silver-Marble.png" },
+      { name: "White Pearl", materialType: "Luster", image: "/images/products/Acrylic Shell Options/White-Pearl.png" },
+      { name: "Smoky Mountains", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Smokey-Mountains.png" },
+      { name: "Glacier Mountain", materialType: "Metallix", image: "/images/products/Acrylic Shell Options/Glacier-Mountain.jpg" },
+      { name: "Tuscan Sun", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Tuscan-Sun.jpg" },
+      { name: "Midnight Canyon", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Midnight-Canyon.jpg" },
+      { name: "Storm Clouds", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Storm-Clouds.jpg" },
+    ],
     specs: {
       seating: "6 Adults",
       dimensions: "91\" x 91\" x 36\"",
@@ -203,9 +228,10 @@ const products: Record<string, Product> = {
       electrical: {
         voltage: "240V",
         amperage: "60 Amp",
-        heater: "5.5 kW North America (60 Hz), 3.0 kW Export (50 Hz)"
+        heater: "5.5 kW North America (60 Hz), 3.0 kW Export (50 Hz)",
+        pumps: "2-4 pumps (1-speed, varies by trim)"
       },
-      dryWeight: "901 lbs + cover",
+      dryWeight: "901 lbs (includes cover)",
       insulation: "Full Foam"
     },
     warranty: {
@@ -425,6 +451,21 @@ const products: Record<string, Product> = {
       { name: "Black", color: "#1F2937", image: "/images/products/Cabinetry Colors/Black.png" },
       { name: "Brown", color: "#8B4513", image: "/images/products/Cabinetry Colors/Brown.png" },
     ],
+    cabinetryOptions: [
+      { name: "Grey", image: "/images/products/Acrylic Shell Options/Grey.jpg" },
+      { name: "Java", image: "/images/products/Acrylic Shell Options/Java.jpg" },
+      { name: "Charcoal Black", image: "/images/products/Acrylic Shell Options/Charcoal-Black.jpg" },
+    ],
+    acrylicShellOptions: [
+      { name: "White", materialType: "Solid", image: "/images/products/Acrylic Shell Options/white.png" },
+      { name: "Silver Marble", materialType: "Marble", image: "/images/products/Acrylic Shell Options/Silver-Marble.png" },
+      { name: "White Pearl", materialType: "Luster", image: "/images/products/Acrylic Shell Options/White-Pearl.png" },
+      { name: "Smoky Mountains", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Smokey-Mountains.png" },
+      { name: "Glacier Mountain", materialType: "Metallix", image: "/images/products/Acrylic Shell Options/Glacier-Mountain.jpg" },
+      { name: "Tuscan Sun", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Tuscan-Sun.jpg" },
+      { name: "Midnight Canyon", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Midnight-Canyon.jpg" },
+      { name: "Storm Clouds", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Storm-Clouds.jpg" },
+    ],
     specs: {
       seating: "7 Adults",
       dimensions: "91\" x 91\" x 36\"",
@@ -433,9 +474,10 @@ const products: Record<string, Product> = {
       electrical: {
         voltage: "240V",
         amperage: "60 Amp",
-        heater: "5.5 kW North America (60 Hz), 3.0 kW Export (50 Hz)"
+        heater: "5.5 kW North America (60 Hz), 3.0 kW Export (50 Hz)",
+        pumps: "2-4 pumps (1-speed, varies by trim)"
       },
-      dryWeight: "900 lbs + cover",
+      dryWeight: "900 lbs (includes cover)",
       insulation: "Full Foam"
     },
     warranty: {
@@ -648,6 +690,21 @@ const products: Record<string, Product> = {
       { name: "Black", color: "#1F2937", image: "/images/products/Cabinetry Colors/Black.png" },
       { name: "Brown", color: "#8B4513", image: "/images/products/Cabinetry Colors/Brown.png" },
     ],
+    cabinetryOptions: [
+      { name: "Grey", image: "/images/products/Acrylic Shell Options/Grey.jpg" },
+      { name: "Java", image: "/images/products/Acrylic Shell Options/Java.jpg" },
+      { name: "Charcoal Black", image: "/images/products/Acrylic Shell Options/Charcoal-Black.jpg" },
+    ],
+    acrylicShellOptions: [
+      { name: "White", materialType: "Solid", image: "/images/products/Acrylic Shell Options/white.png" },
+      { name: "Silver Marble", materialType: "Marble", image: "/images/products/Acrylic Shell Options/Silver-Marble.png" },
+      { name: "White Pearl", materialType: "Luster", image: "/images/products/Acrylic Shell Options/White-Pearl.png" },
+      { name: "Smoky Mountains", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Smokey-Mountains.png" },
+      { name: "Glacier Mountain", materialType: "Metallix", image: "/images/products/Acrylic Shell Options/Glacier-Mountain.jpg" },
+      { name: "Tuscan Sun", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Tuscan-Sun.jpg" },
+      { name: "Midnight Canyon", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Midnight-Canyon.jpg" },
+      { name: "Storm Clouds", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Storm-Clouds.jpg" },
+    ],
     specs: {
       seating: "7 Adults",
       dimensions: "84\" x 84\" x 36\"",
@@ -656,9 +713,10 @@ const products: Record<string, Product> = {
       electrical: {
         voltage: "240V",
         amperage: "50 Amp",
-        heater: "5.5 kW North America (60 Hz), 3.0 kW Export (50 Hz)"
+        heater: "5.5 kW North America (60 Hz), 3.0 kW Export (50 Hz)",
+        pumps: "2-3 pumps (1-speed, varies by trim)"
       },
-      dryWeight: "835 lbs + cover",
+      dryWeight: "835 lbs (includes cover)",
       insulation: "Full Foam"
     },
     warranty: {
@@ -877,6 +935,21 @@ const products: Record<string, Product> = {
       { name: "Black", color: "#1F2937", image: "/images/products/Cabinetry Colors/Black.png" },
       { name: "Brown", color: "#8B4513", image: "/images/products/Cabinetry Colors/Brown.png" },
     ],
+    cabinetryOptions: [
+      { name: "Grey", image: "/images/products/Acrylic Shell Options/Grey.jpg" },
+      { name: "Java", image: "/images/products/Acrylic Shell Options/Java.jpg" },
+      { name: "Charcoal Black", image: "/images/products/Acrylic Shell Options/Charcoal-Black.jpg" },
+    ],
+    acrylicShellOptions: [
+      { name: "White", materialType: "Solid", image: "/images/products/Acrylic Shell Options/white.png" },
+      { name: "Silver Marble", materialType: "Marble", image: "/images/products/Acrylic Shell Options/Silver-Marble.png" },
+      { name: "White Pearl", materialType: "Luster", image: "/images/products/Acrylic Shell Options/White-Pearl.png" },
+      { name: "Smoky Mountains", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Smokey-Mountains.png" },
+      { name: "Glacier Mountain", materialType: "Metallix", image: "/images/products/Acrylic Shell Options/Glacier-Mountain.jpg" },
+      { name: "Tuscan Sun", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Tuscan-Sun.jpg" },
+      { name: "Midnight Canyon", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Midnight-Canyon.jpg" },
+      { name: "Storm Clouds", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Storm-Clouds.jpg" },
+    ],
     specs: {
       seating: "6 Adults",
       dimensions: "84\" x 84\" x 36\"",
@@ -885,9 +958,10 @@ const products: Record<string, Product> = {
       electrical: {
         voltage: "240V",
         amperage: "50 Amp",
-        heater: "5.5 kW North America (60 Hz), 3.0 kW Export (50 Hz)"
+        heater: "5.5 kW North America (60 Hz), 3.0 kW Export (50 Hz)",
+        pumps: "2-3 pumps (1-speed, varies by trim)"
       },
-      dryWeight: "834 lbs + cover",
+      dryWeight: "834 lbs (includes cover)",
       insulation: "Full Foam"
     },
     warranty: {
@@ -1106,6 +1180,20 @@ const products: Record<string, Product> = {
       { name: "Black", color: "#1F2937", image: "/images/products/Cabinetry Colors/Black.png" },
       { name: "Brown", color: "#8B4513", image: "/images/products/Cabinetry Colors/Brown.png" },
     ],
+    cabinetryOptions: [
+      { name: "Grey", image: "/images/products/Acrylic Shell Options/Grey.jpg" },
+      { name: "Java", image: "/images/products/Acrylic Shell Options/Java.jpg" },
+      { name: "Charcoal Black", image: "/images/products/Acrylic Shell Options/Charcoal-Black.jpg" },
+    ],
+    acrylicShellOptions: [
+      { name: "White", materialType: "Solid", image: "/images/products/Acrylic Shell Options/white.png" },
+      { name: "Silver Marble", materialType: "Marble", image: "/images/products/Acrylic Shell Options/Silver-Marble.png" },
+      { name: "White Pearl", materialType: "Luster", image: "/images/products/Acrylic Shell Options/White-Pearl.png" },
+      { name: "Smoky Mountains", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Smokey-Mountains.png" },
+      { name: "Tuscan Sun", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Tuscan-Sun.jpg" },
+      { name: "Midnight Canyon", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Midnight-Canyon.jpg" },
+      { name: "Storm Clouds", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Storm-Clouds.jpg" },
+    ],
     specs: {
       seating: "6 Adults",
       dimensions: "84\" x 84\" x 36\"",
@@ -1114,7 +1202,8 @@ const products: Record<string, Product> = {
       electrical: {
         voltage: "220V/240V Compatible",
         amperage: "15A GFCI Required",
-        heater: "1.0-4.0 kW Variable Power"
+        heater: "1.0-4.0 kW Variable Power",
+        pumps: "1 pump (1.5 BHP, 2-speed)"
       },
       dryWeight: "730 lbs",
       insulation: "ArcticPac Insulation"
@@ -1250,6 +1339,20 @@ const products: Record<string, Product> = {
       { name: "Black", color: "#1F2937", image: "/images/products/Cabinetry Colors/Black.png" },
       { name: "Brown", color: "#8B4513", image: "/images/products/Cabinetry Colors/Brown.png" },
     ],
+    cabinetryOptions: [
+      { name: "Grey", image: "/images/products/Acrylic Shell Options/Grey.jpg" },
+      { name: "Java", image: "/images/products/Acrylic Shell Options/Java.jpg" },
+      { name: "Charcoal Black", image: "/images/products/Acrylic Shell Options/Charcoal-Black.jpg" },
+    ],
+    acrylicShellOptions: [
+      { name: "White", materialType: "Solid", image: "/images/products/Acrylic Shell Options/white.png" },
+      { name: "Silver Marble", materialType: "Marble", image: "/images/products/Acrylic Shell Options/Silver-Marble.png" },
+      { name: "White Pearl", materialType: "Luster", image: "/images/products/Acrylic Shell Options/White-Pearl.png" },
+      { name: "Smoky Mountains", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Smokey-Mountains.png" },
+      { name: "Tuscan Sun", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Tuscan-Sun.jpg" },
+      { name: "Midnight Canyon", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Midnight-Canyon.jpg" },
+      { name: "Storm Clouds", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Storm-Clouds.jpg" },
+    ],
     specs: {
       seating: "6 Adults",
       dimensions: "84\" x 78\" x 34\"",
@@ -1258,7 +1361,8 @@ const products: Record<string, Product> = {
       electrical: {
         voltage: "220V/240V Compatible",
         amperage: "15A GFCI Required",
-        heater: "1.0-4.0 kW Variable Power"
+        heater: "1.0-4.0 kW Variable Power",
+        pumps: "1 pump (1.5 BHP, 2-speed)"
       },
       dryWeight: "769 lbs",
       insulation: "ArcticPac Insulation"
@@ -1394,6 +1498,20 @@ const products: Record<string, Product> = {
       { name: "Black", color: "#1F2937", image: "/images/products/Cabinetry Colors/Black.png" },
       { name: "Brown", color: "#8B4513", image: "/images/products/Cabinetry Colors/Brown.png" },
     ],
+    cabinetryOptions: [
+      { name: "Grey", image: "/images/products/Acrylic Shell Options/Grey.jpg" },
+      { name: "Java", image: "/images/products/Acrylic Shell Options/Java.jpg" },
+      { name: "Charcoal Black", image: "/images/products/Acrylic Shell Options/Charcoal-Black.jpg" },
+    ],
+    acrylicShellOptions: [
+      { name: "White", materialType: "Solid", image: "/images/products/Acrylic Shell Options/white.png" },
+      { name: "Silver Marble", materialType: "Marble", image: "/images/products/Acrylic Shell Options/Silver-Marble.png" },
+      { name: "White Pearl", materialType: "Luster", image: "/images/products/Acrylic Shell Options/White-Pearl.png" },
+      { name: "Smoky Mountains", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Smokey-Mountains.png" },
+      { name: "Tuscan Sun", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Tuscan-Sun.jpg" },
+      { name: "Midnight Canyon", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Midnight-Canyon.jpg" },
+      { name: "Storm Clouds", materialType: "Luster Swirl", image: "/images/products/Acrylic Shell Options/Storm-Clouds.jpg" },
+    ],
     specs: {
       seating: "2 Adults",
       dimensions: "82\" x 65\" x 31\"",
@@ -1402,7 +1520,8 @@ const products: Record<string, Product> = {
       electrical: {
         voltage: "220V/240V Compatible",
         amperage: "15A GFCI Required",
-        heater: "1.0-4.0 kW Variable Power"
+        heater: "1.0-4.0 kW Variable Power",
+        pumps: "1 pump (1.5 BHP, 2-speed)"
       },
       dryWeight: "565 lbs",
       insulation: "ArcticPac Insulation"
@@ -1539,6 +1658,14 @@ const products: Record<string, Product> = {
       { name: "Java", color: "#8B4513", image: "/images/products/Cabinetry Colors/Grandwood Java.png" },
       { name: "Grey", color: "#6B7280", image: "/images/products/Cabinetry Colors/Grey.png" },
     ],
+    cabinetryOptions: [
+      { name: "Grey", image: "/images/products/Acrylic Shell Options/Grey.jpg" },
+      { name: "Java", image: "/images/products/Acrylic Shell Options/Java.jpg" },
+      { name: "Charcoal Black", image: "/images/products/Acrylic Shell Options/Charcoal-Black.jpg" },
+    ],
+    acrylicShellOptions: [
+      { name: "Silver Marble", materialType: "Marble", image: "/images/products/Acrylic Shell Options/Silver-Marble.png" },
+    ],
     specs: {
       seating: "Exercise Pool",
       dimensions: "144\" x 91\" x 52\"",
@@ -1548,8 +1675,9 @@ const products: Record<string, Product> = {
         voltage: "240V",
         amperage: "60 Amp",
         heater: "5.5 kW North America (60 Hz), 3.0 kW Export (50 Hz)",
-        pumps: "2 Swim + 2 Therapy Pumps",
+        pumps: "1-2 swim pumps (3.0 HP)",
       },
+      dryWeight: "2,100 lbs",
       waterChemistry: {
         ph: "7.2-7.6",
         alkalinity: "80-120 ppm",
@@ -1814,6 +1942,14 @@ const products: Record<string, Product> = {
       { name: "Java", color: "#8B4513", image: "/images/products/Cabinetry Colors/Grandwood Java.png" },
       { name: "Grey", color: "#6B7280", image: "/images/products/Cabinetry Colors/Grey.png" },
     ],
+    cabinetryOptions: [
+      { name: "Grey", image: "/images/products/Acrylic Shell Options/Grey.jpg" },
+      { name: "Java", image: "/images/products/Acrylic Shell Options/Java.jpg" },
+      { name: "Charcoal Black", image: "/images/products/Acrylic Shell Options/Charcoal-Black.jpg" },
+    ],
+    acrylicShellOptions: [
+      { name: "Silver Marble", materialType: "Marble", image: "/images/products/Acrylic Shell Options/Silver-Marble.png" },
+    ],
     specs: {
       seating: "Professional Pool",
       dimensions: "180\" x 91\" x 60\"",
@@ -1823,8 +1959,9 @@ const products: Record<string, Product> = {
         voltage: "240V",
         amperage: "60 Amp",
         heater: "5.5 kW North America (60 Hz), 3.0 kW Export (50 Hz)",
-        pumps: "2 Variable Speed + 2 Therapy Pumps",
+        pumps: "1-2 swim pumps (3.0 HP)",
       },
+      dryWeight: "2,400 lbs",
       waterChemistry: {
         ph: "7.2-7.6",
         alkalinity: "80-120 ppm",
@@ -2203,10 +2340,6 @@ export default function ProductPage() {
                    <ul className="space-y-1 text-gray-600">
                      <li>• Multi-color LED lighting</li>
                      <li>• Underwater illumination</li>
-                     {/* Garden series (wisteria, plume, viola) don't have audio/BT speakers */}
-                     {!['wisteria', 'plume', 'viola'].includes(productSlug) && (
-                       <li>• Waterproof speakers</li>
-                     )}
                    </ul>
           </div>
                  <div>
@@ -2254,6 +2387,10 @@ export default function ProductPage() {
                   <span>Jets:</span>
                   <span>{product.specs.jets}</span>
                 </div>
+                <div className="flex justify-between">
+                  <span>Dry Weight:</span>
+                  <span>{product.specs.dryWeight}</span>
+                </div>
             </div>
           </div>
           <div>
@@ -2276,6 +2413,12 @@ export default function ProductPage() {
                   <span>Heater:</span>
                   <span>{product.specs.electrical.heater}</span>
                 </div>
+                {product.specs.electrical.pumps && (
+                  <div className="flex justify-between">
+                    <span>Pumps:</span>
+                    <span>{product.specs.electrical.pumps}</span>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -2293,7 +2436,7 @@ export default function ProductPage() {
               <div className="space-y-3">
                 {product.warranty ? Object.entries(product.warranty).map(([key, value]) => (
                   <div key={key} className="border-l-4 border-emerald-500 pl-4">
-                    <h5 className="font-medium text-gray-900 capitalize">{key}</h5>
+                    <h5 className="font-medium text-gray-900 capitalize">{key === 'shell' ? 'Frame' : key}</h5>
                     <p className="text-gray-600">{value}</p>
                 </div>
                 )) : (
@@ -2688,51 +2831,64 @@ export default function ProductPage() {
               <h1 className="text-5xl font-bold mb-4 text-gray-900">{product.name}</h1>
               <p className="text-xl text-gray-600 mb-6">{product.title}</p>
 
-              {/* Color Selection */}
-              <div className="mb-8">
-                <h3 className="text-lg font-semibold mb-4 text-gray-900">Choose Your Cabinet</h3>
-                <div className="flex gap-3">
-                  {product.colorOptions.map((option, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setSelectedColor(index)}
-                      className={`relative w-16 h-16 rounded-lg border-2 transition-all duration-300 hover:scale-110 overflow-hidden ${
-                        selectedColor === index ? "border-blue-500 scale-110 shadow-lg" : "border-gray-300"
-                      }`}
-                    >
-                      {option.image ? (
-                        <Image
-                          src={option.image}
-                          alt={option.name}
-                          fill
-                          className="object-cover"
-                        />
-                      ) : (
-                        <div 
-                          className="w-full h-full"
-                          style={{ backgroundColor: option.color }}
-                        />
-                      )}
-                      {selectedColor === index && (
-                        <div className="absolute inset-0 rounded-lg border-2 border-blue-500 animate-pulse" />
-                      )}
-                    </button>
-                  ))}
-          </div>
-                <p className="text-sm text-gray-500 mt-2">{product.colorOptions[selectedColor].name}</p>
-        </div>
+              {/* Cabinetry Selection */}
+              {product.cabinetryOptions && (
+                <div className="mb-8">
+                  <h3 className="text-lg font-semibold mb-4 text-gray-900">Choose Your Cabinet</h3>
+                  <div className="grid grid-cols-2 gap-4 sm:flex sm:gap-3 sm:flex-wrap">
+                    {product.cabinetryOptions.map((option, index) => (
+                      <div key={index} className="flex flex-col items-center">
+                        <div className="relative w-20 h-20 sm:w-16 sm:h-16 md:w-32 md:h-32 rounded-lg border-2 border-gray-300 overflow-hidden">
+                          <Image
+                            src={option.image}
+                            alt={option.name}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                        <p className="text-xs sm:text-sm text-gray-500 mt-2 text-center w-20 sm:w-16 md:w-32">{option.name}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Acrylic Shell Selection */}
+              {product.acrylicShellOptions && (
+                <div className="mb-8">
+                  <h3 className="text-lg font-semibold mb-4 text-gray-900">Choose Your Acrylic Shell</h3>
+                  <div className="grid grid-cols-2 gap-4 sm:flex sm:gap-3 sm:flex-wrap">
+                    {product.acrylicShellOptions.map((option, index) => (
+                      <div key={index} className="flex flex-col items-center">
+                        <div className="relative w-20 h-20 sm:w-16 sm:h-16 md:w-32 md:h-32 rounded-lg border-2 border-gray-300 overflow-hidden">
+                          <Image
+                            src={option.image}
+                            alt={option.name}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                        <div className="mt-2 text-center w-20 sm:w-16 md:w-32">
+                          <p className="text-xs sm:text-sm font-medium text-gray-800 leading-tight">{option.name}</p>
+                          <p className="text-xs text-gray-600 mt-0.5">{option.materialType}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* CTA Buttons */}
               <div className="flex flex-col gap-4">
                 {/* Top row buttons */}
-                <div>
-                    <Button
+                <div className="flex flex-col items-center sm:items-start">
+                    <PhoneButton
                       size="lg"
                       className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105"
                       asChild
                     >
-                      <a href="tel:+12087277909">View Sale Pricing</a>
-                    </Button>
+                      View Sale Pricing
+                    </PhoneButton>
                     <p className="text-sm text-gray-500 mt-2 text-center sm:text-left">This pricing is not available online</p>
         </div>
         </div>
@@ -2891,12 +3047,12 @@ export default function ProductPage() {
               <p className="text-blue-100 text-lg mb-6">
                 Discover how the {product.name} can transform your wellness and relaxation routine
               </p>
-                 <Button
+                 <PhoneButton
                 className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
                  asChild
                  >
-                <a href="tel:+12087277909">Get Your Custom Quote</a>
-                 </Button>
+                Get Your Custom Quote
+                 </PhoneButton>
              </div>
           </div>
           </div>
@@ -2956,14 +3112,12 @@ export default function ProductPage() {
              Contact us to learn more about special offers and discounts on the {product.name} Hot Tub.
            </p>
            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-             <Button
+             <PhoneButton
              className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 w-full"
              asChild
              >
-               <a href="tel:+12087277909">
                 Unlock Exclusive Pricing
-               </a>
-             </Button>
+             </PhoneButton>
            </div>
       </div>
         </section>
@@ -3092,7 +3246,7 @@ export default function ProductPage() {
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                   </svg>
-                  <span>info@aquaadvantage.com</span>
+                  <span>info@AquaAdvantagePoolandSpa.com</span>
                 </div>
                 <div className="flex items-center space-x-1 mt-4">
                   {[...Array(5)].map((_, i) => (
