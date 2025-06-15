@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ChevronRight, Star, Shield, Zap, MapPin, Phone, Menu, X } from "lucide-react"
 import Link from "next/link"
+import { PhoneButton } from "@/components/PhoneButton"
 
 const hotTubs = [
   {
@@ -15,7 +16,7 @@ const hotTubs = [
     title: "Island Series Elite Hot Tub",
     price: 18995,
     originalPrice: 21995,
-    image: "/images/products/Grand Bahama Gallery.jpg",
+    image: "/images/products/GrandBahama_ELITE_900.jpg",
     features: [
       "Melt tension: jets + foot therapy",
       "Control jets & lights from phone",
@@ -34,7 +35,7 @@ const hotTubs = [
     title: "Island Series Elite Hot Tub",
     price: 19995,
     originalPrice: 22995,
-    image: "/images/products/Grand Cayman Gallery.jpg",
+    image: "/images/products/Grand Cayman.jpg",
     features: [
       "Powerful massage for 7 people",
       "Manage spa settings via app",
@@ -53,7 +54,7 @@ const hotTubs = [
     title: "Island Series Family Hot Tub",
     price: 16995,
     originalPrice: 19995,
-    image: "/images/products/Captiva Gallery.jpg",
+    image: "/images/products/Captiva.jpg",
     features: [
       "Soothe muscles in 7 seats",
       "App control + stunning lights",
@@ -72,7 +73,7 @@ const hotTubs = [
     title: "Island Series Compact Hot Tub",
     price: 15995,
     originalPrice: 18995,
-    image: "/images/products/Antigua Gallery.jpg",
+    image: "/images/products/Antigua.jpg",
     features: [
       "Target neck/feet tension relief",
       "Personalize jets instantly & remotely",
@@ -91,7 +92,7 @@ const hotTubs = [
     title: "Garden Series Plug & Play",
     price: 8995,
     originalPrice: 10995,
-    image: "/images/products/Wisteria Gallery.jpg",
+    image: "/images/products/Wisteria.jpg",
     features: [
       "Family soak: plug & relax!",
       "No electrician - use tonight",
@@ -110,7 +111,7 @@ const hotTubs = [
     title: "Garden Series Efficient Spa",
     price: 8495,
     originalPrice: 10495,
-    image: "/images/products/Plume Gallery.jpg",
+    image: "/images/products/Plume.jpg",
     features: [
       "Deep relief, compact spa",
       "Plug in, soak tonight",
@@ -129,7 +130,7 @@ const hotTubs = [
     title: "Garden Series Intimate Spa",
     price: 6995,
     originalPrice: 8995,
-    image: "/images/products/Viola Gallery .jpg",
+    image: "/images/products/Viola.jpg",
     features: [
       "Couples' massage: plug & play",
       "Quick setup, instant escape",
@@ -148,7 +149,7 @@ const hotTubs = [
     title: "TidalFit Exercise Pool",
     price: 28995,
     originalPrice: 32995,
-    image: "/images/products/ActivePlus EP-12 Gallery.jpg",
+    image: "/images/products/ActivePlus EP-12.jpg",
     features: [
       "Swim year-round + recover muscles",
       "Adjustable current for all levels",
@@ -167,7 +168,7 @@ const hotTubs = [
     title: "TidalFit Professional Exercise Pool",
     price: 36995,
     originalPrice: 42995,
-    image: "/images/products/Pro EP-15 Gallery.jpg",
+    image: "/images/products/Pro EP-15.jpg",
     features: [
       "Pro swim training at home",
       "Multi-sport workouts + recovery",
@@ -622,7 +623,9 @@ export default function HotTubsPage() {
                 }`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="relative h-64 overflow-hidden">
+                <div className={`relative overflow-hidden ${
+                  tub.id === 'activeplus-ep-12' || tub.id === 'pro-ep-15' ? 'h-64' : 'h-72'
+                }`}>
                   <Image
                     src={tub.image}
                     alt={tub.name}
@@ -729,18 +732,18 @@ export default function HotTubsPage() {
             Schedule a consultation with our experts to find your perfect hot tub
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-4 text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            <PhoneButton 
+              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-4 text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg"
               asChild
             >
-              <a href="tel:+12087277909">Schedule Consultation</a>
-            </Button>
-            <Button
-              variant="outline"
-              className="border-blue-500 text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg transition-all duration-300 hover:scale-105"
+              Schedule Consultation
+            </PhoneButton>
+            <PhoneButton
+              className="border-blue-500 text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg transition-all duration-300 hover:scale-105 bg-white border"
               asChild
             >
-              <a href="tel:+12087277909">Get a Quote</a>
-            </Button>
+              Get a Quote
+            </PhoneButton>
           </div>
         </div>
       </section>
@@ -850,7 +853,7 @@ export default function HotTubsPage() {
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                   </svg>
-                  <span>info@aquaadvantage.com</span>
+                  <span>info@AquaAdvantagePoolandSpa.com</span>
                 </div>
                 <div className="flex items-center space-x-1 mt-4">
                   {[...Array(5)].map((_, i) => (

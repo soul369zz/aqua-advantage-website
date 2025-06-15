@@ -8,6 +8,7 @@ import { ArrowRight, Phone, Star, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { useEffect, useRef, useState } from "react"
+import { PhoneButton } from "@/components/PhoneButton"
 
 // Before/After Slider Component
 function BeforeAfterSlider() {
@@ -573,23 +574,21 @@ export default function HomePage() {
                   </div>
 
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                    <Button
+                    <PhoneButton
                       size="lg"
                       className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium group transition-all duration-300 hover:scale-105 hover:shadow-lg relative overflow-hidden"
                       asChild
                     >
-                      <a href="tel:+12087277909">
-                        <span className="relative z-10">Book Service</span>
-                        <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
-                        <div className="absolute inset-0 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-                      </a>
-                    </Button>
+                      <span className="relative z-10">Book Service</span>
+                      <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
+                      <div className="absolute inset-0 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                    </PhoneButton>
 
                     <div className="flex items-center space-x-2 text-white group cursor-pointer">
                       <Phone className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
-                      <a href="tel:+12087277909" className="text-lg transition-colors duration-300 group-hover:text-blue-200">
+                      <PhoneButton variant="text" className="text-lg transition-colors duration-300 group-hover:text-blue-200">
                         or call us
-                      </a>
+                      </PhoneButton>
                     </div>
                   </div>
                 </div>
@@ -745,13 +744,13 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-6">
             <FadeInSection delay={600}>
               <div className="text-center">
-                  <Button
+                  <PhoneButton
                     size="lg"
                   className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105"
                     asChild
                   >
-                  <a href="tel:+12087277909">Book Service</a>
-                  </Button>
+                  Book Service
+                  </PhoneButton>
               </div>
             </FadeInSection>
           </div>
@@ -849,13 +848,13 @@ export default function HomePage() {
                   <h3 className="text-2xl md:text-3xl font-light mb-3">Need pool service or a new hot tub?</h3>
                   <p className="text-lg mb-6 opacity-90">Schedule a consultation to keep your pool perfect or explore our premium Shop Spa collection.</p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button
+                <PhoneButton
                   size="lg"
                       className="bg-white text-blue-600 hover:bg-gray-50 px-6 py-3 rounded-full text-base font-medium transition-all duration-300 hover:scale-105"
                   asChild
                 >
-                      <a href="tel:+12087277909">Schedule Consultation</a>
-                </Button>
+                      Schedule Consultation
+                </PhoneButton>
                   </div>
                 </div>
               </div>
@@ -1240,13 +1239,13 @@ export default function HomePage() {
         <section className="py-16 bg-white">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <FadeInSection>
-              <Button
+              <PhoneButton
                 size="lg"
                 className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105"
                 asChild
               >
-                <a href="tel:+12087277909">Book Service</a>
-              </Button>
+                Book Service
+              </PhoneButton>
             </FadeInSection>
           </div>
         </section>
@@ -1414,13 +1413,13 @@ export default function HomePage() {
             <FadeInSection delay={600}>
               <div className="text-center mt-12">
                 <p className="text-gray-600 mb-6">Still have questions?</p>
-                <Button
+                <PhoneButton
                   size="lg"
                   className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105"
                   asChild
                 >
-                  <a href="tel:+12087277909">Contact Us</a>
-                </Button>
+                  Contact Us
+                </PhoneButton>
               </div>
             </FadeInSection>
           </div>
@@ -1531,7 +1530,7 @@ export default function HomePage() {
                       <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                     </svg>
-                    <span>info@aquaadvantage.com</span>
+                    <span>info@AquaAdvantagePoolandSpa.com</span>
                   </div>
                   <div className="flex items-center space-x-1 mt-4">
                     {[...Array(5)].map((_, i) => (
