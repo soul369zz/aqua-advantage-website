@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { useEffect, useRef, useState } from "react"
 import { PhoneButton } from "@/components/PhoneButton"
+import { ContactForm } from "@/components/ContactForm"
 
 // Before/After Slider Component
 function BeforeAfterSlider() {
@@ -407,6 +408,7 @@ export default function HomePage() {
     "Shop Spa",
     "Testimonials",
     "FAQs",
+    "Contact",
   ]
 
   return (
@@ -1421,6 +1423,27 @@ export default function HomePage() {
                   Contact Us
                 </PhoneButton>
               </div>
+            </FadeInSection>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-6">
+            <FadeInSection>
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                  Ready to Get Started?
+                </h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                  Transform your backyard into the aquatic paradise you've always dreamed of. 
+                  Contact us today for a free consultation and quote.
+                </p>
+              </div>
+            </FadeInSection>
+
+            <FadeInSection delay={200}>
+              <ContactForm />
             </FadeInSection>
           </div>
         </section>
